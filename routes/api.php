@@ -18,12 +18,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+Route::resource('estados', 'EstadoAPIController', ['except' => [
+    'create', 'show', 'store', 'update', 'destroy'
+]]);
+
+Route::resource('cidades', 'CidadeAPIController', ['except' => [
+    'create', 'show', 'store', 'update', 'destroy'
+]]);
+
+Route::get('estados/{id}/cidades', 'EstadoAPIController@getCidadesPorEstado');
 
 
 
 
 
 
-Route::resource('estados', 'EstadoAPIController');
-
-Route::resource('cidades', 'CidadeAPIController');

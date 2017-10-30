@@ -12,16 +12,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Cidade extends Model
 {
-    use SoftDeletes;
-
     public $table = 'cidades';
-    
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
 
-
-    protected $dates = ['deleted_at'];
-
+    protected $dates = ['created_at', 'updated_at'];
 
     public $fillable = [
         'estado_id',

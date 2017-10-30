@@ -43,32 +43,13 @@ class EstadoAPIController extends AppBaseController
         return $this->sendResponse($estados->toArray(), 'Estados retrieved successfully');
     }
 
-    /**
-     * Store a newly created Estado in storage.
-     * POST /estados
-     *
-     * @param CreateEstadoAPIRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreateEstadoAPIRequest $request)
-    {
-        $input = $request->all();
-
-        $estados = $this->estadoRepository->create($input);
-
-        return $this->sendResponse($estados->toArray(), 'Estado saved successfully');
-    }
 
     /**
-     * Display the specified Estado.
-     * GET|HEAD /estados/{id}
+     * Metodo para retornar as cidades de um estado
      *
-     * @param  int $id
-     *
-     * @return Response
+     * @param $id do Estado
      */
-    public function show($id)
+    public function getCidadesPorEstado($id) 
     {
         /** @var Estado $estado */
         $estado = $this->estadoRepository->findWithoutFail($id);
@@ -77,53 +58,10 @@ class EstadoAPIController extends AppBaseController
             return $this->sendError('Estado not found');
         }
 
-        return $this->sendResponse($estado->toArray(), 'Estado retrieved successfully');
+        return $this->sendResponse($estado->cidades->toArray(), 'Cidades do estado '.$estado->nome.':');
+
     }
 
-    /**
-     * Update the specified Estado in storage.
-     * PUT/PATCH /estados/{id}
-     *
-     * @param  int $id
-     * @param UpdateEstadoAPIRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateEstadoAPIRequest $request)
-    {
-        $input = $request->all();
 
-        /** @var Estado $estado */
-        $estado = $this->estadoRepository->findWithoutFail($id);
 
-        if (empty($estado)) {
-            return $this->sendError('Estado not found');
-        }
-
-        $estado = $this->estadoRepository->update($input, $id);
-
-        return $this->sendResponse($estado->toArray(), 'Estado updated successfully');
-    }
-
-    /**
-     * Remove the specified Estado from storage.
-     * DELETE /estados/{id}
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        /** @var Estado $estado */
-        $estado = $this->estadoRepository->findWithoutFail($id);
-
-        if (empty($estado)) {
-            return $this->sendError('Estado not found');
-        }
-
-        $estado->delete();
-
-        return $this->sendResponse($id, 'Estado deleted successfully');
-    }
 }
