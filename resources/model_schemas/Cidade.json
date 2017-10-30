@@ -11,7 +11,7 @@
         "inIndex": false
     },
     {
-        "name": "state_id",
+        "name": "estado_id",
         "dbType": "integer,false",
         "htmlType": null,
         "validations": null,
@@ -22,7 +22,7 @@
         "inIndex": true
     },
     {
-        "name": "name",
+        "name": "nome",
         "dbType": "string",
         "htmlType": "text",
         "validations": null,
@@ -56,6 +56,6 @@
     },
     {
         "type": "relation",
-        "relation": "mt1,State"
+        "relation": "mt1,Estado"
     }
 ]
