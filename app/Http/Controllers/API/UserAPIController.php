@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers\API;
 
+use Response;
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Repositories\UserRepository;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\API\CreateUserAPIRequest;
 use App\Http\Requests\API\UpdateUserAPIRequest;
-use App\Models\User;
-use App\Repositories\UserRepository;
-use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 
 /**
- * Class UserController
- * @package App\Http\Controllers\API
+ * Class UserController.
  */
-
 class UserAPIController extends AppBaseController
 {
-    /** @var  UserRepository */
+    /** @var UserRepository */
     private $userRepository;
 
     public function __construct(UserRepository $userRepo)
@@ -29,7 +27,7 @@ class UserAPIController extends AppBaseController
 
     /**
      * Display a listing of the User.
-     * GET|HEAD /users
+     * GET|HEAD /users.
      *
      * @param Request $request
      * @return Response
@@ -45,7 +43,7 @@ class UserAPIController extends AppBaseController
 
     /**
      * Store a newly created User in storage.
-     * POST /users
+     * POST /users.
      *
      * @param CreateUserAPIRequest $request
      *
@@ -62,7 +60,7 @@ class UserAPIController extends AppBaseController
 
     /**
      * Display the specified User.
-     * GET|HEAD /users/{id}
+     * GET|HEAD /users/{id}.
      *
      * @param  int $id
      *
@@ -82,7 +80,7 @@ class UserAPIController extends AppBaseController
 
     /**
      * Update the specified User in storage.
-     * PUT/PATCH /users/{id}
+     * PUT/PATCH /users/{id}.
      *
      * @param  int $id
      * @param UpdateUserAPIRequest $request
@@ -107,7 +105,7 @@ class UserAPIController extends AppBaseController
 
     /**
      * Remove the specified User from storage.
-     * DELETE /users/{id}
+     * DELETE /users/{id}.
      *
      * @param  int $id
      *

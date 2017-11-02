@@ -1,13 +1,13 @@
 <?php
 
-use Faker\Factory as Faker;
 use App\Models\Cidade;
+use Faker\Factory as Faker;
 use App\Repositories\CidadeRepository;
 
 trait MakeCidadeTrait
 {
     /**
-     * Create fake instance of Cidade and save it in database
+     * Create fake instance of Cidade and save it in database.
      *
      * @param array $cidadeFields
      * @return Cidade
@@ -17,11 +17,12 @@ trait MakeCidadeTrait
         /** @var CidadeRepository $cidadeRepo */
         $cidadeRepo = App::make(CidadeRepository::class);
         $theme = $this->fakeCidadeData($cidadeFields);
+
         return $cidadeRepo->create($theme);
     }
 
     /**
-     * Get fake instance of Cidade
+     * Get fake instance of Cidade.
      *
      * @param array $cidadeFields
      * @return Cidade
@@ -32,7 +33,7 @@ trait MakeCidadeTrait
     }
 
     /**
-     * Get fake data of Cidade
+     * Get fake data of Cidade.
      *
      * @param array $postFields
      * @return array
@@ -45,7 +46,7 @@ trait MakeCidadeTrait
             'estado_id' => $fake->randomDigitNotNull,
             'nome' => $fake->word,
             'created_at' => $fake->date('Y-m-d H:i:s'),
-            'updated_at' => $fake->date('Y-m-d H:i:s')
+            'updated_at' => $fake->date('Y-m-d H:i:s'),
         ], $cidadeFields);
     }
 }

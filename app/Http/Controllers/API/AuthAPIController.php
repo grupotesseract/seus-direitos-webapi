@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Requests\API\CreateUserAPIRequest;
-use App\Http\Requests\API\UpdateUserAPIRequest;
-use App\Models\User;
-use App\Repositories\UserRepository;
-use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use Response;
 use Auth;
+use Response;
 use Validator;
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Repositories\UserRepository;
+use App\Http\Controllers\AppBaseController;
 
 class AuthAPIController extends AppBaseController
 {
-    /** @var  UserRepository */
+    /** @var UserRepository */
     private $userRepository;
     private $successStatus = 200;
 
@@ -24,21 +22,21 @@ class AuthAPIController extends AppBaseController
     }
 
     /**
-     * login api
+     * login api.
      *
      * @return \Illuminate\Http\Response
      */
-    public function login(){
-        if( Auth::attempt(['email' => request('email'), 'password' => request('password')])){
+    public function login()
+    {
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             $user = Auth::user();
-            $success['token'] =  $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
+            $success['token'] = $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
+
             return response()->json(['success' => $success], $this->successStatus);
-        }
-        else{
+        } else {
             return response()->json(['error'=>'Unauthorised'], 401);
         }
     }
-
 
     public function register(Request $request)
     {
@@ -50,16 +48,15 @@ class AuthAPIController extends AppBaseController
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);            
+            return response()->json(['error'=>$validator->errors()], 401);
         }
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = $this->userRepository->create($input);
-        $success['token'] =  $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
-        $success['name'] =  $user->name;
+        $success['token'] = $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
+        $success['name'] = $user->name;
 
         return response()->json(['success'=>$success], $this->successStatus);
     }
-    
 }

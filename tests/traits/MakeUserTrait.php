@@ -1,13 +1,13 @@
 <?php
 
-use Faker\Factory as Faker;
 use App\Models\User;
+use Faker\Factory as Faker;
 use App\Repositories\UserRepository;
 
 trait MakeUserTrait
 {
     /**
-     * Create fake instance of User and save it in database
+     * Create fake instance of User and save it in database.
      *
      * @param array $userFields
      * @return User
@@ -17,11 +17,12 @@ trait MakeUserTrait
         /** @var UserRepository $userRepo */
         $userRepo = App::make(UserRepository::class);
         $theme = $this->fakeUserData($userFields);
+
         return $userRepo->create($theme);
     }
 
     /**
-     * Get fake instance of User
+     * Get fake instance of User.
      *
      * @param array $userFields
      * @return User
@@ -32,7 +33,7 @@ trait MakeUserTrait
     }
 
     /**
-     * Get fake data of User
+     * Get fake data of User.
      *
      * @param array $postFields
      * @return array
@@ -47,7 +48,7 @@ trait MakeUserTrait
             'password' => $fake->word,
             'remember_token' => $fake->word,
             'created_at' => $fake->date('Y-m-d H:i:s'),
-            'updated_at' => $fake->date('Y-m-d H:i:s')
+            'updated_at' => $fake->date('Y-m-d H:i:s'),
         ], $userFields);
     }
 }

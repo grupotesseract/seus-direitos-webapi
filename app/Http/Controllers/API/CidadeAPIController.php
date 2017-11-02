@@ -2,24 +2,20 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Requests\API\CreateCidadeAPIRequest;
-use App\Http\Requests\API\UpdateCidadeAPIRequest;
-use App\Models\Cidade;
-use App\Repositories\CidadeRepository;
-use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
-use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Cidade;
+use Illuminate\Http\Request;
+use App\Repositories\CidadeRepository;
+use App\Http\Controllers\AppBaseController;
+use Prettus\Repository\Criteria\RequestCriteria;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 
 /**
- * Class CidadeController
- * @package App\Http\Controllers\API
+ * Class CidadeController.
  */
-
 class CidadeAPIController extends AppBaseController
 {
-    /** @var  CidadeRepository */
+    /** @var CidadeRepository */
     private $cidadeRepository;
 
     public function __construct(CidadeRepository $cidadeRepo)
@@ -29,7 +25,7 @@ class CidadeAPIController extends AppBaseController
 
     /**
      * Display a listing of the Cidade.
-     * GET|HEAD /cidades
+     * GET|HEAD /cidades.
      *
      * @param Request $request
      * @return Response
@@ -42,5 +38,4 @@ class CidadeAPIController extends AppBaseController
 
         return $this->sendResponse($cidades->toArray(), 'Cidades retrieved successfully');
     }
-
 }
