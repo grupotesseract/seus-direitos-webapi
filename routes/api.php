@@ -48,3 +48,8 @@ Route::resource('categorias', 'CategoriaAPIController', ['except' => [
     'create', 'show', 'store', 'update', 'destroy',
 ]]);
 
+
+
+Route::resource('sindicatos', 'SindicatoAPIController');
+
+Route::resource('sindicatos', 'SindicatoAPIController');

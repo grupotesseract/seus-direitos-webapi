@@ -11,18 +11,28 @@
 |
 */
 
+
+Auth::routes();
+
 Route::get('/', function () {
     return redirect('/home');
 });
 
-Auth::routes();
-
 Route::get('/admin', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
-Route::resource('users', 'UserController');
+/*
+ * Rotas protegidas
+ */
+Route::group(['middleware' => 'auth:web'], function () {
+
+    /**
+     * Rotas de Entidades (CRUD's via admin)
+     */
+    Route::resource('users', 'UserController');
+    Route::resource('categorias', 'CategoriaController');
+    Route::resource('sindicatos', 'SindicatoController');
 
 
-Route::resource('categorias', 'CategoriaController');
+});
 
-Route::resource('categorias', 'CategoriaController');

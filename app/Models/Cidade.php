@@ -46,4 +46,13 @@ class Cidade extends Model
     {
         return $this->belongsTo(\App\Models\Estado::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function sindicatos()
+    {
+        return $this->hasMany(\App\Models\Sindicato::class);
+    }
+    
 }
