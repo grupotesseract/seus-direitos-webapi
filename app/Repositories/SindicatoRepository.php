@@ -23,4 +23,6 @@ class SindicatoRepository extends BaseRepository
     {
         return Sindicato::class;
     }
+
+    
 }

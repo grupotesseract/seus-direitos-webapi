@@ -21,4 +21,13 @@ class CategoriaRepository extends BaseRepository
     {
         return Categoria::class;
     }
+
+
+    /**
+     * Retorna os campos para um select id => Nome
+     **/
+    public function getCamposSelect()
+    {
+        return Categoria::pluck('nome', 'id');
+    }
 }

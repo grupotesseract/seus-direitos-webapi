@@ -22,4 +22,15 @@ class CidadeRepository extends BaseRepository
     {
         return Cidade::class;
     }
+
+    /**
+     * Retorna os campos para um select id => Nome
+     **/
+    public function getCamposSelect()
+    {
+        return Cidade::pluck('nome', 'id');
+    }
+
+
+
 }

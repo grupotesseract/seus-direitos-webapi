@@ -22,4 +22,13 @@ class EstadoRepository extends BaseRepository
     {
         return Estado::class;
     }
+
+    /**
+     * Retorna os campos para um select id => Nome
+     **/
+    public function getCamposSelect()
+    {
+        return Estado::pluck('nome', 'id');
+    }
+    
 }
