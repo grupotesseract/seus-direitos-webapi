@@ -3,22 +3,20 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Estado
- * @package App\Models
+ * Class Estado.
  * @version October 30, 2017, 8:13 pm BRST
  */
 class Estado extends Model
 {
     public $table = 'estados';
-    
+
     protected $dates = ['created_at', 'updated_at'];
 
     public $fillable = [
         'nome',
-        'sigla'
+        'sigla',
     ];
 
     /**
@@ -29,16 +27,16 @@ class Estado extends Model
     protected $casts = [
         'id' => 'integer',
         'nome' => 'string',
-        'sigla' => 'string'
+        'sigla' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     /**

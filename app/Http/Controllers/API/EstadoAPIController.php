@@ -2,24 +2,20 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Requests\API\CreateEstadoAPIRequest;
-use App\Http\Requests\API\UpdateEstadoAPIRequest;
-use App\Models\Estado;
-use App\Repositories\EstadoRepository;
-use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
-use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Estado;
+use Illuminate\Http\Request;
+use App\Repositories\EstadoRepository;
+use App\Http\Controllers\AppBaseController;
+use Prettus\Repository\Criteria\RequestCriteria;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 
 /**
- * Class EstadoController
- * @package App\Http\Controllers\API
+ * Class EstadoController.
  */
-
 class EstadoAPIController extends AppBaseController
 {
-    /** @var  EstadoRepository */
+    /** @var EstadoRepository */
     private $estadoRepository;
 
     public function __construct(EstadoRepository $estadoRepo)
@@ -29,7 +25,7 @@ class EstadoAPIController extends AppBaseController
 
     /**
      * Display a listing of the Estado.
-     * GET|HEAD /estados
+     * GET|HEAD /estados.
      *
      * @param Request $request
      * @return Response
@@ -43,13 +39,12 @@ class EstadoAPIController extends AppBaseController
         return $this->sendResponse($estados->toArray(), 'Estados retrieved successfully');
     }
 
-
     /**
-     * Metodo para retornar as cidades de um estado
+     * Metodo para retornar as cidades de um estado.
      *
      * @param $id do Estado
      */
-    public function getCidadesPorEstado($id) 
+    public function getCidadesPorEstado($id)
     {
         /** @var Estado $estado */
         $estado = $this->estadoRepository->findWithoutFail($id);
@@ -59,9 +54,5 @@ class EstadoAPIController extends AppBaseController
         }
 
         return $this->sendResponse($estado->cidades->toArray(), 'Cidades do estado '.$estado->nome.':');
-
     }
-
-
-
 }

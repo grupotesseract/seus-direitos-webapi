@@ -3,11 +3,9 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Cidade
- * @package App\Models
+ * Class Cidade.
  * @version October 30, 2017, 8:13 pm BRST
  */
 class Cidade extends Model
@@ -18,7 +16,7 @@ class Cidade extends Model
 
     public $fillable = [
         'estado_id',
-        'nome'
+        'nome',
     ];
 
     /**
@@ -29,16 +27,16 @@ class Cidade extends Model
     protected $casts = [
         'id' => 'integer',
         'estado_id' => 'integer',
-        'nome' => 'string'
+        'nome' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     /**

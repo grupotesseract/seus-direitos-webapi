@@ -30,12 +30,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
-        
-    ];
 
+    ];
 }

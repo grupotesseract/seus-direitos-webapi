@@ -14,11 +14,11 @@ class UserRepository extends BaseRepository
         'name',
         'email',
         'password',
-        'remember_token'
+        'remember_token',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {

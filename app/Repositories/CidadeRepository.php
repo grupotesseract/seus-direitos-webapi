@@ -12,11 +12,11 @@ class CidadeRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'estado_id',
-        'nome'
+        'nome',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {

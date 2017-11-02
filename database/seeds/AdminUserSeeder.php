@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 
 /**
- * Seeder do usuario admin master, obtendo os valores do .env ou seguindo com valores default
+ * Seeder do usuario admin master, obtendo os valores do .env ou seguindo com valores default.
  *
  * @TODO: Assim que existir as estrutura de permissões, modificar o seeder de acordo
  */
