@@ -2,10 +2,9 @@
 
 namespace App\ViewComposers;
 
-use App\Repositories\CategoriaRepository;
-use App\Repositories\EstadoRepository;
-use App\Repositories\SindicatoRepository;
 use Illuminate\View\View;
+use App\Repositories\EstadoRepository;
+use App\Repositories\CategoriaRepository;
 
 class SindicatoComposer
 {
@@ -33,7 +32,7 @@ class SindicatoComposer
     public function compose(View $view)
     {
         $categorias = $this->categorias->getCamposSelect();
-        $estados  = $this->estados->getCamposSelect();
+        $estados = $this->estados->getCamposSelect();
 
         $view
             ->with('categorias', $categorias)

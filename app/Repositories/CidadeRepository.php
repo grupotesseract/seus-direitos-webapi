@@ -24,13 +24,10 @@ class CidadeRepository extends BaseRepository
     }
 
     /**
-     * Retorna os campos para um select id => Nome
+     * Retorna os campos para um select id => Nome.
      **/
     public function getCamposSelect()
     {
         return Cidade::pluck('nome', 'id');
     }
-
-
-
 }

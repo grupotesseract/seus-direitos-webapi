@@ -54,5 +54,4 @@ class Cidade extends Model
     {
         return $this->hasMany(\App\Models\Sindicato::class);
     }
-    
 }

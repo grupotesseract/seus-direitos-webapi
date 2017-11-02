@@ -1,11 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateSindicatosTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -27,7 +26,6 @@ class CreateSindicatosTable extends Migration
 
             $table->timestamps();
             $table->softDeletes();
-            
         });
     }
 

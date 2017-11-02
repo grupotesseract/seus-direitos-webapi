@@ -13,16 +13,14 @@ class SindicatoRepository extends BaseRepository
     protected $fieldSearchable = [
         'nome',
         'sigla',
-        'nome_responsavel'
+        'nome_responsavel',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {
         return Sindicato::class;
     }
-
-    
 }
