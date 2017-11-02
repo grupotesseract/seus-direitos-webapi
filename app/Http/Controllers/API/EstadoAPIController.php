@@ -47,7 +47,7 @@ class EstadoAPIController extends AppBaseController
     public function getCidadesPorEstado($id)
     {
         /** @var Estado $estado */
-        $estado = $this->estadoRepository->findWithoutFail($id);
+        $estado = $this->estadoRepository->findByIdOuSigla($id)->first();
 
         if (empty($estado)) {
             return $this->sendError('Estado not found');

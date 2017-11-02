@@ -22,4 +22,17 @@ class EstadoRepository extends BaseRepository
     {
         return Estado::class;
     }
+
+    /**
+     * Metodo para buscar um Estado por ID ou Sigla
+     *
+     * @param integer|string $idOuSigla
+     */
+    public function findByIdOuSigla($idOuSigla)
+    {
+        $campoQuery = is_numeric($idOuSigla) ?  'id' : 'sigla';
+        return $this->findByField($campoQuery, $idOuSigla);
+    }
+
+
 }
