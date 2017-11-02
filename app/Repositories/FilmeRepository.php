@@ -16,11 +16,11 @@ class FilmeRepository extends BaseRepository
         'genero',
         'duracao',
         'descricao',
-        'trailer'
+        'trailer',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {

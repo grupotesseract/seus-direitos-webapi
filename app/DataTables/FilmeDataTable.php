@@ -3,12 +3,10 @@
 namespace App\DataTables;
 
 use App\Models\Filme;
-use Form;
 use Yajra\Datatables\Services\DataTable;
 
 class FilmeDataTable extends DataTable
 {
-
     /**
      * @return \Illuminate\Http\JsonResponse
      */
@@ -59,8 +57,8 @@ class FilmeDataTable extends DataTable
                              'pdf',
                          ],
                     ],
-                    'colvis'
-                ]
+                    'colvis',
+                ],
             ]);
     }
 
@@ -77,7 +75,7 @@ class FilmeDataTable extends DataTable
             'genero' => ['name' => 'genero', 'data' => 'genero'],
             'duracao' => ['name' => 'duracao', 'data' => 'duracao'],
             'descricao' => ['name' => 'descricao', 'data' => 'descricao'],
-            'trailer' => ['name' => 'trailer', 'data' => 'trailer']
+            'trailer' => ['name' => 'trailer', 'data' => 'trailer'],
         ];
     }
 

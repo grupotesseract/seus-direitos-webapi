@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Response;
+use Illuminate\Http\Request;
+use App\Repositories\FilmeRepository;
 use App\Http\Requests\CreateFilmeRequest;
 use App\Http\Requests\UpdateFilmeRequest;
-use App\Repositories\FilmeRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
-use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 class FilmeController extends AppBaseController
 {
-    /** @var  FilmeRepository */
+    /** @var FilmeRepository */
     private $filmeRepository;
 
     public function __construct(FilmeRepository $filmeRepo)
