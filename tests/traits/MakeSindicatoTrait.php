@@ -1,13 +1,13 @@
 <?php
 
-use Faker\Factory as Faker;
 use App\Models\Sindicato;
+use Faker\Factory as Faker;
 use App\Repositories\SindicatoRepository;
 
 trait MakeSindicatoTrait
 {
     /**
-     * Create fake instance of Sindicato and save it in database
+     * Create fake instance of Sindicato and save it in database.
      *
      * @param array $sindicatoFields
      * @return Sindicato
@@ -17,11 +17,12 @@ trait MakeSindicatoTrait
         /** @var SindicatoRepository $sindicatoRepo */
         $sindicatoRepo = App::make(SindicatoRepository::class);
         $theme = $this->fakeSindicatoData($sindicatoFields);
+
         return $sindicatoRepo->create($theme);
     }
 
     /**
-     * Get fake instance of Sindicato
+     * Get fake instance of Sindicato.
      *
      * @param array $sindicatoFields
      * @return Sindicato
@@ -32,7 +33,7 @@ trait MakeSindicatoTrait
     }
 
     /**
-     * Get fake data of Sindicato
+     * Get fake data of Sindicato.
      *
      * @param array $postFields
      * @return array
@@ -47,7 +48,7 @@ trait MakeSindicatoTrait
             'nome_responsavel' => $fake->word,
             'created_at' => $fake->date('Y-m-d H:i:s'),
             'updated_at' => $fake->date('Y-m-d H:i:s'),
-            'deleted_at' => $fake->date('Y-m-d H:i:s')
+            'deleted_at' => $fake->date('Y-m-d H:i:s'),
         ], $sindicatoFields);
     }
 }

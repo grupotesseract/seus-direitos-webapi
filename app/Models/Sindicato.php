@@ -6,8 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Sindicato
- * @package App\Models
+ * Class Sindicato.
  * @version November 1, 2017, 11:18 pm BRST
  */
 class Sindicato extends Model
@@ -15,14 +14,13 @@ class Sindicato extends Model
     use SoftDeletes;
 
     public $table = 'sindicatos';
-    
-    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $fillable = [
         'nome',
         'sigla',
-        'nome_responsavel'
+        'nome_responsavel',
     ];
 
     /**
@@ -34,20 +32,20 @@ class Sindicato extends Model
         'id' => 'integer',
         'nome' => 'string',
         'sigla' => 'string',
-        'nome_responsavel' => 'string'
+        'nome_responsavel' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     /**
-     * Um Sindicato sempre pertence a uma categoria
+     * Um Sindicato sempre pertence a uma categoria.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
@@ -57,7 +55,7 @@ class Sindicato extends Model
     }
 
     /**
-     * Um Sindicato sempre está associado a uma cidade
+     * Um Sindicato sempre está associado a uma cidade.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
@@ -65,6 +63,4 @@ class Sindicato extends Model
     {
         return $this->belongsTo(\App\Models\Cidade::class);
     }
-    
-    
 }

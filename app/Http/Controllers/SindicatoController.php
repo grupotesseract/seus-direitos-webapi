@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Response;
+use Illuminate\Http\Request;
+use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
-use App\Repositories\SindicatoRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
-use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 class SindicatoController extends AppBaseController
 {
-    /** @var  SindicatoRepository */
+    /** @var SindicatoRepository */
     private $sindicatoRepository;
 
     public function __construct(SindicatoRepository $sindicatoRepo)

@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Response;
+use Illuminate\Http\Request;
+use App\Repositories\CategoriaRepository;
 use App\Http\Requests\CreateCategoriaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
-use App\Repositories\CategoriaRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
-use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 class CategoriaController extends AppBaseController
 {
-    /** @var  CategoriaRepository */
+    /** @var CategoriaRepository */
     private $categoriaRepository;
 
     public function __construct(CategoriaRepository $categoriaRepo)

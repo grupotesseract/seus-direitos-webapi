@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers\API;
 
+use Response;
+use App\Models\Categoria;
+use Illuminate\Http\Request;
+use App\Repositories\CategoriaRepository;
+use App\Http\Controllers\AppBaseController;
+use Prettus\Repository\Criteria\RequestCriteria;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use App\Http\Requests\API\CreateCategoriaAPIRequest;
 use App\Http\Requests\API\UpdateCategoriaAPIRequest;
-use App\Models\Categoria;
-use App\Repositories\CategoriaRepository;
-use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
-use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 /**
- * Class CategoriaController
- * @package App\Http\Controllers\API
+ * Class CategoriaController.
  */
-
 class CategoriaAPIController extends AppBaseController
 {
-    /** @var  CategoriaRepository */
+    /** @var CategoriaRepository */
     private $categoriaRepository;
 
     public function __construct(CategoriaRepository $categoriaRepo)
@@ -29,7 +27,7 @@ class CategoriaAPIController extends AppBaseController
 
     /**
      * Display a listing of the Categoria.
-     * GET|HEAD /categorias
+     * GET|HEAD /categorias.
      *
      * @param Request $request
      * @return Response
@@ -45,7 +43,7 @@ class CategoriaAPIController extends AppBaseController
 
     /**
      * Store a newly created Categoria in storage.
-     * POST /categorias
+     * POST /categorias.
      *
      * @param CreateCategoriaAPIRequest $request
      *
@@ -62,7 +60,7 @@ class CategoriaAPIController extends AppBaseController
 
     /**
      * Display the specified Categoria.
-     * GET|HEAD /categorias/{id}
+     * GET|HEAD /categorias/{id}.
      *
      * @param  int $id
      *
@@ -82,7 +80,7 @@ class CategoriaAPIController extends AppBaseController
 
     /**
      * Update the specified Categoria in storage.
-     * PUT/PATCH /categorias/{id}
+     * PUT/PATCH /categorias/{id}.
      *
      * @param  int $id
      * @param UpdateCategoriaAPIRequest $request
@@ -107,7 +105,7 @@ class CategoriaAPIController extends AppBaseController
 
     /**
      * Remove the specified Categoria from storage.
-     * DELETE /categorias/{id}
+     * DELETE /categorias/{id}.
      *
      * @param  int $id
      *

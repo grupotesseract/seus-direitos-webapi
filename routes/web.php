@@ -11,7 +11,6 @@
 |
 */
 
-
 Auth::routes();
 
 Route::get('/', function () {
@@ -26,13 +25,10 @@ Route::get('/home', 'HomeController@index');
  */
 Route::group(['middleware' => 'auth:web'], function () {
 
-    /**
+    /*
      * Rotas de Entidades (CRUD's via admin)
      */
     Route::resource('users', 'UserController');
     Route::resource('categorias', 'CategoriaController');
     Route::resource('sindicatos', 'SindicatoController');
-
-
 });
-

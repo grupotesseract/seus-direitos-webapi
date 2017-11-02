@@ -6,8 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Categoria
- * @package App\Models
+ * Class Categoria.
  * @version November 1, 2017, 10:50 pm BRST
  */
 class Categoria extends Model
@@ -18,7 +17,7 @@ class Categoria extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $fillable = [
-        'nome'
+        'nome',
     ];
 
     /**
@@ -28,16 +27,16 @@ class Categoria extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nome' => 'string'
+        'nome' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
-        'nome' => 'required'
+        'nome' => 'required',
     ];
 
     /**
@@ -47,6 +46,4 @@ class Categoria extends Model
     {
         return $this->hasMany(\App\Models\Sindicato::class);
     }
-
-    
 }

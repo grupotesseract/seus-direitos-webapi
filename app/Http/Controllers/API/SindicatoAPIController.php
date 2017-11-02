@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers\API;
 
+use Response;
+use App\Models\Sindicato;
+use Illuminate\Http\Request;
+use App\Repositories\SindicatoRepository;
+use App\Http\Controllers\AppBaseController;
+use Prettus\Repository\Criteria\RequestCriteria;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use App\Http\Requests\API\CreateSindicatoAPIRequest;
 use App\Http\Requests\API\UpdateSindicatoAPIRequest;
-use App\Models\Sindicato;
-use App\Repositories\SindicatoRepository;
-use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
-use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 /**
- * Class SindicatoController
- * @package App\Http\Controllers\API
+ * Class SindicatoController.
  */
-
 class SindicatoAPIController extends AppBaseController
 {
-    /** @var  SindicatoRepository */
+    /** @var SindicatoRepository */
     private $sindicatoRepository;
 
     public function __construct(SindicatoRepository $sindicatoRepo)
@@ -29,7 +27,7 @@ class SindicatoAPIController extends AppBaseController
 
     /**
      * Display a listing of the Sindicato.
-     * GET|HEAD /sindicatos
+     * GET|HEAD /sindicatos.
      *
      * @param Request $request
      * @return Response
@@ -45,7 +43,7 @@ class SindicatoAPIController extends AppBaseController
 
     /**
      * Store a newly created Sindicato in storage.
-     * POST /sindicatos
+     * POST /sindicatos.
      *
      * @param CreateSindicatoAPIRequest $request
      *
@@ -62,7 +60,7 @@ class SindicatoAPIController extends AppBaseController
 
     /**
      * Display the specified Sindicato.
-     * GET|HEAD /sindicatos/{id}
+     * GET|HEAD /sindicatos/{id}.
      *
      * @param  int $id
      *
@@ -82,7 +80,7 @@ class SindicatoAPIController extends AppBaseController
 
     /**
      * Update the specified Sindicato in storage.
-     * PUT/PATCH /sindicatos/{id}
+     * PUT/PATCH /sindicatos/{id}.
      *
      * @param  int $id
      * @param UpdateSindicatoAPIRequest $request
@@ -107,7 +105,7 @@ class SindicatoAPIController extends AppBaseController
 
     /**
      * Remove the specified Sindicato from storage.
-     * DELETE /sindicatos/{id}
+     * DELETE /sindicatos/{id}.
      *
      * @param  int $id
      *

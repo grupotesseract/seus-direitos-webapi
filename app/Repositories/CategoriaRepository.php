@@ -11,20 +11,19 @@ class CategoriaRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'nome'
+        'nome',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {
         return Categoria::class;
     }
 
-
     /**
-     * Retorna os campos para um select id => Nome
+     * Retorna os campos para um select id => Nome.
      **/
     public function getCamposSelect()
     {
