@@ -21,3 +21,10 @@ Route::get('/admin', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
 Route::resource('users', 'UserController');
+
+
+Route::resource('filmes', 'FilmeController');
+
+Route::resource('filmes', 'FilmeController');
+
+Route::resource('filmes', 'FilmeController');
