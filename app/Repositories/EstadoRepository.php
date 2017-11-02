@@ -30,7 +30,8 @@ class EstadoRepository extends BaseRepository
      */
     public function findByIdOuSigla($idOuSigla)
     {
-        $campoQuery = is_numeric($idOuSigla) ?  'id' : 'sigla';
+        $campoQuery = is_numeric($idOuSigla) ? 'id' : 'sigla';
+
         return $this->findByField($campoQuery, strtoupper($idOuSigla));
     }
 }
