@@ -14,5 +14,11 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminUserSeeder::class);
         $this->call(StatesTableSeeder::class);
         $this->call(CitiesTableSeeder::class);
+
+        if ( env('APP_ENV') != 'production' ) {
+            $this->call(FakeCategoriasSeeder::class);
+            $this->call(FakeSindicatosSeeder::class);
+        }
+
     }
 }
