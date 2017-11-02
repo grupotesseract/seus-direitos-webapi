@@ -15,13 +15,7 @@ class Categoria extends Model
     use SoftDeletes;
 
     public $table = 'categorias';
-    
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
-
-
-    protected $dates = ['deleted_at'];
-
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $fillable = [
         'nome'
@@ -43,7 +37,7 @@ class Categoria extends Model
      * @var array
      */
     public static $rules = [
-        
+        'nome' => 'required'
     ];
 
     /**
