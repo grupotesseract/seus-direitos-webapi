@@ -2,16 +2,15 @@
 
 namespace App\Repositories;
 
-use App\Models\Cidade;
+use App\Models\Categoria;
 use InfyOm\Generator\Common\BaseRepository;
 
-class CidadeRepository extends BaseRepository
+class CategoriaRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'estado_id',
         'nome',
     ];
 
@@ -20,7 +19,7 @@ class CidadeRepository extends BaseRepository
      **/
     public function model()
     {
-        return Cidade::class;
+        return Categoria::class;
     }
 
     /**
@@ -28,6 +27,6 @@ class CidadeRepository extends BaseRepository
      **/
     public function getCamposSelect()
     {
-        return Cidade::pluck('nome', 'id');
+        return Categoria::pluck('nome', 'id');
     }
 }

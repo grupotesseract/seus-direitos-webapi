@@ -3,19 +3,20 @@
 namespace App\Models;
 
 use Eloquent as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Cidade.
- * @version October 30, 2017, 8:13 pm BRST
+ * Class Categoria.
+ * @version November 1, 2017, 10:50 pm BRST
  */
-class Cidade extends Model
+class Categoria extends Model
 {
-    public $table = 'cidades';
+    use SoftDeletes;
 
-    protected $dates = ['created_at', 'updated_at'];
+    public $table = 'categorias';
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $fillable = [
-        'estado_id',
         'nome',
     ];
 
@@ -26,7 +27,6 @@ class Cidade extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'estado_id' => 'integer',
         'nome' => 'string',
     ];
 
@@ -36,16 +36,8 @@ class Cidade extends Model
      * @var array
      */
     public static $rules = [
-
+        'nome' => 'required',
     ];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function estado()
-    {
-        return $this->belongsTo(\App\Models\Estado::class);
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

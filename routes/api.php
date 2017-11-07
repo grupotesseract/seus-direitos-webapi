@@ -42,3 +42,12 @@ Route::group(['middleware' => 'auth:api'], function () {
         return $request->user();
     });
 });
+
+//Listagem de Categorias
+Route::resource('categorias', 'CategoriaAPIController', ['except' => [
+    'create', 'show', 'store', 'update', 'destroy',
+]]);
+
+Route::resource('sindicatos', 'SindicatoAPIController');
+
+Route::resource('sindicatos', 'SindicatoAPIController');

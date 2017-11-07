@@ -22,3 +22,40 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/* Factory de Categorias para teste */
+$factory->define(App\Models\Categoria::class, function (Faker\Generator $faker) {
+    return [
+        'nome' => $faker->unique()->randomElement([
+            'Construção civil',
+            'Processamento de dados',
+            'Industrias de alimentos',
+            'Saúde',
+            'Educação',
+            'Outra',
+        ]),
+    ];
+});
+
+/* Factory de Sindicatos para teste */
+$factory->define(App\Models\Sindicato::class, function (Faker\Generator $faker) {
+    return [
+        'nome' => $faker->randomElement([
+            'Sindicato dos ',
+            'Sindicato ',
+            'Sindicalistas da ',
+            'Associação ',
+        ]).
+        $faker->randomElement([
+            'Construção civil',
+            'Processamento de dados',
+            'Industrias de alimentos',
+            'Saúde',
+            'dos gagos',
+        ]),
+        'nome_responsavel' => $faker->name,
+        'sigla' => 'S'.implode($faker->randomElements(['T', 'I', 'O', 'R', 'A', 'C', 'E', 'H', 'S'])),
+        'id_categoria' => \App\Models\Categoria::orderByRaw('RANDOM()')->first()->id,
+        'id_cidade' => \App\Models\Cidade::orderByRaw('RANDOM()')->first()->id,
+    ];
+});
