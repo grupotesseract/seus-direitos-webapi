@@ -13,7 +13,9 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 
 /**
- * Class UserController.
+ * @resource User API
+ *
+ * User routes
  */
 class UserAPIController extends AppBaseController
 {

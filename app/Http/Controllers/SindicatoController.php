@@ -10,6 +10,11 @@ use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
 
+/**
+ * @resource Sindicato
+ *
+ * Sindicato routes
+ */
 class SindicatoController extends AppBaseController
 {
     /** @var SindicatoRepository */

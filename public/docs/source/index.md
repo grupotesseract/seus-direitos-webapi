@@ -17,551 +17,12 @@ toc_footers:
 
 Welcome to the generated API reference.
 [Get Postman Collection](http://localhost/docs/collection.json)
+
 <!-- END_INFO -->
 
-#general
-<!-- START_57011a4e29c6bc1cfec9270de49657bf -->
-## Authorize a client to access the user&#039;s account.
+#Auth API
 
-> Example request:
-
-```bash
-curl -X GET "http://localhost/oauth/authorize" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/authorize",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "unsupported_grant_type",
-    "message": "The authorization grant type is not supported by the authorization server.",
-    "hint": "Check the `grant_type` parameter"
-}
-```
-
-### HTTP Request
-`GET oauth/authorize`
-
-`HEAD oauth/authorize`
-
-
-<!-- END_57011a4e29c6bc1cfec9270de49657bf -->
-
-<!-- START_e48cc6a0b45dd21b7076ab2c03908687 -->
-## Approve the authorization request.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/oauth/authorize" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/authorize",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST oauth/authorize`
-
-
-<!-- END_e48cc6a0b45dd21b7076ab2c03908687 -->
-
-<!-- START_de5d7581ef1275fce2a229b6b6eaad9c -->
-## Deny the authorization request.
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/oauth/authorize" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/authorize",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE oauth/authorize`
-
-
-<!-- END_de5d7581ef1275fce2a229b6b6eaad9c -->
-
-<!-- START_a09d20357336aa979ecd8e3972ac9168 -->
-## Authorize a client to access the user&#039;s account.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/oauth/token" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/token",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST oauth/token`
-
-
-<!-- END_a09d20357336aa979ecd8e3972ac9168 -->
-
-<!-- START_e96d5ebaecbbcd30089fa499c8d21792 -->
-## Get all of the authorized tokens for the authenticated user.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/oauth/tokens" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/tokens",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET oauth/tokens`
-
-`HEAD oauth/tokens`
-
-
-<!-- END_e96d5ebaecbbcd30089fa499c8d21792 -->
-
-<!-- START_a9a802c25737cca5324125e5f60b72a5 -->
-## Delete the given token.
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/oauth/tokens/{token_id}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/tokens/{token_id}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE oauth/tokens/{token_id}`
-
-
-<!-- END_a9a802c25737cca5324125e5f60b72a5 -->
-
-<!-- START_abe905e69f5d002aa7d26f433676d623 -->
-## Get a fresh transient token cookie for the authenticated user.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/oauth/token/refresh" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/token/refresh",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST oauth/token/refresh`
-
-
-<!-- END_abe905e69f5d002aa7d26f433676d623 -->
-
-<!-- START_258e7e83c3ea28db7720e63d358b33ff -->
-## Get all of the clients for the authenticated user.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/oauth/clients" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/clients",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET oauth/clients`
-
-`HEAD oauth/clients`
-
-
-<!-- END_258e7e83c3ea28db7720e63d358b33ff -->
-
-<!-- START_9eabf8d6e4ab449c24c503fcb42fba82 -->
-## Store a new client.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/oauth/clients" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/clients",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST oauth/clients`
-
-
-<!-- END_9eabf8d6e4ab449c24c503fcb42fba82 -->
-
-<!-- START_784aec390a455073fc7464335c1defa1 -->
-## Update the given client.
-
-> Example request:
-
-```bash
-curl -X PUT "http://localhost/oauth/clients/{client_id}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/clients/{client_id}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT oauth/clients/{client_id}`
-
-
-<!-- END_784aec390a455073fc7464335c1defa1 -->
-
-<!-- START_1f65a511dd86ba0541d7ba13ca57e364 -->
-## Delete the given client.
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/oauth/clients/{client_id}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/clients/{client_id}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE oauth/clients/{client_id}`
-
-
-<!-- END_1f65a511dd86ba0541d7ba13ca57e364 -->
-
-<!-- START_6eec11382f34d0f08c826d2813b02d04 -->
-## Get all of the available scopes for the application.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/oauth/scopes" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/scopes",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET oauth/scopes`
-
-`HEAD oauth/scopes`
-
-
-<!-- END_6eec11382f34d0f08c826d2813b02d04 -->
-
-<!-- START_b4c3e68afae3c4de78758b62c49ac9a9 -->
-## Get all of the personal access tokens for the authenticated user.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/oauth/personal-access-tokens" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/personal-access-tokens",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET oauth/personal-access-tokens`
-
-`HEAD oauth/personal-access-tokens`
-
-
-<!-- END_b4c3e68afae3c4de78758b62c49ac9a9 -->
-
-<!-- START_a8dd9c0a5583742e671711f9bb3ee406 -->
-## Create a new personal access token for the user.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/oauth/personal-access-tokens" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/personal-access-tokens",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST oauth/personal-access-tokens`
-
-
-<!-- END_a8dd9c0a5583742e671711f9bb3ee406 -->
-
-<!-- START_bae65df80fd9d72a01439241a9ea20d0 -->
-## Delete the given token.
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/oauth/personal-access-tokens/{token_id}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/oauth/personal-access-tokens/{token_id}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE oauth/personal-access-tokens/{token_id}`
-
-
-<!-- END_bae65df80fd9d72a01439241a9ea20d0 -->
-
+Auth API
 <!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
 ## login api.
 
@@ -628,15 +89,16 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_d7b7952e7fdddc07c978c9bdaf757acf -->
 
-<!-- START_8f873c19169d9577378eff32298328b6 -->
-## Display a listing of the Estado.
+#Categoria
 
-GET|HEAD /estados.
+Categoria
+<!-- START_1aebb532274eceeceb98094ee942ff8f -->
+## Display a listing of the Categoria.
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/estados" \
+curl -X GET "http://localhost/categorias" \
 -H "Accept: application/json"
 ```
 
@@ -644,7 +106,301 @@ curl -X GET "http://localhost/api/estados" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/estados",
+    "url": "http://localhost/categorias",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET categorias`
+
+`HEAD categorias`
+
+
+<!-- END_1aebb532274eceeceb98094ee942ff8f -->
+
+<!-- START_3f7898d520f5e203e73effd8282024e8 -->
+## Show the form for creating a new Categoria.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/categorias/create" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/categorias/create",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET categorias/create`
+
+`HEAD categorias/create`
+
+
+<!-- END_3f7898d520f5e203e73effd8282024e8 -->
+
+<!-- START_1c49c6cc6dbfdaadaa69f14e2247f87c -->
+## Store a newly created Categoria in storage.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/categorias" \
+-H "Accept: application/json" \
+    -d "nome"="similique" \
+
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/categorias",
+    "method": "POST",
+    "data": {
+        "nome": "similique"
+},
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST categorias`
+
+#### Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    nome | string |  required  | 
+
+<!-- END_1c49c6cc6dbfdaadaa69f14e2247f87c -->
+
+<!-- START_93a63dc568a3b5ebcca61d5ec9dfcf8d -->
+## Display the specified Categoria.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/categorias/{categoria}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/categorias/{categoria}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET categorias/{categoria}`
+
+`HEAD categorias/{categoria}`
+
+
+<!-- END_93a63dc568a3b5ebcca61d5ec9dfcf8d -->
+
+<!-- START_d75cefbc2b41e367b7aa39b80e19274e -->
+## Show the form for editing the specified Categoria.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/categorias/{categoria}/edit" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/categorias/{categoria}/edit",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET categorias/{categoria}/edit`
+
+`HEAD categorias/{categoria}/edit`
+
+
+<!-- END_d75cefbc2b41e367b7aa39b80e19274e -->
+
+<!-- START_48012cd045bfcb34e3fdeabc09d31deb -->
+## Update the specified Categoria in storage.
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/categorias/{categoria}" \
+-H "Accept: application/json" \
+    -d "nome"="quos" \
+
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/categorias/{categoria}",
+    "method": "PUT",
+    "data": {
+        "nome": "quos"
+},
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`PUT categorias/{categoria}`
+
+`PATCH categorias/{categoria}`
+
+#### Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    nome | string |  required  | 
+
+<!-- END_48012cd045bfcb34e3fdeabc09d31deb -->
+
+<!-- START_c1136c13b82cd18f17797cdffe786883 -->
+## Remove the specified Categoria from storage.
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/categorias/{categoria}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/categorias/{categoria}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`DELETE categorias/{categoria}`
+
+
+<!-- END_c1136c13b82cd18f17797cdffe786883 -->
+
+#Categoria API
+
+Categoria routes
+<!-- START_7bbe662e59cffcc3c6fdcf325d7c3182 -->
+## Display a listing of the Categoria.
+
+GET|HEAD /categorias.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/api/categorias" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/categorias",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -663,207 +419,56 @@ $.ajax(settings).done(function (response) {
     "success": true,
     "data": [
         {
-            "id": 11,
-            "nome": "Rondônia",
-            "sigla": "RO",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
+            "id": 1,
+            "nome": "Educação",
+            "created_at": "2017-11-07 19:16:49",
+            "updated_at": "2017-11-07 19:16:49",
+            "deleted_at": null
         },
         {
-            "id": 12,
-            "nome": "Acre",
-            "sigla": "AC",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
+            "id": 2,
+            "nome": "Construção civil",
+            "created_at": "2017-11-07 19:16:49",
+            "updated_at": "2017-11-07 19:16:49",
+            "deleted_at": null
         },
         {
-            "id": 13,
-            "nome": "Amazonas",
-            "sigla": "AM",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
+            "id": 3,
+            "nome": "Industrias de alimentos",
+            "created_at": "2017-11-07 19:16:49",
+            "updated_at": "2017-11-07 19:16:49",
+            "deleted_at": null
         },
         {
-            "id": 14,
-            "nome": "Roraima",
-            "sigla": "RR",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
+            "id": 4,
+            "nome": "Outra",
+            "created_at": "2017-11-07 19:16:49",
+            "updated_at": "2017-11-07 19:16:49",
+            "deleted_at": null
         },
         {
-            "id": 15,
-            "nome": "Pará",
-            "sigla": "PA",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 16,
-            "nome": "Amapá",
-            "sigla": "AP",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 17,
-            "nome": "Tocantins",
-            "sigla": "TO",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 21,
-            "nome": "Maranhão",
-            "sigla": "MA",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 22,
-            "nome": "Piauí",
-            "sigla": "PI",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 23,
-            "nome": "Ceará",
-            "sigla": "CE",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 24,
-            "nome": "Rio Grande do Norte",
-            "sigla": "RN",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 25,
-            "nome": "Paraíba",
-            "sigla": "PB",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 26,
-            "nome": "Pernambuco",
-            "sigla": "PE",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 27,
-            "nome": "Alagoas",
-            "sigla": "AL",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 28,
-            "nome": "Sergipe",
-            "sigla": "SE",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 29,
-            "nome": "Bahia",
-            "sigla": "BA",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 31,
-            "nome": "Minas Gerais",
-            "sigla": "MG",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 32,
-            "nome": "Espírito Santo",
-            "sigla": "ES",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 33,
-            "nome": "Rio de Janeiro",
-            "sigla": "RJ",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 35,
-            "nome": "São Paulo",
-            "sigla": "SP",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 41,
-            "nome": "Paraná",
-            "sigla": "PR",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 42,
-            "nome": "Santa Catarina",
-            "sigla": "SC",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 43,
-            "nome": "Rio Grande do Sul",
-            "sigla": "RS",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 50,
-            "nome": "Mato Grosso do Sul",
-            "sigla": "MS",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 51,
-            "nome": "Mato Grosso",
-            "sigla": "MT",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 52,
-            "nome": "Goiás",
-            "sigla": "GO",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
-        },
-        {
-            "id": 53,
-            "nome": "Distrito Federal",
-            "sigla": "DF",
-            "created_at": "2017-11-07 19:16:48",
-            "updated_at": "2017-11-07 19:16:48"
+            "id": 5,
+            "nome": "Saúde",
+            "created_at": "2017-11-07 19:16:49",
+            "updated_at": "2017-11-07 19:16:49",
+            "deleted_at": null
         }
     ],
-    "message": "Estados retrieved successfully"
+    "message": "Categorias retrieved successfully"
 }
 ```
 
 ### HTTP Request
-`GET api/estados`
+`GET api/categorias`
 
-`HEAD api/estados`
+`HEAD api/categorias`
 
 
-<!-- END_8f873c19169d9577378eff32298328b6 -->
+<!-- END_7bbe662e59cffcc3c6fdcf325d7c3182 -->
 
+#Cidade API
+
+Cidade routes
 <!-- START_9811a14937f8e19f6b46f6f0b03e3e8e -->
 ## Display a listing of the Cidade.
 
@@ -39901,6 +39506,245 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_9811a14937f8e19f6b46f6f0b03e3e8e -->
 
+#Estado API
+
+Estado routes
+<!-- START_8f873c19169d9577378eff32298328b6 -->
+## Display a listing of the Estado.
+
+GET|HEAD /estados.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/api/estados" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/estados",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "id": 11,
+            "nome": "Rondônia",
+            "sigla": "RO",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 12,
+            "nome": "Acre",
+            "sigla": "AC",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 13,
+            "nome": "Amazonas",
+            "sigla": "AM",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 14,
+            "nome": "Roraima",
+            "sigla": "RR",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 15,
+            "nome": "Pará",
+            "sigla": "PA",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 16,
+            "nome": "Amapá",
+            "sigla": "AP",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 17,
+            "nome": "Tocantins",
+            "sigla": "TO",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 21,
+            "nome": "Maranhão",
+            "sigla": "MA",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 22,
+            "nome": "Piauí",
+            "sigla": "PI",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 23,
+            "nome": "Ceará",
+            "sigla": "CE",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 24,
+            "nome": "Rio Grande do Norte",
+            "sigla": "RN",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 25,
+            "nome": "Paraíba",
+            "sigla": "PB",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 26,
+            "nome": "Pernambuco",
+            "sigla": "PE",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 27,
+            "nome": "Alagoas",
+            "sigla": "AL",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 28,
+            "nome": "Sergipe",
+            "sigla": "SE",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 29,
+            "nome": "Bahia",
+            "sigla": "BA",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 31,
+            "nome": "Minas Gerais",
+            "sigla": "MG",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 32,
+            "nome": "Espírito Santo",
+            "sigla": "ES",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 33,
+            "nome": "Rio de Janeiro",
+            "sigla": "RJ",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 35,
+            "nome": "São Paulo",
+            "sigla": "SP",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 41,
+            "nome": "Paraná",
+            "sigla": "PR",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 42,
+            "nome": "Santa Catarina",
+            "sigla": "SC",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 43,
+            "nome": "Rio Grande do Sul",
+            "sigla": "RS",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 50,
+            "nome": "Mato Grosso do Sul",
+            "sigla": "MS",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 51,
+            "nome": "Mato Grosso",
+            "sigla": "MT",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 52,
+            "nome": "Goiás",
+            "sigla": "GO",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        },
+        {
+            "id": 53,
+            "nome": "Distrito Federal",
+            "sigla": "DF",
+            "created_at": "2017-11-07 19:16:48",
+            "updated_at": "2017-11-07 19:16:48"
+        }
+    ],
+    "message": "Estados retrieved successfully"
+}
+```
+
+### HTTP Request
+`GET api/estados`
+
+`HEAD api/estados`
+
+
+<!-- END_8f873c19169d9577378eff32298328b6 -->
+
 <!-- START_7d58e968c162bf0607dbec6442b9e5d1 -->
 ## Metodo para retornar as cidades de um estado.
 
@@ -39944,15 +39788,16 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_7d58e968c162bf0607dbec6442b9e5d1 -->
 
-<!-- START_7bbe662e59cffcc3c6fdcf325d7c3182 -->
-## Display a listing of the Categoria.
+#Forgot Password
 
-GET|HEAD /categorias.
+Forgot Password
+<!-- START_f9bb43b2d406a133a7646f806a34310b -->
+## Display the form to request a password reset link.
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/categorias" \
+curl -X GET "http://localhost/password/reset" \
 -H "Accept: application/json"
 ```
 
@@ -39960,7 +39805,83 @@ curl -X GET "http://localhost/api/categorias" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/categorias",
+    "url": "http://localhost/password/reset",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET password/reset`
+
+`HEAD password/reset`
+
+
+<!-- END_f9bb43b2d406a133a7646f806a34310b -->
+
+<!-- START_feb40f06a93c80d742181b6ffb6b734e -->
+## Send a reset link to the given user.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/password/email" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/password/email",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST password/email`
+
+
+<!-- END_feb40f06a93c80d742181b6ffb6b734e -->
+
+#Home
+
+Home
+<!-- START_7423f04c3e3eab0779fda86600776e5e -->
+## Show the application dashboard.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/admin" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/admin",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -39976,56 +39897,598 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "success": true,
-    "data": [
-        {
-            "id": 1,
-            "nome": "Educação",
-            "created_at": "2017-11-07 19:16:49",
-            "updated_at": "2017-11-07 19:16:49",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "nome": "Construção civil",
-            "created_at": "2017-11-07 19:16:49",
-            "updated_at": "2017-11-07 19:16:49",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "nome": "Industrias de alimentos",
-            "created_at": "2017-11-07 19:16:49",
-            "updated_at": "2017-11-07 19:16:49",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "nome": "Outra",
-            "created_at": "2017-11-07 19:16:49",
-            "updated_at": "2017-11-07 19:16:49",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "nome": "Saúde",
-            "created_at": "2017-11-07 19:16:49",
-            "updated_at": "2017-11-07 19:16:49",
-            "deleted_at": null
-        }
-    ],
-    "message": "Categorias retrieved successfully"
+    "error": "Unauthenticated."
 }
 ```
 
 ### HTTP Request
-`GET api/categorias`
+`GET admin`
 
-`HEAD api/categorias`
+`HEAD admin`
 
 
-<!-- END_7bbe662e59cffcc3c6fdcf325d7c3182 -->
+<!-- END_7423f04c3e3eab0779fda86600776e5e -->
 
+<!-- START_4d12119dce26b7df4c0c737c5de8f208 -->
+## Show the application dashboard.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/home" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/home",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET home`
+
+`HEAD home`
+
+
+<!-- END_4d12119dce26b7df4c0c737c5de8f208 -->
+
+#Login
+
+Login
+<!-- START_45def4da6d09e649f3b2c95189bbb020 -->
+## Show the application&#039;s login form.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/login" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/login",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET login`
+
+`HEAD login`
+
+
+<!-- END_45def4da6d09e649f3b2c95189bbb020 -->
+
+<!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
+## Handle a login request to the application.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/login" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/login",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST login`
+
+
+<!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
+
+<!-- START_e65925f23b9bc6b93d9356895f29f80c -->
+## Log the user out of the application.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/logout" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/logout",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST logout`
+
+
+<!-- END_e65925f23b9bc6b93d9356895f29f80c -->
+
+#Register
+
+Register
+<!-- START_d7e8ee2d51ff436e319caca5ab309cd9 -->
+## Show the application registration form.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/register" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/register",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET register`
+
+`HEAD register`
+
+
+<!-- END_d7e8ee2d51ff436e319caca5ab309cd9 -->
+
+<!-- START_d7aad7b5ac127700500280d511a3db01 -->
+## Handle a registration request for the application.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/register" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/register",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST register`
+
+
+<!-- END_d7aad7b5ac127700500280d511a3db01 -->
+
+#Reset Password
+
+Reset Password
+<!-- START_5a0014b83f352dff4e16558b63bfd23e -->
+## Display the password reset view for the given token.
+
+If no token is present, display the link request form.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/password/reset/{token}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/password/reset/{token}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET password/reset/{token}`
+
+`HEAD password/reset/{token}`
+
+
+<!-- END_5a0014b83f352dff4e16558b63bfd23e -->
+
+<!-- START_cafb407b7a846b31491f97719bb15aef -->
+## Reset the given user&#039;s password.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/password/reset" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/password/reset",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST password/reset`
+
+
+<!-- END_cafb407b7a846b31491f97719bb15aef -->
+
+#Sindicato
+
+Sindicato routes
+<!-- START_ccbeb5d73edeacdf8a901483512bd8fe -->
+## Display a listing of the Sindicato.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/sindicatos" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/sindicatos",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET sindicatos`
+
+`HEAD sindicatos`
+
+
+<!-- END_ccbeb5d73edeacdf8a901483512bd8fe -->
+
+<!-- START_c2574c7d0915cf35601f09502eb3ee01 -->
+## Show the form for creating a new Sindicato.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/sindicatos/create" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/sindicatos/create",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET sindicatos/create`
+
+`HEAD sindicatos/create`
+
+
+<!-- END_c2574c7d0915cf35601f09502eb3ee01 -->
+
+<!-- START_3a2806313de4f39e49d0c9b2e13f26bc -->
+## Store a newly created Sindicato in storage.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/sindicatos" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/sindicatos",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST sindicatos`
+
+
+<!-- END_3a2806313de4f39e49d0c9b2e13f26bc -->
+
+<!-- START_5208c35ccbd3991633839e7d7db0299f -->
+## Display the specified Sindicato.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/sindicatos/{sindicato}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/sindicatos/{sindicato}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET sindicatos/{sindicato}`
+
+`HEAD sindicatos/{sindicato}`
+
+
+<!-- END_5208c35ccbd3991633839e7d7db0299f -->
+
+<!-- START_db57c4e8a753279522706dad143da214 -->
+## Show the form for editing the specified Sindicato.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/sindicatos/{sindicato}/edit" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/sindicatos/{sindicato}/edit",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET sindicatos/{sindicato}/edit`
+
+`HEAD sindicatos/{sindicato}/edit`
+
+
+<!-- END_db57c4e8a753279522706dad143da214 -->
+
+<!-- START_6778c6c81418f2ac055b4b4a28861dbd -->
+## Update the specified Sindicato in storage.
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/sindicatos/{sindicato}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/sindicatos/{sindicato}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`PUT sindicatos/{sindicato}`
+
+`PATCH sindicatos/{sindicato}`
+
+
+<!-- END_6778c6c81418f2ac055b4b4a28861dbd -->
+
+<!-- START_be3816392ddf50b9afb366f5278fa33d -->
+## Remove the specified Sindicato from storage.
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/sindicatos/{sindicato}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/sindicatos/{sindicato}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`DELETE sindicatos/{sindicato}`
+
+
+<!-- END_be3816392ddf50b9afb366f5278fa33d -->
+
+#Sindicato API
+
+Sindicato routes
 <!-- START_abd5fddb9fd2b204c295181fb5f75294 -->
 ## Display a listing of the Sindicato.
 
@@ -40060,17 +40523,6 @@ $.ajax(settings).done(function (response) {
 {
     "success": true,
     "data": [
-        {
-            "id": 1,
-            "nome": "Sindicato Processamento de dados",
-            "sigla": "SI",
-            "nome_responsavel": "Sr. José Torres Filho",
-            "id_categoria": 5,
-            "id_cidade": 2802502,
-            "created_at": "2017-11-07 19:16:49",
-            "updated_at": "2017-11-07 19:16:49",
-            "deleted_at": null
-        },
         {
             "id": 2,
             "nome": "Sindicato Saúde",
@@ -40250,19 +40702,8 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "success": true,
-    "data": {
-        "id": 1,
-        "nome": "Sindicato Processamento de dados",
-        "sigla": "SI",
-        "nome_responsavel": "Sr. José Torres Filho",
-        "id_categoria": 5,
-        "id_cidade": 2802502,
-        "created_at": "2017-11-07 19:16:49",
-        "updated_at": "2017-11-07 19:16:49",
-        "deleted_at": null
-    },
-    "message": "Sindicato retrieved successfully"
+    "success": false,
+    "message": "Sindicato not found"
 }
 ```
 
@@ -40346,417 +40787,9 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_6c7c0d63f3108de29c49eee11b235f5d -->
 
-<!-- START_45def4da6d09e649f3b2c95189bbb020 -->
-## Show the application&#039;s login form.
+#User
 
-> Example request:
-
-```bash
-curl -X GET "http://localhost/login" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/login",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET login`
-
-`HEAD login`
-
-
-<!-- END_45def4da6d09e649f3b2c95189bbb020 -->
-
-<!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
-## Handle a login request to the application.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/login" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/login",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST login`
-
-
-<!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
-
-<!-- START_e65925f23b9bc6b93d9356895f29f80c -->
-## Log the user out of the application.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/logout" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/logout",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST logout`
-
-
-<!-- END_e65925f23b9bc6b93d9356895f29f80c -->
-
-<!-- START_d7e8ee2d51ff436e319caca5ab309cd9 -->
-## Show the application registration form.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/register" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/register",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET register`
-
-`HEAD register`
-
-
-<!-- END_d7e8ee2d51ff436e319caca5ab309cd9 -->
-
-<!-- START_d7aad7b5ac127700500280d511a3db01 -->
-## Handle a registration request for the application.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/register" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/register",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST register`
-
-
-<!-- END_d7aad7b5ac127700500280d511a3db01 -->
-
-<!-- START_f9bb43b2d406a133a7646f806a34310b -->
-## Display the form to request a password reset link.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/password/reset" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/password/reset",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET password/reset`
-
-`HEAD password/reset`
-
-
-<!-- END_f9bb43b2d406a133a7646f806a34310b -->
-
-<!-- START_feb40f06a93c80d742181b6ffb6b734e -->
-## Send a reset link to the given user.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/password/email" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/password/email",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST password/email`
-
-
-<!-- END_feb40f06a93c80d742181b6ffb6b734e -->
-
-<!-- START_5a0014b83f352dff4e16558b63bfd23e -->
-## Display the password reset view for the given token.
-
-If no token is present, display the link request form.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/password/reset/{token}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/password/reset/{token}",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET password/reset/{token}`
-
-`HEAD password/reset/{token}`
-
-
-<!-- END_5a0014b83f352dff4e16558b63bfd23e -->
-
-<!-- START_cafb407b7a846b31491f97719bb15aef -->
-## Reset the given user&#039;s password.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/password/reset" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/password/reset",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST password/reset`
-
-
-<!-- END_cafb407b7a846b31491f97719bb15aef -->
-
-<!-- START_7423f04c3e3eab0779fda86600776e5e -->
-## Show the application dashboard.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/admin" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/admin",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin`
-
-`HEAD admin`
-
-
-<!-- END_7423f04c3e3eab0779fda86600776e5e -->
-
-<!-- START_4d12119dce26b7df4c0c737c5de8f208 -->
-## Show the application dashboard.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/home" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/home",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET home`
-
-`HEAD home`
-
-
-<!-- END_4d12119dce26b7df4c0c737c5de8f208 -->
-
+User routes
 <!-- START_00160fc4c9a4c1a8b75f8f743c6192fa -->
 ## Display a listing of the User.
 
@@ -41026,13 +41059,14 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_a948aef61c80bf96137d023464fde21f -->
 
-<!-- START_1aebb532274eceeceb98094ee942ff8f -->
-## Display a listing of the Categoria.
+#general
+<!-- START_57011a4e29c6bc1cfec9270de49657bf -->
+## Authorize a client to access the user&#039;s account.
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/categorias" \
+curl -X GET "http://localhost/oauth/authorize" \
 -H "Accept: application/json"
 ```
 
@@ -41040,7 +41074,7 @@ curl -X GET "http://localhost/categorias" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/categorias",
+    "url": "http://localhost/oauth/authorize",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -41056,25 +41090,27 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "error": "Unauthenticated."
+    "error": "unsupported_grant_type",
+    "message": "The authorization grant type is not supported by the authorization server.",
+    "hint": "Check the `grant_type` parameter"
 }
 ```
 
 ### HTTP Request
-`GET categorias`
+`GET oauth/authorize`
 
-`HEAD categorias`
+`HEAD oauth/authorize`
 
 
-<!-- END_1aebb532274eceeceb98094ee942ff8f -->
+<!-- END_57011a4e29c6bc1cfec9270de49657bf -->
 
-<!-- START_3f7898d520f5e203e73effd8282024e8 -->
-## Show the form for creating a new Categoria.
+<!-- START_e48cc6a0b45dd21b7076ab2c03908687 -->
+## Approve the authorization request.
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/categorias/create" \
+curl -X POST "http://localhost/oauth/authorize" \
 -H "Accept: application/json"
 ```
 
@@ -41082,338 +41118,7 @@ curl -X GET "http://localhost/categorias/create" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/categorias/create",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET categorias/create`
-
-`HEAD categorias/create`
-
-
-<!-- END_3f7898d520f5e203e73effd8282024e8 -->
-
-<!-- START_1c49c6cc6dbfdaadaa69f14e2247f87c -->
-## Store a newly created Categoria in storage.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/categorias" \
--H "Accept: application/json" \
-    -d "nome"="similique" \
-
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/categorias",
-    "method": "POST",
-    "data": {
-        "nome": "similique"
-},
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST categorias`
-
-#### Parameters
-
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    nome | string |  required  | 
-
-<!-- END_1c49c6cc6dbfdaadaa69f14e2247f87c -->
-
-<!-- START_93a63dc568a3b5ebcca61d5ec9dfcf8d -->
-## Display the specified Categoria.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/categorias/{categoria}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/categorias/{categoria}",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET categorias/{categoria}`
-
-`HEAD categorias/{categoria}`
-
-
-<!-- END_93a63dc568a3b5ebcca61d5ec9dfcf8d -->
-
-<!-- START_d75cefbc2b41e367b7aa39b80e19274e -->
-## Show the form for editing the specified Categoria.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/categorias/{categoria}/edit" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/categorias/{categoria}/edit",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET categorias/{categoria}/edit`
-
-`HEAD categorias/{categoria}/edit`
-
-
-<!-- END_d75cefbc2b41e367b7aa39b80e19274e -->
-
-<!-- START_48012cd045bfcb34e3fdeabc09d31deb -->
-## Update the specified Categoria in storage.
-
-> Example request:
-
-```bash
-curl -X PUT "http://localhost/categorias/{categoria}" \
--H "Accept: application/json" \
-    -d "nome"="quos" \
-
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/categorias/{categoria}",
-    "method": "PUT",
-    "data": {
-        "nome": "quos"
-},
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT categorias/{categoria}`
-
-`PATCH categorias/{categoria}`
-
-#### Parameters
-
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    nome | string |  required  | 
-
-<!-- END_48012cd045bfcb34e3fdeabc09d31deb -->
-
-<!-- START_c1136c13b82cd18f17797cdffe786883 -->
-## Remove the specified Categoria from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/categorias/{categoria}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/categorias/{categoria}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE categorias/{categoria}`
-
-
-<!-- END_c1136c13b82cd18f17797cdffe786883 -->
-
-<!-- START_ccbeb5d73edeacdf8a901483512bd8fe -->
-## Display a listing of the Sindicato.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/sindicatos" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/sindicatos",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET sindicatos`
-
-`HEAD sindicatos`
-
-
-<!-- END_ccbeb5d73edeacdf8a901483512bd8fe -->
-
-<!-- START_c2574c7d0915cf35601f09502eb3ee01 -->
-## Show the form for creating a new Sindicato.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/sindicatos/create" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/sindicatos/create",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET sindicatos/create`
-
-`HEAD sindicatos/create`
-
-
-<!-- END_c2574c7d0915cf35601f09502eb3ee01 -->
-
-<!-- START_3a2806313de4f39e49d0c9b2e13f26bc -->
-## Store a newly created Sindicato in storage.
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/sindicatos" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/sindicatos",
+    "url": "http://localhost/oauth/authorize",
     "method": "POST",
     "headers": {
         "accept": "application/json"
@@ -41427,18 +41132,18 @@ $.ajax(settings).done(function (response) {
 
 
 ### HTTP Request
-`POST sindicatos`
+`POST oauth/authorize`
 
 
-<!-- END_3a2806313de4f39e49d0c9b2e13f26bc -->
+<!-- END_e48cc6a0b45dd21b7076ab2c03908687 -->
 
-<!-- START_5208c35ccbd3991633839e7d7db0299f -->
-## Display the specified Sindicato.
+<!-- START_de5d7581ef1275fce2a229b6b6eaad9c -->
+## Deny the authorization request.
 
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/sindicatos/{sindicato}" \
+curl -X DELETE "http://localhost/oauth/authorize" \
 -H "Accept: application/json"
 ```
 
@@ -41446,126 +41151,7 @@ curl -X GET "http://localhost/sindicatos/{sindicato}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/sindicatos/{sindicato}",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET sindicatos/{sindicato}`
-
-`HEAD sindicatos/{sindicato}`
-
-
-<!-- END_5208c35ccbd3991633839e7d7db0299f -->
-
-<!-- START_db57c4e8a753279522706dad143da214 -->
-## Show the form for editing the specified Sindicato.
-
-> Example request:
-
-```bash
-curl -X GET "http://localhost/sindicatos/{sindicato}/edit" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/sindicatos/{sindicato}/edit",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-{
-    "error": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET sindicatos/{sindicato}/edit`
-
-`HEAD sindicatos/{sindicato}/edit`
-
-
-<!-- END_db57c4e8a753279522706dad143da214 -->
-
-<!-- START_6778c6c81418f2ac055b4b4a28861dbd -->
-## Update the specified Sindicato in storage.
-
-> Example request:
-
-```bash
-curl -X PUT "http://localhost/sindicatos/{sindicato}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/sindicatos/{sindicato}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT sindicatos/{sindicato}`
-
-`PATCH sindicatos/{sindicato}`
-
-
-<!-- END_6778c6c81418f2ac055b4b4a28861dbd -->
-
-<!-- START_be3816392ddf50b9afb366f5278fa33d -->
-## Remove the specified Sindicato from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/sindicatos/{sindicato}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/sindicatos/{sindicato}",
+    "url": "http://localhost/oauth/authorize",
     "method": "DELETE",
     "headers": {
         "accept": "application/json"
@@ -41579,8 +41165,440 @@ $.ajax(settings).done(function (response) {
 
 
 ### HTTP Request
-`DELETE sindicatos/{sindicato}`
+`DELETE oauth/authorize`
 
 
-<!-- END_be3816392ddf50b9afb366f5278fa33d -->
+<!-- END_de5d7581ef1275fce2a229b6b6eaad9c -->
+
+<!-- START_a09d20357336aa979ecd8e3972ac9168 -->
+## Authorize a client to access the user&#039;s account.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/oauth/token" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/token",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST oauth/token`
+
+
+<!-- END_a09d20357336aa979ecd8e3972ac9168 -->
+
+<!-- START_e96d5ebaecbbcd30089fa499c8d21792 -->
+## Get all of the authorized tokens for the authenticated user.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/oauth/tokens" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/tokens",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET oauth/tokens`
+
+`HEAD oauth/tokens`
+
+
+<!-- END_e96d5ebaecbbcd30089fa499c8d21792 -->
+
+<!-- START_a9a802c25737cca5324125e5f60b72a5 -->
+## Delete the given token.
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/oauth/tokens/{token_id}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/tokens/{token_id}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`DELETE oauth/tokens/{token_id}`
+
+
+<!-- END_a9a802c25737cca5324125e5f60b72a5 -->
+
+<!-- START_abe905e69f5d002aa7d26f433676d623 -->
+## Get a fresh transient token cookie for the authenticated user.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/oauth/token/refresh" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/token/refresh",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST oauth/token/refresh`
+
+
+<!-- END_abe905e69f5d002aa7d26f433676d623 -->
+
+<!-- START_258e7e83c3ea28db7720e63d358b33ff -->
+## Get all of the clients for the authenticated user.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/oauth/clients" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/clients",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET oauth/clients`
+
+`HEAD oauth/clients`
+
+
+<!-- END_258e7e83c3ea28db7720e63d358b33ff -->
+
+<!-- START_9eabf8d6e4ab449c24c503fcb42fba82 -->
+## Store a new client.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/oauth/clients" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/clients",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST oauth/clients`
+
+
+<!-- END_9eabf8d6e4ab449c24c503fcb42fba82 -->
+
+<!-- START_784aec390a455073fc7464335c1defa1 -->
+## Update the given client.
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/oauth/clients/{client_id}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/clients/{client_id}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`PUT oauth/clients/{client_id}`
+
+
+<!-- END_784aec390a455073fc7464335c1defa1 -->
+
+<!-- START_1f65a511dd86ba0541d7ba13ca57e364 -->
+## Delete the given client.
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/oauth/clients/{client_id}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/clients/{client_id}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`DELETE oauth/clients/{client_id}`
+
+
+<!-- END_1f65a511dd86ba0541d7ba13ca57e364 -->
+
+<!-- START_6eec11382f34d0f08c826d2813b02d04 -->
+## Get all of the available scopes for the application.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/oauth/scopes" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/scopes",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET oauth/scopes`
+
+`HEAD oauth/scopes`
+
+
+<!-- END_6eec11382f34d0f08c826d2813b02d04 -->
+
+<!-- START_b4c3e68afae3c4de78758b62c49ac9a9 -->
+## Get all of the personal access tokens for the authenticated user.
+
+> Example request:
+
+```bash
+curl -X GET "http://localhost/oauth/personal-access-tokens" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/personal-access-tokens",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "error": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET oauth/personal-access-tokens`
+
+`HEAD oauth/personal-access-tokens`
+
+
+<!-- END_b4c3e68afae3c4de78758b62c49ac9a9 -->
+
+<!-- START_a8dd9c0a5583742e671711f9bb3ee406 -->
+## Create a new personal access token for the user.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/oauth/personal-access-tokens" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/personal-access-tokens",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST oauth/personal-access-tokens`
+
+
+<!-- END_a8dd9c0a5583742e671711f9bb3ee406 -->
+
+<!-- START_bae65df80fd9d72a01439241a9ea20d0 -->
+## Delete the given token.
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/oauth/personal-access-tokens/{token_id}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/oauth/personal-access-tokens/{token_id}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`DELETE oauth/personal-access-tokens/{token_id}`
+
+
+<!-- END_bae65df80fd9d72a01439241a9ea20d0 -->
 

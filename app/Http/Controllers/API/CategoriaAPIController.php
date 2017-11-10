@@ -13,7 +13,9 @@ use App\Http\Requests\API\CreateCategoriaAPIRequest;
 use App\Http\Requests\API\UpdateCategoriaAPIRequest;
 
 /**
- * Class CategoriaController.
+ * @resource Categoria API
+ *
+ * Categoria routes
  */
 class CategoriaAPIController extends AppBaseController
 {

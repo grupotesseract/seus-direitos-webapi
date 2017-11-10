@@ -11,7 +11,9 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 
 /**
- * Class EstadoController.
+ * @resource Estado API
+ *
+ * Estado routes
  */
 class EstadoAPIController extends AppBaseController
 {
