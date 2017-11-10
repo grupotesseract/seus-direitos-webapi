@@ -21,12 +21,12 @@ Route::post('register', 'AuthAPIController@register');
 
 //Listagem de estados
 Route::resource('estados', 'EstadoAPIController', ['except' => [
-    'create', 'show', 'store', 'update', 'destroy',
+    'edit', 'create', 'show', 'store', 'update', 'destroy',
 ]]);
 
 //Listagem de cidades
 Route::resource('cidades', 'CidadeAPIController', ['except' => [
-    'create', 'show', 'store', 'update', 'destroy',
+    'edit', 'create', 'show', 'store', 'update', 'destroy',
 ]]);
 
 //Listagem de cidades de 1 estado
@@ -45,9 +45,9 @@ Route::group(['middleware' => 'auth:api'], function () {
 
 //Listagem de Categorias
 Route::resource('categorias', 'CategoriaAPIController', ['except' => [
-    'create', 'show', 'store', 'update', 'destroy',
+    'edit', 'create', 'show', 'store', 'update', 'destroy',
 ]]);
 
-Route::resource('sindicatos', 'SindicatoAPIController');
-
-Route::resource('sindicatos', 'SindicatoAPIController');
+Route::resource('sindicatos', 'SindicatoAPIController', ['except' => [
+    'create', 'edit'
+]]);
