@@ -52,6 +52,6 @@ class Cidade extends Model
      **/
     public function sindicatos()
     {
-        return $this->hasMany(\App\Models\Sindicato::class);
+        return $this->belongsToMany(\App\Models\Sindicato::class);
     }
 }
