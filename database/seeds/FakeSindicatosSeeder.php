@@ -13,26 +13,24 @@ class FakeSindicatosSeeder extends Seeder
     public function run()
     {
         // Pegando 3 cidades para associar a um sindicado
-        $cidadesSP = Estado::where('sigla', 'ilike', "%SP%")->first()
+        $cidadesSP = Estado::where('sigla', 'ilike', '%SP%')->first()
             ->cidades()->orderByRaw('RANDOM()')->get()->take(3);
 
         factory(App\Models\Sindicato::class)->create()->cidades()
-            ->sync( $cidadesSP->pluck('id') );
+            ->sync($cidadesSP->pluck('id'));
 
         // Pegando 2 cidades para associar a um sindicado
-        $cidadesSP = Estado::where('sigla', 'ilike', "%SP%")->first()
+        $cidadesSP = Estado::where('sigla', 'ilike', '%SP%')->first()
             ->cidades()->orderByRaw('RANDOM()')->get()->take(1);
 
         factory(App\Models\Sindicato::class)->create()->cidades()
-            ->sync( $cidadesSP->pluck('id') );
-        
+            ->sync($cidadesSP->pluck('id'));
+
         // Pegando 2 cidades para associar a um sindicado
-        $cidadesSP = Estado::where('sigla', 'ilike', "%AM%")->first()
+        $cidadesSP = Estado::where('sigla', 'ilike', '%AM%')->first()
             ->cidades()->orderByRaw('RANDOM()')->get()->take(5);
 
         factory(App\Models\Sindicato::class)->create()->cidades()
-            ->sync( $cidadesSP->pluck('id') );
-        
-
+            ->sync($cidadesSP->pluck('id'));
     }
 }
