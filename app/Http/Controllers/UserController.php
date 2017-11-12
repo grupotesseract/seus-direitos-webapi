@@ -156,4 +156,50 @@ class UserController extends AppBaseController
 
         return redirect(route('users.index'));
     }
+
+
+    /**
+     * Rota para mostrar apenas usuarios com role de 'admin'
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getAdmins(Request $request)
+    {
+        
+        $users = $this->userRepository->getUsuariosAdmins();
+
+        return view('users.index')
+            ->with('users', $users);
+    }
+
+    /**
+     * Rota para mostrar apenas usuarios com role de 'sindicalista'
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getSindicalistas(Request $request)
+    {
+        
+        $users = $this->userRepository->getUsuariosSindicalistas();
+
+        return view('users.index')
+            ->with('users', $users);
+    }
+
+    /**
+     * Rota para mostrar apenas usuarios com role de 'funcionario'
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getFuncionarios(Request $request)
+    {
+        
+        $users = $this->userRepository->getUsuariosFuncionarios();
+
+        return view('users.index')
+            ->with('users', $users);
+    }
 }

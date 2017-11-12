@@ -24,4 +24,33 @@ class UserRepository extends BaseRepository
     {
         return User::class;
     }
+
+
+    /**
+     * Funcao para retornar os usuarios que são super-admins
+     * @TODO aplicar a logica que filtra por 'role'
+     */
+    public function getUsuariosAdmins()
+    {
+        return $this->all();
+    }
+
+    /**
+     * Funcao para retornar os usuarios que são sindicalistas (admin sindicato)
+     * @TODO aplicar a logica que filtra por 'role'
+     */
+    public function getUsuariosSindicalistas()
+    {
+        return $this->all();
+    }
+    
+    /**
+     * Funcao para retornar os usuarios que são funcionarios registro via app
+     * @TODO aplicar a logica que filtra por 'role'
+     */
+    public function getUsuariosFuncionarios()
+    {
+        return $this->all();
+    }
+
 }
