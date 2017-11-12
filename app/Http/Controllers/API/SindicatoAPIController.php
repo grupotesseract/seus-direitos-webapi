@@ -13,7 +13,9 @@ use App\Http\Requests\API\CreateSindicatoAPIRequest;
 use App\Http\Requests\API\UpdateSindicatoAPIRequest;
 
 /**
- * Class SindicatoController.
+ * @resource Sindicato API
+ *
+ * Sindicato routes
  */
 class SindicatoAPIController extends AppBaseController
 {

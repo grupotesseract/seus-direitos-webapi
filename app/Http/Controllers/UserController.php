@@ -10,6 +10,11 @@ use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
 
+/**
+ * @resource User
+ *
+ * User routes
+ */
 class UserController extends AppBaseController
 {
     /** @var UserRepository */

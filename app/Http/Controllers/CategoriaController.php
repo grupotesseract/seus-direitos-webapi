@@ -10,6 +10,11 @@ use App\Http\Requests\CreateCategoriaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
 
+/**
+ * @resource Categoria
+ *
+ * Categoria
+ */
 class CategoriaController extends AppBaseController
 {
     /** @var CategoriaRepository */

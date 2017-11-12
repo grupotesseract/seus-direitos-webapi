@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
 
+/**
+ * @resource Auth API
+ *
+ * Auth API
+ */
 class AuthAPIController extends AppBaseController
 {
     /** @var UserRepository */

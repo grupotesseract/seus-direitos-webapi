@@ -11,7 +11,9 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 
 /**
- * Class CidadeController.
+ * @resource Cidade API
+ *
+ * Cidade routes
  */
 class CidadeAPIController extends AppBaseController
 {
