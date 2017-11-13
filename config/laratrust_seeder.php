@@ -17,7 +17,7 @@ return [
             'categoria' => 'r',
         ],
         'funcionario' => [
-            'users' => 'r, u', 
+            'users' => 'r, u',
             'sindicatos' => 'r',
             'estados' => 'r',
             'cidades' => 'r',
@@ -28,6 +28,6 @@ return [
         'c' => 'create',
         'r' => 'read',
         'u' => 'update',
-        'd' => 'delete'
-    ]
+        'd' => 'delete',
+    ],
 ];
