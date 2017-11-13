@@ -186,6 +186,8 @@ return [
 
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
 
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Yajra\Datatables\ButtonsServiceProvider::class,
     ],
 
     /*

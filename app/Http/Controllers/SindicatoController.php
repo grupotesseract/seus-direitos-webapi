@@ -9,6 +9,7 @@ use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
+use App\DataTables\CidadesDataTable;
 
 /**
  * @resource Sindicato
@@ -41,13 +42,11 @@ class SindicatoController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new Sindicato.
-     *
-     * @return Response
+     * Serve a view do Crud de sindicatos com a Datatable de cidades embutida.
      */
-    public function create()
+    public function create(CidadesDataTable $cidadesDataTable)
     {
-        return view('sindicatos.create');
+        return $cidadesDataTable->render('sindicatos.create');
     }
 
     /**
