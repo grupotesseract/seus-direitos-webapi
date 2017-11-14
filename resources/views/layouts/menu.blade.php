@@ -6,7 +6,7 @@
     </a>
 
     <ul class="treeview-menu">
-        <li class="{{ Request::is('usuarios/administradores') ? 'active' : '' }}">
+        <li class="{{ Request::is('/usuarios/administradores') ? 'active' : '' }}">
             <a href="{{ url('usuarios/administradores') }}"> 
                 &nbsp; Administradores
             </a>
@@ -21,6 +21,12 @@
                 &nbsp; Funcionários
             </a>
         </li>
+        <li class="{{ Request::is('usuarios') ? 'active' : '' }}">
+            <a href="{{ url('usuarios') }}"> 
+                &nbsp; Todos
+            </a>
+        </li>
+
     </ul>
 
 </li>

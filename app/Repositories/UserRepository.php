@@ -28,29 +28,26 @@ class UserRepository extends BaseRepository
 
     /**
      * Funcao para retornar os usuarios que são super-admins
-     * @TODO aplicar a logica que filtra por 'role'
      */
     public function getUsuariosAdmins()
     {
-        return $this->all();
+        return User::whereRoleIs('superadmin')->get();
     }
 
     /**
      * Funcao para retornar os usuarios que são sindicalistas (admin sindicato)
-     * @TODO aplicar a logica que filtra por 'role'
      */
     public function getUsuariosSindicalistas()
     {
-        return $this->all();
+        return User::whereRoleIs('sindicalista')->get();
     }
     
     /**
-     * Funcao para retornar os usuarios que são funcionarios registro via app
-     * @TODO aplicar a logica que filtra por 'role'
+     * Funcao para retornar os usuarios que são funcionarios (registro via app)
      */
     public function getUsuariosFuncionarios()
     {
-        return $this->all();
+        return User::whereRoleIs('funcionario')->get();
     }
 
 }

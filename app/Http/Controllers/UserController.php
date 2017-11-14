@@ -202,4 +202,19 @@ class UserController extends AppBaseController
         return view('users.index')
             ->with('users', $users);
     }
+
+    /**
+     * Rota para mostrar todos os usuarios
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getAll(Request $request)
+    {
+        $users = $this->userRepository->all();
+
+        return view('users.index')
+            ->with('users', $users);
+    }
+    
 }
