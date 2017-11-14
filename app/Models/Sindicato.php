@@ -56,7 +56,7 @@ class Sindicato extends Model
     }
 
     /**
-     * Um Sindicato pode estar presente em varias cidades
+     * Um Sindicato pode estar presente em varias cidades.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/

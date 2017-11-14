@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
             $this->call(FakeCategoriasSeeder::class);
             $this->call(FakeSindicatosSeeder::class);
         }
+
+        $this->call(LaratrustSeeder::class);
     }
 }
