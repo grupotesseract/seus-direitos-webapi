@@ -9,6 +9,7 @@ use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
+use App\Models\Role;
 
 /**
  * @resource User
@@ -71,8 +72,15 @@ class UserController extends AppBaseController
     public function store(CreateUserRequest $request)
     {
         $input = $request->all();
+        $input['password'] = bcrypt($request->password);
 
         $user = $this->userRepository->create($input);
+        $role = Role::where('name', $request->role)->first();
+
+        if ($user && $role) {
+            $user->attachRole($role);
+        }
+
 
         Flash::success('User saved successfully.');
 

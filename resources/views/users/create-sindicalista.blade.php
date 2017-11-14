@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('head_scripts')
+    <script src="/js/app.js"></script>
+@endsection
+
 @section('content')
     <section class="content-header">
         <h1>

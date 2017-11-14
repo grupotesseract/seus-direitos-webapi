@@ -18,6 +18,10 @@ class AppServiceProvider extends ServiceProvider
         \View::composer(
             'sindicatos.fields', 'App\ViewComposers\SindicatoComposer'
         );
+        \View::composer(
+            'users.fields', 'App\ViewComposers\UserSindicalistaComposer'
+        );
+
     }
 
     /**

@@ -100,6 +100,7 @@ __webpack_require__(4);
 $(function () {
 
     bindaSelectCategorias();
+    bindaSelectSindicatos();
 
     /**
      * Funcao para 'clonar' a 1 linha da datatable de cidades e inserir como 
@@ -124,9 +125,24 @@ $(function () {
     };
 });
 
+/**
+ * Funcao para checar se existe um select de categorias e chama o select2
+ */
 var bindaSelectCategorias = function bindaSelectCategorias() {
     if ($('#id_categoria').length) {
         $('#id_categoria').select2({
+            width: '100%'
+        });
+    }
+};
+
+/**
+ *
+ * Funcao para checar se existe um select de sindicatos e chama o select2
+ */
+var bindaSelectSindicatos = function bindaSelectSindicatos() {
+    if ($('#sindicato_id').length) {
+        $('#sindicato_id').select2({
             width: '100%'
         });
     }
