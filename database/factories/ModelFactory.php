@@ -56,6 +56,5 @@ $factory->define(App\Models\Sindicato::class, function (Faker\Generator $faker) 
         'nome_responsavel' => $faker->name,
         'sigla' => 'S'.implode($faker->randomElements(['T', 'I', 'O', 'R', 'A', 'C', 'E', 'H', 'S'])),
         'id_categoria' => \App\Models\Categoria::orderByRaw('RANDOM()')->first()->id,
-        'id_cidade' => \App\Models\Cidade::orderByRaw('RANDOM()')->first()->id,
     ];
 });

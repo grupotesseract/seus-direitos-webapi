@@ -55,12 +55,12 @@ class Sindicato extends Model
     }
 
     /**
-     * Um Sindicato sempre está associado a uma cidade.
+     * Um Sindicato pode estar presente em varias cidades.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function cidade()
+    public function cidades()
     {
-        return $this->belongsTo(\App\Models\Cidade::class);
+        return $this->belongsToMany(\App\Models\Cidade::class);
     }
 }

@@ -21,9 +21,6 @@ class CreateSindicatosTable extends Migration
             $table->integer('id_categoria')->unsigned();
             $table->foreign('id_categoria')->references('id')->on('categorias');
 
-            $table->integer('id_cidade')->unsigned();
-            $table->foreign('id_cidade')->references('id')->on('cidades');
-
             $table->timestamps();
             $table->softDeletes();
         });
