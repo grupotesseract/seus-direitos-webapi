@@ -21,7 +21,6 @@ class AppServiceProvider extends ServiceProvider
         \View::composer(
             'users.fields', 'App\ViewComposers\UserSindicalistaComposer'
         );
-
     }
 
     /**
