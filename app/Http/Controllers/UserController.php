@@ -41,14 +41,25 @@ class UserController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new User.
+     * Show the form for creating a new User do tipo super-admin
      *
      * @return Response
      */
-    public function create()
+    public function createAdmin()
     {
-        return view('users.create');
+        return view('users.create-admin');
     }
+
+    /**
+     * Show the form for creating a new User do tipo sindicalista
+     *
+     * @return Response
+     */
+    public function createSindicalista()
+    {
+        return view('users.create-sindicalista');
+    }
+    
 
     /**
      * Store a newly created User in storage.
@@ -169,7 +180,7 @@ class UserController extends AppBaseController
         
         $users = $this->userRepository->getUsuariosAdmins();
 
-        return view('users.index')
+        return view('users.lista-admins')
             ->with('users', $users);
     }
 
@@ -184,7 +195,7 @@ class UserController extends AppBaseController
         
         $users = $this->userRepository->getUsuariosSindicalistas();
 
-        return view('users.index')
+        return view('users.lista-sindicalistas')
             ->with('users', $users);
     }
 
@@ -199,7 +210,7 @@ class UserController extends AppBaseController
         
         $users = $this->userRepository->getUsuariosFuncionarios();
 
-        return view('users.index')
+        return view('users.lista-funcionarios')
             ->with('users', $users);
     }
 

@@ -25,7 +25,6 @@ class UserRepository extends BaseRepository
         return User::class;
     }
 
-
     /**
      * Funcao para retornar os usuarios que são super-admins
      */
