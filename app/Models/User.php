@@ -43,16 +43,14 @@ class User extends Authenticatable
         'role' => 'required|exists:roles,name',
         'sindicato_id' => 'sometimes|exists:sindicatos,id',
     ];
-    
+
     /**
-     * Um User pode ser responsavel de um sindicato ou estar associado a um sindicato
+     * Um User pode ser responsavel de um sindicato ou estar associado a um sindicato.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
     public function sindicato()
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
-
     }
-
 }

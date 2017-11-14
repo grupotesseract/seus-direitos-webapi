@@ -26,7 +26,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Funcao para retornar os usuarios que são superadmins
+     * Funcao para retornar os usuarios que são superadmins.
      */
     public function getUsuariosAdmins()
     {
@@ -34,7 +34,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Funcao para retornar os usuarios que são sindicalistas (admin sindicato)
+     * Funcao para retornar os usuarios que são sindicalistas (admin sindicato).
      */
     public function getUsuariosSindicalistas()
     {
@@ -42,7 +42,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Funcao para retornar os usuarios que são funcionarios (registro via app)
+     * Funcao para retornar os usuarios que são funcionarios (registro via app).
      */
     public function getUsuariosFuncionarios()
     {
