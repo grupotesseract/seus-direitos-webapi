@@ -20,7 +20,7 @@ class Cidade extends Model
     ];
 
     /**
-     * Array de propriedades que devem ser removidas das respostas do Eloquent
+     * Array de propriedades que devem ser removidas das respostas do Eloquent.
      *
      * @var array
      */
@@ -29,18 +29,18 @@ class Cidade extends Model
         'created_at',
         'updated_at',
         'pivot',
-        'estado'
+        'estado',
     ];
 
     /**
-     * Array de propriedades que devem ser inseridas nas respostas do Eloquent
+     * Array de propriedades que devem ser inseridas nas respostas do Eloquent.
      *
      * @var array
      */
     public $appends = [
-        'sigla_estado'
+        'sigla_estado',
     ];
-    
+
     /**
      * The attributes that should be casted to native types.
      *
@@ -78,11 +78,10 @@ class Cidade extends Model
     }
 
     /**
-     * Acessor para a sigla do estado a qual essa cidade pertence
+     * Acessor para a sigla do estado a qual essa cidade pertence.
      */
     public function getSiglaEstadoAttribute()
     {
         return $this->estado->sigla;
     }
-    
 }

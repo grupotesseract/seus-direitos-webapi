@@ -31,5 +31,4 @@ class SindicatoRepository extends BaseRepository
     {
         return Sindicato::pluck('nome', 'id');
     }
-    
 }

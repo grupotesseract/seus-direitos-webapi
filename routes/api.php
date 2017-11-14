@@ -30,7 +30,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     });
 });
 
-
 //Listagem de estados
 Route::resource('estados', 'EstadoAPIController', ['except' => [
     'edit', 'create', 'show', 'store', 'update', 'destroy',

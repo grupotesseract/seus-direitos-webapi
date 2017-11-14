@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\AppBaseController;
+use Response;
 use App\Models\Sindicato;
+use Illuminate\Http\Request;
 use App\Presenters\SindicatoPresenter;
 use App\Repositories\SindicatoRepository;
-use Illuminate\Http\Request;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
+use App\Http\Controllers\AppBaseController;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 
 /**
  * @resource Sindicato API
@@ -40,12 +40,11 @@ class SindicatoAPIController extends AppBaseController
 
         //Settando um Presenter para retornar apenas as informacoes relevantes
         $this->sindicatoRepository->setPresenter(SindicatoPresenter::class);
-        
+
         $sindicatos = $this->sindicatoRepository->all();
 
         return $this->sendResponse($sindicatos, 'Sindicatos retrieved successfully');
     }
-
 
     /**
      * Display the specified Sindicato.
@@ -66,5 +65,4 @@ class SindicatoAPIController extends AppBaseController
 
         return $this->sendResponse($sindicato->toArray(), 'Sindicato retrieved successfully');
     }
-
 }

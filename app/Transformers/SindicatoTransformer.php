@@ -2,18 +2,16 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
 use App\Models\Sindicato;
+use League\Fractal\TransformerAbstract;
 
 /**
- * Class SindicatoTransformer
- * @package namespace App\Transformers;
+ * Class SindicatoTransformer.
  */
 class SindicatoTransformer extends TransformerAbstract
 {
-
     /**
-     * Transform the Sindicato entity
+     * Transform the Sindicato entity.
      * @param App\Entities\Sindicato $model
      *
      * @return array

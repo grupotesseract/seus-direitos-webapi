@@ -26,7 +26,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Funcao para retornar os usuarios que são superadmins
+     * Funcao para retornar os usuarios que são superadmins.
      */
     public function getUsuariosAdmins()
     {
@@ -34,7 +34,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Funcao para retornar os usuarios que são sindicalistas (admin sindicato)
+     * Funcao para retornar os usuarios que são sindicalistas (admin sindicato).
      */
     public function getUsuariosSindicalistas()
     {
@@ -42,16 +42,15 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Funcao para retornar os usuarios que são funcionarios (registro via app)
+     * Funcao para retornar os usuarios que são funcionarios (registro via app).
      */
     public function getUsuariosFuncionarios()
     {
         return User::whereRoleIs('funcionario')->get();
     }
 
-
     /**
-     * Metodo para adicionar um Role a partir do seu name
+     * Metodo para adicionar um Role a partir do seu name.
      *
      * @param $user - User model que vai receber o role
      * @param $role_name - string com o name do role a ser inserido
@@ -62,6 +61,7 @@ class UserRepository extends BaseRepository
 
         if ($user && $role) {
             $user->attachRole($role);
+
             return true;
         }
 
