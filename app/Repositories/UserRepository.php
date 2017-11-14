@@ -26,7 +26,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Funcao para retornar os usuarios que são super-admins
+     * Funcao para retornar os usuarios que são superadmins
      */
     public function getUsuariosAdmins()
     {
@@ -40,7 +40,7 @@ class UserRepository extends BaseRepository
     {
         return User::whereRoleIs('sindicalista')->get();
     }
-    
+
     /**
      * Funcao para retornar os usuarios que são funcionarios (registro via app)
      */
@@ -48,5 +48,4 @@ class UserRepository extends BaseRepository
     {
         return User::whereRoleIs('funcionario')->get();
     }
-
 }
