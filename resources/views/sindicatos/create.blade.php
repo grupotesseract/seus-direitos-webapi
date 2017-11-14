@@ -10,13 +10,11 @@
 
 @section('content')
 
-    <section class="content-header">
-        <h3> Criando um novo Sindicato </h3>
-    </section>
 
     <div class="content">
-
         @include('adminlte-templates::common.errors')
+
+        <h3> Criando um novo Sindicato </h3>
 
         {!! Form::open(['route' => 'sindicatos.store']) !!}
 

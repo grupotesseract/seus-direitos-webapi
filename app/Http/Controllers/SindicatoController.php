@@ -83,7 +83,7 @@ class SindicatoController extends AppBaseController
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
         if (empty($sindicato)) {
-            Flash::error('Sindicato not found');
+            Flash::error('Sindicato não encontrado');
 
             return redirect(route('sindicatos.index'));
         }
@@ -98,17 +98,16 @@ class SindicatoController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit(CidadesDataTable $cidadesDataTable, $id)
     {
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
         if (empty($sindicato)) {
-            Flash::error('Sindicato not found');
-
+            Flash::error('Sindicato não encontrado');
             return redirect(route('sindicatos.index'));
         }
 
-        return view('sindicatos.edit')->with('sindicato', $sindicato);
+        return $cidadesDataTable->render('sindicatos.edit', compact('sindicato'));
     }
 
     /**
@@ -124,15 +123,18 @@ class SindicatoController extends AppBaseController
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
         if (empty($sindicato)) {
-            Flash::error('Sindicato not found');
-
+            Flash::error('Sindicato não encontrado');
             return redirect(route('sindicatos.index'));
         }
 
         $sindicato = $this->sindicatoRepository->update($request->all(), $id);
 
-        Flash::success('Sindicato updated successfully.');
+        if ($sindicato) {
+            $cidades = $request->id_cidades ? $request->id_cidades : [];
+            $sindicato->cidades()->sync($cidades);
+        }
 
+        Flash::success('Sindicato atualizado com sucesso.');
         return redirect(route('sindicatos.index'));
     }
 
@@ -148,15 +150,13 @@ class SindicatoController extends AppBaseController
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
         if (empty($sindicato)) {
-            Flash::error('Sindicato not found');
-
+            Flash::error('Sindicato não encontrado');
             return redirect(route('sindicatos.index'));
         }
 
         $this->sindicatoRepository->delete($id);
 
         Flash::success('Sindicato deleted successfully.');
-
         return redirect(route('sindicatos.index'));
     }
 }
