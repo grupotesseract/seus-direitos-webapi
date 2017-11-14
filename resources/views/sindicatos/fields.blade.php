@@ -16,23 +16,13 @@
     {!! Form::text('nome_responsavel', null, ['class' => 'form-control']) !!}
 </div>
 
-
 <!-- Categoria Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_categoria', 'Categoria:') !!}
-    {!! Form::select('id_categoria', $categorias, ['class' => 'form-control']) !!}
+    <div class="row">
+        <div class="col-xs-12">
+            {!! Form::select('id_categoria', $categorias, ['class' => 'form-control']) !!}
+        </div>
+    </div>
 </div>
 
-
-<!-- Estados Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('id_estado', 'Estado:') !!}
-    {!! Form::select('id_estado', $estados, ['class' => 'form-control']) !!}
-</div>
-
-
-<!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('sindicatos.index') !!}" class="btn btn-default">Cancel</a>
-</div>

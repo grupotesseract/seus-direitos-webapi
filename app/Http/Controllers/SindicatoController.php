@@ -62,6 +62,10 @@ class SindicatoController extends AppBaseController
 
         $sindicato = $this->sindicatoRepository->create($input);
 
+        if ($sindicato && $request->id_cidades) {
+            $sindicato->cidades()->sync($request->id_cidades);
+        }
+
         Flash::success('Sindicato saved successfully.');
 
         return redirect(route('sindicatos.index'));
