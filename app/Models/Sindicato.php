@@ -64,9 +64,9 @@ class Sindicato extends Model
     {
         return $this->belongsToMany(\App\Models\Cidade::class);
     }
-    
+
     /**
-     * Um Sindicato pode possuir varios responsaveis (administradores)
+     * Um Sindicato pode possuir varios responsaveis (administradores).
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
@@ -76,7 +76,7 @@ class Sindicato extends Model
     }
 
     /**
-     * Um Sindicato pode possuir varios associados
+     * Um Sindicato pode possuir varios associados.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
@@ -84,5 +84,4 @@ class Sindicato extends Model
     {
         return $this->hasMany(\App\Models\User::class);
     }
-
 }

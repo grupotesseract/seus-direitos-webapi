@@ -6,14 +6,12 @@ use App\Transformers\SindicatoTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class SindicatoPresenter
- *
- * @package namespace App\Presenters;
+ * Class SindicatoPresenter.
  */
 class SindicatoPresenter extends FractalPresenter
 {
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

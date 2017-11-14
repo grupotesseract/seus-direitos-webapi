@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Flash;
 use Response;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Models\Role;
 
 /**
  * @resource User
@@ -42,7 +42,7 @@ class UserController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new User do tipo super-admin
+     * Show the form for creating a new User do tipo super-admin.
      *
      * @return Response
      */
@@ -52,7 +52,7 @@ class UserController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new User do tipo sindicalista
+     * Show the form for creating a new User do tipo sindicalista.
      *
      * @return Response
      */
@@ -60,7 +60,6 @@ class UserController extends AppBaseController
     {
         return view('users.create-sindicalista');
     }
-    
 
     /**
      * Store a newly created User in storage.
@@ -80,7 +79,6 @@ class UserController extends AppBaseController
         if ($user && $role) {
             $user->attachRole($role);
         }
-
 
         Flash::success('User saved successfully.');
 
@@ -219,7 +217,7 @@ class UserController extends AppBaseController
     }
 
     /**
-     * Rota para mostrar todos os usuarios
+     * Rota para mostrar todos os usuarios.
      *
      * @param Request $request
      * @return Response
@@ -231,5 +229,4 @@ class UserController extends AppBaseController
         return view('users.index')
             ->with('users', $users);
     }
-    
 }

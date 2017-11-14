@@ -14,12 +14,10 @@ class AdicionaFkSindicatoEmUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-
             $table->integer('sindicato_id')->unsigned()->nullable();
             $table->foreign('sindicato_id')
                 ->references('id')
                 ->on('sindicatos');
-
         });
     }
 
