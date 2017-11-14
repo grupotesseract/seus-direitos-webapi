@@ -7,7 +7,6 @@ use Yajra\Datatables\Services\DataTable;
 
 class CidadesDataTable extends DataTable
 {
-
     /**
      * @return \Illuminate\Http\JsonResponse
      */
@@ -28,6 +27,7 @@ class CidadesDataTable extends DataTable
     public function query()
     {
         $query = Cidade::with('estado');
+
         return $this->applyScopes($query);
     }
 

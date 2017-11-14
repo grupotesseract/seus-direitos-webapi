@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Flash;
 use Response;
 use Illuminate\Http\Request;
+use App\DataTables\CidadesDataTable;
 use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\DataTables\CidadesDataTable;
 
 /**
  * @resource Sindicato
@@ -104,6 +104,7 @@ class SindicatoController extends AppBaseController
 
         if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
+
             return redirect(route('sindicatos.index'));
         }
 
@@ -124,6 +125,7 @@ class SindicatoController extends AppBaseController
 
         if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
+
             return redirect(route('sindicatos.index'));
         }
 
@@ -135,6 +137,7 @@ class SindicatoController extends AppBaseController
         }
 
         Flash::success('Sindicato atualizado com sucesso.');
+
         return redirect(route('sindicatos.index'));
     }
 
@@ -151,12 +154,14 @@ class SindicatoController extends AppBaseController
 
         if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
+
             return redirect(route('sindicatos.index'));
         }
 
         $this->sindicatoRepository->delete($id);
 
         Flash::success('Sindicato deleted successfully.');
+
         return redirect(route('sindicatos.index'));
     }
 }
