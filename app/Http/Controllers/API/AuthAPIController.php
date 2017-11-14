@@ -48,6 +48,7 @@ class AuthAPIController extends AppBaseController
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
+            'sindicato_id' => 'required|exists:sindicatos,id',
             'password' => 'required',
             'password_confirm' => 'required|same:password',
         ]);
@@ -61,6 +62,9 @@ class AuthAPIController extends AppBaseController
         $user = $this->userRepository->create($input);
         $success['token'] = $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
         $success['name'] = $user->name;
+
+        //Adicionando role de funcionario a todos os usuarios criados via api
+        $this->userRepository->addRole($user, 'funcionario');
 
         return response()->json(['success'=>$success], $this->successStatus);
     }
