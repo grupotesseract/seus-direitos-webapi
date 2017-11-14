@@ -15,13 +15,14 @@
         "laravel/framework": "5.4.*",
         "laravel/passport": "^4.0",
         "laravel/tinker": "~1.0",
-        "psy/psysh": "0.8.11",
         "laravelcollective/html": "^5.4.0",
+        "league/fractal": "^0.17.0",
         "mpociot/laravel-apidoc-generator": "^2.0",
+        "psy/psysh": "0.8.11",
+        "santigarcor/laratrust": "5.0.*",
         "yajra/laravel-datatables-buttons": "^1.0",
         "yajra/laravel-datatables-html": "^1.0",
-        "yajra/laravel-datatables-oracle": "^7.0",
-        "santigarcor/laratrust": "5.0.*"
+        "yajra/laravel-datatables-oracle": "^7.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
