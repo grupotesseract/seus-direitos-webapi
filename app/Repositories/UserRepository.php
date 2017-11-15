@@ -24,4 +24,28 @@ class UserRepository extends BaseRepository
     {
         return User::class;
     }
+
+    /**
+     * Funcao para retornar os usuarios que são superadmins.
+     */
+    public function getUsuariosAdmins()
+    {
+        return User::whereRoleIs('superadmin')->get();
+    }
+
+    /**
+     * Funcao para retornar os usuarios que são sindicalistas (admin sindicato).
+     */
+    public function getUsuariosSindicalistas()
+    {
+        return User::whereRoleIs('sindicalista')->get();
+    }
+
+    /**
+     * Funcao para retornar os usuarios que são funcionarios (registro via app).
+     */
+    public function getUsuariosFuncionarios()
+    {
+        return User::whereRoleIs('funcionario')->get();
+    }
 }

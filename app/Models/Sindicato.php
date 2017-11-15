@@ -21,6 +21,7 @@ class Sindicato extends Model
         'nome',
         'sigla',
         'nome_responsavel',
+        'id_categoria',
     ];
 
     /**
@@ -62,5 +63,25 @@ class Sindicato extends Model
     public function cidades()
     {
         return $this->belongsToMany(\App\Models\Cidade::class);
+    }
+
+    /**
+     * Um Sindicato pode possuir varios responsaveis (administradores).
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function responsaveis()
+    {
+        return $this->hasMany(\App\Models\User::class);
+    }
+
+    /**
+     * Um Sindicato pode possuir varios associados.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function associados()
+    {
+        return $this->hasMany(\App\Models\User::class);
     }
 }

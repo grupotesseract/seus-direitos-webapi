@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Flash;
 use Response;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
@@ -41,13 +42,23 @@ class UserController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new User.
+     * Show the form for creating a new User do tipo super-admin.
      *
      * @return Response
      */
-    public function create()
+    public function createAdmin()
     {
-        return view('users.create');
+        return view('users.create-admin');
+    }
+
+    /**
+     * Show the form for creating a new User do tipo sindicalista.
+     *
+     * @return Response
+     */
+    public function createSindicalista()
+    {
+        return view('users.create-sindicalista');
     }
 
     /**
@@ -60,8 +71,14 @@ class UserController extends AppBaseController
     public function store(CreateUserRequest $request)
     {
         $input = $request->all();
+        $input['password'] = bcrypt($request->password);
 
         $user = $this->userRepository->create($input);
+        $role = Role::where('name', $request->role)->first();
+
+        if ($user && $role) {
+            $user->attachRole($role);
+        }
 
         Flash::success('User saved successfully.');
 
@@ -155,5 +172,61 @@ class UserController extends AppBaseController
         Flash::success('User deleted successfully.');
 
         return redirect(route('users.index'));
+    }
+
+    /**
+     * Rota para mostrar apenas usuarios com role de 'admin'.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getAdmins(Request $request)
+    {
+        $users = $this->userRepository->getUsuariosAdmins();
+
+        return view('users.lista-admins')
+            ->with('users', $users);
+    }
+
+    /**
+     * Rota para mostrar apenas usuarios com role de 'sindicalista'.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getSindicalistas(Request $request)
+    {
+        $users = $this->userRepository->getUsuariosSindicalistas();
+
+        return view('users.lista-sindicalistas')
+            ->with('users', $users);
+    }
+
+    /**
+     * Rota para mostrar apenas usuarios com role de 'funcionario'.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getFuncionarios(Request $request)
+    {
+        $users = $this->userRepository->getUsuariosFuncionarios();
+
+        return view('users.lista-funcionarios')
+            ->with('users', $users);
+    }
+
+    /**
+     * Rota para mostrar todos os usuarios.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getAll(Request $request)
+    {
+        $users = $this->userRepository->all();
+
+        return view('users.index')
+            ->with('users', $users);
     }
 }

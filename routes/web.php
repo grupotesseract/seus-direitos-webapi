@@ -29,6 +29,14 @@ Route::group(['middleware' => 'auth:web'], function () {
      * Rotas de Entidades (CRUD's via admin)
      */
     Route::resource('users', 'UserController');
+
+    Route::get('usuarios', 'UserController@getAll');
+    Route::get('usuarios/administradores', 'UserController@getAdmins');
+    Route::get('usuarios/sindicalistas', 'UserController@getSindicalistas');
+    Route::get('usuarios/funcionarios', 'UserController@getFuncionarios');
+    Route::get('usuarios/administradores/create', 'UserController@createAdmin');
+    Route::get('usuarios/sindicalistas/create', 'UserController@createSindicalista');
+
     Route::resource('categorias', 'CategoriaController');
     Route::resource('sindicatos', 'SindicatoController');
 });

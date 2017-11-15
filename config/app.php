@@ -187,6 +187,8 @@ return [
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
 
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Yajra\Datatables\ButtonsServiceProvider::class,
     ],
 
     /*

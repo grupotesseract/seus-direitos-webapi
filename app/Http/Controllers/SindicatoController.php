@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Flash;
 use Response;
 use Illuminate\Http\Request;
+use App\DataTables\CidadesDataTable;
 use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
@@ -41,13 +42,11 @@ class SindicatoController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new Sindicato.
-     *
-     * @return Response
+     * Serve a view do Crud de sindicatos com a Datatable de cidades embutida.
      */
-    public function create()
+    public function create(CidadesDataTable $cidadesDataTable)
     {
-        return view('sindicatos.create');
+        return $cidadesDataTable->render('sindicatos.create');
     }
 
     /**
@@ -62,6 +61,10 @@ class SindicatoController extends AppBaseController
         $input = $request->all();
 
         $sindicato = $this->sindicatoRepository->create($input);
+
+        if ($sindicato && $request->id_cidades) {
+            $sindicato->cidades()->sync($request->id_cidades);
+        }
 
         Flash::success('Sindicato saved successfully.');
 
@@ -80,7 +83,7 @@ class SindicatoController extends AppBaseController
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
         if (empty($sindicato)) {
-            Flash::error('Sindicato not found');
+            Flash::error('Sindicato não encontrado');
 
             return redirect(route('sindicatos.index'));
         }
@@ -95,17 +98,17 @@ class SindicatoController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit(CidadesDataTable $cidadesDataTable, $id)
     {
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
         if (empty($sindicato)) {
-            Flash::error('Sindicato not found');
+            Flash::error('Sindicato não encontrado');
 
             return redirect(route('sindicatos.index'));
         }
 
-        return view('sindicatos.edit')->with('sindicato', $sindicato);
+        return $cidadesDataTable->render('sindicatos.edit', compact('sindicato'));
     }
 
     /**
@@ -121,14 +124,19 @@ class SindicatoController extends AppBaseController
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
         if (empty($sindicato)) {
-            Flash::error('Sindicato not found');
+            Flash::error('Sindicato não encontrado');
 
             return redirect(route('sindicatos.index'));
         }
 
         $sindicato = $this->sindicatoRepository->update($request->all(), $id);
 
-        Flash::success('Sindicato updated successfully.');
+        if ($sindicato) {
+            $cidades = $request->id_cidades ? $request->id_cidades : [];
+            $sindicato->cidades()->sync($cidades);
+        }
+
+        Flash::success('Sindicato atualizado com sucesso.');
 
         return redirect(route('sindicatos.index'));
     }
@@ -145,7 +153,7 @@ class SindicatoController extends AppBaseController
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
         if (empty($sindicato)) {
-            Flash::error('Sindicato not found');
+            Flash::error('Sindicato não encontrado');
 
             return redirect(route('sindicatos.index'));
         }

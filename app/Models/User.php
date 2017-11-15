@@ -37,6 +37,20 @@ class User extends Authenticatable
      * @var array
      */
     public static $rules = [
-
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+        'role' => 'required|exists:roles,name',
+        'sindicato_id' => 'sometimes|exists:sindicatos,id',
     ];
+
+    /**
+     * Um User pode ser responsavel de um sindicato ou estar associado a um sindicato.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function sindicato()
+    {
+        return $this->belongsTo(\App\Models\Sindicato::class);
+    }
 }
