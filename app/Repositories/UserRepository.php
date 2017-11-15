@@ -48,4 +48,23 @@ class UserRepository extends BaseRepository
     {
         return User::whereRoleIs('funcionario')->get();
     }
+
+    /**
+     * Metodo para adicionar um Role a partir do seu name.
+     *
+     * @param $user - User model que vai receber o role
+     * @param $role_name - string com o name do role a ser inserido
+     */
+    public function addRole($user, $role_name)
+    {
+        $role = \App\Models\Role::where('name', $role_name)->first();
+
+        if ($user && $role) {
+            $user->attachRole($role);
+
+            return true;
+        }
+
+        return false;
+    }
 }

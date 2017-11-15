@@ -20,6 +20,28 @@ class Cidade extends Model
     ];
 
     /**
+     * Array de propriedades que devem ser removidas das respostas do Eloquent.
+     *
+     * @var array
+     */
+    public $hidden = [
+        'estado_id',
+        'created_at',
+        'updated_at',
+        'pivot',
+        'estado',
+    ];
+
+    /**
+     * Array de propriedades que devem ser inseridas nas respostas do Eloquent.
+     *
+     * @var array
+     */
+    public $appends = [
+        'sigla_estado',
+    ];
+
+    /**
      * The attributes that should be casted to native types.
      *
      * @var array
@@ -53,5 +75,13 @@ class Cidade extends Model
     public function sindicatos()
     {
         return $this->belongsToMany(\App\Models\Sindicato::class);
+    }
+
+    /**
+     * Acessor para a sigla do estado a qual essa cidade pertence.
+     */
+    public function getSiglaEstadoAttribute()
+    {
+        return $this->estado->sigla;
     }
 }
