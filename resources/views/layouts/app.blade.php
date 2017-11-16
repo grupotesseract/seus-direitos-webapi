@@ -84,13 +84,6 @@
         @yield('content')
     </div>
 
-
-    <!-- Main Footer -->
-    <footer class="main-footer" style="max-height: 100px;text-align: center">
-        <strong>Desenvolvido por <a href="http://grupotesseract.com.br" target="_blank">Grupo Tesseract</a></strong> 
-    </footer>
-
-
 </div>
 
 
