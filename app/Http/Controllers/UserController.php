@@ -224,6 +224,9 @@ class UserController extends AppBaseController
      */
     public function getAll(Request $request)
     {
+        if(\Laratrust::hasRole('sindicalista')) {
+            $users = $this->userRepository->getUsuariosFuncionarios();
+        }
         $users = $this->userRepository->all();
 
         return view('users.index')
