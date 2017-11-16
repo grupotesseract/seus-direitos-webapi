@@ -1,3 +1,4 @@
+@role('superadmin')
 <li class="treeview">
     <a href="#">
         <i class="fa fa-group"></i>
@@ -26,11 +27,17 @@
                 &nbsp; Todos
             </a>
         </li>
-
     </ul>
-
 </li>
+@endrole
 
+@role('sindicalista')
+    <li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
+        <a href="{{ url('usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Funcionários </a>
+    </li>
+@endrole
+
+@role('superadmin')
 <li class="{{ Request::is('categorias*') ? 'active' : '' }}">
     <a href="{!! route('categorias.index') !!}"><i class="fa fa-asterisk"></i><span>Categorias</span></a>
 </li>
@@ -38,4 +45,5 @@
 <li class="{{ Request::is('sindicatos*') ? 'active' : '' }}">
     <a href="{!! route('sindicatos.index') !!}"><i class="fa fa-bank"></i><span>Sindicatos</span></a>
 </li>
+@endrole
 
