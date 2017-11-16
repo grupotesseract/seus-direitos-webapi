@@ -226,8 +226,9 @@ class UserController extends AppBaseController
     {
         if(\Laratrust::hasRole('sindicalista')) {
             $users = $this->userRepository->getUsuariosFuncionarios();
+        } elseif(\Laratrust::hasRole('superadmin')) {
+            $users = $this->userRepository->all();
         }
-        $users = $this->userRepository->all();
 
         return view('users.index')
             ->with('users', $users);
