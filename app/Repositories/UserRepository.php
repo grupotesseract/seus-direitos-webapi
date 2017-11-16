@@ -46,9 +46,10 @@ class UserRepository extends BaseRepository
      */
     public function getUsuariosFuncionarios()
     {
-        if(\Laratrust::hasRole('sindicalista')) {
-            return User::whereRoleIs('funcionario')->where('sindicato_id',\Auth::user()->sindicato_id)->get();
+        if (\Laratrust::hasRole('sindicalista')) {
+            return User::whereRoleIs('funcionario')->where('sindicato_id', \Auth::user()->sindicato_id)->get();
         }
+
         return User::whereRoleIs('funcionario')->get();
     }
 
