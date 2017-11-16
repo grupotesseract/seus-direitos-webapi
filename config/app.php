@@ -187,8 +187,12 @@ return [
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
 
+        // Datatables
         Yajra\Datatables\DatatablesServiceProvider::class,
         Yajra\Datatables\ButtonsServiceProvider::class,
+
+        // CORS
+        Barryvdh\Cors\ServiceProvider::class,
     ],
 
     /*
