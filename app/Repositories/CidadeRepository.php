@@ -11,7 +11,7 @@ class CidadeRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'nome' => 'ilike'
+        'nome' => 'ilike',
     ];
 
     /**
