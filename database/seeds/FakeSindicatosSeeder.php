@@ -13,24 +13,45 @@ class FakeSindicatosSeeder extends Seeder
     public function run()
     {
         // Pegando 3 cidades para associar a um sindicado
-        $cidadesSP = Estado::where('sigla', 'ilike', '%SP%')->first()
+        $cidades = Estado::orderByRaw('RANDOM()')->first()
             ->cidades()->orderByRaw('RANDOM()')->get()->take(3);
 
         factory(App\Models\Sindicato::class)->create()->cidades()
-            ->sync($cidadesSP->pluck('id'));
+            ->sync($cidades->pluck('id'));
 
-        // Pegando 2 cidades para associar a um sindicado
-        $cidadesSP = Estado::where('sigla', 'ilike', '%SP%')->first()
+        // Pegando 1 cidades para associar a um sindicado
+        $cidades = Estado::orderByRaw('RANDOM()')->first()
             ->cidades()->orderByRaw('RANDOM()')->get()->take(1);
 
         factory(App\Models\Sindicato::class)->create()->cidades()
-            ->sync($cidadesSP->pluck('id'));
+            ->sync($cidades->pluck('id'));
 
-        // Pegando 2 cidades para associar a um sindicado
-        $cidadesSP = Estado::where('sigla', 'ilike', '%AM%')->first()
-            ->cidades()->orderByRaw('RANDOM()')->get()->take(5);
+        // Pegando 1 cidades para associar a um sindicado
+        $cidades = Estado::orderByRaw('RANDOM()')->first()
+            ->cidades()->orderByRaw('RANDOM()')->get()->take(1);
 
         factory(App\Models\Sindicato::class)->create()->cidades()
-            ->sync($cidadesSP->pluck('id'));
+            ->sync($cidades->pluck('id'));
+
+        // Pegando 1 cidades para associar a um sindicado
+        $cidades = Estado::orderByRaw('RANDOM()')->first()
+            ->cidades()->orderByRaw('RANDOM()')->get()->take(1);
+
+        factory(App\Models\Sindicato::class)->create()->cidades()
+            ->sync($cidades->pluck('id'));
+
+        // Pegando 2 cidades para associar a um sindicado
+        $cidades = Estado::orderByRaw('RANDOM()')->first()
+            ->cidades()->orderByRaw('RANDOM()')->get()->take(1);
+
+        factory(App\Models\Sindicato::class)->create()->cidades()
+            ->sync($cidades->pluck('id'));
+
+        // Pegando 2 cidades para associar a um sindicado
+        $cidades = Estado::orderByRaw('RANDOM()')->first()
+            ->cidades()->orderByRaw('RANDOM()')->get()->take(2);
+
+        factory(App\Models\Sindicato::class)->create()->cidades()
+            ->sync($cidades->pluck('id'));
     }
 }

@@ -41,35 +41,37 @@ $factory->define(App\Models\Categoria::class, function (Faker\Generator $faker) 
 
 /* Factory de Sindicatos para teste */
 $factory->define(App\Models\Sindicato::class, function (Faker\Generator $faker) {
-    return [
-        'nome' => $faker->randomElement([
+    $nome = $faker->randomElement([
             'SINDICATO DOS ',
             'SIND DOS ',
         ])
         .
         $faker->randomElement([
-            'TRABALHADORES NA CONSTRUÇÃO CIVIL',
-            'PROCESSAMENTO DE DADOS',
-            'ESTIVADORES DE ITACOATIARA',
-            'CONDU AUTO DE VEICULOS RODOV D.MANACAPURU',
-            'EMP EM ESTAB BANCARIOS NO ESTADO DO AMAZONAS',
-            'PROFESSORES DE MANAUS',
-            'FARMACEUTICOS DO AMAZONAS',
-            'CIRURGIOES – DENTISTAS DO AMAZONAS',
-            'MEDICOS DO ESTADO DO AMAZONAS',
-            'CORRETORES DE IMOVEIS DO ESTADO DO AMAZONAS.',
-            'TRAB.EM TRANSPORTES RODOV.DE RIO GRANDE',
-            'TRABALHADORES RURAIS DE FRED WESTPHALEN',
-            'EMPREGADOS EM ESTAB.SERV.SAUDE DE CAX SUL',
-            'TRABALHADORES RURAIS',
-            'SERV PUBLICOS MUNICIPAIS DE STO ANASTACIO',
-            'FUNCIONARIOS E SERV.PUBL.MUNIC.DE QUATA',
-            'SERVIDORES PUBLICOS MUNICIPAIS DE IPUA',
-            'SERVIDORES PUBL MUNICIPAIS DE ITUVERAVA',
-            'PUBLICOS MUN EST TURISTICA IBITINGA',
-        ]),
+            'Trabalhadores na Construção Civil',
+            'Processamento de Dados',
+            'Estivadores de Itacoatiara',
+            'Condu auto de Veiculos Rodov',
+            'Emp em estab Bancarios',
+            'Professores',
+            'Farmaceuticos',
+            'Cirurgioes Dentistas',
+            'Medicos Plantonistas',
+            'Corretores de Imoveis ',
+            'Trab transportes Rodov ',
+            'Trabalhadores Rurais',
+            'Empregados Estab Serv Saude',
+            'Trabalhadores rurais',
+            'Serv Publicos Municipais ',
+            'Func Serv Publ Munic de Quata',
+        ]);
+
+    preg_match_all('/\b\w/', $nome, $matches);
+    $sigla = implode('', $matches[0]);
+
+    return [
+        'nome' => $nome,
         'nome_responsavel' => $faker->name,
-        'sigla' => 'S'.implode($faker->randomElements(['T', 'I', 'O', 'R', 'A', 'C', 'E', 'H', 'S'])),
+        'sigla' => $sigla,
         'id_categoria' => \App\Models\Categoria::orderByRaw('RANDOM()')->first()->id,
     ];
 });
