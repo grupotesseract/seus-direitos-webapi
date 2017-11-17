@@ -47,10 +47,20 @@ class AuthAPIController extends AppBaseController
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'sindicato_id' => 'required|exists:sindicatos,id',
+            'cidade_id' => 'required|exists:cidades,id',
             'password' => 'required',
             'password_confirm' => 'required|same:password',
+        ], 
+        [
+            'cidade_id.required' => 'O campo cidade é obrigatório',
+            'sindicato_id.required' => 'O campo sindicato é obrigatório',
+            'password_confirm.same' => 'Os campos senha não estão iguais',
+            'required'=>'O campo :attribute é obrigatório',
+            'email.unique'=>'Já existe um usuário com esse endereço de e-mail!',
+            'sindicato_id.exists'=>'Sindicato não encontrado',
+            'cidade_id.exists'=>'Cidade não encontrada',
         ]);
 
         if ($validator->fails()) {
