@@ -52,7 +52,7 @@ class AuthAPIController extends AppBaseController
             'cidade_id' => 'required|exists:cidades,id',
             'password' => 'required',
             'password_confirm' => 'required|same:password',
-        ], 
+        ],
         [
             'cidade_id.required' => 'O campo cidade é obrigatório',
             'sindicato_id.required' => 'O campo sindicato é obrigatório',
