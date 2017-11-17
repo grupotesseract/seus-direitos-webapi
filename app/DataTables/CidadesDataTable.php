@@ -59,7 +59,7 @@ class CidadesDataTable extends DataTable
         return [
             'selecionar' => ['name' => 'selecionar', 'orderable'=>false, 'searchable' => false],
             'nome' => ['name' => 'nome', 'data' => 'nome'],
-            'estado' => ['name' => 'estado', 'data' => 'estado.sigla', 'searchable' => false,  'orderable'=>false],
+            'estado' => ['name' => 'estado.sigla', 'data' => 'estado.sigla', 'searchable' => true,  'orderable'=>false],
         ];
     }
 
@@ -70,6 +70,6 @@ class CidadesDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'empresas';
+        return 'cidades';
     }
 }

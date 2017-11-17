@@ -32,6 +32,8 @@ $factory->define(App\Models\Categoria::class, function (Faker\Generator $faker) 
             'Industrias de alimentos',
             'Saúde',
             'Educação',
+            'Hotelaria',
+            '',
             'Outra',
         ]),
     ];
@@ -41,17 +43,30 @@ $factory->define(App\Models\Categoria::class, function (Faker\Generator $faker) 
 $factory->define(App\Models\Sindicato::class, function (Faker\Generator $faker) {
     return [
         'nome' => $faker->randomElement([
-            'Sindicato dos ',
-            'Sindicato ',
-            'Sindicalistas da ',
-            'Associação ',
-        ]).
+            'SINDICATO DOS ',
+            'SIND DOS',
+        ])
+        .
         $faker->randomElement([
-            'Construção civil',
-            'Processamento de dados',
-            'Industrias de alimentos',
-            'Saúde',
-            'dos gagos',
+            'TRABALHADORES NA CONSTRUÇÃO CIVIL',
+            'PROCESSAMENTO DE DADOS',
+            'ESTIVADORES DE ITACOATIARA',
+            'CONDU AUTO DE VEICULOS RODOV D.MANACAPURU',
+            'EMP EM ESTAB BANCARIOS NO ESTADO DO AMAZONAS',
+            'PROFESSORES DE MANAUS',
+            'FARMACEUTICOS DO AMAZONAS',
+            'CIRURGIOES – DENTISTAS DO AMAZONAS',
+            'MEDICOS DO ESTADO DO AMAZONAS',
+            'CORRETORES DE IMOVEIS DO ESTADO DO AMAZONAS.',
+            'TRAB.EM TRANSPORTES RODOV.DE RIO GRANDE',
+            'TRABALHADORES RURAIS DE FRED WESTPHALEN',
+            'EMPREGADOS EM ESTAB.SERV.SAUDE DE CAX SUL',
+            'TRABALHADORES RURAIS',
+            'SERV PUBLICOS MUNICIPAIS DE STO ANASTACIO',
+            'FUNCIONARIOS E SERV.PUBL.MUNIC.DE QUATA',
+            'SERVIDORES PUBLICOS MUNICIPAIS DE IPUA',
+            'SERVIDORES PUBL MUNICIPAIS DE ITUVERAVA',
+            'PUBLICOS MUN EST TURISTICA IBITINGA',
         ]),
         'nome_responsavel' => $faker->name,
         'sigla' => 'S'.implode($faker->randomElements(['T', 'I', 'O', 'R', 'A', 'C', 'E', 'H', 'S'])),
