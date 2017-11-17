@@ -54,4 +54,13 @@ class User extends Authenticatable
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function cidade()
+    {
+        return $this->belongsTo(\App\Models\Cidade::class);
+    }
+    
 }
