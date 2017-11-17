@@ -44,7 +44,7 @@ $factory->define(App\Models\Sindicato::class, function (Faker\Generator $faker) 
     return [
         'nome' => $faker->randomElement([
             'SINDICATO DOS ',
-            'SIND DOS',
+            'SIND DOS ',
         ])
         .
         $faker->randomElement([
