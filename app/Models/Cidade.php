@@ -85,7 +85,6 @@ class Cidade extends Model
         return $this->hasMany(\App\Models\User::class);
     }
 
-
     /**
      * Acessor para a sigla do estado a qual essa cidade pertence.
      */
@@ -93,5 +92,4 @@ class Cidade extends Model
     {
         return $this->estado->sigla;
     }
-
 }
