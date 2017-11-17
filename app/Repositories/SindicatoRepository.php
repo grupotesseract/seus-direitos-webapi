@@ -12,8 +12,7 @@ class SindicatoRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'nome' => 'ilike',
-        'sigla',
-        'nome_responsavel',
+        'sigla' => 'ilike'
     ];
 
     /**
