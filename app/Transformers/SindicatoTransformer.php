@@ -23,7 +23,7 @@ class SindicatoTransformer extends TransformerAbstract
 
             /* place your other model properties here */
 
-            'nome' => $model->nome,
+            'nome' => ucwords($model->nome),
             'cidades' => $model->cidades,
         ];
     }
