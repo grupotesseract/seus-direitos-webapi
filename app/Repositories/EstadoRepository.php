@@ -24,7 +24,6 @@ class EstadoRepository extends BaseRepository
     }
 
     /**
-
      * Retorna os campos para um select id => Nome.
      **/
     public function getCamposSelect()

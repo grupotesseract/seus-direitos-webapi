@@ -24,7 +24,6 @@ Route::resource('users', 'UserController');
 
 Route::resource('filmes', 'FilmeController');
 
-
 /*
  * Rotas protegidas
  */
