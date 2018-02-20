@@ -21,6 +21,7 @@ class CreateFilmesTable extends Migration
             $table->text('descricao');
             $table->string('trailer');
             $table->string('linkimagem');
+            $table->string('extensao');
             $table->timestamps();
             $table->softDeletes();
         });

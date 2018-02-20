@@ -194,6 +194,8 @@ return [
 
         // CORS
         Barryvdh\Cors\ServiceProvider::class,
+        JD\Cloudder\CloudderServiceProvider::class
+
     ],
 
     /*
@@ -246,6 +248,8 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Laratrust'   => Laratrust\LaratrustFacade::class,
+        'Cloudder' => JD\Cloudder\Facades\Cloudder::class
+        
     ],
 
 ];

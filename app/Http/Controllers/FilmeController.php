@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
-use Illuminate\Http\Request;
-use App\Repositories\FilmeRepository;
 use App\Http\Requests\CreateFilmeRequest;
 use App\Http\Requests\UpdateFilmeRequest;
+use App\Repositories\FilmeRepository;
+use App\Http\Controllers\AppBaseController;
+use Illuminate\Http\Request;
+use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
+use Cloudder;
 
 class FilmeController extends AppBaseController
 {
-    /** @var FilmeRepository */
+    /** @var  FilmeRepository */
     private $filmeRepository;
 
     public function __construct(FilmeRepository $filmeRepo)
     {
-        $this->filmeRepository = $filmeRepo;
+        $this->filmeRepository = $filmeRepo;        
     }
 
     /**
@@ -32,6 +34,21 @@ class FilmeController extends AppBaseController
         $filmes = $this->filmeRepository->all();
 
         return view('filmes.index')
+            ->with('filmes', $filmes);
+    }
+
+    /**
+     * Display a listing of the Filme - publico.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function indexpublic(Request $request)
+    {
+        $this->filmeRepository->pushCriteria(new RequestCriteria($request));
+        $filmes = $this->filmeRepository->all();
+
+        return view('filmes.indexpublico')
             ->with('filmes', $filmes);
     }
 
@@ -53,7 +70,15 @@ class FilmeController extends AppBaseController
      * @return Response
      */
     public function store(CreateFilmeRequest $request)
-    {
+    {        
+
+        $cloud = Cloudder::upload($request->file('cartaz')->path());
+
+        $extensao = $request->file('cartaz')->extension();
+        $publicId = Cloudder::getPublicId();      
+
+        $request->request->add(['linkimagem' => $publicId, 'extensao' => $extensao]);
+
         $input = $request->all();
 
         $filme = $this->filmeRepository->create($input);

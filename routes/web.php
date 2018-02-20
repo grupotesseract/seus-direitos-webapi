@@ -22,7 +22,10 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('users', 'UserController');
 
-Route::resource('filmes', 'FilmeController');
+Route::resource('filmes', 'FilmeController', ['middleware' => 'auth']);
+
+Route::get('publico/filmes', 'FilmeController@indexpublic');
+
 
 /*
  * Rotas protegidas

@@ -1,3 +1,9 @@
+<!-- Imagem Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('cartaz', 'Imagem Cartaz:') !!}
+    {!! Form::file('cartaz', null) !!}
+</div>
+
 <!-- Nome Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nome', 'Nome:') !!}

@@ -27,6 +27,8 @@ class Filme extends Model
         'duracao',
         'descricao',
         'trailer',
+        'linkimagem',
+        'extensao',
     ];
 
     /**
