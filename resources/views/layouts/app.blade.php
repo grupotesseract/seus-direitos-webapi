@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>InfyOm Generator</title>
+    <title>Seu Sindicato - Seus Direitos</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
     @yield('css')
+    @yield('head_scripts')
 </head>
 
 <body class="skin-blue sidebar-mini">
@@ -24,7 +25,7 @@
 
         <!-- Logo -->
         <a href="#" class="logo">
-            <b>InfyOm</b>
+            <b>Seu Sindicato</b>
         </a>
 
         <!-- Header Navbar -->
@@ -41,7 +42,7 @@
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
+                            <img src="/img/logo.png"
                                  class="user-image" alt="User Image"/>
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">{!! Auth::user()->name !!}</span>
@@ -49,7 +50,7 @@
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
+                                <img src="/img/logo.png"
                                      class="img-circle" alt="User Image"/>
                                 <p>
                                     {!! Auth::user()->name !!}
@@ -58,13 +59,10 @@
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
-                                <div class="pull-right">
+                                <div class="">
                                     <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat"
                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        Sign out
+                                        Sair
                                     </a>
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST"
                                           style="display: none;">
@@ -85,11 +83,6 @@
     <div class="content-wrapper">
         @yield('content')
     </div>
-
-    <!-- Main Footer -->
-    <footer class="main-footer" style="max-height: 100px;text-align: center">
-        <strong>Copyright © 2016 <a href="http://infyom.com" target="_blank">InfyOm Technologies</a>.</strong> All rights reserved.
-    </footer>
 
 </div>
 

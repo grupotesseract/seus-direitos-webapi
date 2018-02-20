@@ -11,8 +11,7 @@ class CidadeRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'estado_id',
-        'nome',
+        'nome' => 'ilike',
     ];
 
     /**
@@ -21,5 +20,13 @@ class CidadeRepository extends BaseRepository
     public function model()
     {
         return Cidade::class;
+    }
+
+    /**
+     * Retorna os campos para um select id => Nome.
+     **/
+    public function getCamposSelect()
+    {
+        return Cidade::pluck('nome', 'id');
     }
 }

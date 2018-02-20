@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
+use Laratrust\Traits\LaratrustUserTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use LaratrustUserTrait;
     use HasApiTokens, Notifiable;
 
     public $table = 'users';
@@ -27,6 +29,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'sindicato_id',
     ];
 
     /**
@@ -35,6 +38,29 @@ class User extends Authenticatable
      * @var array
      */
     public static $rules = [
-
+        'name' => 'required',
+        'email' => 'required|unique:users,email',
+        'password' => 'required',
+        'role' => 'required|exists:roles,name',
+        'sindicato_id' => 'sometimes|exists:sindicatos,id',
+        'cidade_id' => 'sometimes|exists:cidades,id',
     ];
+
+    /**
+     * Um User pode ser responsavel de um sindicato ou estar associado a um sindicato.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function sindicato()
+    {
+        return $this->belongsTo(\App\Models\Sindicato::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function cidade()
+    {
+        return $this->belongsTo(\App\Models\Cidade::class);
+    }
 }

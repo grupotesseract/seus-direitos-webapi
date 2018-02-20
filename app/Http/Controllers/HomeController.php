@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+/**
+ * @resource Home
+ *
+ * Home
+ */
 class HomeController extends Controller
 {
     public function __construct()

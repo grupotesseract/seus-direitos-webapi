@@ -24,6 +24,15 @@ class EstadoRepository extends BaseRepository
     }
 
     /**
+
+     * Retorna os campos para um select id => Nome.
+     **/
+    public function getCamposSelect()
+    {
+        return Estado::pluck('nome', 'id');
+    }
+
+    /*
      * Metodo para buscar um Estado por ID ou Sigla.
      *
      * @param int|string $idOuSigla
@@ -32,6 +41,6 @@ class EstadoRepository extends BaseRepository
     {
         $campoQuery = is_numeric($idOuSigla) ? 'id' : 'sigla';
 
-        return $this->findByField($campoQuery, $idOuSigla);
+        return $this->findByField($campoQuery, strtoupper($idOuSigla));
     }
 }

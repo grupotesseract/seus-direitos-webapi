@@ -185,6 +185,15 @@ return [
         Laravel\Passport\PassportServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
 
+        Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
+        Laratrust\LaratrustServiceProvider::class,
+
+        // Datatables
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Yajra\Datatables\ButtonsServiceProvider::class,
+
+        // CORS
+        Barryvdh\Cors\ServiceProvider::class,
     ],
 
     /*
@@ -236,6 +245,7 @@ return [
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
+        'Laratrust'   => Laratrust\LaratrustFacade::class,
     ],
 
 ];
