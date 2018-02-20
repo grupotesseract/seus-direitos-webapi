@@ -26,7 +26,6 @@ Route::resource('filmes', 'FilmeController', ['middleware' => 'auth']);
 
 Route::get('publico/filmes', 'FilmeController@indexpublic');
 
-
 /*
  * Rotas protegidas
  */
