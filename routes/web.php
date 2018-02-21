@@ -24,7 +24,8 @@ Route::resource('users', 'UserController');
 
 Route::resource('filmes', 'FilmeController', ['middleware' => 'auth']);
 
-Route::get('publico/filmes', 'FilmeController@indexpublic');
+//FUTURAMENTE, ISSO SERÁ DINÃMICO POR CONVÊNIO - POR SINDICATO
+Route::get('saaebauru/convenios/alameda', 'FilmeController@indexpublic');
 
 /*
  * Rotas protegidas

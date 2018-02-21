@@ -80,7 +80,7 @@
         <div class="row filme">
             <div class="col-lg-3">
 
-                <img width="387" height="512" src="http://res.cloudinary.com/fernandes/image/upload/{{$filme->linkimagem}}.{{$filme->extensao}}" class="img-responsive wp-post-image" alt="">
+                <img style="margin-left: 10px" width="387" height="512" src="http://res.cloudinary.com/fernandes/image/upload/{{$filme->linkimagem}}.{{$filme->extensao}}" class="img-responsive wp-post-image" alt="">
            
 
             </div>
