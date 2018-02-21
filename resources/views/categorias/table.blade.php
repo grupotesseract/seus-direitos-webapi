@@ -1,7 +1,7 @@
 <table class="table table-responsive" id="categorias-table">
     <thead>
         <th>Nome</th>
-        <th colspan="3">Action</th>
+        <th colspan="3">Ação</th>
     </thead>
     <tbody>
     @foreach($categorias as $categoria)

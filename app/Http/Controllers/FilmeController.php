@@ -81,7 +81,7 @@ class FilmeController extends AppBaseController
 
         $filme = $this->filmeRepository->create($input);
 
-        Flash::success('Filme saved successfully.');
+        Flash::success('Filme salvo com sucesso.');
 
         return redirect(route('filmes.index'));
     }
@@ -98,7 +98,7 @@ class FilmeController extends AppBaseController
         $filme = $this->filmeRepository->findWithoutFail($id);
 
         if (empty($filme)) {
-            Flash::error('Filme not found');
+            Flash::error('Filme não encontrado');
 
             return redirect(route('filmes.index'));
         }
@@ -118,7 +118,7 @@ class FilmeController extends AppBaseController
         $filme = $this->filmeRepository->findWithoutFail($id);
 
         if (empty($filme)) {
-            Flash::error('Filme not found');
+            Flash::error('Filme não encontrado');
 
             return redirect(route('filmes.index'));
         }
@@ -139,14 +139,14 @@ class FilmeController extends AppBaseController
         $filme = $this->filmeRepository->findWithoutFail($id);
 
         if (empty($filme)) {
-            Flash::error('Filme not found');
+            Flash::error('Filme não encontrado');
 
             return redirect(route('filmes.index'));
         }
 
         $filme = $this->filmeRepository->update($request->all(), $id);
 
-        Flash::success('Filme updated successfully.');
+        Flash::success('Filme atualizado com sucesso.');
 
         return redirect(route('filmes.index'));
     }
@@ -163,14 +163,14 @@ class FilmeController extends AppBaseController
         $filme = $this->filmeRepository->findWithoutFail($id);
 
         if (empty($filme)) {
-            Flash::error('Filme not found');
+            Flash::error('Filme não encontrado');
 
             return redirect(route('filmes.index'));
         }
 
         $this->filmeRepository->delete($id);
 
-        Flash::success('Filme deleted successfully.');
+        Flash::success('Filme excluido com sucesso.');
 
         return redirect(route('filmes.index'));
     }

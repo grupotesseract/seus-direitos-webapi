@@ -12,7 +12,7 @@
             <td>
                 {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Você tem certeza que deseja excluir este registro?')"]) !!}
                 </div>
                 {!! Form::close() !!}
             </td>
