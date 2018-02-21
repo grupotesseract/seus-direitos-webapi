@@ -2,9 +2,9 @@
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left">Sindicatos</h1>
+        <h1 class="pull-left">Filmes</h1>
         <h1 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('sindicatos.create') !!}">Incluir</a>
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('filmes.create') !!}">Adicionar Novo</a>
         </h1>
     </section>
     <div class="content">
@@ -15,7 +15,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                    @include('sindicatos.table')
+                    @include('filmes.table')
             </div>
         </div>
     </div>

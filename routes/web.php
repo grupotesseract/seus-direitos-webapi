@@ -20,6 +20,13 @@ Route::get('/', function () {
 Route::get('/admin', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
+Route::resource('users', 'UserController');
+
+Route::resource('filmes', 'FilmeController', ['middleware' => 'auth']);
+
+//FUTURAMENTE, ISSO SERÁ DINÃMICO POR CONVÊNIO - POR SINDICATO
+Route::get('saaebauru/convenios/alameda', 'FilmeController@indexpublic');
+
 /*
  * Rotas protegidas
  */

@@ -47,3 +47,7 @@
 </li>
 @endrole
 
+<li class="{{ Request::is('filmes*') ? 'active' : '' }}">
+    <a href="{!! route('filmes.index') !!}"><i class="fa fa-edit"></i><span>Filmes</span></a>
+</li>
+

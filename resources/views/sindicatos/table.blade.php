@@ -2,8 +2,8 @@
     <thead>
         <th>Nome</th>
         <th>Sigla</th>
-        <th>Nome Responsavel</th>
-        <th colspan="3">Action</th>
+        <th>Nome Responsável</th>
+        <th colspan="3">Ação</th>
     </thead>
     <tbody>
     @foreach($sindicatos as $sindicato)

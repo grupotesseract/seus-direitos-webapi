@@ -183,6 +183,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Laravel\Passport\PassportServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
@@ -193,6 +194,8 @@ return [
 
         // CORS
         Barryvdh\Cors\ServiceProvider::class,
+        JD\Cloudder\CloudderServiceProvider::class,
+
     ],
 
     /*
@@ -245,6 +248,8 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Laratrust'   => Laratrust\LaratrustFacade::class,
+        'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
+
     ],
 
 ];
