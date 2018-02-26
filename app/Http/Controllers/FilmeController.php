@@ -51,6 +51,11 @@ class FilmeController extends AppBaseController
             ->with('filmes', $filmes);
     }
 
+    public function indice()
+    {
+        return view('filmes.indice');
+    }
+
     /**
      * Show the form for creating a new Filme.
      *
