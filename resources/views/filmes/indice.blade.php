@@ -75,7 +75,9 @@
             </div>
             <div class="col-lg-4">
                 <p class="text-center">
-                    <img src="/img/home-cinema.png" height="126" width="263">
+                    <a href="alameda/filmes">
+                        <img src="/img/home-cinema.png" height="126" width="263">
+                    </a>
                 </p>
             </div>
             <div class="col-lg-4">
