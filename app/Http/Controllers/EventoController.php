@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Response;
+use Illuminate\Http\Request;
+use App\Repositories\EventoRepository;
 use App\Http\Requests\CreateEventoRequest;
 use App\Http\Requests\UpdateEventoRequest;
-use App\Repositories\EventoRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
-use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 class EventoController extends AppBaseController
 {
-    /** @var  EventoRepository */
+    /** @var EventoRepository */
     private $eventoRepository;
 
     public function __construct(EventoRepository $eventoRepo)
