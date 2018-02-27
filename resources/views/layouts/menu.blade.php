@@ -45,7 +45,6 @@
 <li class="{{ Request::is('sindicatos*') ? 'active' : '' }}">
     <a href="{!! route('sindicatos.index') !!}"><i class="fa fa-bank"></i><span>Sindicatos</span></a>
 </li>
-@endrole
 
 <li class="{{ Request::is('filmes*') ? 'active' : '' }}">
     <a href="{!! route('filmes.index') !!}"><i class="fa fa-edit"></i><span>Filmes</span></a>
@@ -56,6 +55,8 @@
 </li>
 
 <li class="{{ Request::is('promocaos*') ? 'active' : '' }}">
-    <a href="{!! route('promocaos.index') !!}"><i class="fa fa-edit"></i><span>Promocaos</span></a>
+    <a href="{!! route('promocaos.index') !!}"><i class="fa fa-edit"></i><span>Promoções</span></a>
 </li>
+@endrole
+
 
