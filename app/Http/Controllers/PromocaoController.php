@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Response;
+use Illuminate\Http\Request;
+use App\Repositories\PromocaoRepository;
 use App\Http\Requests\CreatePromocaoRequest;
 use App\Http\Requests\UpdatePromocaoRequest;
-use App\Repositories\PromocaoRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
-use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 class PromocaoController extends AppBaseController
 {
-    /** @var  PromocaoRepository */
+    /** @var PromocaoRepository */
     private $promocaoRepository;
 
     public function __construct(PromocaoRepository $promocaoRepo)
