@@ -51,3 +51,11 @@
     <a href="{!! route('filmes.index') !!}"><i class="fa fa-edit"></i><span>Filmes</span></a>
 </li>
 
+<li class="{{ Request::is('eventos*') ? 'active' : '' }}">
+    <a href="{!! route('eventos.index') !!}"><i class="fa fa-edit"></i><span>Eventos</span></a>
+</li>
+
+<li class="{{ Request::is('promocaos*') ? 'active' : '' }}">
+    <a href="{!! route('promocaos.index') !!}"><i class="fa fa-edit"></i><span>Promocaos</span></a>
+</li>
+
