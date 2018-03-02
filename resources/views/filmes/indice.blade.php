@@ -51,16 +51,11 @@
     
 </style>
 
-
-<!-- INCLUIR CABEÇALHO DO ALAMEDA -->
-<!-- AJUSTAR TAMANHO DA IMAGEM -->
-<!-- TRADUZIR LABELS -->
-
-<div class="container">
+<div class="container" style="height:100%; background-color: #eae4dd">
     
     <header class="section" style="margin-top: 25px">
         <div class="row">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4">
                 <img src="/img/alameda.png" height="89" width="354" class="logo img-responsive">
             </div>
         </div>
@@ -68,21 +63,21 @@
 
     <div class="section" style="margin-top: 100px">
         <div class="row">
-            <div class="col-lg-4">
-                <p class="text-center">
-                    <img src="/img/home-business.png" height="126" width="263">
-                </p>
-            </div>
-            <div class="col-lg-4">
+            <div class="col-xs-12">
                 <p class="text-center">
                     <a href="alameda/filmes">
-                        <img src="/img/home-cinema.png" height="126" width="263">
+                        <img src="/img/home-cinema.png" height="126" width="126">
                     </a>
                 </p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-xs-6">
                 <p class="text-center">
-                    <img src="/img/home-servicos.png" height="126" width="263">
+                    <img src="/img/home-eventos.png" style="opacity: 0.4;filter: alpha(opacity=40);" height="126" width="126">
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p class="text-center">
+                    <img src="/img/home-promocoes.png" style="opacity: 0.4;filter: alpha(opacity=40);" height="126" width="126">
                 </p>
             </div>
         </div>
