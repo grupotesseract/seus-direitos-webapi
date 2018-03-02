@@ -6,14 +6,13 @@ use App\Models\Promocao;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class PromocaoRepository
- * @package App\Repositories
+ * Class PromocaoRepository.
  * @version February 27, 2018, 10:11 am BRT
  *
  * @method Promocao findWithoutFail($id, $columns = ['*'])
  * @method Promocao find($id, $columns = ['*'])
  * @method Promocao first($columns = ['*'])
-*/
+ */
 class PromocaoRepository extends BaseRepository
 {
     /**
@@ -23,11 +22,11 @@ class PromocaoRepository extends BaseRepository
         'nome',
         'descricao',
         'loja',
-        'observacao'
+        'observacao',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {

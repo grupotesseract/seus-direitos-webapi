@@ -49,7 +49,6 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::resource('sindicatos', 'SindicatoController');
 });
 
-
 Route::resource('eventos', 'EventoController');
 
 Route::resource('promocaos', 'PromocaoController');

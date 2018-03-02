@@ -6,14 +6,13 @@ use App\Models\Evento;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class EventoRepository
- * @package App\Repositories
+ * Class EventoRepository.
  * @version February 27, 2018, 10:06 am BRT
  *
  * @method Evento findWithoutFail($id, $columns = ['*'])
  * @method Evento find($id, $columns = ['*'])
  * @method Evento first($columns = ['*'])
-*/
+ */
 class EventoRepository extends BaseRepository
 {
     /**
@@ -23,11 +22,11 @@ class EventoRepository extends BaseRepository
         'nome',
         'descricao',
         'datahora',
-        'linkimagem'
+        'linkimagem',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {

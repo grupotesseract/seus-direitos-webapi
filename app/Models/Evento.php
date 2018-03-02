@@ -6,8 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Evento
- * @package App\Models
+ * Class Evento.
  * @version February 27, 2018, 10:06 am BRT
  *
  * @property string nome
@@ -20,16 +19,14 @@ class Evento extends Model
     use SoftDeletes;
 
     public $table = 'eventos';
-    
 
     protected $dates = ['deleted_at'];
-
 
     public $fillable = [
         'nome',
         'descricao',
         'datahora',
-        'linkimagem'
+        'linkimagem',
     ];
 
     /**
@@ -40,19 +37,17 @@ class Evento extends Model
     protected $casts = [
         'nome' => 'string',
         'descricao' => 'string',
-        'linkimagem' => 'string'
+        'linkimagem' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
         'nome' => 'required',
         'descricao' => 'required',
-        'datahora' => 'required'
+        'datahora' => 'required',
     ];
-
-    
 }
