@@ -61,9 +61,9 @@
         </div>
     </header>
 
-    <div class="section" style="margin-top: 100px">
+    <div class="section" style="margin-top: 40px">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12">     
                 <p class="text-center">
                     <a href="alameda/filmes">
                         <img src="/img/home-cinema.png" height="126" width="126">
