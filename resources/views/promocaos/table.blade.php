@@ -2,10 +2,9 @@
     <thead>
         <tr>
             <th>Nome</th>
-        <th>Descricao</th>
+        <th>Descriçao</th>
         <th>Loja</th>
-        <th>Observacao</th>
-            <th colspan="3">Action</th>
+            <th colspan="3">Ação</th>
         </tr>
     </thead>
     <tbody>
@@ -14,7 +13,6 @@
             <td>{!! $promocao->nome !!}</td>
             <td>{!! $promocao->descricao !!}</td>
             <td>{!! $promocao->loja !!}</td>
-            <td>{!! $promocao->observacao !!}</td>
             <td>
                 {!! Form::open(['route' => ['promocaos.destroy', $promocao->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

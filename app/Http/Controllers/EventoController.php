@@ -147,6 +147,15 @@ class EventoController extends AppBaseController
             return redirect(route('eventos.index'));
         }
 
+        if (!is_null($request->file('cartaz'))) {
+            $cloud = Cloudder::upload($request->file('cartaz')->path());
+
+            $extensao = $request->file('cartaz')->extension();
+            $publicId = Cloudder::getPublicId();
+
+            $request->request->add(['linkimagem' => $publicId, 'extensao' => $extensao]);
+        }
+
         $evento = $this->eventoRepository->update($request->all(), $id);
 
         Flash::success('Evento updated successfully.');

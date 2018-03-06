@@ -19,7 +19,7 @@
 <!-- Imagem Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('cartaz', 'Imagem:') !!}
-    {!! Form::file('cartaz', null) !!}
+    {!! Form::file('cartaz', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Submit Field -->

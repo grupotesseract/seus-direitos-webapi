@@ -70,30 +70,26 @@
         <div class="row">
             <div class="col-lg-12">
                 <p class="text-center">
-                    <img src="http://alamedaqualitycenter.com.br/wp-content/themes/alameda/img/logo-cinenfun.png" height="170" width="163">
+                    <img src="/img/home-promocoes.png" height="126" width="126">
                 </p>
             </div>
         </div>
     </div>
     
-    @foreach ($filmes as $filme)
+    @foreach ($promocoes as $promocao)
         <div class="row filme">
             <div class="col-lg-3">
 
-                <img style="margin-left: 10px" width="387" height="512" src="http://res.cloudinary.com/fernandes/image/upload/{{$filme->linkimagem}}.{{$filme->extensao}}" class="img-responsive wp-post-image" alt="">
+                <img style="margin-left: 10px" width="387" height="512" src="http://res.cloudinary.com/fernandes/image/upload/{{$promocao->linkimagem}}.{{$promocao->extensao}}" class="img-responsive wp-post-image" alt="">
            
 
             </div>
 
             <div class="col-lg-9">
-                <h2>{{$filme->nome}}</h2>
-                <p>{{$filme->idade}}</p>
-                <p>{{$filme->genero}}</p>
-                <p>{!! nl2br(e($filme->descricao)) !!}</p>
-                
-                @if ($filme->trailer)
-                    <a href="{{$filme->trailer}}" target="_blank">Assista o Trailer</a>
-                @endif
+                <h2>{{$promocao->nome}}</h2>
+                <p>{{$promocao->loja}}</p>
+                <p>{!! nl2br(e($promocao->descricao)) !!}</p>
+                <p>{!! nl2br(e($promocao->observacao)) !!}</p>               
             </div>
 
 

@@ -28,6 +28,7 @@ Route::resource('filmes', 'FilmeController', ['middleware' => 'auth']);
 Route::get('saaebauru/convenios/alameda', 'FilmeController@indice');
 Route::get('saaebauru/convenios/alameda/filmes', 'FilmeController@indexpublic');
 Route::get('saaebauru/convenios/alameda/eventos', 'EventoController@indexpublic');
+Route::get('saaebauru/convenios/alameda/promocoes', 'PromocaoController@indexpublic');
 
 /*
  * Rotas protegidas
