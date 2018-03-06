@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Flash;
+use Cloudder;
 use Response;
 use Illuminate\Http\Request;
 use App\Repositories\EventoRepository;
 use App\Http\Requests\CreateEventoRequest;
 use App\Http\Requests\UpdateEventoRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
-
-use Cloudder;
-
 
 class EventoController extends AppBaseController
 {
