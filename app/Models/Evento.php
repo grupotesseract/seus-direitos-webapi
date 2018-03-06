@@ -27,6 +27,7 @@ class Evento extends Model
         'descricao',
         'datahora',
         'linkimagem',
+        'extensao',
     ];
 
     /**
@@ -38,6 +39,7 @@ class Evento extends Model
         'nome' => 'string',
         'descricao' => 'string',
         'linkimagem' => 'string',
+        'extensao' => 'string',
     ];
 
     /**

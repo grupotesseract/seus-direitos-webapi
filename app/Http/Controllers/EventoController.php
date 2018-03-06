@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Flash;
+use Cloudder;
 use Response;
 use Illuminate\Http\Request;
 use App\Repositories\EventoRepository;
@@ -26,6 +27,22 @@ class EventoController extends AppBaseController
      * @param Request $request
      * @return Response
      */
+
+    /**
+     * Display a listing of the Evento - publico.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function indexpublic(Request $request)
+    {
+        $this->eventoRepository->pushCriteria(new RequestCriteria($request));
+        $eventos = $this->eventoRepository->all();
+
+        return view('eventos.indexpublico')
+            ->with('eventos', $eventos);
+    }
+
     public function index(Request $request)
     {
         $this->eventoRepository->pushCriteria(new RequestCriteria($request));
@@ -54,11 +71,18 @@ class EventoController extends AppBaseController
      */
     public function store(CreateEventoRequest $request)
     {
+        $cloud = Cloudder::upload($request->file('cartaz')->path());
+
+        $extensao = $request->file('cartaz')->extension();
+        $publicId = Cloudder::getPublicId();
+
+        $request->request->add(['linkimagem' => $publicId, 'extensao' => $extensao]);
+
         $input = $request->all();
 
         $evento = $this->eventoRepository->create($input);
 
-        Flash::success('Evento saved successfully.');
+        Flash::success('Evento salvo com sucesso.');
 
         return redirect(route('eventos.index'));
     }
@@ -119,6 +143,15 @@ class EventoController extends AppBaseController
             Flash::error('Evento not found');
 
             return redirect(route('eventos.index'));
+        }
+
+        if (! is_null($request->file('cartaz'))) {
+            $cloud = Cloudder::upload($request->file('cartaz')->path());
+
+            $extensao = $request->file('cartaz')->extension();
+            $publicId = Cloudder::getPublicId();
+
+            $request->request->add(['linkimagem' => $publicId, 'extensao' => $extensao]);
         }
 
         $evento = $this->eventoRepository->update($request->all(), $id);

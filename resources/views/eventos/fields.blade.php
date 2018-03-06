@@ -1,29 +1,29 @@
 <!-- Nome Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nome', 'Nome:') !!}
-    {!! Form::text('nome', null, ['class' => 'form-control']) !!}
+    {!! Form::text('nome', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Descricao Field -->
 <div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('descricao', 'Descricao:') !!}
-    {!! Form::textarea('descricao', null, ['class' => 'form-control']) !!}
+    {!! Form::label('descricao', 'Descrição:') !!}
+    {!! Form::textarea('descricao', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Datahora Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('datahora', 'Datahora:') !!}
-    {!! Form::text('datahora', null, ['class' => 'form-control']) !!}
+    {!! Form::label('datahora', 'Data e Hora:') !!}
+    {!! Form::text('datahora', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
-<!-- Linkimagem Field -->
+<!-- Imagem Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('linkimagem', 'Linkimagem:') !!}
-    {!! Form::text('linkimagem', null, ['class' => 'form-control']) !!}
+    {!! Form::label('cartaz', 'Imagem:') !!}
+    {!! Form::file('cartaz', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('eventos.index') !!}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('eventos.index') !!}" class="btn btn-default">Cancelar</a>
 </div>

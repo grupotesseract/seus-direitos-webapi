@@ -149,6 +149,15 @@ class FilmeController extends AppBaseController
             return redirect(route('filmes.index'));
         }
 
+        if (! is_null($request->file('cartaz'))) {
+            $cloud = Cloudder::upload($request->file('cartaz')->path());
+
+            $extensao = $request->file('cartaz')->extension();
+            $publicId = Cloudder::getPublicId();
+
+            $request->request->add(['linkimagem' => $publicId, 'extensao' => $extensao]);
+        }
+
         $filme = $this->filmeRepository->update($request->all(), $id);
 
         Flash::success('Filme atualizado com sucesso.');

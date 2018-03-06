@@ -27,6 +27,8 @@ class Promocao extends Model
         'descricao',
         'loja',
         'observacao',
+        'linkimagem',
+        'extensao',
     ];
 
     /**
@@ -39,6 +41,8 @@ class Promocao extends Model
         'descricao' => 'string',
         'loja' => 'string',
         'observacao' => 'string',
+        'linkimagem' => 'string',
+        'extensao' => 'string',
     ];
 
     /**

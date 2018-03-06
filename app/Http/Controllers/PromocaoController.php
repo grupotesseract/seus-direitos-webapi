@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Flash;
+use Cloudder;
 use Response;
 use Illuminate\Http\Request;
 use App\Repositories\PromocaoRepository;
@@ -18,6 +19,21 @@ class PromocaoController extends AppBaseController
     public function __construct(PromocaoRepository $promocaoRepo)
     {
         $this->promocaoRepository = $promocaoRepo;
+    }
+
+    /**
+     * Display a listing of the Promocao - publico.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function indexpublic(Request $request)
+    {
+        $this->promocaoRepository->pushCriteria(new RequestCriteria($request));
+        $promocoes = $this->promocaoRepository->all();
+
+        return view('promocaos.indexpublico')
+            ->with('promocoes', $promocoes);
     }
 
     /**
@@ -54,11 +70,18 @@ class PromocaoController extends AppBaseController
      */
     public function store(CreatePromocaoRequest $request)
     {
+        $cloud = Cloudder::upload($request->file('cartaz')->path());
+
+        $extensao = $request->file('cartaz')->extension();
+        $publicId = Cloudder::getPublicId();
+
+        $request->request->add(['linkimagem' => $publicId, 'extensao' => $extensao]);
+
         $input = $request->all();
 
         $promocao = $this->promocaoRepository->create($input);
 
-        Flash::success('Promocao saved successfully.');
+        Flash::success('Promoção salva com sucesso.');
 
         return redirect(route('promocaos.index'));
     }
@@ -121,9 +144,18 @@ class PromocaoController extends AppBaseController
             return redirect(route('promocaos.index'));
         }
 
+        if (! is_null($request->file('cartaz'))) {
+            $cloud = Cloudder::upload($request->file('cartaz')->path());
+
+            $extensao = $request->file('cartaz')->extension();
+            $publicId = Cloudder::getPublicId();
+
+            $request->request->add(['linkimagem' => $publicId, 'extensao' => $extensao]);
+        }
+
         $promocao = $this->promocaoRepository->update($request->all(), $id);
 
-        Flash::success('Promocao updated successfully.');
+        Flash::success('Promoção atualizada com sucesso.');
 
         return redirect(route('promocaos.index'));
     }
@@ -147,7 +179,7 @@ class PromocaoController extends AppBaseController
 
         $this->promocaoRepository->delete($id);
 
-        Flash::success('Promocao deleted successfully.');
+        Flash::success('Promocao excluída com sucesso.');
 
         return redirect(route('promocaos.index'));
     }
