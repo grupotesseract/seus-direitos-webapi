@@ -6,20 +6,20 @@
 
 <!-- Descricao Field -->
 <div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('descricao', 'Descricao:') !!}
+    {!! Form::label('descricao', 'Descrição:') !!}
     {!! Form::textarea('descricao', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Datahora Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('datahora', 'Datahora:') !!}
+    {!! Form::label('datahora', 'Data e Hora:') !!}
     {!! Form::text('datahora', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Linkimagem Field -->
+<!-- Imagem Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('linkimagem', 'Linkimagem:') !!}
-    {!! Form::text('linkimagem', null, ['class' => 'form-control']) !!}
+    {!! Form::label('cartaz', 'Imagem:') !!}
+    {!! Form::file('cartaz', null) !!}
 </div>
 
 <!-- Submit Field -->

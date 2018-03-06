@@ -16,8 +16,9 @@ class CreateEventosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->text('descricao');
-            $table->timestamp('datahora');
+            $table->string('datahora');
             $table->string('linkimagem');
+            $table->string('extensao');
             $table->timestamps();
             $table->softDeletes();
         });

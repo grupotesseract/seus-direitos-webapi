@@ -10,6 +10,9 @@ use App\Http\Requests\CreateEventoRequest;
 use App\Http\Requests\UpdateEventoRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
 
+use Cloudder;
+
+
 class EventoController extends AppBaseController
 {
     /** @var EventoRepository */
@@ -54,11 +57,18 @@ class EventoController extends AppBaseController
      */
     public function store(CreateEventoRequest $request)
     {
+        $cloud = Cloudder::upload($request->file('cartaz')->path());
+
+        $extensao = $request->file('cartaz')->extension();
+        $publicId = Cloudder::getPublicId();
+
+        $request->request->add(['linkimagem' => $publicId, 'extensao' => $extensao]);
+
         $input = $request->all();
 
         $evento = $this->eventoRepository->create($input);
 
-        Flash::success('Evento saved successfully.');
+        Flash::success('Evento salvo com sucesso.');
 
         return redirect(route('eventos.index'));
     }
