@@ -18,6 +18,8 @@ class CreatePromocaosTable extends Migration
             $table->text('descricao');
             $table->string('loja');
             $table->text('observacao')->nullable();
+            $table->string('linkimagem')->nullable();
+            $table->string('extensao')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
