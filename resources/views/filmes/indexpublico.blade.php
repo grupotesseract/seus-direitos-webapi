@@ -56,7 +56,7 @@
 <!-- AJUSTAR TAMANHO DA IMAGEM -->
 <!-- TRADUZIR LABELS -->
 
-<div class="container">
+<div class="container" style="margin-right: 20px">
     
     <header class="section">
         <div class="row">

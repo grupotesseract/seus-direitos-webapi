@@ -72,12 +72,16 @@
             </div>
             <div class="col-xs-6">
                 <p class="text-center">
-                    <img src="/img/home-eventos.png" style="opacity: 0.4;filter: alpha(opacity=40);" height="126" width="126">
+                    <a href="alameda/eventos">
+                        <img src="/img/home-eventos.png" height="126" width="126">
+                    </a>
                 </p>
             </div>
             <div class="col-xs-6">
                 <p class="text-center">
-                    <img src="/img/home-promocoes.png" style="opacity: 0.4;filter: alpha(opacity=40);" height="126" width="126">
+                    <a href="alameda/promocoes">
+                        <img src="/img/home-promocoes.png" height="126" width="126">
+                    </a>
                 </p>
             </div>
         </div>
