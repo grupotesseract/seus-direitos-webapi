@@ -29,6 +29,22 @@ class EventoController extends AppBaseController
      * @param Request $request
      * @return Response
      */
+    
+     /**
+     * Display a listing of the Evento - publico.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function indexpublic(Request $request)
+    {
+        $this->eventoRepository->pushCriteria(new RequestCriteria($request));
+        $eventos = $this->eventoRepository->all();
+
+        return view('eventos.indexpublico')
+            ->with('eventos', $eventos);
+    }
+
     public function index(Request $request)
     {
         $this->eventoRepository->pushCriteria(new RequestCriteria($request));

@@ -27,6 +27,7 @@ Route::resource('filmes', 'FilmeController', ['middleware' => 'auth']);
 //FUTURAMENTE, ISSO SERÁ DINÃMICO POR CONVÊNIO - POR SINDICATO
 Route::get('saaebauru/convenios/alameda', 'FilmeController@indice');
 Route::get('saaebauru/convenios/alameda/filmes', 'FilmeController@indexpublic');
+Route::get('saaebauru/convenios/alameda/eventos', 'EventoController@indexpublic');
 
 /*
  * Rotas protegidas
