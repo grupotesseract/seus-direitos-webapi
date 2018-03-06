@@ -27,8 +27,8 @@ class EventoController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    
-     /**
+
+    /**
      * Display a listing of the Evento - publico.
      *
      * @param Request $request
@@ -145,7 +145,7 @@ class EventoController extends AppBaseController
             return redirect(route('eventos.index'));
         }
 
-        if (!is_null($request->file('cartaz'))) {
+        if (! is_null($request->file('cartaz'))) {
             $cloud = Cloudder::upload($request->file('cartaz')->path());
 
             $extensao = $request->file('cartaz')->extension();
