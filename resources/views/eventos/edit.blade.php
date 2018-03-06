@@ -11,7 +11,7 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($evento, ['route' => ['eventos.update', $evento->id], 'method' => 'patch']) !!}
+                   {!! Form::model($evento, ['route' => ['eventos.update', $evento->id], 'method' => 'patch', 'files' => true]) !!}
 
                         @include('eventos.fields')
 
