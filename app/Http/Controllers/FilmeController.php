@@ -149,7 +149,7 @@ class FilmeController extends AppBaseController
             return redirect(route('filmes.index'));
         }
 
-        if (!is_null($request->file('cartaz'))) {
+        if (! is_null($request->file('cartaz'))) {
             $cloud = Cloudder::upload($request->file('cartaz')->path());
 
             $extensao = $request->file('cartaz')->extension();

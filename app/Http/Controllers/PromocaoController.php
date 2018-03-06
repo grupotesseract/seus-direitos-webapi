@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Flash;
+use Cloudder;
 use Response;
 use Illuminate\Http\Request;
 use App\Repositories\PromocaoRepository;
 use App\Http\Requests\CreatePromocaoRequest;
 use App\Http\Requests\UpdatePromocaoRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
-
-use Cloudder;
-
 
 class PromocaoController extends AppBaseController
 {
@@ -146,7 +144,7 @@ class PromocaoController extends AppBaseController
             return redirect(route('promocaos.index'));
         }
 
-        if (!is_null($request->file('cartaz'))) {
+        if (! is_null($request->file('cartaz'))) {
             $cloud = Cloudder::upload($request->file('cartaz')->path());
 
             $extensao = $request->file('cartaz')->extension();

@@ -27,7 +27,7 @@ class Evento extends Model
         'descricao',
         'datahora',
         'linkimagem',
-        'extensao'
+        'extensao',
     ];
 
     /**
