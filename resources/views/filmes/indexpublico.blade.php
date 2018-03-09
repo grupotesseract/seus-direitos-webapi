@@ -69,6 +69,7 @@
     <div class="section" style="margin-top: 30px">
         <div class="row">
             <div class="col-lg-12">
+                <h3 class="text-center" style="font-size: 15px">APRESENTE A CARTEIRINHA AO COMPRAR O INGRESSO</h3>
                 <p class="text-center">
                     <img src="http://alamedaqualitycenter.com.br/wp-content/themes/alameda/img/logo-cinenfun.png" height="170" width="163">
                 </p>
