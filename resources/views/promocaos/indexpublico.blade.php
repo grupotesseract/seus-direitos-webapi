@@ -62,13 +62,14 @@
         <div class="row">
             <div class="col-lg-4 col-md-12">
                 <img src="http://alamedaqualitycenter.com.br/wp-content/themes/alameda/img/logo.png" height="89" width="354" class="logo img-responsive">
-            </div>
+            </div>            
         </div>
     </header>
 
     <div class="section" style="margin-top: 30px">
         <div class="row">
             <div class="col-lg-12">
+                <h3 class="text-center" style="font-size: 20px">APRESENTE A CARTEIRINHA NO PEDIDO</h3>
                 <p class="text-center">
                     <img src="/img/home-promocoes.png" height="126" width="126">
                 </p>
@@ -80,16 +81,15 @@
         <div class="row filme">
             <div class="col-lg-3">
 
-                <img style="margin-left: 10px" width="387" height="512" src="http://res.cloudinary.com/fernandes/image/upload/{{$promocao->linkimagem}}.{{$promocao->extensao}}" class="img-responsive wp-post-image" alt="">
+                <img style="margin-left: 7px" width="387" height="512" src="http://res.cloudinary.com/fernandes/image/upload/{{$promocao->linkimagem}}.{{$promocao->extensao}}" class="img-responsive wp-post-image" alt="">
            
 
             </div>
 
             <div class="col-lg-9">
                 <h2>{{$promocao->nome}}</h2>
-                <p>{{$promocao->loja}}</p>
-                <p>{!! nl2br(e($promocao->descricao)) !!}</p>
-                <p>{!! nl2br(e($promocao->observacao)) !!}</p>               
+                <p style="font-size: 25px">{!! nl2br(e($promocao->descricao)) !!}</p>
+                <p style="font-size: 25px">{!! nl2br(e($promocao->observacao)) !!}</p>               
             </div>
 
 

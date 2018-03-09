@@ -19,7 +19,7 @@
 <!-- Observacao Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('observacao', 'Observação:') !!}
-    {!! Form::textarea('observacao', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::textarea('observacao', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Imagem Field -->
