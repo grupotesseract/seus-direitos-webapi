@@ -2,10 +2,10 @@
 
 namespace App\DataTables;
 
-use App\Models\Cidade;
+use App\Models\User;
 use Yajra\Datatables\Services\DataTable;
 
-class CidadesDataTable extends DataTable
+class UserDataTable extends DataTable
 {
     /**
      * @return \Illuminate\Http\JsonResponse
@@ -14,8 +14,11 @@ class CidadesDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('selecionar', 'sindicatos.botao-selecionar')
-            ->rawColumns(['selecionar'])
+            ->addColumn('tipo', function($model) {
+                $temRoles = !$model->roles->isEmpty();                
+                return $temRoles ? $model->roles->first()->display_name : '';
+            })
+            ->addColumn('action', 'users.datatables_actions')
             ->make(true);
     }
 
@@ -26,7 +29,7 @@ class CidadesDataTable extends DataTable
      */
     public function query()
     {
-        $query = Cidade::with('estado');
+        $query = User::with('roles');
 
         return $this->applyScopes($query);
     }
@@ -57,9 +60,10 @@ class CidadesDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'selecionar' => ['name' => 'selecionar', 'orderable'=>false, 'searchable' => false],
-            'nome' => ['name' => 'nome', 'data' => 'nome'],
-            'estado' => ['name' => 'estado.sigla', 'data' => 'estado.sigla', 'searchable' => true],
+            'name' => ['name' => 'name', 'data' => 'name', 'title' => 'Nome'],
+            'email' => ['name' => 'name', 'data' => 'name', 'title' => 'Email'],
+            'tipo',
+            'action',
         ];
     }
 
@@ -70,6 +74,6 @@ class CidadesDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'cidades';
+        return 'usuarios';
     }
 }

@@ -10,6 +10,7 @@ use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
+use App\DataTables\UserDataTable;
 
 /**
  * @resource User
@@ -32,13 +33,9 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function index(Request $request)
+    public function index(UserDataTable $userDT)
     {
-        $this->userRepository->pushCriteria(new RequestCriteria($request));
-        $users = $this->userRepository->all();
-
-        return view('users.index')
-            ->with('users', $users);
+        return $userDT->render('users.index');
     }
 
     /**
@@ -222,7 +219,7 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getAll(Request $request)
+    public function troca(Request $request)
     {
         if (\Laratrust::hasRole('sindicalista')) {
             $users = $this->userRepository->getUsuariosFuncionarios();
