@@ -14,8 +14,9 @@ class UserDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('tipo', function($model) {
-                $temRoles = !$model->roles->isEmpty();                
+            ->addColumn('tipo', function ($model) {
+                $temRoles = ! $model->roles->isEmpty();
+
                 return $temRoles ? $model->roles->first()->display_name : '';
             })
             ->addColumn('action', 'users.datatables_actions')
@@ -48,7 +49,7 @@ class UserDataTable extends DataTable
                 'dom' => 'Bfrtip',
                 'scrollX' => false,
                 'buttons' => [
-                
+
                 ],
                 'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
             ]);

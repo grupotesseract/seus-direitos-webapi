@@ -17,7 +17,6 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-
 Route::get('/teste', 'SindicatoController@create');
 
 Route::get('/admin', 'HomeController@index');

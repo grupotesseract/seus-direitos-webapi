@@ -6,11 +6,10 @@ use Flash;
 use Response;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use App\DataTables\UserDataTable;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\DataTables\UserDataTable;
 
 /**
  * @resource User
