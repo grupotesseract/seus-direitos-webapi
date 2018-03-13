@@ -51,3 +51,6 @@ Route::resource('categorias', 'CategoriaAPIController', ['except' => [
 Route::resource('sindicatos', 'SindicatoAPIController', ['except' => [
     'create', 'edit',
 ]]);
+
+
+Route::resource('beneficios', 'BeneficioAPIController');

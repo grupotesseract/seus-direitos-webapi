@@ -54,3 +54,6 @@ Route::group(['middleware' => 'auth:web'], function () {
 Route::resource('eventos', 'EventoController');
 
 Route::resource('promocaos', 'PromocaoController');
+
+
+Route::resource('beneficios', 'BeneficioController');

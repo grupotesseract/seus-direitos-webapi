@@ -11,7 +11,7 @@
         "inIndex": false
     },
     {
-        "name": "estado_id",
+        "name": "sindicato_id",
         "dbType": "integer,false",
         "htmlType": null,
         "validations": null,
@@ -56,6 +56,6 @@
     },
     {
         "type": "relation",
-        "relation": "mt1,Estado"
+        "relation": "mt1,Sindicato"
     }
 ]
