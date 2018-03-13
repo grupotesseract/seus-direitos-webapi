@@ -31,4 +31,5 @@ class BeneficioRepository extends BaseRepository
     {
         return Beneficio::class;
     }
+
 }
