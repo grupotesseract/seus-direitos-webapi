@@ -65,4 +65,21 @@ class SindicatoAPIController extends AppBaseController
 
         return $this->sendResponse($sindicato->toArray(), 'Sindicato retrieved successfully');
     }
+
+    /**
+     * Metodo para retornar os beneficios de um sindicato.
+     *
+     * @param $id do Sindicato
+     */
+    public function getBeneficiosPorSindicato($id)
+    {
+        /** @var Estado $estado */
+        $sindicato = $this->sindicatoRepository->find($id)->first();
+
+        if (empty($sindicato)) {
+            return $this->sendError('Sindicato não encontrado');
+        }
+
+        return $this->sendResponse($sindicato->beneficios->toArray(), 'Beneficios do '.$sindicato->nome.':');
+    }
 }

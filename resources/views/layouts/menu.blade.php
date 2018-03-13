@@ -60,3 +60,7 @@
 @endrole
 
 
+<li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
+    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-edit"></i><span>Beneficios</span></a>
+</li>
+
