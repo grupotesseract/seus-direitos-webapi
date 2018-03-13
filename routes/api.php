@@ -13,6 +13,41 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Rota para login via API
+Route::post('login', 'AuthAPIController@login');
+
+//Rota para register via API
+Route::post('register', 'AuthAPIController@register');
+
+/*
+ * Rotas protegidas
+ */
+Route::group(['middleware' => 'auth:api'], function () {
+
+    //Retorna o usuario logado
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 });
+
+//Listagem de estados
+Route::resource('estados', 'EstadoAPIController', ['except' => [
+    'edit', 'create', 'show', 'store', 'update', 'destroy',
+]]);
+
+//Listagem de cidades
+Route::resource('cidades', 'CidadeAPIController', ['except' => [
+    'edit', 'create', 'show', 'store', 'update', 'destroy',
+]]);
+
+//Listagem de cidades de 1 estado
+Route::get('estados/{id}/cidades', 'EstadoAPIController@getCidadesPorEstado');
+
+//Listagem de Categorias
+Route::resource('categorias', 'CategoriaAPIController', ['except' => [
+    'edit', 'create', 'show', 'store', 'update', 'destroy',
+]]);
+
+Route::resource('sindicatos', 'SindicatoAPIController', ['except' => [
+    'create', 'edit',
+]]);

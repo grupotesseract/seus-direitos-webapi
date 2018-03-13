@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+/**
+ * @resource Register
+ *
+ * Register
+ */
 class RegisterController extends Controller
 {
     /*
@@ -58,7 +63,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return User
      */
     protected function create(array $data)
     {
