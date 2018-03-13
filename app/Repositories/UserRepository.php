@@ -71,4 +71,27 @@ class UserRepository extends BaseRepository
 
         return false;
     }
+
+    /**
+     * Atualiza o user aceitando ou cancelando o aceite de contribuicao
+     */
+    public function togglAceiteContribuicao(User $user)
+    {
+        // Se ja permitir, entao esta cancelando, atualizar data de cancelamento
+        if ($user->aceitou_contribuicao) {
+            $user->data_cancelou_contribuicao = \Carbon\Carbon::now();
+        }
+
+        else {
+            $user->data_aceitou_contribuicao = \Carbon\Carbon::now();
+        }
+
+        $user->aceitou_contribuicao = !$user->aceitou_contribuicao;
+        return $user->save();
+    }
+    
+
+
+
+
 }
