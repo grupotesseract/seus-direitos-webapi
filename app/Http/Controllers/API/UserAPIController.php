@@ -26,27 +26,24 @@ class UserAPIController extends AppBaseController
 
 
     /**
-     * undocumented function
+     * Metodo para dar Toggl no Aceite da Contribuição sindical
      *
-     * @return void
+     * @return json
      */
-    public function postAceiteContribuicao()
+    public function postTogglContribuicaoSindical()
     {
         $user = Auth::user();
         $mensagem = '';
 
         if ($user->aceitou_contribuicao) {
-            $mensagem = 'Aceite da contribuição realizado com sucesso!';
+            $mensagem = 'Cancelamento da contribuição realizado com sucesso!';
         }
         else {
-            $mensagem = 'Cancelamento da contribuição realizado com sucesso!';
+            $mensagem = 'Aceite da contribuição realizado com sucesso!';
         }
 
         $this->userRepository->togglAceiteContribuicao($user);
         return $this->sendResponse([], $mensagem);
     }
     
-
-
-
 }

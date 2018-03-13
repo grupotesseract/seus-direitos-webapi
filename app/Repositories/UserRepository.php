@@ -74,6 +74,8 @@ class UserRepository extends BaseRepository
 
     /**
      * Atualiza o user aceitando ou cancelando o aceite de contribuicao
+     *
+     * @param App\Models\User $user
      */
     public function togglAceiteContribuicao(User $user)
     {
@@ -82,8 +84,10 @@ class UserRepository extends BaseRepository
             $user->data_cancelou_contribuicao = \Carbon\Carbon::now();
         }
 
+        // Se esta permitindo, remover data cancelamento para garantir :)
         else {
             $user->data_aceitou_contribuicao = \Carbon\Carbon::now();
+            $user->data_cancelou_contribuicao = null;
         }
 
         $user->aceitou_contribuicao = !$user->aceitou_contribuicao;

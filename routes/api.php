@@ -29,8 +29,8 @@ Route::group(['middleware' => 'auth:api'], function () {
         return $request->user();
     });
 
-    //Aceita ou Cancela o aceite digital
-    Route::get('/toggl', 'UserAPIController@postAceiteContribuicao');
+    //Rota para Aceitar ou Cancelar a contribuição sindical
+    Route::post('/toggl', 'UserAPIController@postTogglContribuicaoSindical');
 
 });
 

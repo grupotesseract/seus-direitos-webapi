@@ -43,6 +43,11 @@ class AuthAPIController extends AppBaseController
         }
     }
 
+    /**
+     * Metodo para fazer register via API
+     *
+     * @param Request 
+     */
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
