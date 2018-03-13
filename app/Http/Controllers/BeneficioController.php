@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Flash;
+use Response;
 use App\DataTables\BeneficioDataTable;
 use App\DataTables\Scopes\PorSindicato;
-use App\Http\Requests;
-use App\Http\Requests\CreateBeneficioRequest;
-use App\Http\Requests\UpdateBeneficioRequest;
 use App\Repositories\BeneficioRepository;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
-use Auth;
+use App\Http\Requests\CreateBeneficioRequest;
 
 class BeneficioController extends AppBaseController
 {
-    /** @var  BeneficioRepository */
+    /** @var BeneficioRepository */
     private $beneficioRepository;
 
     public function __construct(BeneficioRepository $beneficioRepo)
@@ -43,7 +40,8 @@ class BeneficioController extends AppBaseController
      */
     public function create()
     {
-        $sindicato_id = Auth::user()->hasRole('superadmin') ? null : Auth::user()->sindicato_id; 
+        $sindicato_id = Auth::user()->hasRole('superadmin') ? null : Auth::user()->sindicato_id;
+
         return view('beneficios.create')->with('sindicatoId', $sindicato_id);
     }
 

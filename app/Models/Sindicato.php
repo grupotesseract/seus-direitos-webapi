@@ -85,7 +85,6 @@ class Sindicato extends Model
         return $this->hasMany(\App\Models\User::class);
     }
 
-
     /**
      * Um Sindicato pode possuir varios beneficios.
      *
@@ -95,5 +94,4 @@ class Sindicato extends Model
     {
         return $this->hasMany(\App\Models\Beneficio::class);
     }
-    
 }
