@@ -90,12 +90,8 @@ class UserRepository extends BaseRepository
             $user->data_cancelou_contribuicao = null;
         }
 
-        $user->aceitou_contribuicao = !$user->aceitou_contribuicao;
+        $user->aceitou_contribuicao = ! $user->aceitou_contribuicao;
+
         return $user->save();
     }
-    
-
-
-
-
 }

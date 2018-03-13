@@ -1,13 +1,13 @@
 <?php
 
-use Faker\Factory as Faker;
 use App\Models\Beneficio;
+use Faker\Factory as Faker;
 use App\Repositories\BeneficioRepository;
 
 trait MakeBeneficioTrait
 {
     /**
-     * Create fake instance of Beneficio and save it in database
+     * Create fake instance of Beneficio and save it in database.
      *
      * @param array $beneficioFields
      * @return Beneficio
@@ -17,11 +17,12 @@ trait MakeBeneficioTrait
         /** @var BeneficioRepository $beneficioRepo */
         $beneficioRepo = App::make(BeneficioRepository::class);
         $theme = $this->fakeBeneficioData($beneficioFields);
+
         return $beneficioRepo->create($theme);
     }
 
     /**
-     * Get fake instance of Beneficio
+     * Get fake instance of Beneficio.
      *
      * @param array $beneficioFields
      * @return Beneficio
@@ -32,7 +33,7 @@ trait MakeBeneficioTrait
     }
 
     /**
-     * Get fake data of Beneficio
+     * Get fake data of Beneficio.
      *
      * @param array $postFields
      * @return array
@@ -45,7 +46,7 @@ trait MakeBeneficioTrait
             'sindicato_id' => $fake->randomDigitNotNull,
             'nome' => $fake->word,
             'created_at' => $fake->date('Y-m-d H:i:s'),
-            'updated_at' => $fake->date('Y-m-d H:i:s')
+            'updated_at' => $fake->date('Y-m-d H:i:s'),
         ], $beneficioFields);
     }
 }

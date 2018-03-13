@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use Response;
+use Auth;
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
-use Auth;
 
 /**
  * @resource User API
@@ -23,7 +21,6 @@ class UserAPIController extends AppBaseController
     {
         $this->userRepository = $userRepo;
     }
-
 
     /**
      * Metodo para dar Toggl no Aceite da Contribuição sindical
@@ -43,7 +40,7 @@ class UserAPIController extends AppBaseController
         }
 
         $this->userRepository->togglAceiteContribuicao($user);
+
         return $this->sendResponse([], $mensagem);
     }
-    
 }

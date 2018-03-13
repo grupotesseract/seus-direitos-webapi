@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers\API;
 
+use Response;
+use App\Models\Beneficio;
+use Illuminate\Http\Request;
+use App\Repositories\BeneficioRepository;
+use App\Http\Controllers\AppBaseController;
+use Prettus\Repository\Criteria\RequestCriteria;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use App\Http\Requests\API\CreateBeneficioAPIRequest;
 use App\Http\Requests\API\UpdateBeneficioAPIRequest;
-use App\Models\Beneficio;
-use App\Repositories\BeneficioRepository;
-use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
-use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 /**
- * Class BeneficioController
- * @package App\Http\Controllers\API
+ * Class BeneficioController.
  */
-
 class BeneficioAPIController extends AppBaseController
 {
-    /** @var  BeneficioRepository */
+    /** @var BeneficioRepository */
     private $beneficioRepository;
 
     public function __construct(BeneficioRepository $beneficioRepo)
@@ -29,7 +27,7 @@ class BeneficioAPIController extends AppBaseController
 
     /**
      * Display a listing of the Beneficio.
-     * GET|HEAD /beneficios
+     * GET|HEAD /beneficios.
      *
      * @param Request $request
      * @return Response
@@ -45,7 +43,7 @@ class BeneficioAPIController extends AppBaseController
 
     /**
      * Store a newly created Beneficio in storage.
-     * POST /beneficios
+     * POST /beneficios.
      *
      * @param CreateBeneficioAPIRequest $request
      *
@@ -62,7 +60,7 @@ class BeneficioAPIController extends AppBaseController
 
     /**
      * Display the specified Beneficio.
-     * GET|HEAD /beneficios/{id}
+     * GET|HEAD /beneficios/{id}.
      *
      * @param  int $id
      *
@@ -82,7 +80,7 @@ class BeneficioAPIController extends AppBaseController
 
     /**
      * Update the specified Beneficio in storage.
-     * PUT/PATCH /beneficios/{id}
+     * PUT/PATCH /beneficios/{id}.
      *
      * @param  int $id
      * @param UpdateBeneficioAPIRequest $request
@@ -107,7 +105,7 @@ class BeneficioAPIController extends AppBaseController
 
     /**
      * Remove the specified Beneficio from storage.
-     * DELETE /beneficios/{id}
+     * DELETE /beneficios/{id}.
      *
      * @param  int $id
      *
