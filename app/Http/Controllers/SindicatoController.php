@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Flash;
 use Response;
 use Illuminate\Http\Request;
-use App\DataTables\CidadesDataTable;
+use App\DataTables\CidadeDataTable;
 use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
@@ -44,7 +44,7 @@ class SindicatoController extends AppBaseController
     /**
      * Serve a view do Crud de sindicatos com a Datatable de cidades embutida.
      */
-    public function create(CidadesDataTable $cidadesDataTable)
+    public function create(CidadeDataTable $cidadesDataTable)
     {
         return $cidadesDataTable->render('sindicatos.create');
     }

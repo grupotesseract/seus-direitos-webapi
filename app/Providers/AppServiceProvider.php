@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Faker\Factory as FakerFactory;
+use Faker\Generator as FakerGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,9 +15,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \View::composer(
+            'sindicatos.fields', 'App\ViewComposers\SindicatoComposer'
+        );
+        \View::composer(
+            'users.fields', 'App\ViewComposers\UserSindicalistaComposer'
+        );
     }
-
     /**
      * Register any application services.
      *
@@ -23,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(FakerGenerator::class, function () {
+            return FakerFactory::create('pt_BR');
+        });
     }
 }
