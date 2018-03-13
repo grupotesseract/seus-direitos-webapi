@@ -3,7 +3,6 @@
 namespace App\ViewComposers;
 
 use Illuminate\View\View;
-use App\Models\Sindicato;
 use App\Repositories\SindicatoRepository;
 
 class SindicatoSelectComposer
