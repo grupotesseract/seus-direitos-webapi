@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use Response;
+use Auth;
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
-use Auth;
 
 /**
  * @resource User API
@@ -24,9 +22,8 @@ class UserAPIController extends AppBaseController
         $this->userRepository = $userRepo;
     }
 
-
     /**
-     * undocumented function
+     * undocumented function.
      *
      * @return void
      */
@@ -37,16 +34,12 @@ class UserAPIController extends AppBaseController
 
         if ($user->aceitou_contribuicao) {
             $mensagem = 'Aceite da contribuição realizado com sucesso!';
-        }
-        else {
+        } else {
             $mensagem = 'Cancelamento da contribuição realizado com sucesso!';
         }
 
         $this->userRepository->togglAceiteContribuicao($user);
+
         return $this->sendResponse([], $mensagem);
     }
-    
-
-
-
 }

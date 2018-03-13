@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Beneficio;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class BeneficioDataTable extends DataTable
 {
@@ -68,7 +68,7 @@ class BeneficioDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'nome'
+            'nome',
         ];
     }
 
@@ -79,6 +79,6 @@ class BeneficioDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'beneficiosdatatable_' . time();
+        return 'beneficiosdatatable_'.time();
     }
 }

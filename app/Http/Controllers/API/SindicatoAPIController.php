@@ -67,9 +67,9 @@ class SindicatoAPIController extends AppBaseController
     }
 
     /**
-     * Metodo para retornar os beneficios de um sindicato
+     * Metodo para retornar os beneficios de um sindicato.
      *
-     * @param $id do Sindicato 
+     * @param $id do Sindicato
      */
     public function getBeneficiosPorSindicato($id)
     {
@@ -82,8 +82,4 @@ class SindicatoAPIController extends AppBaseController
 
         return $this->sendResponse($sindicato->beneficios->toArray(), 'Beneficios do '.$sindicato->nome.':');
     }
-
-
-
-
 }

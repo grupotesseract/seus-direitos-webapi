@@ -10,7 +10,7 @@ class PorSindicato implements DataTableScope
     private $sindicatoId;
 
     /**
-     * @param mixed 
+     * @param mixed
      */
     public function __construct(User $user)
     {
@@ -18,7 +18,6 @@ class PorSindicato implements DataTableScope
             ? null
             : $user->sindicato_id;
     }
-    
 
     /**
      * Apply a query scope.
