@@ -6,10 +6,10 @@ use Flash;
 use Response;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use App\DataTables\UserDataTable;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use Prettus\Repository\Criteria\RequestCriteria;
 
 /**
  * @resource User
@@ -32,13 +32,9 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function index(Request $request)
+    public function index(UserDataTable $userDT)
     {
-        $this->userRepository->pushCriteria(new RequestCriteria($request));
-        $users = $this->userRepository->all();
-
-        return view('users.index')
-            ->with('users', $users);
+        return $userDT->render('users.index');
     }
 
     /**
@@ -222,15 +218,15 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getAll(Request $request)
+    public function getAll(UserDataTable $userDT)
     {
         if (\Laratrust::hasRole('sindicalista')) {
+            //@TODO aplicar scope para pegar apenas usuarios funcionarios
             $users = $this->userRepository->getUsuariosFuncionarios();
         } elseif (\Laratrust::hasRole('superadmin')) {
             $users = $this->userRepository->all();
         }
 
-        return view('users.index')
-            ->with('users', $users);
+        return $userDT->render('users.index');
     }
 }

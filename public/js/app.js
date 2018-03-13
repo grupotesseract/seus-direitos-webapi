@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -32,9 +32,6 @@
 /******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
 /******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
@@ -63,93 +60,29 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-//Acertando dependencias
-window.$ = window.jQuery = __webpack_require__(5);
-
+__webpack_require__(1);
 __webpack_require__(4);
+module.exports = __webpack_require__(5);
+
 
 /***/ }),
-/* 1 */,
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+//Acertando dependencias
+window.$ = window.jQuery = __webpack_require__(2);
+
+__webpack_require__(3);
+
+/***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-/**
- * TUDO DENTRO DESSE BLOCO É EXECUTADO NO READY, APOS o DOM LOADED
- *
- * @PS: para utilizar do attr 'onclick' do html é necessario atribuir a funcao ao obj window.
- */
-$(function () {
-
-    bindaSelectCategorias();
-    bindaSelectSindicatos();
-
-    /**
-     * Funcao para 'clonar' a 1 linha da datatable de cidades e inserir como 
-     * uma cidade selecionada no crud de sindicatos
-     */
-    window.selecionarCidade = function (ev) {
-        var linha = $(ev.target).parents('tr');
-        var containerSelecionadas = $('.cidades-selecionadas');
-        var clone = linha.clone();
-        var htmlBtnRemover = "<i class='fa fa-close'></i> &nbsp; Remover ";
-
-        clone.find('a.btn.btn-info').attr('onclick', 'removerLinha(event)').removeClass('btn-info').addClass('btn-danger').html(htmlBtnRemover).next().removeAttr('disabled');
-
-        containerSelecionadas.append(clone);
-    };
-
-    /**
-     * Funcao para remover a cidade selecionada no crud de sindicatos
-     */
-    window.removerLinha = function (ev) {
-        $(ev.target).parents('tr').remove();
-    };
-});
-
-/**
- * Funcao para checar se existe um select de categorias e chama o select2
- */
-var bindaSelectCategorias = function bindaSelectCategorias() {
-    if ($('#id_categoria').length) {
-        $('#id_categoria').select2({
-            width: '100%'
-        });
-    }
-};
-
-/**
- *
- * Funcao para checar se existe um select de sindicatos e chama o select2
- */
-var bindaSelectSindicatos = function bindaSelectSindicatos() {
-    if ($('#sindicato_id').length) {
-        $('#sindicato_id').select2({
-            width: '100%'
-        });
-    }
-};
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10476,9 +10409,9 @@ jQuery.isNumeric = function( obj ) {
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
 if ( true ) {
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 		return jQuery;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
 
@@ -10520,13 +10453,76 @@ return jQuery;
 
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 3 */
+/***/ (function(module, exports) {
 
-__webpack_require__(0);
-__webpack_require__(2);
-module.exports = __webpack_require__(3);
+/**
+ * TUDO DENTRO DESSE BLOCO É EXECUTADO NO READY, APOS o DOM LOADED
+ *
+ * @PS: para utilizar do attr 'onclick' do html é necessario atribuir a funcao ao obj window.
+ */
+$(function () {
 
+    bindaSelectCategorias();
+    bindaSelectSindicatos();
+
+    /**
+     * Funcao para 'clonar' a 1 linha da datatable de cidades e inserir como 
+     * uma cidade selecionada no crud de sindicatos
+     */
+    window.selecionarCidade = function (ev) {
+        var linha = $(ev.target).parents('tr');
+        var containerSelecionadas = $('.cidades-selecionadas');
+        var clone = linha.clone();
+        var htmlBtnRemover = "<i class='fa fa-close'></i> &nbsp; Remover ";
+
+        clone.find('a.btn.btn-info').attr('onclick', 'removerLinha(event)').removeClass('btn-info').addClass('btn-danger').html(htmlBtnRemover).next().removeAttr('disabled');
+
+        containerSelecionadas.append(clone);
+    };
+
+    /**
+     * Funcao para remover a cidade selecionada no crud de sindicatos
+     */
+    window.removerLinha = function (ev) {
+        $(ev.target).parents('tr').remove();
+    };
+});
+
+/**
+ * Funcao para checar se existe um select de categorias e chama o select2
+ */
+var bindaSelectCategorias = function bindaSelectCategorias() {
+    if ($('#id_categoria').length) {
+        $('#id_categoria').select2({
+            width: '100%'
+        });
+    }
+};
+
+/**
+ *
+ * Funcao para checar se existe um select de sindicatos e chama o select2
+ */
+var bindaSelectSindicatos = function bindaSelectSindicatos() {
+    if ($('#sindicato_id').length) {
+        $('#sindicato_id').select2({
+            width: '100%'
+        });
+    }
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
