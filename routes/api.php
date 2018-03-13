@@ -52,5 +52,7 @@ Route::resource('sindicatos', 'SindicatoAPIController', ['except' => [
     'create', 'edit',
 ]]);
 
+//Listagem de cidades de 1 estado
+Route::get('sindicatos/{id}/beneficios', 'SindicatoAPIController@getBeneficiosPorSindicato');
 
 Route::resource('beneficios', 'BeneficioAPIController');

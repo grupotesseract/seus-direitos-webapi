@@ -47,7 +47,12 @@ class Beneficio extends Model
     public static $rules = [
         'nome' => 'required',
         'sindicato_id' => 'required|exists:sindicatos,id'
-        
+    ];
+
+   public $hidden = [
+       'sindicato_id',
+       'created_at',
+       'updated_at',
     ];
 
     /**

@@ -60,72 +60,7 @@ class BeneficioController extends AppBaseController
 
         $beneficio = $this->beneficioRepository->create($input);
 
-        Flash::success('Beneficio saved successfully.');
-
-        return redirect(route('beneficios.index'));
-    }
-
-    /**
-     * Display the specified Beneficio.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $beneficio = $this->beneficioRepository->findWithoutFail($id);
-
-        if (empty($beneficio)) {
-            Flash::error('Beneficio not found');
-
-            return redirect(route('beneficios.index'));
-        }
-
-        return view('beneficios.show')->with('beneficio', $beneficio);
-    }
-
-    /**
-     * Show the form for editing the specified Beneficio.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $beneficio = $this->beneficioRepository->findWithoutFail($id);
-
-        if (empty($beneficio)) {
-            Flash::error('Beneficio not found');
-
-            return redirect(route('beneficios.index'));
-        }
-
-        return view('beneficios.edit')->with('beneficio', $beneficio);
-    }
-
-    /**
-     * Update the specified Beneficio in storage.
-     *
-     * @param  int              $id
-     * @param UpdateBeneficioRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateBeneficioRequest $request)
-    {
-        $beneficio = $this->beneficioRepository->findWithoutFail($id);
-
-        if (empty($beneficio)) {
-            Flash::error('Beneficio not found');
-
-            return redirect(route('beneficios.index'));
-        }
-
-        $beneficio = $this->beneficioRepository->update($request->all(), $id);
-
-        Flash::success('Beneficio updated successfully.');
+        Flash::success('Beneficio criado com sucesso.');
 
         return redirect(route('beneficios.index'));
     }
@@ -142,14 +77,14 @@ class BeneficioController extends AppBaseController
         $beneficio = $this->beneficioRepository->findWithoutFail($id);
 
         if (empty($beneficio)) {
-            Flash::error('Beneficio not found');
+            Flash::error('Beneficio não encontrado');
 
             return redirect(route('beneficios.index'));
         }
 
         $this->beneficioRepository->delete($id);
 
-        Flash::success('Beneficio deleted successfully.');
+        Flash::success('Beneficio removido.');
 
         return redirect(route('beneficios.index'));
     }

@@ -42,17 +42,21 @@ class BeneficioDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '80px'])
+            ->addAction(['width' => '80px', 'title' => ''])
             ->parameters([
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
                 'buttons' => [
-                    'create',
-                    'export',
-                    'print',
-                    'reset',
-                    'reload',
+                    [
+                         'extend'  => 'collection',
+                         'text'    => '<i class="fa fa-download"></i> Exportar',
+                         'buttons' => [
+                             'csv',
+                             'excel',
+                         ],
+                    ],
                 ],
+                'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
             ]);
     }
 
@@ -64,7 +68,6 @@ class BeneficioDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'sindicato_id',
             'nome'
         ];
     }
