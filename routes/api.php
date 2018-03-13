@@ -31,7 +31,6 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     //Rota para Aceitar ou Cancelar a contribuição sindical
     Route::post('/toggl', 'UserAPIController@postTogglContribuicaoSindical');
-
 });
 
 //Listagem de estados

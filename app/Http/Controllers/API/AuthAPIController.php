@@ -44,9 +44,9 @@ class AuthAPIController extends AppBaseController
     }
 
     /**
-     * Metodo para fazer register via API
+     * Metodo para fazer register via API.
      *
-     * @param Request 
+     * @param Request
      */
     public function register(Request $request)
     {
