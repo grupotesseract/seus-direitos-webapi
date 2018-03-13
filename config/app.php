@@ -183,13 +183,15 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Laravel\Passport\PassportServiceProvider::class,
-        Yajra\Datatables\DatatablesServiceProvider::class,
 
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
 
-        // Datatables
+        // Yajra Datatables v7
         Yajra\Datatables\DatatablesServiceProvider::class,
+        // Yajra Datatables html
+        Yajra\Datatables\HtmlServiceProvider::class,
+        // Yajra Datatables buttons
         Yajra\Datatables\ButtonsServiceProvider::class,
 
         // CORS

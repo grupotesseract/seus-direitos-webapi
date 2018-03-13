@@ -10,7 +10,7 @@ use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\DataTables\UserDataTable;
+use App\DataTables\UsersDataTable;
 
 /**
  * @resource User
@@ -33,7 +33,7 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function index(UserDataTable $userDT)
+    public function index(UsersDataTable $userDT)
     {
         return $userDT->render('users.index');
     }
