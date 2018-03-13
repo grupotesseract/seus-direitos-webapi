@@ -31,7 +31,6 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     //Aceita ou Cancela o aceite digital
     Route::get('/toggl', 'UserAPIController@postAceiteContribuicao');
-
 });
 
 //Listagem de estados

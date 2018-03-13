@@ -3,29 +3,24 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Beneficio
- * @package App\Models
+ * Class Beneficio.
  * @version March 13, 2018, 6:27 pm UTC
  *
  * @property \App\Models\Sindicato sindicato
- * @property integer sindicato_id
+ * @property int sindicato_id
  * @property string nome
  */
 class Beneficio extends Model
 {
-
     public $table = 'beneficios';
-    
 
     protected $dates = ['deleted_at'];
 
-
     public $fillable = [
         'sindicato_id',
-        'nome'
+        'nome',
     ];
 
     /**
@@ -36,20 +31,20 @@ class Beneficio extends Model
     protected $casts = [
         'id' => 'integer',
         'sindicato_id' => 'integer',
-        'nome' => 'string'
+        'nome' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
         'nome' => 'required',
-        'sindicato_id' => 'required|exists:sindicatos,id'
+        'sindicato_id' => 'required|exists:sindicatos,id',
     ];
 
-   public $hidden = [
+    public $hidden = [
        'sindicato_id',
        'created_at',
        'updated_at',
