@@ -42,8 +42,8 @@ class CidadeDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->parameters([
-                        'dom'     => 'Bfrtip',
-                        'order'   => [[0, 'desc']],
+                        'dom' => 'Bfrtip',
+                        'buttons' => ['export'],
                         'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
                     ]);
     }
