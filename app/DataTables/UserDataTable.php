@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\User;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class UserDataTable extends DataTable
 {
@@ -17,9 +17,11 @@ class UserDataTable extends DataTable
     public function dataTable($query)
     {
         $dataTable = new EloquentDataTable($query);
+
         return $dataTable
-            ->addColumn('tipo', function($model) {
-                $temRoles = !$model->roles->isEmpty();                
+            ->addColumn('tipo', function ($model) {
+                $temRoles = ! $model->roles->isEmpty();
+
                 return $temRoles ? $model->roles->first()->display_name : '';
             })
             ->addColumn('action', 'users.datatables_actions');
@@ -63,7 +65,7 @@ class UserDataTable extends DataTable
         return [
             ['name' => 'name', 'data' => 'name', 'title' => 'Nome'],
             ['name' => 'email', 'data' => 'email', 'title' => 'Email'],
-            'tipo'
+            'tipo',
         ];
     }
 
@@ -74,6 +76,6 @@ class UserDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'usersdatatable_' . time();
+        return 'usersdatatable_'.time();
     }
 }

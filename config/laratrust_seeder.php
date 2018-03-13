@@ -1,4 +1,5 @@
 <?php
+
 return [
     'role_structure' => [
         'superadmin' => [

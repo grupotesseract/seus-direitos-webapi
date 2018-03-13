@@ -68,6 +68,6 @@ class CidadeDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Cidade_' . date('YmdHis');
+        return 'Cidade_'.date('YmdHis');
     }
 }
