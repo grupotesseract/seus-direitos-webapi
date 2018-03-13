@@ -42,7 +42,7 @@ class CidadeDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->parameters([
-                        'dom' => '<"wrapper-busca"f>rti',
+                        'dom' => 'frti',
                         'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
                     ]);
     }

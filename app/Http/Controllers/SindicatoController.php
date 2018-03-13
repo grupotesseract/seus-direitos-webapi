@@ -98,7 +98,7 @@ class SindicatoController extends AppBaseController
      *
      * @return Response
      */
-    public function edit(CidadesDataTable $cidadesDataTable, $id)
+    public function edit(CidadeDataTable $cidadesDataTable, $id)
     {
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
 
