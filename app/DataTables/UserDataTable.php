@@ -49,30 +49,6 @@ class UserDataTable extends DataTable
             ->addAction(['width' => '10%', 'title'=> 'Ação'])
             ->parameters([
                 'dom'     => 'Bfrtip',
-                'order'   => [[0, 'desc']],
-                'buttons' => [
-                    [
-                        'extend' => 'print',
-                        'text'    => '<i class="fa fa-print"></i> Imprimir',
-                    ],
-
-                    [
-                        'extend' => 'reload',
-                        'text'    => '<i class="fa fa-refresh"></i> Atualizar',
-                    ],
-                    [
-                         'extend'  => 'collection',
-                         'text'    => '<i class="fa fa-download"></i> Exportar',
-                         'buttons' => [
-                             'csv',
-                             'excel',
-                         ],
-                    ],
-                    [
-                        'extend' => 'colvis',
-                        'text'    => 'Filtrar Colunas',
-                    ],
-                ],
                 'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
             ]);
     }

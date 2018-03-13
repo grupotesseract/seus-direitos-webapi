@@ -42,8 +42,7 @@ class CidadeDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->parameters([
-                        'dom' => 'Bfrtip',
-                        'buttons' => ['export'],
+                        'dom' => '<"wrapper-busca"f>rti',
                         'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
                     ]);
     }
@@ -58,7 +57,7 @@ class CidadeDataTable extends DataTable
         return [
             'selecionar' => ['name' => 'selecionar', 'orderable'=>false, 'searchable' => false],
             'nome' => ['name' => 'nome', 'data' => 'nome'],
-            'estado' => ['name' => 'estado.sigla', 'data' => 'estado.sigla', 'searchable' => true,  'orderable'=>false],
+            'estado' => ['name' => 'estado.sigla', 'data' => 'estado.sigla', 'orderable'=>false],
         ];
     }
 
