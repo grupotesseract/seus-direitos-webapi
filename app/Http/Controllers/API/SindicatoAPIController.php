@@ -41,7 +41,7 @@ class SindicatoAPIController extends AppBaseController
         //Settando um Presenter para retornar apenas as informacoes relevantes
         $this->sindicatoRepository->setPresenter(SindicatoPresenter::class);
 
-        $sindicatos = $this->sindicatoRepository->all();
+        $sindicatos = $this->sindicatoRepository->allFixed();
 
         return $this->sendResponse($sindicatos, 'Sindicatos retrieved successfully');
     }
