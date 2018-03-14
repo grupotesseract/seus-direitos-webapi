@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Video
@@ -19,13 +18,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Video extends Model
 {
-    use SoftDeletes;
 
     public $table = 'videos';
-    
 
     protected $dates = ['deleted_at'];
-
 
     public $fillable = [
         'destaque',
@@ -41,7 +37,6 @@ class Video extends Model
      * @var array
      */
     protected $casts = [
-        'destaque' => 'boolean',
         'sindicato_id' => 'integer',
         'titulo' => 'string',
         'descricao' => 'string',
@@ -66,4 +61,5 @@ class Video extends Model
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
     }
+
 }

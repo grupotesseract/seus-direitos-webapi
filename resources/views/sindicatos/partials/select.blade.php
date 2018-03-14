@@ -4,7 +4,7 @@
 
 
 {!! Form::label('sindicato_id', 'Sindicato:') !!}
-{!! Form::select('sindicato_id', $selectSindicatos, isset($sindicatoId) ? $sindicatoId : null, ['class' => 'form-control select2', isset($sindicatoId) ? 'disabled' : '' ] ) !!}
+{!! Form::select('sindicato_id', [null]+$selectSindicatos->toArray(), isset($sindicatoId) ? $sindicatoId : null, ['class' => 'form-control select2', isset($sindicatoId) ? 'disabled' : '' ] ) !!}
 
 @if ( isset($sindicatoId) )
 {!! Form::hidden('sindicato_id', $sindicatoId) !!}

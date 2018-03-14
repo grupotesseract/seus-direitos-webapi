@@ -57,16 +57,24 @@
 <li class="{{ Request::is('promocaos*') ? 'active' : '' }}">
     <a href="{!! route('promocaos.index') !!}"><i class="fa fa-edit"></i><span>Promoções</span></a>
 </li>
-@endrole
-
 
 <li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
     <a href="{!! route('beneficios.index') !!}"><i class="fa fa-edit"></i><span>Beneficios</span></a>
 </li>
 
-
-
 <li class="{{ Request::is('videos*') ? 'active' : '' }}">
     <a href="{!! route('videos.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
 </li>
 
+@endrole
+
+
+@role('sindicalista')
+<li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
+    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-edit"></i><span>Beneficios</span></a>
+</li>
+
+<li class="{{ Request::is('videos*') ? 'active' : '' }}">
+    <a href="{!! route('videos.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
+</li>
+@endrole

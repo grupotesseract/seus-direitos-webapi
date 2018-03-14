@@ -34,4 +34,33 @@ class VideoRepository extends BaseRepository
     {
         return Video::class;
     }
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     */
+    public function setVideoDestaque(Video $video)
+    {
+        $this->limpaVideosDestaque();
+
+        $result = $video->update([
+            'destaque' => true
+        ]);
+
+        return $result;
+    }
+    
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     */
+    public function limpaVideosDestaque()
+    {
+        return $this->model->where('destaque', true)->update(['destaque' => false]);
+    }
+    
+
 }

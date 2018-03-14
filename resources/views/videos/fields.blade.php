@@ -1,7 +1,6 @@
 <!-- Sindicato Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('sindicato_id', 'Sindicato Id:') !!}
-    {!! Form::text('sindicato_id', null, ['class' => 'form-control']) !!}
+    @include('sindicatos.partials.select')
 </div>
 
 <!-- Titulo Field -->

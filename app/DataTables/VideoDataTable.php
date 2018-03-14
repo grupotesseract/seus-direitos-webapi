@@ -18,7 +18,15 @@ class VideoDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
+        if (\Auth::user()->hasRole("superadmin")) {
+            $dataTable->addColumn('destaque', function ($model) {
+                $emDestaque = $model->destaque;
+                return $emDestaque ? 'Sim' : 'Não';
+            });
+        }
+        
         return $dataTable->addColumn('action', 'videos.datatables_actions');
+
     }
 
     /**
@@ -42,17 +50,25 @@ class VideoDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '80px'])
+            ->addAction(['width' => '100px'])
             ->parameters([
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
                 'buttons' => [
-                    'create',
-                    'export',
-                    'print',
-                    'reset',
-                    'reload',
+                    [
+                        'extend'  => 'create',
+                        'text'    => '<i class="fa fa-plus"></i> Criar novo',
+                    ],
+                    [
+                        'extend'  => 'collection',
+                        'text'    => '<i class="fa fa-download"></i> Exportar',
+                        'buttons' => [
+                            'csv',
+                            'excel',
+                        ],
+                    ],
                 ],
+                'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
             ]);
     }
 
@@ -63,13 +79,17 @@ class VideoDataTable extends DataTable
      */
     protected function getColumns()
     {
-        return [
-            'destaque',
-            'sindicato_id',
-            'titulo',
-            'descricao',
-            'youtube_id'
-        ];
+        $array = \Auth::user()->hasRole("superadmin") 
+            ? ['destaque'] 
+            : [];
+
+        return $array
+            +
+            [
+                'titulo',
+                'descricao',
+                'youtube_id'
+            ];
     }
 
     /**

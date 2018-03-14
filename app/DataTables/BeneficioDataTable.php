@@ -48,12 +48,16 @@ class BeneficioDataTable extends DataTable
                 'order'   => [[0, 'desc']],
                 'buttons' => [
                     [
-                         'extend'  => 'collection',
-                         'text'    => '<i class="fa fa-download"></i> Exportar',
-                         'buttons' => [
-                             'csv',
-                             'excel',
-                         ],
+                        'extend'  => 'create',
+                        'text'    => '<i class="fa fa-plus"></i> Criar novo',
+                    ],
+                    [
+                        'extend'  => 'collection',
+                        'text'    => '<i class="fa fa-download"></i> Exportar',
+                        'buttons' => [
+                            'csv',
+                            'excel',
+                        ],
                     ],
                 ],
                 'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],

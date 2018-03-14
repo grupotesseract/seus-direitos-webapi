@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\VideoDataTable;
+use Auth;
+use Flash;
+use Response;
 use App\Http\Requests;
+use App\DataTables\VideoDataTable;
+use App\Repositories\VideoRepository;
+use App\DataTables\Scopes\PorSindicato;
 use App\Http\Requests\CreateVideoRequest;
 use App\Http\Requests\UpdateVideoRequest;
-use App\Repositories\VideoRepository;
-use Flash;
 use App\Http\Controllers\AppBaseController;
-use Response;
 
 class VideoController extends AppBaseController
 {
@@ -29,7 +31,9 @@ class VideoController extends AppBaseController
      */
     public function index(VideoDataTable $videoDataTable)
     {
-        return $videoDataTable->render('videos.index');
+        return $videoDataTable
+            ->addScope(new PorSindicato(Auth::user()))
+            ->render('videos.index');
     }
 
     /**
@@ -55,7 +59,7 @@ class VideoController extends AppBaseController
 
         $video = $this->videoRepository->create($input);
 
-        Flash::success('Video saved successfully.');
+        Flash::success('Video criado com sucesso.');
 
         return redirect(route('videos.index'));
     }
@@ -72,7 +76,7 @@ class VideoController extends AppBaseController
         $video = $this->videoRepository->findWithoutFail($id);
 
         if (empty($video)) {
-            Flash::error('Video not found');
+            Flash::error('Video não encontrado');
 
             return redirect(route('videos.index'));
         }
@@ -92,7 +96,7 @@ class VideoController extends AppBaseController
         $video = $this->videoRepository->findWithoutFail($id);
 
         if (empty($video)) {
-            Flash::error('Video not found');
+            Flash::error('Video não encontrado');
 
             return redirect(route('videos.index'));
         }
@@ -113,14 +117,14 @@ class VideoController extends AppBaseController
         $video = $this->videoRepository->findWithoutFail($id);
 
         if (empty($video)) {
-            Flash::error('Video not found');
+            Flash::error('Video não encontrado');
 
             return redirect(route('videos.index'));
         }
 
         $video = $this->videoRepository->update($request->all(), $id);
 
-        Flash::success('Video updated successfully.');
+        Flash::success('Video atualizado com sucesso.');
 
         return redirect(route('videos.index'));
     }
@@ -137,15 +141,39 @@ class VideoController extends AppBaseController
         $video = $this->videoRepository->findWithoutFail($id);
 
         if (empty($video)) {
-            Flash::error('Video not found');
+            Flash::error('Video não encontrado');
 
             return redirect(route('videos.index'));
         }
 
         $this->videoRepository->delete($id);
 
-        Flash::success('Video deleted successfully.');
+        Flash::success('Video removido com sucesso.');
 
         return redirect(route('videos.index'));
     }
+
+
+    /**
+     * Rota para settar o video de destaque
+     *
+     * @return void
+     */
+    public function postVideoDestaque($id)
+    {
+        $video = $this->videoRepository->findWithoutFail($id);
+        if (empty($video)) {
+            Flash::error('Video não encontrado');
+            return redirect(route('videos.index'));
+        }
+        
+        $deuCerto = $this->videoRepository->setVideoDestaque($video);
+
+        if ($deuCerto) {
+            Flash::success('Video em destaque atualizado.');
+        }
+
+        return redirect(route('videos.index'));
+    }
+    
 }
