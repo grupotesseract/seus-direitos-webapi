@@ -5,20 +5,18 @@ namespace App\Models;
 use Eloquent as Model;
 
 /**
- * Class Video
- * @package App\Models
+ * Class Video.
  * @version March 13, 2018, 9:17 pm BRT
  *
  * @property \App\Models\Sindicato sindicato
- * @property boolean destaque
- * @property integer sindicato_id
+ * @property bool destaque
+ * @property int sindicato_id
  * @property string titulo
  * @property string descricao
  * @property string youtube_id
  */
 class Video extends Model
 {
-
     public $table = 'videos';
 
     protected $dates = ['deleted_at'];
@@ -28,7 +26,7 @@ class Video extends Model
         'sindicato_id',
         'titulo',
         'descricao',
-        'youtube_id'
+        'youtube_id',
     ];
 
     /**
@@ -40,18 +38,18 @@ class Video extends Model
         'sindicato_id' => 'integer',
         'titulo' => 'string',
         'descricao' => 'string',
-        'youtube_id' => 'string'
+        'youtube_id' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
         'titulo' => 'required',
         'descricao' => 'required',
-        'youtube_id' => 'required'
+        'youtube_id' => 'required',
     ];
 
     /**
@@ -61,5 +59,4 @@ class Video extends Model
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
     }
-
 }

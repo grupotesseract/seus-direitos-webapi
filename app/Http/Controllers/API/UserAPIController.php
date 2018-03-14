@@ -23,7 +23,7 @@ class UserAPIController extends AppBaseController
     }
 
     /**
-     * Metodo para dar Toggl no Aceite da Contribuição sindical
+     * Metodo para dar Toggl no Aceite da Contribuição sindical.
      *
      * @return json
      */
@@ -34,8 +34,7 @@ class UserAPIController extends AppBaseController
 
         if ($user->aceitou_contribuicao) {
             $mensagem = 'Cancelamento da contribuição realizado com sucesso!';
-        }
-        else {
+        } else {
             $mensagem = 'Aceite da contribuição realizado com sucesso!';
         }
 

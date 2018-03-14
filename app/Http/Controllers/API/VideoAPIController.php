@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers\API;
 
+use Response;
+use App\Models\Video;
+use Illuminate\Http\Request;
+use App\Repositories\VideoRepository;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\API\CreateVideoAPIRequest;
 use App\Http\Requests\API\UpdateVideoAPIRequest;
-use App\Models\Video;
-use App\Repositories\VideoRepository;
-use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 
 /**
- * Class VideoController
- * @package App\Http\Controllers\API
+ * Class VideoController.
  */
-
 class VideoAPIController extends AppBaseController
 {
-    /** @var  VideoRepository */
+    /** @var VideoRepository */
     private $videoRepository;
 
     public function __construct(VideoRepository $videoRepo)
@@ -29,7 +27,7 @@ class VideoAPIController extends AppBaseController
 
     /**
      * Display a listing of the Video.
-     * GET|HEAD /videos
+     * GET|HEAD /videos.
      *
      * @param Request $request
      * @return Response
@@ -45,7 +43,7 @@ class VideoAPIController extends AppBaseController
 
     /**
      * Store a newly created Video in storage.
-     * POST /videos
+     * POST /videos.
      *
      * @param CreateVideoAPIRequest $request
      *
@@ -62,7 +60,7 @@ class VideoAPIController extends AppBaseController
 
     /**
      * Display the specified Video.
-     * GET|HEAD /videos/{id}
+     * GET|HEAD /videos/{id}.
      *
      * @param  int $id
      *
@@ -82,7 +80,7 @@ class VideoAPIController extends AppBaseController
 
     /**
      * Update the specified Video in storage.
-     * PUT/PATCH /videos/{id}
+     * PUT/PATCH /videos/{id}.
      *
      * @param  int $id
      * @param UpdateVideoAPIRequest $request
@@ -107,7 +105,7 @@ class VideoAPIController extends AppBaseController
 
     /**
      * Remove the specified Video from storage.
-     * DELETE /videos/{id}
+     * DELETE /videos/{id}.
      *
      * @param  int $id
      *
