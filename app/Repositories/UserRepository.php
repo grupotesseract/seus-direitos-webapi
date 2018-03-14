@@ -73,7 +73,7 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Atualiza o user aceitando ou cancelando o aceite de contribuicao
+     * Atualiza o user aceitando ou cancelando o aceite de contribuicao.
      *
      * @param App\Models\User $user
      */

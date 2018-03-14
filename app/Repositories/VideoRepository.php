@@ -6,14 +6,13 @@ use App\Models\Video;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class VideoRepository
- * @package App\Repositories
+ * Class VideoRepository.
  * @version March 13, 2018, 9:17 pm BRT
  *
  * @method Video findWithoutFail($id, $columns = ['*'])
  * @method Video find($id, $columns = ['*'])
  * @method Video first($columns = ['*'])
-*/
+ */
 class VideoRepository extends BaseRepository
 {
     /**
@@ -24,11 +23,11 @@ class VideoRepository extends BaseRepository
         'sindicato_id',
         'titulo',
         'descricao',
-        'youtube_id'
+        'youtube_id',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {
@@ -36,7 +35,7 @@ class VideoRepository extends BaseRepository
     }
 
     /**
-     * undocumented function
+     * undocumented function.
      *
      * @return void
      */
@@ -45,15 +44,14 @@ class VideoRepository extends BaseRepository
         $this->limpaVideosDestaque();
 
         $result = $video->update([
-            'destaque' => true
+            'destaque' => true,
         ]);
 
         return $result;
     }
-    
 
     /**
-     * undocumented function
+     * undocumented function.
      *
      * @return void
      */
@@ -61,6 +59,4 @@ class VideoRepository extends BaseRepository
     {
         return $this->model->where('destaque', true)->update(['destaque' => false]);
     }
-    
-
 }
