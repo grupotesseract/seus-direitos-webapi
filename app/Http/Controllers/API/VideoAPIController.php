@@ -126,4 +126,17 @@ class VideoAPIController extends AppBaseController
 
         return $this->sendResponse($id, 'Video deleted successfully');
     }
+
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     */
+    public function getVideoHome()
+    {
+        $video = $this->videoRepository->getVideoEmDestaque();
+        return $this->sendResponse($video->toArray(), 'Video em destaque');
+    }
+    
 }

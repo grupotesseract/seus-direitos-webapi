@@ -63,4 +63,15 @@ class VideoRepository extends BaseRepository
     }
     
 
+    /**
+     * undocumented function
+     *
+     * @return void
+     */
+    public function getVideoEmDestaque()
+    {
+        return $this->model->where('destaque', true)->get();
+    }
+    
+
 }

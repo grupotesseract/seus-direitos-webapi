@@ -62,5 +62,8 @@ Route::get('sindicatos/{id}/beneficios', 'SindicatoAPIController@getBeneficiosPo
 //Listagem de videos de 1 estado
 Route::get('sindicatos/{id}/videos', 'SindicatoAPIController@getVideosPorSindicato');
 
+//Video em destaque
+Route::get('video-home', 'VideoAPIController@getVideoHome');
+
 Route::resource('beneficios', 'BeneficioAPIController');
 Route::resource('videos', 'VideoAPIController');
