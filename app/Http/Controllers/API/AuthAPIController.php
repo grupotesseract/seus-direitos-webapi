@@ -37,7 +37,7 @@ class AuthAPIController extends AppBaseController
             $user = Auth::user();
             $success['token'] = $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
 
-            return response()->json(['success' => $success], $this->successStatus);
+            return response()->json(['success' => $success, 'data' => $user], $this->successStatus);
         } else {
             return response()->json(['error'=>'Unauthorised'], 401);
         }
