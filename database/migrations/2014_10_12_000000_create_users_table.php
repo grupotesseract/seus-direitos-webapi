@@ -18,6 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->boolean('aceitou_contribuicao')->default(false);
+            $table->datetime('data_aceitou_contribuicao')->nullable();
+            $table->datetime('data_cancelou_contribuicao')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
