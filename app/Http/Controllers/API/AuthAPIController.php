@@ -37,12 +37,17 @@ class AuthAPIController extends AppBaseController
             $user = Auth::user();
             $success['token'] = $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
 
-            return response()->json(['success' => $success], $this->successStatus);
+            return response()->json(['success' => $success, 'data' => $user], $this->successStatus);
         } else {
             return response()->json(['error'=>'Unauthorised'], 401);
         }
     }
 
+    /**
+     * Metodo para fazer register via API.
+     *
+     * @param Request
+     */
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [

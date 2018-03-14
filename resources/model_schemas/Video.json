@@ -1,7 +1,7 @@
 [
     {
         "name": "id",
-        "dbType": "integer,true",
+        "dbType": "increments",
         "htmlType": null,
         "validations": null,
         "searchable": false,
@@ -11,8 +11,19 @@
         "inIndex": false
     },
     {
-        "name": "estado_id",
-        "dbType": "integer,false",
+        "name": "destaque",
+        "dbType": "boolean:default,false",
+        "htmlType": null,
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
+        "inIndex": true
+    },
+    {
+        "name": "sindicato_id",
+        "dbType": "integer:nullable",
         "htmlType": null,
         "validations": null,
         "searchable": true,
@@ -22,10 +33,32 @@
         "inIndex": true
     },
     {
-        "name": "nome",
+        "name": "titulo",
         "dbType": "string",
         "htmlType": "text",
-        "validations": null,
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "descricao",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "youtube_id",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -56,6 +89,6 @@
     },
     {
         "type": "relation",
-        "relation": "mt1,Estado"
+        "relation": "mt1,Sindicato"
     }
 ]

@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\User;
+use App\Models\Beneficio;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Services\DataTable;
 
-class UserDataTable extends DataTable
+class BeneficioDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -18,13 +18,7 @@ class UserDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable
-            ->addColumn('tipo', function ($model) {
-                $temRoles = ! $model->roles->isEmpty();
-
-                return $temRoles ? $model->roles->first()->display_name : '';
-            })
-            ->addColumn('action', 'users.datatables_actions');
+        return $dataTable->addColumn('action', 'beneficios.datatables_actions');
     }
 
     /**
@@ -33,9 +27,9 @@ class UserDataTable extends DataTable
      * @param \App\Models\Post $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model)
+    public function query(Beneficio $model)
     {
-        return $model->newQuery()->with('roles');
+        return $model->newQuery();
     }
 
     /**
@@ -48,7 +42,7 @@ class UserDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '10%', 'title'=> 'Ação'])
+            ->addAction(['width' => '80px', 'title' => ''])
             ->parameters([
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
@@ -78,9 +72,7 @@ class UserDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['name' => 'name', 'data' => 'name', 'title' => 'Nome'],
-            ['name' => 'email', 'data' => 'email', 'title' => 'Email'],
-            'tipo',
+            'nome',
         ];
     }
 
@@ -91,6 +83,6 @@ class UserDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'usersdatatable_'.time();
+        return 'beneficiosdatatable_'.time();
     }
 }

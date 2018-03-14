@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\User;
+use App\Models\Video;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Services\DataTable;
 
-class UserDataTable extends DataTable
+class VideoDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -18,13 +18,15 @@ class UserDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable
-            ->addColumn('tipo', function ($model) {
-                $temRoles = ! $model->roles->isEmpty();
+        if (\Auth::user()->hasRole('superadmin')) {
+            $dataTable->addColumn('destaque', function ($model) {
+                $emDestaque = $model->destaque;
 
-                return $temRoles ? $model->roles->first()->display_name : '';
-            })
-            ->addColumn('action', 'users.datatables_actions');
+                return $emDestaque ? 'Sim' : 'Não';
+            });
+        }
+
+        return $dataTable->addColumn('action', 'videos.datatables_actions');
     }
 
     /**
@@ -33,9 +35,9 @@ class UserDataTable extends DataTable
      * @param \App\Models\Post $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model)
+    public function query(Video $model)
     {
-        return $model->newQuery()->with('roles');
+        return $model->newQuery();
     }
 
     /**
@@ -48,7 +50,7 @@ class UserDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '10%', 'title'=> 'Ação'])
+            ->addAction(['width' => '100px'])
             ->parameters([
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
@@ -77,11 +79,17 @@ class UserDataTable extends DataTable
      */
     protected function getColumns()
     {
-        return [
-            ['name' => 'name', 'data' => 'name', 'title' => 'Nome'],
-            ['name' => 'email', 'data' => 'email', 'title' => 'Email'],
-            'tipo',
-        ];
+        $array = \Auth::user()->hasRole('superadmin')
+            ? ['destaque']
+            : [];
+
+        return $array
+            +
+            [
+                'titulo',
+                'descricao',
+                'youtube_id',
+            ];
     }
 
     /**
@@ -91,6 +99,6 @@ class UserDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'usersdatatable_'.time();
+        return 'videosdatatable_'.time();
     }
 }
