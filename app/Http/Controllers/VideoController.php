@@ -5,17 +5,15 @@ namespace App\Http\Controllers;
 use Auth;
 use Flash;
 use Response;
-use App\Http\Requests;
 use App\DataTables\VideoDataTable;
 use App\Repositories\VideoRepository;
 use App\DataTables\Scopes\PorSindicato;
 use App\Http\Requests\CreateVideoRequest;
 use App\Http\Requests\UpdateVideoRequest;
-use App\Http\Controllers\AppBaseController;
 
 class VideoController extends AppBaseController
 {
-    /** @var  VideoRepository */
+    /** @var VideoRepository */
     private $videoRepository;
 
     public function __construct(VideoRepository $videoRepo)
@@ -153,9 +151,8 @@ class VideoController extends AppBaseController
         return redirect(route('videos.index'));
     }
 
-
     /**
-     * Rota para settar o video de destaque
+     * Rota para settar o video de destaque.
      *
      * @return void
      */
@@ -164,9 +161,10 @@ class VideoController extends AppBaseController
         $video = $this->videoRepository->findWithoutFail($id);
         if (empty($video)) {
             Flash::error('Video não encontrado');
+
             return redirect(route('videos.index'));
         }
-        
+
         $deuCerto = $this->videoRepository->setVideoDestaque($video);
 
         if ($deuCerto) {
@@ -175,5 +173,4 @@ class VideoController extends AppBaseController
 
         return redirect(route('videos.index'));
     }
-    
 }

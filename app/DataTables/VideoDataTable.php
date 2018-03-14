@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Video;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class VideoDataTable extends DataTable
 {
@@ -18,15 +18,15 @@ class VideoDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        if (\Auth::user()->hasRole("superadmin")) {
+        if (\Auth::user()->hasRole('superadmin')) {
             $dataTable->addColumn('destaque', function ($model) {
                 $emDestaque = $model->destaque;
+
                 return $emDestaque ? 'Sim' : 'Não';
             });
         }
-        
-        return $dataTable->addColumn('action', 'videos.datatables_actions');
 
+        return $dataTable->addColumn('action', 'videos.datatables_actions');
     }
 
     /**
@@ -79,8 +79,8 @@ class VideoDataTable extends DataTable
      */
     protected function getColumns()
     {
-        $array = \Auth::user()->hasRole("superadmin") 
-            ? ['destaque'] 
+        $array = \Auth::user()->hasRole('superadmin')
+            ? ['destaque']
             : [];
 
         return $array
@@ -88,7 +88,7 @@ class VideoDataTable extends DataTable
             [
                 'titulo',
                 'descricao',
-                'youtube_id'
+                'youtube_id',
             ];
     }
 
@@ -99,6 +99,6 @@ class VideoDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'videosdatatable_' . time();
+        return 'videosdatatable_'.time();
     }
 }

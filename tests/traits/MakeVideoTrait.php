@@ -1,13 +1,13 @@
 <?php
 
-use Faker\Factory as Faker;
 use App\Models\Video;
+use Faker\Factory as Faker;
 use App\Repositories\VideoRepository;
 
 trait MakeVideoTrait
 {
     /**
-     * Create fake instance of Video and save it in database
+     * Create fake instance of Video and save it in database.
      *
      * @param array $videoFields
      * @return Video
@@ -17,11 +17,12 @@ trait MakeVideoTrait
         /** @var VideoRepository $videoRepo */
         $videoRepo = App::make(VideoRepository::class);
         $theme = $this->fakeVideoData($videoFields);
+
         return $videoRepo->create($theme);
     }
 
     /**
-     * Get fake instance of Video
+     * Get fake instance of Video.
      *
      * @param array $videoFields
      * @return Video
@@ -32,7 +33,7 @@ trait MakeVideoTrait
     }
 
     /**
-     * Get fake data of Video
+     * Get fake data of Video.
      *
      * @param array $postFields
      * @return array
@@ -48,7 +49,7 @@ trait MakeVideoTrait
             'descricao' => $fake->word,
             'youtube_id' => $fake->word,
             'created_at' => $fake->date('Y-m-d H:i:s'),
-            'updated_at' => $fake->date('Y-m-d H:i:s')
+            'updated_at' => $fake->date('Y-m-d H:i:s'),
         ], $videoFields);
     }
 }
