@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Models\Sindicato;
-use Illuminate\Database\Eloquent\Builder;
 use InfyOm\Generator\Common\BaseRepository;
 
 class SindicatoRepository extends BaseRepository
