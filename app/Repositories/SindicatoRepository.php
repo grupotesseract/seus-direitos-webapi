@@ -23,7 +23,6 @@ class SindicatoRepository extends BaseRepository
     {
         return Sindicato::class;
     }
-    
 
     /**
      * Retorna os campos para um select id => Nome.
