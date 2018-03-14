@@ -53,3 +53,10 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::resource('promocaos', 'PromocaoController');
     Route::resource('beneficios', 'BeneficioController');
 });
+
+
+
+
+
+
+Route::resource('videos', 'VideoController');

@@ -60,3 +60,10 @@ Route::resource('sindicatos', 'SindicatoAPIController', ['except' => [
 Route::get('sindicatos/{id}/beneficios', 'SindicatoAPIController@getBeneficiosPorSindicato');
 
 Route::resource('beneficios', 'BeneficioAPIController');
+
+
+
+
+
+
+Route::resource('videos', 'VideoAPIController');
