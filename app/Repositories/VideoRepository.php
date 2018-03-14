@@ -61,7 +61,7 @@ class VideoRepository extends BaseRepository
     }
 
     /**
-     * undocumented function
+     * undocumented function.
      *
      * @return void
      */
