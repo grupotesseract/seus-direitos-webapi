@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Sindicato;
-use InfyOm\Generator\Common\BaseRepository;
 use Illuminate\Database\Eloquent\Builder;
+use InfyOm\Generator\Common\BaseRepository;
 
 class SindicatoRepository extends BaseRepository
 {
@@ -33,7 +33,7 @@ class SindicatoRepository extends BaseRepository
     }
 
     /**
-     * undocumented function
+     * undocumented function.
      *
      * @return void
      */
@@ -53,5 +53,4 @@ class SindicatoRepository extends BaseRepository
 
         return $results;
     }
-    
 }
