@@ -10,6 +10,8 @@ use App\DataTables\UserDataTable;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\DataTables\Scopes\PorRole;
+
 
 /**
  * @resource User
@@ -176,12 +178,11 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getAdmins(Request $request)
+    public function getAdmins(UserDataTable $userDT)
     {
-        $users = $this->userRepository->getUsuariosAdmins();
-
-        return view('users.lista-admins')
-            ->with('users', $users);
+        return $userDT
+            ->addScope(new PorRole('superadmin'))
+            ->render('users.lista-admins');
     }
 
     /**
@@ -190,12 +191,11 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getSindicalistas(Request $request)
+    public function getSindicalistas(UserDataTable $userDT)
     {
-        $users = $this->userRepository->getUsuariosSindicalistas();
-
-        return view('users.lista-sindicalistas')
-            ->with('users', $users);
+        return $userDT
+            ->addScope(new PorRole('sindicalista'))
+            ->render('users.lista-sindicalistas');
     }
 
     /**
@@ -204,12 +204,11 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getFuncionarios(Request $request)
+    public function getFuncionarios(UserDataTable $userDT)
     {
-        $users = $this->userRepository->getUsuariosFuncionarios();
-
-        return view('users.lista-funcionarios')
-            ->with('users', $users);
+        return $userDT
+            ->addScope(new PorRole('funcionario'))
+            ->render('users.lista-funcionarios');
     }
 
     /**
