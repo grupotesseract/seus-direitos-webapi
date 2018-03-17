@@ -7,11 +7,10 @@ use Response;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
+use App\DataTables\Scopes\PorRole;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\DataTables\Scopes\PorRole;
-
 
 /**
  * @resource User
