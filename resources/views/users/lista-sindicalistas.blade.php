@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1>Listagem de usuários do tipo sindicalista
+        <h1>Listagem de usuários do tipo Sindicalista
            <a class="btn btn-primary pull-right" style="margin-top: -5px;margin-bottom: 5px" href="/usuarios/sindicalistas/create">Criar novo</a>
         </h1>
     </section>

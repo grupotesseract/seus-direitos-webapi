@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1>Listagem de usuários do tipo funcionario</h1>
+        <h1>Listagem de usuários do tipo Funcionário - Feitos pelo Aplicativo</h1>
     </section>
     <div class="content">
         <div class="clearfix"></div>

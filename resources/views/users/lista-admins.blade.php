@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1>Listagem de usuários do tipo super-admin
+        <h1>Listagem de usuários do tipo Administradores
            <a class="btn btn-primary pull-right" style="margin-top: -5px;margin-bottom: 5px" href="/usuarios/administradores/create">Criar novo</a>
         </h1>
     </section>
