@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1>Listagem de usuários do tipo funcionario</h1>
+        <h1>Listagem de usuários do tipo Funcionário - Feitos pelo Aplicativo</h1>
     </section>
     <div class="content">
         <div class="clearfix"></div>
@@ -12,7 +12,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                    @include('users.table')
+                    @include('layouts.base-datatable')
             </div>
         </div>
     </div>

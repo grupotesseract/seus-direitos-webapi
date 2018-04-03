@@ -28,6 +28,9 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
+
+    //Rota para Aceitar ou Cancelar a contribuição sindical
+    Route::post('/toggl', 'UserAPIController@postTogglContribuicaoSindical');
 });
 
 //Listagem de estados
@@ -51,3 +54,15 @@ Route::resource('categorias', 'CategoriaAPIController', ['except' => [
 Route::resource('sindicatos', 'SindicatoAPIController', ['except' => [
     'create', 'edit',
 ]]);
+
+//Listagem de beneficios de 1 estado
+Route::get('sindicatos/{id}/beneficios', 'SindicatoAPIController@getBeneficiosPorSindicato');
+
+//Listagem de videos de 1 estado
+Route::get('sindicatos/{id}/videos', 'SindicatoAPIController@getVideosPorSindicato');
+
+//Video em destaque
+Route::get('video-home', 'VideoAPIController@getVideoHome');
+
+Route::resource('beneficios', 'BeneficioAPIController');
+Route::resource('videos', 'VideoAPIController');

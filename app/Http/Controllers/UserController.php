@@ -6,10 +6,11 @@ use Flash;
 use Response;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use App\DataTables\UserDataTable;
+use App\DataTables\Scopes\PorRole;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use Prettus\Repository\Criteria\RequestCriteria;
 
 /**
  * @resource User
@@ -32,13 +33,9 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function index(Request $request)
+    public function index(UserDataTable $userDT)
     {
-        $this->userRepository->pushCriteria(new RequestCriteria($request));
-        $users = $this->userRepository->all();
-
-        return view('users.index')
-            ->with('users', $users);
+        return $userDT->render('users.index');
     }
 
     /**
@@ -180,12 +177,11 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getAdmins(Request $request)
+    public function getAdmins(UserDataTable $userDT)
     {
-        $users = $this->userRepository->getUsuariosAdmins();
-
-        return view('users.lista-admins')
-            ->with('users', $users);
+        return $userDT
+            ->addScope(new PorRole('superadmin'))
+            ->render('users.lista-admins');
     }
 
     /**
@@ -194,12 +190,11 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getSindicalistas(Request $request)
+    public function getSindicalistas(UserDataTable $userDT)
     {
-        $users = $this->userRepository->getUsuariosSindicalistas();
-
-        return view('users.lista-sindicalistas')
-            ->with('users', $users);
+        return $userDT
+            ->addScope(new PorRole('sindicalista'))
+            ->render('users.lista-sindicalistas');
     }
 
     /**
@@ -208,12 +203,11 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getFuncionarios(Request $request)
+    public function getFuncionarios(UserDataTable $userDT)
     {
-        $users = $this->userRepository->getUsuariosFuncionarios();
-
-        return view('users.lista-funcionarios')
-            ->with('users', $users);
+        return $userDT
+            ->addScope(new PorRole('funcionario'))
+            ->render('users.lista-funcionarios');
     }
 
     /**
@@ -222,15 +216,15 @@ class UserController extends AppBaseController
      * @param Request $request
      * @return Response
      */
-    public function getAll(Request $request)
+    public function getAll(UserDataTable $userDT)
     {
         if (\Laratrust::hasRole('sindicalista')) {
+            //@TODO aplicar scope para pegar apenas usuarios funcionarios
             $users = $this->userRepository->getUsuariosFuncionarios();
         } elseif (\Laratrust::hasRole('superadmin')) {
             $users = $this->userRepository->all();
         }
 
-        return view('users.index')
-            ->with('users', $users);
+        return $userDT->render('users.index');
     }
 }

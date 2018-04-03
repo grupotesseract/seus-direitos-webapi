@@ -45,7 +45,7 @@
                 <hr>
 
                 <div class="datatable-crud-sindicatos">
-                    @include('sindicatos.cidades-table')
+                    @include('layouts.base-datatable')
                 </div>
             </div>
         </div>
