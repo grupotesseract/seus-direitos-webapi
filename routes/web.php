@@ -65,3 +65,5 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 
 Route::resource('convencaos', 'ConvencaoController');
+
+Route::resource('noticias', 'NoticiasController');
