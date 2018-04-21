@@ -9,10 +9,17 @@
     {!! Form::label('arquivo', 'Arquivo:') !!}
     {!! Form::file('arquivo') !!}
 </div>
+
+<div class="form-group col-sm-12">
+    {!! Form::label('arquivo', 'Categoria:') !!}
+    {!! Form::select('categoria_id', $categorias, isset($convencao) ? $convencao->categoria_id : null , ['placeholder' => 'Escolha uma Categoria']) !!}
+</div>
+
+
 <div class="clearfix"></div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('convencaos.index') !!}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('convencaos.index') !!}" class="btn btn-default">Cancelar</a>
 </div>

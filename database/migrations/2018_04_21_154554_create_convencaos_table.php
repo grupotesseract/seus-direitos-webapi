@@ -17,6 +17,10 @@ class CreateConvencaosTable extends Migration
             $table->increments('id');
             $table->string('resumo');
             $table->string('arquivo');
+            $table->integer('categoria_id')->unsigned();
+            $table->foreign('categoria_id')
+                ->references('id')
+                ->on('categorias');
             $table->timestamps();
             $table->softDeletes();
         });

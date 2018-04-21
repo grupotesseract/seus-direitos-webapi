@@ -11,6 +11,8 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
+use App\Models\Categoria as Categoria;
+
 class ConvencaoController extends AppBaseController
 {
     /** @var  ConvencaoRepository */
@@ -39,7 +41,8 @@ class ConvencaoController extends AppBaseController
      */
     public function create()
     {
-        return view('convencaos.create');
+        $categorias = Categoria::all()->pluck('nome','id')->toArray();
+        return view('convencaos.create')->with('categorias', $categorias);
     }
 
     /**
@@ -51,11 +54,15 @@ class ConvencaoController extends AppBaseController
      */
     public function store(CreateConvencaoRequest $request)
     {
+        $arquivo = $request->file('arquivo')->store('arquivos_convencao');
+
         $input = $request->all();
+
+        $input['arquivo'] = $arquivo;
 
         $convencao = $this->convencaoRepository->create($input);
 
-        Flash::success('Convencao saved successfully.');
+        Flash::success('Convenção salva com sucesso.');
 
         return redirect(route('convencaos.index'));
     }
@@ -72,7 +79,7 @@ class ConvencaoController extends AppBaseController
         $convencao = $this->convencaoRepository->findWithoutFail($id);
 
         if (empty($convencao)) {
-            Flash::error('Convencao not found');
+            Flash::error('Convenção Coletiva não encontrada');
 
             return redirect(route('convencaos.index'));
         }
@@ -92,12 +99,14 @@ class ConvencaoController extends AppBaseController
         $convencao = $this->convencaoRepository->findWithoutFail($id);
 
         if (empty($convencao)) {
-            Flash::error('Convencao not found');
+            Flash::error('Convenção Coletiva não encontrada');
 
             return redirect(route('convencaos.index'));
         }
 
-        return view('convencaos.edit')->with('convencao', $convencao);
+        $categorias = Categoria::all()->pluck('nome','id')->toArray();
+
+        return view('convencaos.edit')->with(['convencao' => $convencao, 'categorias' => $categorias]);
     }
 
     /**
@@ -113,14 +122,14 @@ class ConvencaoController extends AppBaseController
         $convencao = $this->convencaoRepository->findWithoutFail($id);
 
         if (empty($convencao)) {
-            Flash::error('Convencao not found');
+            Flash::error('Convenção Coletiva não encontrada');
 
             return redirect(route('convencaos.index'));
         }
 
         $convencao = $this->convencaoRepository->update($request->all(), $id);
 
-        Flash::success('Convencao updated successfully.');
+        Flash::success('Convenção Coletiva salva com sucesso.');
 
         return redirect(route('convencaos.index'));
     }
@@ -137,14 +146,14 @@ class ConvencaoController extends AppBaseController
         $convencao = $this->convencaoRepository->findWithoutFail($id);
 
         if (empty($convencao)) {
-            Flash::error('Convencao not found');
+            Flash::error('Convenção Coletiva não encontrada');
 
             return redirect(route('convencaos.index'));
         }
 
         $this->convencaoRepository->delete($id);
 
-        Flash::success('Convencao deleted successfully.');
+        Flash::success('Convenção Coletiva excluída com sucesso.');
 
         return redirect(route('convencaos.index'));
     }
