@@ -52,7 +52,7 @@ class Sindicato extends Model
      **/
     public function categoria()
     {
-        return $this->belongsTo(\App\Models\Categoria::class);
+        return $this->belongsTo(\App\Models\Categoria::class, 'id_categoria');
     }
 
     /**

@@ -79,6 +79,6 @@
 </li>
 @endrole
 <li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
-    <a href="{!! route('convencaos.index') !!}"><i class="fa fa-edit"></i><span>Convencaos</span></a>
+    <a href="{!! route('convencaos.index') !!}"><i class="fa fa-edit"></i><span>Convenções Coletivas</span></a>
 </li>
 

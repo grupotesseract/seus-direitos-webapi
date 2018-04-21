@@ -46,8 +46,14 @@ class Convencao extends Model
      */
     public static $rules = [
         'resumo' => 'required',
-        'arquivo' => 'required'
+        'arquivo' => 'required',
+        'categoria_id' => 'required'
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(\App\Models\Categoria::class);
+    }
 
     
 }

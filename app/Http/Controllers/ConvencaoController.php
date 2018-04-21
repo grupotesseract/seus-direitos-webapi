@@ -12,6 +12,9 @@ use App\Http\Controllers\AppBaseController;
 use Response;
 
 use App\Models\Categoria as Categoria;
+use App\Models\Sindicato as Sindicato;
+
+use Illuminate\Support\Facades\Storage;
 
 class ConvencaoController extends AppBaseController
 {
@@ -54,7 +57,9 @@ class ConvencaoController extends AppBaseController
      */
     public function store(CreateConvencaoRequest $request)
     {
-        $arquivo = $request->file('arquivo')->store('arquivos_convencao');
+        //$arquivo = $request->file('arquivo')->store('arquivos_convencao');
+
+        $arquivo = Storage::putFile('arquivos_convencao', $request->file('arquivo'), 'public');
 
         $input = $request->all();
 
@@ -127,7 +132,13 @@ class ConvencaoController extends AppBaseController
             return redirect(route('convencaos.index'));
         }
 
-        $convencao = $this->convencaoRepository->update($request->all(), $id);
+        $arquivo = $request->file('arquivo')->store('arquivos_convencao');
+
+        $input = $request->all();
+
+        $input['arquivo'] = $arquivo;
+
+        $convencao = $this->convencaoRepository->update($input, $id);
 
         Flash::success('Convenção Coletiva salva com sucesso.');
 
@@ -156,5 +167,20 @@ class ConvencaoController extends AppBaseController
         Flash::success('Convenção Coletiva excluída com sucesso.');
 
         return redirect(route('convencaos.index'));
+    }
+
+    public function getConvencoesPorSindicato($idSindicato)
+    {
+        $convencoes = Sindicato::find($idSindicato)->categoria->convencaos;
+
+        return view('convencaos.indexpublico')->with('convencoes', $convencoes);
+    }
+
+    public function downloadConvencao ($id)
+    {
+        $convencao = $this->convencaoRepository->findWithoutFail($id);
+        $arquivo = storage_path('app/'.$convencao->arquivo);
+        
+        return response()->download($arquivo);
     }
 }
