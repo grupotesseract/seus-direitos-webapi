@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Response;
 use App\DataTables\ConvencaoDataTable;
-use App\Http\Requests;
+use App\Repositories\ConvencaoRepository;
 use App\Http\Requests\CreateConvencaoRequest;
 use App\Http\Requests\UpdateConvencaoRequest;
-use App\Repositories\ConvencaoRepository;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class ConvencaoController extends AppBaseController
 {
-    /** @var  ConvencaoRepository */
+    /** @var ConvencaoRepository */
     private $convencaoRepository;
 
     public function __construct(ConvencaoRepository $convencaoRepo)
