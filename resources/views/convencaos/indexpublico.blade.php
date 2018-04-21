@@ -63,7 +63,7 @@
 
             <div class="col-lg-12">
                 <h2>{{$convencao->resumo}}</h2>    
-                <a href="{{ url('downloadconvencao/'.$convencao->id) }}">Fazer Download</a>            
+                <a class="btn btn-primary pull-left" href="{{ url('downloadconvencao/'.$convencao->id) }}">Fazer Download</a>    
             </div>
 
         </div>
