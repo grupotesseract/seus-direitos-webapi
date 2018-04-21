@@ -78,3 +78,7 @@
     <a href="{!! route('videos.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
 </li>
 @endrole
+<li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
+    <a href="{!! route('convencaos.index') !!}"><i class="fa fa-edit"></i><span>Convencaos</span></a>
+</li>
+

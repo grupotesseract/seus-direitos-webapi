@@ -56,3 +56,6 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::post('videos/{id}/destaque', 'VideoController@postVideoDestaque');
 });
+
+
+Route::resource('convencaos', 'ConvencaoController');
