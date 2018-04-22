@@ -12,7 +12,7 @@
 
 <div class="form-group col-sm-12">
     {!! Form::label('arquivo', 'Categoria:') !!}
-    {!! Form::select('categoria_id', $categorias, isset($convencao) ? $convencao->categoria_id : null , ['placeholder' => 'Escolha uma Categoria']) !!}
+    {!! Form::select('categoria_id', $categorias, isset($convencao) ? $convencao->categoria_id : null , ['placeholder' => 'Escolha uma Categoria', 'class' => 'form-control']) !!}
 </div>
 
 

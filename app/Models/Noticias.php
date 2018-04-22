@@ -28,7 +28,8 @@ class Noticias extends Model
     public $fillable = [
         'manchete',
         'corpo',
-        'thumbnail',
+        'thumbnailid',
+        'extensao',
         'sindicato_id'
     ];
 
@@ -40,7 +41,8 @@ class Noticias extends Model
     protected $casts = [
         'manchete' => 'string',
         'corpo' => 'string',
-        'thumbnail' => 'string',
+        'thumbnailid' => 'string',
+        'extensao' => 'string',
         'sindicato_id' => 'integer'
     ];
 
@@ -52,8 +54,12 @@ class Noticias extends Model
     public static $rules = [
         'manchete' => 'required',
         'corpo' => 'required',
-        'thumbnail' => 'required'
     ];
+
+    public function sindicato()
+    {
+        return $this->belongsTo(\App\Models\Sindicato::class);
+    }
 
     
 }

@@ -96,6 +96,13 @@
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/js/app.min.js"></script>
 
+<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+
+
+<script>    
+    CKEDITOR.replace('editor');
+</script>
+
 @yield('scripts')
 </body>
 </html>

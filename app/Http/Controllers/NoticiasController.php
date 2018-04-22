@@ -10,6 +10,9 @@ use App\Repositories\NoticiasRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use Cloudder;
+
+use App\Models\Sindicato as Sindicato;
 
 class NoticiasController extends AppBaseController
 {
@@ -39,7 +42,9 @@ class NoticiasController extends AppBaseController
      */
     public function create()
     {
-        return view('noticias.create');
+        $sindicatos = Sindicato::all()->pluck('nome','id')->toArray();
+        
+        return view('noticias.create')->with('sindicatos', $sindicatos);
     }
 
     /**
@@ -51,11 +56,18 @@ class NoticiasController extends AppBaseController
      */
     public function store(CreateNoticiasRequest $request)
     {
+        $cloud = Cloudder::upload($request->file('thumbnail')->path());
+
+        $extensao = $request->file('thumbnail')->extension();
+        $publicId = Cloudder::getPublicId();
+
+        $request->request->add(['thumbnailid' => $publicId, 'extensao' => $extensao]);
+
         $input = $request->all();
 
         $noticias = $this->noticiasRepository->create($input);
 
-        Flash::success('Noticias saved successfully.');
+        Flash::success('Noticia salva com sucesso.');
 
         return redirect(route('noticias.index'));
     }
@@ -72,7 +84,7 @@ class NoticiasController extends AppBaseController
         $noticias = $this->noticiasRepository->findWithoutFail($id);
 
         if (empty($noticias)) {
-            Flash::error('Noticias not found');
+            Flash::error('Notícia não encontrada');
 
             return redirect(route('noticias.index'));
         }
@@ -92,12 +104,14 @@ class NoticiasController extends AppBaseController
         $noticias = $this->noticiasRepository->findWithoutFail($id);
 
         if (empty($noticias)) {
-            Flash::error('Noticias not found');
+            Flash::error('Notícia não encontrada');
 
             return redirect(route('noticias.index'));
         }
 
-        return view('noticias.edit')->with('noticias', $noticias);
+        $sindicatos = Sindicato::all()->pluck('nome','id')->toArray();
+        
+        return view('noticias.edit')->with(['noticias' => $noticias, 'sindicatos' => $sindicatos]);
     }
 
     /**
@@ -113,14 +127,21 @@ class NoticiasController extends AppBaseController
         $noticias = $this->noticiasRepository->findWithoutFail($id);
 
         if (empty($noticias)) {
-            Flash::error('Noticias not found');
+            Flash::error('Notícia não encontrada');
 
             return redirect(route('noticias.index'));
         }
 
+        $cloud = Cloudder::upload($request->file('thumbnail')->path());
+
+        $extensao = $request->file('thumbnail')->extension();
+        $publicId = Cloudder::getPublicId();
+
+        $request->request->add(['thumbnailid' => $publicId, 'extensao' => $extensao]);
+
         $noticias = $this->noticiasRepository->update($request->all(), $id);
 
-        Flash::success('Noticias updated successfully.');
+        Flash::success('Noticia atualizada com sucesso.');
 
         return redirect(route('noticias.index'));
     }
@@ -137,15 +158,29 @@ class NoticiasController extends AppBaseController
         $noticias = $this->noticiasRepository->findWithoutFail($id);
 
         if (empty($noticias)) {
-            Flash::error('Noticias not found');
+            Flash::error('Notícia não encontrada');
 
             return redirect(route('noticias.index'));
         }
 
         $this->noticiasRepository->delete($id);
 
-        Flash::success('Noticias deleted successfully.');
+        Flash::success('Noticias excluída com sucesso.');
 
         return redirect(route('noticias.index'));
+    }
+
+    public function getNoticiasPorSindicato($idSindicato)
+    {
+        $noticias = Sindicato::find($idSindicato)->noticias;
+
+        return view('noticias.indexpublico')->with('noticias', $noticias);
+    }
+
+    public function detalhaNoticia($id)
+    {
+        $noticia = $this->noticiasRepository->findWithoutFail($id);
+
+        return view('noticias.detalhapublico')->with('noticia', $noticia);
     }
 }

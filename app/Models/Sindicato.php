@@ -94,4 +94,9 @@ class Sindicato extends Model
     {
         return $this->hasMany(\App\Models\Beneficio::class);
     }
+
+    public function noticias()
+    {
+        return $this->hasMany(\App\Models\Noticias::class);
+    }
 }

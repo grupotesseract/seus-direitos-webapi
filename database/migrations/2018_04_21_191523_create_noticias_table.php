@@ -17,7 +17,8 @@ class CreateNoticiasTable extends Migration
             $table->increments('id');
             $table->text('manchete');
             $table->text('corpo');
-            $table->string('thumbnail', 1000);
+            $table->string('thumbnailid', 1000);
+            $table->string('extensao');
             $table->integer('sindicato_id')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();

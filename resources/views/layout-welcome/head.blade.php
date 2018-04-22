@@ -10,6 +10,7 @@
     <!-- Fonts -->
 
     <!-- Normalize CDN -->
+    <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous">
 
     <!-- CSS/SASS -->

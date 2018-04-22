@@ -33,7 +33,11 @@ Route::get('saaebauru/convenios/alameda/promocoes', 'PromocaoController@indexpub
 //Listagem de convenções de 1 sindicato
 Route::get('sindicatos/{idSindicato}/convencoes', 'ConvencaoController@getConvencoesPorSindicato');
 
+//Listagem de noticias de 1 sindicato
+Route::get('sindicatos/{idSindicato}/noticias', 'NoticiasController@getNoticiasPorSindicato');
+
 Route::get('downloadconvencao/{id}', 'ConvencaoController@downloadConvencao');
+Route::get('detalhanoticia/{id}', 'NoticiasController@detalhaNoticia');
 
 
 /*
