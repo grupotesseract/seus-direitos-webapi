@@ -6,31 +6,28 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Noticias
- * @package App\Models
+ * Class Noticias.
  * @version April 21, 2018, 7:15 pm BRT
  *
  * @property string manchete
  * @property string corpo
  * @property string thumbnail
- * @property integer sindicato_id
+ * @property int sindicato_id
  */
 class Noticias extends Model
 {
     use SoftDeletes;
 
     public $table = 'noticias';
-    
 
     protected $dates = ['deleted_at'];
-
 
     public $fillable = [
         'manchete',
         'corpo',
         'thumbnailid',
         'extensao',
-        'sindicato_id'
+        'sindicato_id',
     ];
 
     /**
@@ -43,11 +40,11 @@ class Noticias extends Model
         'corpo' => 'string',
         'thumbnailid' => 'string',
         'extensao' => 'string',
-        'sindicato_id' => 'integer'
+        'sindicato_id' => 'integer',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
@@ -60,6 +57,4 @@ class Noticias extends Model
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
     }
-
-    
 }

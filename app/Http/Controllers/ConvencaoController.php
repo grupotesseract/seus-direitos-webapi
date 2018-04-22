@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use Flash;
 use Response;
 use App\DataTables\ConvencaoDataTable;
+use App\Models\Categoria as Categoria;
+use App\Models\Sindicato as Sindicato;
+use Illuminate\Support\Facades\Storage;
 use App\Repositories\ConvencaoRepository;
 use App\Http\Requests\CreateConvencaoRequest;
 use App\Http\Requests\UpdateConvencaoRequest;
-
-use App\Models\Categoria as Categoria;
-use App\Models\Sindicato as Sindicato;
-
-use Illuminate\Support\Facades\Storage;
 
 class ConvencaoController extends AppBaseController
 {
@@ -42,7 +40,8 @@ class ConvencaoController extends AppBaseController
      */
     public function create()
     {
-        $categorias = Categoria::all()->pluck('nome','id')->toArray();
+        $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
+
         return view('convencaos.create')->with('categorias', $categorias);
     }
 
@@ -107,7 +106,7 @@ class ConvencaoController extends AppBaseController
             return redirect(route('convencaos.index'));
         }
 
-        $categorias = Categoria::all()->pluck('nome','id')->toArray();
+        $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
 
         return view('convencaos.edit')->with(['convencao' => $convencao, 'categorias' => $categorias]);
     }
@@ -174,11 +173,11 @@ class ConvencaoController extends AppBaseController
         return view('convencaos.indexpublico')->with('convencoes', $convencoes);
     }
 
-    public function downloadConvencao ($id)
+    public function downloadConvencao($id)
     {
         $convencao = $this->convencaoRepository->findWithoutFail($id);
         $arquivo = storage_path('app/'.$convencao->arquivo);
-        
+
         return response()->download($arquivo);
     }
 }
