@@ -6,8 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Convencao
- * @package App\Models
+ * Class Convencao.
  * @version April 21, 2018, 3:45 pm BRT
  *
  * @property string resumo
@@ -18,15 +17,12 @@ class Convencao extends Model
     use SoftDeletes;
 
     public $table = 'convencaos';
-    
 
     protected $dates = ['deleted_at'];
-
 
     public $fillable = [
         'resumo',
         'arquivo',
-        'categoria_id'
     ];
 
     /**
@@ -36,11 +32,11 @@ class Convencao extends Model
      */
     protected $casts = [
         'resumo' => 'string',
-        'arquivo' => 'string'
+        'arquivo' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
@@ -56,4 +52,5 @@ class Convencao extends Model
     }
 
     
+
 }

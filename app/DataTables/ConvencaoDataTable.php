@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Convencao;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class ConvencaoDataTable extends DataTable
 {
@@ -72,7 +72,7 @@ class ConvencaoDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'resumo'
+            'resumo',
         ];
     }
 
@@ -83,6 +83,6 @@ class ConvencaoDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'convencaosdatatable_' . time();
+        return 'convencaosdatatable_'.time();
     }
 }
