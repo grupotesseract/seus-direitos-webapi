@@ -78,3 +78,11 @@
     <a href="{!! route('videos.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
 </li>
 @endrole
+<li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
+    <a href="{!! route('convencaos.index') !!}"><i class="fa fa-edit"></i><span>Convenções Coletivas</span></a>
+</li>
+
+<li class="{{ Request::is('noticias*') ? 'active' : '' }}">
+    <a href="{!! route('noticias.index') !!}"><i class="fa fa-edit"></i><span>Noticias</span></a>
+</li>
+

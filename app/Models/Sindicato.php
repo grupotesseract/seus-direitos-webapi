@@ -52,7 +52,7 @@ class Sindicato extends Model
      **/
     public function categoria()
     {
-        return $this->belongsTo(\App\Models\Categoria::class);
+        return $this->belongsTo(\App\Models\Categoria::class, 'id_categoria');
     }
 
     /**
@@ -93,5 +93,10 @@ class Sindicato extends Model
     public function beneficios()
     {
         return $this->hasMany(\App\Models\Beneficio::class);
+    }
+
+    public function noticias()
+    {
+        return $this->hasMany(\App\Models\Noticias::class);
     }
 }
