@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Cloudder;
+use Response;
 use App\DataTables\NoticiasDataTable;
-use App\Http\Requests;
+use App\Models\Sindicato as Sindicato;
+use App\Repositories\NoticiasRepository;
 use App\Http\Requests\CreateNoticiasRequest;
 use App\Http\Requests\UpdateNoticiasRequest;
-use App\Repositories\NoticiasRepository;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
-use Cloudder;
-
-use App\Models\Sindicato as Sindicato;
 
 class NoticiasController extends AppBaseController
 {
-    /** @var  NoticiasRepository */
+    /** @var NoticiasRepository */
     private $noticiasRepository;
 
     public function __construct(NoticiasRepository $noticiasRepo)
@@ -42,8 +39,8 @@ class NoticiasController extends AppBaseController
      */
     public function create()
     {
-        $sindicatos = Sindicato::all()->pluck('nome','id')->toArray();
-        
+        $sindicatos = Sindicato::all()->pluck('nome', 'id')->toArray();
+
         return view('noticias.create')->with('sindicatos', $sindicatos);
     }
 
@@ -109,8 +106,8 @@ class NoticiasController extends AppBaseController
             return redirect(route('noticias.index'));
         }
 
-        $sindicatos = Sindicato::all()->pluck('nome','id')->toArray();
-        
+        $sindicatos = Sindicato::all()->pluck('nome', 'id')->toArray();
+
         return view('noticias.edit')->with(['noticias' => $noticias, 'sindicatos' => $sindicatos]);
     }
 
