@@ -44,6 +44,11 @@ class Categoria extends Model
      **/
     public function sindicatos()
     {
-        return $this->hasMany(\App\Models\Sindicato::class);
+        return $this->hasMany(\App\Models\Sindicato::class, 'id_categoria');
+    }
+
+    public function convencaos()
+    {
+        return $this->hasMany(\App\Models\Convencao::class);
     }
 }

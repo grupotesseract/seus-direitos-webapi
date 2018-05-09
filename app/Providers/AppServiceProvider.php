@@ -21,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
         \View::composer(
             'users.fields', 'App\ViewComposers\UserSindicalistaComposer'
         );
+
+        \View::composer('sindicatos.partials.select', 'App\ViewComposers\SindicatoSelectComposer');
     }
 
     /**

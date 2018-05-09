@@ -30,6 +30,16 @@ Route::get('saaebauru/convenios/alameda/filmes', 'FilmeController@indexpublic');
 Route::get('saaebauru/convenios/alameda/eventos', 'EventoController@indexpublic');
 Route::get('saaebauru/convenios/alameda/promocoes', 'PromocaoController@indexpublic');
 
+//Listagem de convenções de 1 sindicato
+Route::get('sindicatos/{idSindicato}/convencoes', 'ConvencaoController@getConvencoesPorSindicato');
+
+//Listagem de noticias de 1 sindicato
+Route::get('sindicatos/{idSindicato}/noticias', 'NoticiasController@getNoticiasPorSindicato');
+
+Route::get('downloadconvencao/{id}', 'ConvencaoController@downloadConvencao');
+Route::get('detalhanoticia/{id}', 'NoticiasController@detalhaNoticia');
+
+
 /*
  * Rotas protegidas
  */
@@ -49,8 +59,15 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::resource('categorias', 'CategoriaController');
     Route::resource('sindicatos', 'SindicatoController');
+    Route::resource('eventos', 'EventoController');
+    Route::resource('promocaos', 'PromocaoController');
+    Route::resource('beneficios', 'BeneficioController');
+    Route::resource('videos', 'VideoController');
+
+    Route::post('videos/{id}/destaque', 'VideoController@postVideoDestaque');
 });
 
-Route::resource('eventos', 'EventoController');
+Route::resource('convencaos', 'ConvencaoController');
 
-Route::resource('promocaos', 'PromocaoController');
+Route::resource('noticias', 'NoticiasController');
+

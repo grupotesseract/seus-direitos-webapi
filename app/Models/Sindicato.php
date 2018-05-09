@@ -52,7 +52,7 @@ class Sindicato extends Model
      **/
     public function categoria()
     {
-        return $this->belongsTo(\App\Models\Categoria::class);
+        return $this->belongsTo(\App\Models\Categoria::class, 'id_categoria');
     }
 
     /**
@@ -78,10 +78,25 @@ class Sindicato extends Model
     /**
      * Um Sindicato pode possuir varios associados.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
      **/
     public function associados()
     {
         return $this->hasMany(\App\Models\User::class);
+    }
+
+    /**
+     * Um Sindicato pode possuir varios beneficios.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     **/
+    public function beneficios()
+    {
+        return $this->hasMany(\App\Models\Beneficio::class);
+    }
+
+    public function noticias()
+    {
+        return $this->hasMany(\App\Models\Noticias::class);
     }
 }
