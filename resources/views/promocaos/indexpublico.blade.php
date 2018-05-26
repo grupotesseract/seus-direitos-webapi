@@ -1,7 +1,7 @@
 @extends('layout-welcome.head')
 
 <style>
-    
+
     .filme {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -10,7 +10,7 @@
         border-bottom: 1px solid gray;
     }
 
-    
+
 
     .filme h2, .filme h3 {
         color: #6c6c6c;
@@ -48,7 +48,7 @@
     body {
         font-family: 'Hind', sans-serif;
     }
-    
+
 </style>
 
 
@@ -57,12 +57,12 @@
 <!-- TRADUZIR LABELS -->
 
 <div class="container">
-    
+
     <header class="section">
         <div class="row">
             <div class="col-lg-4 col-md-12">
                 <img src="http://alamedaqualitycenter.com.br/wp-content/themes/alameda/img/logo.png" height="89" width="354" class="logo img-responsive">
-            </div>            
+            </div>
         </div>
     </header>
 
@@ -76,20 +76,20 @@
             </div>
         </div>
     </div>
-    
+
     @foreach ($promocoes as $promocao)
         <div class="row filme">
             <div class="col-lg-3">
 
-                <img style="margin-left: 7px" width="387" height="512" src="http://res.cloudinary.com/fernandes/image/upload/{{$promocao->linkimagem}}.{{$promocao->extensao}}" class="img-responsive wp-post-image" alt="">
-           
+                <img style="margin-left: 7px" width="387" height="512" src="https://res.cloudinary.com/fernandes/image/upload/{{$promocao->linkimagem}}.{{$promocao->extensao}}" class="img-responsive wp-post-image" alt="">
+
 
             </div>
 
             <div class="col-lg-9">
                 <h2>{{$promocao->nome}}</h2>
                 <p style="font-size: 25px">{!! nl2br(e($promocao->descricao)) !!}</p>
-                <p style="font-size: 25px">{!! nl2br(e($promocao->observacao)) !!}</p>               
+                <p style="font-size: 25px">{!! nl2br(e($promocao->observacao)) !!}</p>
             </div>
 
 
