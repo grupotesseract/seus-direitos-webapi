@@ -23,6 +23,7 @@ class Convencao extends Model
     public $fillable = [
         'resumo',
         'arquivo',
+        'categoria_id'
     ];
 
     /**
