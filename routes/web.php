@@ -39,7 +39,6 @@ Route::get('sindicatos/{idSindicato}/noticias', 'NoticiasController@getNoticiasP
 Route::get('downloadconvencao/{id}', 'ConvencaoController@downloadConvencao');
 Route::get('detalhanoticia/{id}', 'NoticiasController@detalhaNoticia');
 
-
 /*
  * Rotas protegidas
  */
@@ -70,4 +69,3 @@ Route::group(['middleware' => 'auth:web'], function () {
 Route::resource('convencaos', 'ConvencaoController');
 
 Route::resource('noticias', 'NoticiasController');
-
