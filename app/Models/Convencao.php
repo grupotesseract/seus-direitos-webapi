@@ -23,7 +23,7 @@ class Convencao extends Model
     public $fillable = [
         'resumo',
         'arquivo',
-        'categoria_id'
+        'categoria_id',
     ];
 
     /**
@@ -44,14 +44,11 @@ class Convencao extends Model
     public static $rules = [
         'resumo' => 'required',
         'arquivo' => 'required',
-        'categoria_id' => 'required'
+        'categoria_id' => 'required',
     ];
 
     public function categoria()
     {
         return $this->belongsTo(\App\Models\Categoria::class);
     }
-
-    
-
 }
