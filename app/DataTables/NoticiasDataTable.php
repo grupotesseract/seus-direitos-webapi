@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Noticias;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class NoticiasDataTable extends DataTable
 {
@@ -72,7 +72,7 @@ class NoticiasDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'manchete'
+            'manchete',
         ];
     }
 
@@ -83,6 +83,6 @@ class NoticiasDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'noticiasdatatable_' . time();
+        return 'noticiasdatatable_'.time();
     }
 }
