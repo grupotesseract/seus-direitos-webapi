@@ -66,7 +66,7 @@ class SindicatoController extends AppBaseController
             $sindicato->cidades()->sync($request->id_cidades);
         }
 
-        Flash::success('Sindicato saved successfully.');
+        Flash::success('Sindicato salvo com sucesso.');
 
         return redirect(route('sindicatos.index'));
     }
@@ -160,7 +160,7 @@ class SindicatoController extends AppBaseController
 
         $this->sindicatoRepository->delete($id);
 
-        Flash::success('Sindicato deleted successfully.');
+        Flash::success('Sindicato excluído com successo.');
 
         return redirect(route('sindicatos.index'));
     }

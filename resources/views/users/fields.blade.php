@@ -1,6 +1,6 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', 'Nome:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -33,6 +33,21 @@
     <div class="form-group col-sm-6">
         {!! Form::label('tipo', 'Tipo:') !!}
         {!! Form::text('tipo', "sindicalista", ['class'=> 'form-control', 'disabled']) !!}
+    </div>
+
+    <!-- Sindicato Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('sindicato_id', 'Sindicato:') !!}
+        {!! Form::select('sindicato_id', $sindicatos, isset($user) ? $user->sindicato->id : null) !!}
+    </div>
+
+@elseif (\Request::segment(2) == 'funcionarios')
+    {!! Form::hidden('role', 'funcionario') !!}
+
+    <!-- Sindicato Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('tipo', 'Tipo:') !!}
+        {!! Form::text('tipo', "funcionario", ['class'=> 'form-control', 'disabled']) !!}
     </div>
 
     <!-- Sindicato Field -->
