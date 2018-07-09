@@ -53,7 +53,7 @@ class UserDataTable extends DataTable
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
                 'buttons' => [
-                    
+
                     [
                         'extend'  => 'collection',
                         'text'    => '<i class="fa fa-download"></i> Exportar',
