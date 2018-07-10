@@ -35,6 +35,7 @@ class AuthAPIController extends AppBaseController
     {
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             $user = Auth::user();
+            $user->load('sindicato');
             $success['token'] = $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
 
             return response()->json(['success' => $success, 'data' => $user], $this->successStatus);
