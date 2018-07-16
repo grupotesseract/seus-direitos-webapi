@@ -59,6 +59,16 @@ class UserController extends AppBaseController
     }
 
     /**
+     * Show the form for creating a new User do tipo funcionario.
+     *
+     * @return Response
+     */
+    public function createFuncionario()
+    {
+        return view('users.create-funcionario');
+    }
+
+    /**
      * Store a newly created User in storage.
      *
      * @param CreateUserRequest $request
@@ -77,7 +87,7 @@ class UserController extends AppBaseController
             $user->attachRole($role);
         }
 
-        Flash::success('User saved successfully.');
+        Flash::success('Usuário salvo com sucesso.');
 
         return redirect(route('users.index'));
     }
@@ -94,7 +104,7 @@ class UserController extends AppBaseController
         $user = $this->userRepository->findWithoutFail($id);
 
         if (empty($user)) {
-            Flash::error('User not found');
+            Flash::error('Usuário não encontrado');
 
             return redirect(route('users.index'));
         }
@@ -114,7 +124,7 @@ class UserController extends AppBaseController
         $user = $this->userRepository->findWithoutFail($id);
 
         if (empty($user)) {
-            Flash::error('User not found');
+            Flash::error('Usuário não encontrado');
 
             return redirect(route('users.index'));
         }
@@ -135,14 +145,14 @@ class UserController extends AppBaseController
         $user = $this->userRepository->findWithoutFail($id);
 
         if (empty($user)) {
-            Flash::error('User not found');
+            Flash::error('Usuário não encontrado');
 
             return redirect(route('users.index'));
         }
 
         $user = $this->userRepository->update($request->all(), $id);
 
-        Flash::success('User updated successfully.');
+        Flash::success('Usuário atualizado com sucesso.');
 
         return redirect(route('users.index'));
     }
@@ -159,14 +169,14 @@ class UserController extends AppBaseController
         $user = $this->userRepository->findWithoutFail($id);
 
         if (empty($user)) {
-            Flash::error('User not found');
+            Flash::error('Usuário não encontrado');
 
             return redirect(route('users.index'));
         }
 
         $this->userRepository->delete($id);
 
-        Flash::success('User deleted successfully.');
+        Flash::success('Usuário excluído com sucesso.');
 
         return redirect(route('users.index'));
     }

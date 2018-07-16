@@ -55,6 +55,11 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('usuarios/funcionarios', 'UserController@getFuncionarios');
     Route::get('usuarios/administradores/create', 'UserController@createAdmin');
     Route::get('usuarios/sindicalistas/create', 'UserController@createSindicalista');
+    Route::get('usuarios/funcionarios/create', 'UserController@createFuncionario');
+
+    Route::get('usuarios/administradores/{id}/edit', 'UserController@edit');
+    Route::get('usuarios/sindicalistas/{id}/edit', 'UserController@edit');
+    Route::get('usuarios/funcionarios/{id}/edit', 'UserController@edit');
 
     Route::resource('categorias', 'CategoriaController');
     Route::resource('sindicatos', 'SindicatoController');
