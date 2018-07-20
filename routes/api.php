@@ -26,7 +26,9 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     //Retorna o usuario logado
     Route::get('/user', function (Request $request) {
-        return $request->user()->with('sindicato');
+        $user = $request->user(); 
+        $user->load('sindicato');
+        return $user;
     });
 
     //Rota para Aceitar ou Cancelar a contribuição sindical
