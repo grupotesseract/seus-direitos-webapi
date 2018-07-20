@@ -27,7 +27,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     //Retorna o usuario logado
     Route::get('/user', function (Request $request) {
         $user = $request->user();
-        $user->load('sindicato') ;
+        $user->load('sindicato');
+
         return $user;
     });
 
