@@ -86,3 +86,7 @@
     <a href="{!! route('noticias.index') !!}"><i class="fa fa-edit"></i><span>Noticias</span></a>
 </li>
 
+<li class="{{ Request::is('faleConoscos*') ? 'active' : '' }}">
+    <a href="{!! route('faleConoscos.index') !!}"><i class="fa fa-edit"></i><span>Fale Conoscos</span></a>
+</li>
+

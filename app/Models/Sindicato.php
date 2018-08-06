@@ -22,6 +22,7 @@ class Sindicato extends Model
         'sigla',
         'nome_responsavel',
         'id_categoria',
+        'email'
     ];
 
     /**
@@ -34,6 +35,7 @@ class Sindicato extends Model
         'nome' => 'string',
         'sigla' => 'string',
         'nome_responsavel' => 'string',
+        'email' => 'string'
     ];
 
     /**
