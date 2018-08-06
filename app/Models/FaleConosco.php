@@ -6,28 +6,25 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class FaleConosco
- * @package App\Models
+ * Class FaleConosco.
  * @version August 6, 2018, 11:14 am BRT
  *
  * @property string assunto
  * @property string texto
- * @property integer sindicato_id
+ * @property int sindicato_id
  */
 class FaleConosco extends Model
 {
     use SoftDeletes;
 
     public $table = 'fale_conoscos';
-    
 
     protected $dates = ['deleted_at'];
-
 
     public $fillable = [
         'assunto',
         'texto',
-        'sindicato_id'
+        'sindicato_id',
     ];
 
     /**
@@ -38,19 +35,17 @@ class FaleConosco extends Model
     protected $casts = [
         'assunto' => 'string',
         'texto' => 'string',
-        'sindicato_id' => 'integer'
+        'sindicato_id' => 'integer',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
         'assunto' => 'required',
         'texto' => 'required',
-        'sindicato_id' => 'required'
+        'sindicato_id' => 'required',
     ];
-
-    
 }

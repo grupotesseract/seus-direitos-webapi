@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/user', function (Request $request) {
         $user = $request->user();
         $user->load('sindicato');
+
         return $user;
     });
 
