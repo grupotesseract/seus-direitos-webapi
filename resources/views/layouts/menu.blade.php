@@ -38,6 +38,9 @@
 @endrole
 
 @role('superadmin')
+<li class="{{ Request::is('videos*') ? 'active' : '' }}">
+    <a href="{!! route('videos.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
+</li>
 <li class="{{ Request::is('categorias*') ? 'active' : '' }}">
     <a href="{!! route('categorias.index') !!}"><i class="fa fa-asterisk"></i><span>Categorias</span></a>
 </li>
@@ -74,10 +77,6 @@
     <a href="{!! route('beneficios.index') !!}"><i class="fa fa-edit"></i><span>Beneficios</span></a>
 </li>
 
-<li class="{{ Request::is('videos*') ? 'active' : '' }}">
-    <a href="{!! route('videos.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
-</li>
-@endrole
 <li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
     <a href="{!! route('convencaos.index') !!}"><i class="fa fa-edit"></i><span>Convenções Coletivas</span></a>
 </li>
@@ -87,6 +86,8 @@
 </li>
 
 <li class="{{ Request::is('faleConoscos*') ? 'active' : '' }}">
-    <a href="{!! route('faleConoscos.index') !!}"><i class="fa fa-edit"></i><span>Fale Conoscos</span></a>
+    <a href="{!! route('faleConoscos.index') !!}"><i class="fa fa-edit"></i><span>Fale Conosco</span></a>
 </li>
+@endrole
+
 

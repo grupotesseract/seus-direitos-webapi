@@ -42,17 +42,25 @@ class FaleConoscoDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '80px'])
+            ->addAction(['width' => '80px', 'title' => 'Ações'])
             ->parameters([
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
                 'buttons' => [
-                    'create',
-                    'export',
-                    'print',
-                    'reset',
-                    'reload',
+                    /*[
+                        'extend'  => 'create',
+                        'text'    => '<i class="fa fa-plus"></i> Criar novo',
+                    ],*/
+                    [
+                        'extend'  => 'collection',
+                        'text'    => '<i class="fa fa-download"></i> Exportar',
+                        'buttons' => [
+                            'csv',
+                            'excel',
+                        ],
+                    ],
                 ],
+                'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
             ]);
     }
 
@@ -65,7 +73,6 @@ class FaleConoscoDataTable extends DataTable
     {
         return [
             'assunto',
-            'sindicato_id'
         ];
     }
 
