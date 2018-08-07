@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\FaleConosco;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class FaleConoscoDataTable extends DataTable
 {
@@ -83,6 +83,6 @@ class FaleConoscoDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'fale_conoscosdatatable_' . time();
+        return 'fale_conoscosdatatable_'.time();
     }
 }

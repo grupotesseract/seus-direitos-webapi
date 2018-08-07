@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\FaleConoscoDataTable;
-use App\Http\Requests;
-use App\Http\Requests\CreateFaleConoscoRequest;
-use App\Http\Requests\UpdateFaleConoscoRequest;
-use App\Repositories\FaleConoscoRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 use App\Models\Sindicato as Sindicato;
+use App\DataTables\FaleConoscoDataTable;
+use App\Repositories\FaleConoscoRepository;
+use App\Http\Requests\CreateFaleConoscoRequest;
+use App\Http\Requests\UpdateFaleConoscoRequest;
 
 class FaleConoscoController extends AppBaseController
 {
-    /** @var  FaleConoscoRepository */
+    /** @var FaleConoscoRepository */
     private $faleConoscoRepository;
 
     public function __construct(FaleConoscoRepository $faleConoscoRepo)
@@ -51,7 +49,8 @@ class FaleConoscoController extends AppBaseController
     public function createApp($sindicato_id)
     {
         $sindicato = Sindicato::find($sindicato_id);
-        return view('fale_conoscos.create_app')->with('sindicato',$sindicato);
+
+        return view('fale_conoscos.create_app')->with('sindicato', $sindicato);
     }
 
     /**
@@ -67,12 +66,11 @@ class FaleConoscoController extends AppBaseController
 
         $faleConosco = $this->faleConoscoRepository->create($input);
 
-
         $sindicato = Sindicato::find($input['sindicato_id']);
 
         Flash::success('Mensagem enviada com sucesso.');
         //return redirect(route('faleConoscos.index'));
-        return view('fale_conoscos.create_app')->with('sindicato',$sindicato);
+        return view('fale_conoscos.create_app')->with('sindicato', $sindicato);
     }
 
     /**

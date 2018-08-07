@@ -6,14 +6,13 @@ use App\Models\FaleConosco;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class FaleConoscoRepository
- * @package App\Repositories
+ * Class FaleConoscoRepository.
  * @version August 6, 2018, 11:14 am BRT
  *
  * @method FaleConosco findWithoutFail($id, $columns = ['*'])
  * @method FaleConosco find($id, $columns = ['*'])
  * @method FaleConosco first($columns = ['*'])
-*/
+ */
 class FaleConoscoRepository extends BaseRepository
 {
     /**
@@ -22,11 +21,11 @@ class FaleConoscoRepository extends BaseRepository
     protected $fieldSearchable = [
         'assunto',
         'texto',
-        'sindicato_id'
+        'sindicato_id',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {
