@@ -74,3 +74,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 Route::resource('convencaos', 'ConvencaoController');
 
 Route::resource('noticias', 'NoticiasController');
+
+Route::resource('faleConoscos', 'FaleConoscoController');
+
+Route::get('faleconosco/{id}', 'FaleConoscoController@createApp');
