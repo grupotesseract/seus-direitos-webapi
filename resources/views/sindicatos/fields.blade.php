@@ -16,6 +16,11 @@
     {!! Form::text('nome_responsavel', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group col-sm-6">
+    {!! Form::label('email', 'Email:') !!}
+    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Categoria Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_categoria', 'Categoria:') !!}
