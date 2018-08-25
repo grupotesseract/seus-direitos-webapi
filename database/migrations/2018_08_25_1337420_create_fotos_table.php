@@ -22,7 +22,6 @@ class CreatefotosTable extends Migration
             $table->integer('owner_id')->nullable();
             $table->string('owner_type')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Eloquent as Model;
+use App\Helpers\DeleteModelHelper;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -49,6 +50,25 @@ class Sindicato extends Model
         'sigla' => 'required',
         'email' => 'required|email',
     ];
+
+    /** Array que contem os nomes das nested relations, que devem ser deletadas caso essa entidade seja deletada **/
+    public $relacoesDependentes = [
+        'logo'
+    ];
+
+
+    /**
+     * Bindando Model Events para controlar o delete
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        //Bindando o deleting para remover as relationships dependentes
+        static::deleting(function ($model) {
+            DeleteModelHelper::deleteRelationships($model);
+        });
+    }
 
     /**
      * Um Sindicato sempre pertence a uma categoria.

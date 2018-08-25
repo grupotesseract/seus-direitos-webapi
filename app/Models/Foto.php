@@ -83,7 +83,7 @@ class Foto extends Model
      */
     public function getURLCloudinaryAttribute()
     {
-        return "//res.cloudinary.com/"
+        return "https://res.cloudinary.com/"
             .env('CLOUDINARY_CLOUD_NAME')
             ."/image/upload/q_auto/$this->cloudinary_id."
             .$this->image_extension;
