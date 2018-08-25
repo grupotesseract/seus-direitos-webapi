@@ -11,11 +11,11 @@ class FotoRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        
+
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {
@@ -58,7 +58,7 @@ class FotoRepository extends BaseRepository
 
                 return $novaFoto;
 
-                // Se nao tiver funcionado, retornar false no success para o js se manisfestar
+            // Se nao tiver funcionado, retornar false no success para o js se manisfestar
             } else {
                 return [
                     'success' => false,
@@ -98,11 +98,12 @@ class FotoRepository extends BaseRepository
     {
         $foto = $this->find($fotoID);
         $retornoCloudinary = \Cloudder::destroyImage($foto->cloudinary_id);
+
         return  empty($retornoCloudinary->deleted) ? false : true;
     }
 
     /**
-     * Override BaseRepository@delete - para remover também do cloudinary e local
+     * Override BaseRepository@delete - para remover também do cloudinary e local.
      *
      * @param $id
      * @return int
@@ -111,12 +112,12 @@ class FotoRepository extends BaseRepository
     {
         $this->removeFromCloudinary($id);
         $this->deleteLocal($id);
+
         return parent::delete($id);
     }
-    
 
     /**
-     * Deleta a foto do disco local
+     * Deleta a foto do disco local.
      *
      * @param mixed $id
      */
@@ -128,7 +129,4 @@ class FotoRepository extends BaseRepository
             \File::delete($Foto->fullPath);
         }
     }
-
-
-
 }

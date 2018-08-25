@@ -33,6 +33,4 @@ class CreateSindicatoRequest extends FormRequest
             'file.max' => 'O logo não pode ter mais que 5MB',
         ];
     }
-
-
 }

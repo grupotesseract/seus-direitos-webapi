@@ -35,7 +35,6 @@ class SindicatoController extends AppBaseController
         $this->fotoRepository = $fotoRepo;
     }
 
-
     /**
      * Display a listing of the Sindicato.
      *
@@ -51,7 +50,6 @@ class SindicatoController extends AppBaseController
             ->with('sindicatos', $sindicatos);
     }
 
-
     /**
      * Serve a view do Crud de sindicatos com a Datatable de cidades embutida.
      */
@@ -60,7 +58,6 @@ class SindicatoController extends AppBaseController
         return $cidadesDataTable->render('sindicatos.create');
     }
 
-    
     /**
      * Store a newly created Sindicato in storage.
      *
@@ -74,28 +71,27 @@ class SindicatoController extends AppBaseController
 
         $sindicato = $this->sindicatoRepository->create($input);
 
-        /** Se houver um file na request, entao, salvar img de logo do sindicato **/
+        /* Se houver um file na request, entao, salvar img de logo do sindicato **/
         if ($request->file) {
-
             $foto = $this->fotoRepository->uploadAndCreate($request);
             $sindicato->logo()->save($foto);
 
-            //Upload p/ Cloudinary e delete local 
-            $publicId = "logo_sindicato_".time();
+            //Upload p/ Cloudinary e delete local
+            $publicId = 'logo_sindicato_'.time();
             $retorno = $this->fotoRepository->sendToCloudinary($foto, $publicId);
             $this->fotoRepository->deleteLocal($foto->id);
         }
 
-        /** Se houver cidades, syncar tb.. **/
+        /* Se houver cidades, syncar tb.. **/
         if ($sindicato && $request->id_cidades) {
             $sindicato->cidades()->sync($request->id_cidades);
         }
 
         Flash::success('Sindicato salvo com sucesso.');
+
         return redirect(route('sindicatos.index'));
     }
 
-    
     /**
      * Display the specified Sindicato.
      *
@@ -109,12 +105,12 @@ class SindicatoController extends AppBaseController
 
         if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
+
             return redirect(route('sindicatos.index'));
         }
 
         return view('sindicatos.show')->with('sindicato', $sindicato);
     }
-
 
     /**
      * Show the form for editing the specified Sindicato.
@@ -129,12 +125,12 @@ class SindicatoController extends AppBaseController
 
         if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
+
             return redirect(route('sindicatos.index'));
         }
 
         return $cidadesDataTable->render('sindicatos.edit', compact('sindicato'));
     }
-
 
     /**
      * Update the specified Sindicato in storage.
@@ -150,24 +146,23 @@ class SindicatoController extends AppBaseController
 
         if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
+
             return redirect(route('sindicatos.index'));
         }
 
         $sindicato = $this->sindicatoRepository->update($request->all(), $id);
 
-        /** Se houver um file na request, entao, salvar img de logo do sindicato **/
+        /* Se houver um file na request, entao, salvar img de logo do sindicato **/
         if ($request->file) {
-
             $foto = $this->fotoRepository->uploadAndCreate($request);
             $sindicato->logo()->delete();
             $sindicato->logo()->save($foto);
 
-            //Upload p/ Cloudinary e delete local 
-            $publicId = "logo_sindicato_".time();
+            //Upload p/ Cloudinary e delete local
+            $publicId = 'logo_sindicato_'.time();
             $retorno = $this->fotoRepository->sendToCloudinary($foto, $publicId);
             $this->fotoRepository->deleteLocal($foto->id);
         }
-        
 
         if ($sindicato) {
             $cidades = $request->id_cidades ? $request->id_cidades : [];
@@ -175,9 +170,9 @@ class SindicatoController extends AppBaseController
         }
 
         Flash::success('Sindicato atualizado com sucesso.');
+
         return redirect(route('sindicatos.index'));
     }
-
 
     /**
      * Remove the specified Sindicato from storage.
@@ -192,13 +187,14 @@ class SindicatoController extends AppBaseController
 
         if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
+
             return redirect(route('sindicatos.index'));
         }
 
         $this->sindicatoRepository->delete($id);
 
         Flash::success('Sindicato excluído com successo.');
+
         return redirect(route('sindicatos.index'));
     }
-
 }
