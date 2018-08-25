@@ -97,8 +97,23 @@ class Sindicato extends Model
         return $this->hasMany(\App\Models\Beneficio::class);
     }
 
+    /**
+     * Um Sindicato pode possuir varias noticias
+     */
     public function noticias()
     {
         return $this->hasMany(\App\Models\Noticias::class);
     }
+
+    /**
+     * Cada sindicato possuí um 1 unica Foto de Logo
+     *
+     * @return void
+     */
+    public function logo()
+    {
+        return $this->morphOne(\App\Models\Foto::class, 'owner');
+    }
+    
+
 }

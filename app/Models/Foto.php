@@ -3,26 +3,13 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Foto
- * @package App\Models
- * @version March 30, 2018, 9:05 pm BRT
- *
- * @property string image_name
- * @property string image_path
- * @property string image_extension
- * @property integer owner_id
- * @property string owner_type
+ * Class Foto - Com as propriedades para armazenamento local ou no Cloudinary
  */
 class Foto extends Model
 {
-    use SoftDeletes;
-
     public $table = 'fotos';
-
-    protected $dates = ['deleted_at'];
 
     public $fillable = [
         'image_name',
@@ -84,14 +71,6 @@ class Foto extends Model
      ************************/
 
     /**
-     * Definindo um acessor para a URL da foto.
-     */
-    public function getURLAttribute()
-    {
-        return url('/uploads/'.$this->image_name.'.'.$this->image_extension);
-    }
-
-    /**
      * Definindo um acessor para o fullpath da foto.
      */
     public function getFullPathAttribute()
@@ -100,11 +79,14 @@ class Foto extends Model
     }
 
     /**
-     * Definindo um acessor para a URL da foto no cloudinary no tamanho maximo que irão aparecer 800 x 450
+     * Definindo um acessor para a URL da foto no cloudinary 
      */
     public function getURLCloudinaryAttribute()
     {
-        return "//res.cloudinary.com/".env('CLOUDINARY_CLOUD_NAME')."/image/upload/c_scale,g_center,h_450,w_800/$this->cloudinary_id.jpg";
+        return "//res.cloudinary.com/"
+            .env('CLOUDINARY_CLOUD_NAME')
+            ."/image/upload/q_auto/$this->cloudinary_id."
+            .$this->image_extension;
     }
 
     

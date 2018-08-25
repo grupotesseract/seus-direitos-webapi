@@ -1,42 +1,32 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $sindicato->id !!}</p>
-</div>
-
 <!-- Nome Field -->
-<div class="form-group">
-    {!! Form::label('nome', 'Nome:') !!}
+<div class="col-xs-6">
+    {!! Form::label('nome', 'Nome do sindicato:') !!}
     <p>{!! $sindicato->nome !!}</p>
 </div>
 
 <!-- Sigla Field -->
-<div class="form-group">
+<div class="col-xs-2">
     {!! Form::label('sigla', 'Sigla:') !!}
     <p>{!! $sindicato->sigla !!}</p>
 </div>
 
 <!-- Nome Responsavel Field -->
-<div class="form-group">
+<div class="col-xs-4">
     {!! Form::label('nome_responsavel', 'Nome Responsavel:') !!}
     <p>{!! $sindicato->nome_responsavel !!}</p>
 </div>
 
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $sindicato->created_at !!}</p>
-</div>
+<div class="col-xs-12">
 
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $sindicato->updated_at !!}</p>
-</div>
+    {!! Form::label('logo', 'Logo do sindicato:') !!} <br>
+    @if ($sindicato->logo)
+        <img src="{{$sindicato->logo->urlCloudinary}}" alt="Logo do sindicato" class="img-responsive">
+    @else
+        <p>Nenhum logo adicionado - <a href="{{route('sindicatos.edit', $sindicato->id)}}"> Editar</a> </p> 
+    @endif
 
-<!-- Deleted At Field -->
-<div class="form-group">
-    {!! Form::label('deleted_at', 'Deleted At:') !!}
-    <p>{!! $sindicato->deleted_at !!}</p>
 </div>
+<p>&nbsp;</p>
+
+
 

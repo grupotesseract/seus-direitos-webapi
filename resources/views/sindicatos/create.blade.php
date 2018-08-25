@@ -10,13 +10,12 @@
 
 @section('content')
 
-
     <div class="content">
         @include('adminlte-templates::common.errors')
 
         <h3> Criando um novo Sindicato </h3>
 
-        {!! Form::open(['route' => 'sindicatos.store']) !!}
+        {!! Form::open(['route' => 'sindicatos.store', 'files' => 'true']) !!}
 
         <div class="box box-primary">
             <div class="box-body">

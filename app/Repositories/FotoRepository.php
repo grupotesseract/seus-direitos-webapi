@@ -23,7 +23,7 @@ class FotoRepository extends BaseRepository
     }
 
     /**
-     * uploadAndCreate - Guarda o arquivo no /uploads/ e cria a Foto.
+     * uploadAndCreate - Guarda o arquivo no e cria a Foto.
      *
      * @param mixed $request
      */
@@ -34,7 +34,7 @@ class FotoRepository extends BaseRepository
         if ($file && $file->isValid()) {
 
             //Criando path inicial para direcionar o arquivo
-            $destinationPath = public_path().'/uploads/';
+            $destinationPath = public_path().'/';
             //Pega o formato da imagem
             $extension = $request->file('file')->getClientOriginalExtension();
 
@@ -98,29 +98,25 @@ class FotoRepository extends BaseRepository
     {
         $foto = $this->find($fotoID);
         $retornoCloudinary = \Cloudder::destroyImage($foto->cloudinary_id);
-
         return  empty($retornoCloudinary->deleted) ? false : true;
     }
 
     /**
-     * Override BaseRepository@delete - para remover também do cloudinary
-     * Delete a entity in repository by id.
+     * Override BaseRepository@delete - para remover também do cloudinary e local
      *
      * @param $id
-     *
      * @return int
      */
     public function delete($id)
     {
         $this->removeFromCloudinary($id);
         $this->deleteLocal($id);
-
         return parent::delete($id);
     }
     
 
     /**
-     * deleteLocal 
+     * Deleta a foto do disco local
      *
      * @param mixed $id
      */
