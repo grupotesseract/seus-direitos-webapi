@@ -155,6 +155,20 @@ class SindicatoController extends AppBaseController
 
         $sindicato = $this->sindicatoRepository->update($request->all(), $id);
 
+        /** Se houver um file na request, entao, salvar img de logo do sindicato **/
+        if ($request->file) {
+
+            $foto = $this->fotoRepository->uploadAndCreate($request);
+            $sindicato->logo()->delete();
+            $sindicato->logo()->save($foto);
+
+            //Upload p/ Cloudinary e delete local 
+            $publicId = "logo_sindicato_".time();
+            $retorno = $this->fotoRepository->sendToCloudinary($foto, $publicId);
+            $this->fotoRepository->deleteLocal($foto->id);
+        }
+        
+
         if ($sindicato) {
             $cidades = $request->id_cidades ? $request->id_cidades : [];
             $sindicato->cidades()->sync($cidades);

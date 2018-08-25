@@ -44,7 +44,7 @@ class Sindicato extends Model
      * @var array
      */
     public static $rules = [
-
+        'file' => 'max:5000',
     ];
 
     /**

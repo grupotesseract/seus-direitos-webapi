@@ -16,7 +16,7 @@
 
         <h3> Editando um sindicato </h3>
 
-        {!! Form::model($sindicato, ['route' => ['sindicatos.update', $sindicato->id], 'method' => 'patch']) !!}
+        {!! Form::model($sindicato, ['route' => ['sindicatos.update', $sindicato->id], 'method' => 'patch', 'files' => 'true']) !!}
 
         <div class="box box-primary">
             <div class="box-body">

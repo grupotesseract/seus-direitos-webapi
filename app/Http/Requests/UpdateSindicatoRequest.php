@@ -26,4 +26,12 @@ class UpdateSindicatoRequest extends FormRequest
     {
         return Sindicato::$rules;
     }
+
+    public function messages()
+    {
+        return [
+            'file.max' => 'O logo não pode ter mais que 5MB',
+        ];
+    }
+    
 }
