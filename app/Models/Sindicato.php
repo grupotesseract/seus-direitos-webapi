@@ -53,12 +53,11 @@ class Sindicato extends Model
 
     /** Array que contem os nomes das nested relations, que devem ser deletadas caso essa entidade seja deletada **/
     public $relacoesDependentes = [
-        'logo'
+        'logo',
     ];
 
-
     /**
-     * Bindando Model Events para controlar o delete
+     * Bindando Model Events para controlar o delete.
      */
     public static function boot()
     {
@@ -121,7 +120,7 @@ class Sindicato extends Model
     }
 
     /**
-     * Um Sindicato pode possuir varias noticias
+     * Um Sindicato pode possuir varias noticias.
      */
     public function noticias()
     {
@@ -129,7 +128,7 @@ class Sindicato extends Model
     }
 
     /**
-     * Cada sindicato possuí um 1 unica Foto de Logo
+     * Cada sindicato possuí um 1 unica Foto de Logo.
      *
      * @return void
      */
@@ -137,6 +136,4 @@ class Sindicato extends Model
     {
         return $this->morphOne(\App\Models\Foto::class, 'owner');
     }
-    
-
 }
