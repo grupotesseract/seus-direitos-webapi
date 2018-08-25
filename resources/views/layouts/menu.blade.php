@@ -59,7 +59,7 @@
 </li>
 
 <li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
-    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-pagelines"></i><span>Beneficios</span></a>
+    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-pagelines"></i><span>Benefícios</span></a>
 </li>
 
 <li class="{{ Request::is('videos*') ? 'active' : '' }}">
@@ -71,7 +71,7 @@
 
 @role('sindicalista')
 <li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
-    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-pagelines"></i><span>Beneficios</span></a>
+    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-pagelines"></i><span>Benefícios</span></a>
 </li>
 
 <li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
@@ -79,7 +79,7 @@
 </li>
 
 <li class="{{ Request::is('noticias*') ? 'active' : '' }}">
-    <a href="{!! route('noticias.index') !!}"><i class="fa fa-bullhorn"></i><span>Noticias</span></a>
+    <a href="{!! route('noticias.index') !!}"><i class="fa fa-bullhorn"></i><span>Notícias</span></a>
 </li>
 
 <li class="{{ Request::is('faleConoscos*') ? 'active' : '' }}">
