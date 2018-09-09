@@ -241,7 +241,7 @@ class UserController extends AppBaseController
 
     public function getCarteirinha($id)
     {
-        $carteirinha = $this->userRepository->with(['instituicao','sindicato'])->findWithoutFail($id);
+        $carteirinha = $this->userRepository->with(['instituicao','sindicato', 'sindicato.logo'])->findWithoutFail($id);
 
         return $carteirinha;
     }
