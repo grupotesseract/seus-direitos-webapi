@@ -237,4 +237,11 @@ class UserController extends AppBaseController
 
         return $userDT->render('users.index');
     }
+
+    public function getCarteirinha($id)
+    {
+        $carteirinha = $this->userRepository->findWithoutFail($id);
+        return $carteirinha;
+
+    }
 }
