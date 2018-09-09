@@ -21,8 +21,7 @@ class SindicatoTransformer extends TransformerAbstract
         return [
             'id'         => (int) $model->id,
 
-            /* place your other model properties here */
-
+            'logo' => $model->logo ? $model->logo->urlCloudinary : null,
             'nome' => ucwords(strtolower($model->nome)),
             'cidades' => $model->cidades,
         ];

@@ -6,6 +6,7 @@ use Flash;
 use Response;
 use Illuminate\Http\Request;
 use App\DataTables\CidadeDataTable;
+use App\Repositories\FotoRepository;
 use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
@@ -20,10 +21,18 @@ class SindicatoController extends AppBaseController
 {
     /** @var SindicatoRepository */
     private $sindicatoRepository;
+    private $fotoRepository;
 
-    public function __construct(SindicatoRepository $sindicatoRepo)
+    /**
+     * Construtor recebendo repositorios necessarios..
+     *
+     * @param SindicatoRepository $sindicatoRepo
+     * @param FotoRepository $fotoRepo
+     */
+    public function __construct(SindicatoRepository $sindicatoRepo, FotoRepository $fotoRepo)
     {
         $this->sindicatoRepository = $sindicatoRepo;
+        $this->fotoRepository = $fotoRepo;
     }
 
     /**
@@ -62,6 +71,18 @@ class SindicatoController extends AppBaseController
 
         $sindicato = $this->sindicatoRepository->create($input);
 
+        /* Se houver um file na request, entao, salvar img de logo do sindicato **/
+        if ($request->file) {
+            $foto = $this->fotoRepository->uploadAndCreate($request);
+            $sindicato->logo()->save($foto);
+
+            //Upload p/ Cloudinary e delete local
+            $publicId = 'logo_sindicato_'.time();
+            $retorno = $this->fotoRepository->sendToCloudinary($foto, $publicId);
+            $this->fotoRepository->deleteLocal($foto->id);
+        }
+
+        /* Se houver cidades, syncar tb.. **/
         if ($sindicato && $request->id_cidades) {
             $sindicato->cidades()->sync($request->id_cidades);
         }
@@ -130,6 +151,18 @@ class SindicatoController extends AppBaseController
         }
 
         $sindicato = $this->sindicatoRepository->update($request->all(), $id);
+
+        /* Se houver um file na request, entao, salvar img de logo do sindicato **/
+        if ($request->file) {
+            $foto = $this->fotoRepository->uploadAndCreate($request);
+            $sindicato->logo()->delete();
+            $sindicato->logo()->save($foto);
+
+            //Upload p/ Cloudinary e delete local
+            $publicId = 'logo_sindicato_'.time();
+            $retorno = $this->fotoRepository->sendToCloudinary($foto, $publicId);
+            $this->fotoRepository->deleteLocal($foto->id);
+        }
 
         if ($sindicato) {
             $cidades = $request->id_cidades ? $request->id_cidades : [];
