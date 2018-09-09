@@ -6,8 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Instituicao
- * @package App\Models
+ * Class Instituicao.
  * @version September 9, 2018, 7:00 pm BRT
  *
  * @property string nome
@@ -18,14 +17,12 @@ class Instituicao extends Model
     use SoftDeletes;
 
     public $table = 'instituicoes';
-    
 
     protected $dates = ['deleted_at'];
 
-
     public $fillable = [
         'nome',
-        'nomecompleto'
+        'nomecompleto',
     ];
 
     /**
@@ -35,23 +32,21 @@ class Instituicao extends Model
      */
     protected $casts = [
         'nome' => 'string',
-        'nomecompleto' => 'string'
+        'nomecompleto' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
         'nome' => 'required',
-        'nomecompleto' => 'required'
+        'nomecompleto' => 'required',
     ];
 
     public function funcionarios()
     {
         return $this->hasMany(\App\Models\User::class);
     }
-
-    
 }

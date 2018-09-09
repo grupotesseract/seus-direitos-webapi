@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Instituicao;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class InstituicaoDataTable extends DataTable
 {
@@ -65,7 +65,7 @@ class InstituicaoDataTable extends DataTable
     {
         return [
             'nome',
-            'nomecompleto'
+            'nomecompleto',
         ];
     }
 
@@ -76,6 +76,6 @@ class InstituicaoDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'instituicaosdatatable_' . time();
+        return 'instituicaosdatatable_'.time();
     }
 }
