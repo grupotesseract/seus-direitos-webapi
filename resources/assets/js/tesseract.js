@@ -7,6 +7,7 @@ $(function () {
 
     bindaSelectCategorias();
     bindaSelectSindicatos();
+    bindaSelectInstituicoes();
 
     /**
      * Funcao para 'clonar' a 1 linha da datatable de cidades e inserir como 
@@ -55,6 +56,18 @@ var bindaSelectCategorias = function(){
 var bindaSelectSindicatos = function(){
     if ( $('#sindicato_id').length ){
         $('#sindicato_id').select2({
+            width: '100%'
+        });
+    }
+};
+
+/**
+ *
+ * Funcao para checar se existe um select de sindicatos e chama o select2
+ */
+var bindaSelectInstituicoes = function(){
+    if ( $('#instituicao_id').length ){
+        $('#instituicao_id').select2({
             width: '100%'
         });
     }

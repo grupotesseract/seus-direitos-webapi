@@ -4,6 +4,7 @@ namespace App\ViewComposers;
 
 use Illuminate\View\View;
 use App\Repositories\SindicatoRepository;
+use App\Repositories\InstituicaoRepository;
 
 class UserSindicalistaComposer
 {
@@ -15,9 +16,10 @@ class UserSindicalistaComposer
      * @param  UserRepository  $users
      * @return void
      */
-    public function __construct(SindicatoRepository $sindicatos)
+    public function __construct(SindicatoRepository $sindicatos, InstituicaoRepository $instituicoes)
     {
         $this->sindicatos = $sindicatos;
+        $this->instituicoes = $instituicoes;
     }
 
     /**
@@ -29,6 +31,7 @@ class UserSindicalistaComposer
     public function compose(View $view)
     {
         $sindicatos = $this->sindicatos->getCamposSelect();
-        $view->with('sindicatos', $sindicatos);
+        $instituicoes = $this->instituicoes->all()->pluck('nomecompleto', 'id');
+        $view->with(['sindicatos' => $sindicatos, 'instituicoes' => $instituicoes]);
     }
 }

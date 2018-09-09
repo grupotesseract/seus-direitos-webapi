@@ -34,6 +34,7 @@ class User extends Authenticatable
         'password',
         'sindicato_id',
         'cidade_id',
+        'instituicao_id',
     ];
 
     /**
@@ -47,6 +48,7 @@ class User extends Authenticatable
         'password' => 'required',
         'role' => 'required|exists:roles,name',
         'sindicato_id' => 'sometimes|exists:sindicatos,id',
+        'instituicao_id' => 'sometimes|exists:instituicoes,id',
         'cidade_id' => 'sometimes|exists:cidades,id',
     ];
 
@@ -66,5 +68,10 @@ class User extends Authenticatable
     public function cidade()
     {
         return $this->belongsTo(\App\Models\Cidade::class);
+    }
+
+    public function instituicao()
+    {
+        return $this->belongsTo(\App\Models\Instituicao::class);
     }
 }
