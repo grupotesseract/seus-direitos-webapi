@@ -241,7 +241,7 @@ class UserController extends AppBaseController
     public function getCarteirinha($id)
     {
         $carteirinha = $this->userRepository->findWithoutFail($id);
-        return $carteirinha;
 
+        return $carteirinha;
     }
 }
