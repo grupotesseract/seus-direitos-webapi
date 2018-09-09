@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Response;
 use App\DataTables\InstituicaoDataTable;
-use App\Http\Requests;
+use App\Repositories\InstituicaoRepository;
 use App\Http\Requests\CreateInstituicaoRequest;
 use App\Http\Requests\UpdateInstituicaoRequest;
-use App\Repositories\InstituicaoRepository;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class InstituicaoController extends AppBaseController
 {
-    /** @var  InstituicaoRepository */
+    /** @var InstituicaoRepository */
     private $instituicaoRepository;
 
     public function __construct(InstituicaoRepository $instituicaoRepo)

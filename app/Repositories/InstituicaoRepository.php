@@ -6,14 +6,13 @@ use App\Models\Instituicao;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class InstituicaoRepository
- * @package App\Repositories
+ * Class InstituicaoRepository.
  * @version September 9, 2018, 7:00 pm BRT
  *
  * @method Instituicao findWithoutFail($id, $columns = ['*'])
  * @method Instituicao find($id, $columns = ['*'])
  * @method Instituicao first($columns = ['*'])
-*/
+ */
 class InstituicaoRepository extends BaseRepository
 {
     /**
@@ -21,11 +20,11 @@ class InstituicaoRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'nome',
-        'nomecompleto'
+        'nomecompleto',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {
