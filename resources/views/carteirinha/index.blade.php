@@ -13,17 +13,17 @@
 
 @extends('layout-welcome.head')
 
-<div class="container" style="margin-top: 20px; margin-left: 50px"> 
+<div class="container" style="background-color: black;"> 
     
-    <div class="carteirinha">
+    <div class="carteirinha" style="margin: 40px">
 
-	    <div class="section">
+	    <div class="section" >
 	        <div class="row">
 		    	<img src="/img/logo-seusindicato.jpg" width="40%" height="40%" class="img-responsive" align="left">
 		    </div>
 		</div>
 		
-	    <div class="section" style="margin-top: 40px; margin-left: 10px">
+	    <div class="section" style="margin-top: 40px; ">
 	        <div class="row">
 		        <div class="col-3">
 					<img src="{{ $carteirinha->sindicato->logo->url_cloudinary }}" width="150px" height="350px" class="img-responsive" align="left">	
@@ -35,7 +35,7 @@
 			</div>
 	    </div>
 
-	    <div class="section" style="margin-left: 10px">
+	    <div class="section" style="margin-left: 50px">
 	        <div class="row">
 				<h3 class="h3-texto">Associado: {{ $carteirinha->name }}</h3>			
 				<h3 class="h3-texto">RG: {{ $carteirinha->rg }}</h3>			
