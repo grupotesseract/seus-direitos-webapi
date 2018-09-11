@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Flash;
 use Response;
 use App\Models\Role;
+use App\Models\Instituicao;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
 use App\DataTables\Scopes\PorRole;
@@ -236,5 +237,12 @@ class UserController extends AppBaseController
         }
 
         return $userDT->render('users.index');
+    }
+
+    public function getCarteirinha($id)
+    {
+        $carteirinha = $this->userRepository->with(['instituicao', 'sindicato', 'sindicato.logo'])->findWithoutFail($id);
+
+        return view('carteirinha.index')->with('carteirinha', $carteirinha);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Sindicato;
+use App\Models\Instituicao;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateSindicatoRequest extends FormRequest
+class CreateInstituicaoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,6 @@ class CreateSindicatoRequest extends FormRequest
      */
     public function rules()
     {
-        return Sindicato::$rules;
-    }
-
-    public function messages()
-    {
-        return [
-            'file.max' => 'O logo não pode ter mais que 5MB',
-        ];
+        return Instituicao::$rules;
     }
 }

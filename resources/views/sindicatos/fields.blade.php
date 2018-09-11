@@ -31,3 +31,9 @@
     </div>
 </div>
 
+<!-- Descricao Listagem Field -->
+<div class="form-group col-sm-6">
+    @include('fotos.partials.fields', [
+        'label' => 'Logo do Sindicato:'
+    ])
+</div>

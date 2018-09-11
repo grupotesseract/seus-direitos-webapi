@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/**
+* Geral e Portrait
+**/
+
+.container-geral {
+  height: 100vh;
+  background-color: black;
+  padding: 20px;
+}
+
+.container-geral #logo-seu-sindicato {
+  width: 100px;
+  margin: 0.5rem auto;
+}
+
+.container-geral h3 {
+  font-size: 1.15rem;
+}
+
+.container-geral .titulo-sindicato {
+  font-size: 1.35rem;
+}
+
+.container-geral .negrito {
+  font-weight: bold;
+}
+
+.container-geral .carteirinha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fdfeff;
+  border-radius: 20px;
+  text-align: center;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.container-geral .container-infos-sindicato {
+  margin-top: -80px;
+  padding: 20px;
+}
+
+.container-geral .container-infos-sindicato .container-logo-sindicato {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container-geral .container-infos-sindicato .container-logo-sindicato img {
+  height: 200px;
+  width: 200px;
+}
+
+/**
+ * Adaptações landscape
+***/
+
+@media all and (orientation: landscape) {
+  .container-geral #logo-seu-sindicato {
+    width: 80px;
+    margin: 0.5rem;
+    float: left;
+  }
+
+  .container-geral .carteirinha {
+    display: block;
+    text-align: center;
+    height: 80vh;
+  }
+
+  .container-geral .container-infos-sindicato {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    margin-top: 3.5rem;
+    padding: 0;
+  }
+
+  .container-geral .container-infos-sindicato .container-logo-sindicato {
+    padding: 0;
+    width: 25vw;
+  }
+
+  .container-geral .container-infos-sindicato .container-logo-sindicato img {
+    height: 120px;
+    width: 120px;
+  }
+
+  .container-geral .container-infos-associado {
+    text-align: left;
+    padding: 10px 25px;
+  }
+
+  .container-geral .container-infos-associado h3 {
+    font-size: 1.2rem;
+  }
+}
+

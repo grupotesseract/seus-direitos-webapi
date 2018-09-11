@@ -38,9 +38,6 @@
 @endrole
 
 @role('superadmin')
-<li class="{{ Request::is('videos*') ? 'active' : '' }}">
-    <a href="{!! route('videos.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
-</li>
 <li class="{{ Request::is('categorias*') ? 'active' : '' }}">
     <a href="{!! route('categorias.index') !!}"><i class="fa fa-asterisk"></i><span>Categorias</span></a>
 </li>
@@ -50,23 +47,23 @@
 </li>
 
 <li class="{{ Request::is('filmes*') ? 'active' : '' }}">
-    <a href="{!! route('filmes.index') !!}"><i class="fa fa-edit"></i><span>Filmes</span></a>
+    <a href="{!! route('filmes.index') !!}"><i class="fa fa-film"></i><span>Filmes</span></a>
 </li>
 
 <li class="{{ Request::is('eventos*') ? 'active' : '' }}">
-    <a href="{!! route('eventos.index') !!}"><i class="fa fa-edit"></i><span>Eventos</span></a>
+    <a href="{!! route('eventos.index') !!}"><i class="fa fa-calendar"></i><span>Eventos</span></a>
 </li>
 
 <li class="{{ Request::is('promocaos*') ? 'active' : '' }}">
-    <a href="{!! route('promocaos.index') !!}"><i class="fa fa-edit"></i><span>Promoções</span></a>
+    <a href="{!! route('promocaos.index') !!}"><i class="fa fa-gift"></i><span>Promoções</span></a>
 </li>
 
 <li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
-    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-edit"></i><span>Beneficios</span></a>
+    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-pagelines"></i><span>Benefícios</span></a>
 </li>
 
 <li class="{{ Request::is('videos*') ? 'active' : '' }}">
-    <a href="{!! route('videos.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
+    <a href="{!! route('videos.index') !!}"><i class="fa fa-play"></i><span>Videos</span></a>
 </li>
 
 @endrole
@@ -74,20 +71,24 @@
 
 @role('sindicalista')
 <li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
-    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-edit"></i><span>Beneficios</span></a>
+    <a href="{!! route('beneficios.index') !!}"><i class="fa fa-pagelines"></i><span>Benefícios</span></a>
 </li>
 
 <li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
-    <a href="{!! route('convencaos.index') !!}"><i class="fa fa-edit"></i><span>Convenções Coletivas</span></a>
+    <a href="{!! route('convencaos.index') !!}"><i class="fa fa-calendar-check-o"></i><span>Convenções Coletivas</span></a>
 </li>
 
 <li class="{{ Request::is('noticias*') ? 'active' : '' }}">
-    <a href="{!! route('noticias.index') !!}"><i class="fa fa-edit"></i><span>Noticias</span></a>
+    <a href="{!! route('noticias.index') !!}"><i class="fa fa-bullhorn"></i><span>Notícias</span></a>
 </li>
 
 <li class="{{ Request::is('faleConoscos*') ? 'active' : '' }}">
-    <a href="{!! route('faleConoscos.index') !!}"><i class="fa fa-edit"></i><span>Fale Conosco</span></a>
+    <a href="{!! route('faleConoscos.index') !!}"><i class="fa fa-envelope"></i><span>Fale Conosco</span></a>
 </li>
 @endrole
 
+
+<li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
+    <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-edit"></i><span>Instituicaos</span></a>
+</li>
 

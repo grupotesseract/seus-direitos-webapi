@@ -78,3 +78,7 @@ Route::resource('noticias', 'NoticiasController');
 Route::resource('faleConoscos', 'FaleConoscoController');
 
 Route::get('faleconosco/{id}', 'FaleConoscoController@createApp');
+
+Route::get('carteirinha/{id}', 'UserController@getCarteirinha');
+
+Route::resource('instituicaos', 'InstituicaoController');

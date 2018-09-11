@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use Auth;
 use Response;
 use App\Models\Sindicato;
 use Illuminate\Http\Request;
@@ -81,6 +82,14 @@ class SindicatoAPIController extends AppBaseController
             return $this->sendError('Sindicato não encontrado');
         }
 
-        return $this->sendResponse($sindicato->beneficios->toArray(), 'Beneficios do '.$sindicato->nome.':');
+        $user = Auth::user();
+        $user_id = isset($user->id) ? $user->id : 0;
+
+        $urlBeneficio = ['id' => 0, 'nome' => 'Veja aqui sua Carteria Digital: https://www.seusindicato.com.br/carteirinha/'.$user_id];
+
+        $retorno = $sindicato->beneficios->toArray();
+        array_push($retorno, $urlBeneficio);
+
+        return $this->sendResponse($retorno, 'Beneficios do '.$sindicato->nome.':');
     }
 }
