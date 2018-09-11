@@ -1,54 +1,36 @@
-<style type="text/css">
-	.h3-texto {
-		font-size: 15px;
-		font-weight: bold;
-		font-family: "Courier New", Courier, monospace;
-	}
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Seu Sindicato - Seus Direitos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	.h3-textosindicato {
-		font-size: 35px;
-		margin-top: 50px;
-	}
-</style>
+        <!-- Normalize CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-@extends('layout-welcome.head')
+        <link rel="stylesheet" href="/css/carteirinha.css">
 
-<div class="container" style="background-color: black;"> 
-    
-    <div class="carteirinha" style="margin: 40px">
-
-	    <div class="section" >
-	        <div class="row">
-		    	<img src="/img/logo-seusindicato.jpg" width="40%" height="40%" class="img-responsive" align="left">
-		    </div>
-		</div>
-		
-	    <div class="section" style="margin-top: 40px; ">
-	        <div class="row">
-		        <div class="col-3">
-					<img src="{{ $carteirinha->sindicato->logo->url_cloudinary }}" width="150px" height="350px" class="img-responsive" align="left">	
-				</div>
-
-				<div class="col-9">
-					<h3 class="h3-textosindicato" >{{ $carteirinha->sindicato->nome }}</h3>			
-				</div>
-			</div>
-	    </div>
-
-	    <div class="section" style="margin-left: 50px">
-	        <div class="row">
-				<h3 class="h3-texto">Associado: {{ $carteirinha->name }}</h3>			
-				<h3 class="h3-texto">RG: {{ $carteirinha->rg }}</h3>			
-			</div>
-	    </div>
-
-	    <div class="section" style="margin-top: -20px">
-	        <div class="row">
-				<h3 class="h3-texto" align="center">Instituicão: {{ $carteirinha->instituicao->nomecompleto }}</h3>			
-			</div>
-	    </div>
-
-    </div>
-
-
-</div>
+    </head>
+    <body>
+        <div class="container-geral"> 
+            <div class="carteirinha m-3">
+                <img id="logo-seu-sindicato" src="/img/logo-seusindicato.jpg">
+                <div class="container-infos-sindicato">
+                    <div class="container-logo-sindicato">
+                        <img src="{{ $carteirinha->sindicato->logo->url_cloudinary }}" class="img-responsive" align="left">	
+                    </div>
+                    <h2 class="titulo-sindicato" >{{ $carteirinha->sindicato->nome }}</h3>			
+                </div>
+                <div class="container-infos-associado">
+                    <h3 class="negrito">Associado: {{ strtoupper($carteirinha->name) }}</h3>
+                    <h3 class="negrito">RG: {{ $carteirinha->rg }}</h3>
+                </div>
+                <div class="container-infos-instituicao">
+                    <h3 class="negrito">Instituicão: {{ $carteirinha->instituicao->nomecompleto }}</h3>			
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
