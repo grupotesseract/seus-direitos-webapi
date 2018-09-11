@@ -56,6 +56,14 @@
         {!! Form::select('sindicato_id', $sindicatos, isset($user) ? $user->sindicato->id : null) !!}
     </div>
 
+    <!-- Sindicato Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('instituicao_id', 'Instituição:') !!}
+        {!! Form::select('instituicao_id', $instituicoes, isset($user) ? $user->instituicao->id : null, ['class'=> 'form-control']) !!}
+    </div>
+
+
+
 @endif
 
 <!-- Submit Field -->

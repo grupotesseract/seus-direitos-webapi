@@ -69,7 +69,8 @@
 
 __webpack_require__(1);
 __webpack_require__(4);
-module.exports = __webpack_require__(5);
+__webpack_require__(5);
+module.exports = __webpack_require__(6);
 
 
 /***/ }),
@@ -10465,6 +10466,7 @@ $(function () {
 
     bindaSelectCategorias();
     bindaSelectSindicatos();
+    bindaSelectInstituicoes();
 
     /**
      * Funcao para 'clonar' a 1 linha da datatable de cidades e inserir como 
@@ -10512,6 +10514,18 @@ var bindaSelectSindicatos = function bindaSelectSindicatos() {
     }
 };
 
+/**
+ *
+ * Funcao para checar se existe um select de sindicatos e chama o select2
+ */
+var bindaSelectInstituicoes = function bindaSelectInstituicoes() {
+    if ($('#instituicao_id').length) {
+        $('#instituicao_id').select2({
+            width: '100%'
+        });
+    }
+};
+
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
@@ -10520,6 +10534,12 @@ var bindaSelectSindicatos = function bindaSelectSindicatos() {
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
