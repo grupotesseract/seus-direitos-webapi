@@ -76,7 +76,7 @@ class SindicatoAPIController extends AppBaseController
     public function getBeneficiosPorSindicato($id)
     {
         /** @var Estado $estado */
-        $sindicato = $this->sindicatoRepository->find($id)->first();
+        $sindicato = $this->sindicatoRepository->find($id);
 
         if (empty($sindicato)) {
             return $this->sendError('Sindicato não encontrado');
