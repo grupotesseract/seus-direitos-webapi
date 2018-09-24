@@ -89,6 +89,6 @@
 
 
 <li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
-    <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-edit"></i><span>Instituicaos</span></a>
+    <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-edit"></i><span>Instituições</span></a>
 </li>
 

@@ -53,7 +53,7 @@ class InstituicaoController extends AppBaseController
 
         $instituicao = $this->instituicaoRepository->create($input);
 
-        Flash::success('Instituicao saved successfully.');
+        Flash::success('Instituicao salva com sucesso.');
 
         return redirect(route('instituicaos.index'));
     }
@@ -118,7 +118,7 @@ class InstituicaoController extends AppBaseController
 
         $instituicao = $this->instituicaoRepository->update($request->all(), $id);
 
-        Flash::success('Instituicao updated successfully.');
+        Flash::success('Instituicao atualizada com sucesso.');
 
         return redirect(route('instituicaos.index'));
     }
@@ -142,7 +142,7 @@ class InstituicaoController extends AppBaseController
 
         $this->instituicaoRepository->delete($id);
 
-        Flash::success('Instituicao deleted successfully.');
+        Flash::success('Instituicao excluída com sucesso.');
 
         return redirect(route('instituicaos.index'));
     }
