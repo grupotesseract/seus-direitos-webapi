@@ -15,7 +15,6 @@ class AumentarTamanhoSigla extends Migration
     {
         Schema::table('sindicatos', function (Blueprint $table) {
             $table->string('sigla', 50)->change();
-            
         });
     }
 
@@ -26,6 +25,5 @@ class AumentarTamanhoSigla extends Migration
      */
     public function down()
     {
-        
     }
 }
