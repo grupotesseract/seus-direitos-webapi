@@ -35,7 +35,7 @@ class User extends Authenticatable
         'sindicato_id',
         'cidade_id',
         'instituicao_id',
-        'rg'
+        'rg',
     ];
 
     /**
