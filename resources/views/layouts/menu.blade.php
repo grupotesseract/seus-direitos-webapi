@@ -33,7 +33,7 @@
 
 @role('sindicalista')
     <li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
-        <a href="{{ url('usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Funcionários </a>
+        <a href="{{ url('usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Associados </a>
     </li>
 @endrole
 
