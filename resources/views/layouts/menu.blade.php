@@ -19,7 +19,7 @@
         </li>
         <li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
             <a href="{{ url('usuarios/funcionarios') }}"> 
-                &nbsp; Funcionários
+                &nbsp; Associados
             </a>
         </li>
         <li class="{{ Request::is('usuarios') ? 'active' : '' }}">
