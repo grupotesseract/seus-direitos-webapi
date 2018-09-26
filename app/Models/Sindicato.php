@@ -137,25 +137,19 @@ class Sindicato extends Model
         return $this->morphOne(\App\Models\Foto::class, 'owner');
     }
 
-
     /**
-     * Definindo um acessor para a URL da foto no cloudinary no tamanho certo que irão aparecer 200x200
+     * Definindo um acessor para a URL da foto no cloudinary no tamanho certo que irão aparecer 200x200.
      */
     public function getLinkLogoAttribute()
     {
         if ($this->logo) {
-
-            return "//res.cloudinary.com/"
-                . env('CLOUDINARY_CLOUD_NAME')
-                . "/image/upload/c_scale,h_200,w_200,q_auto/"
-                . $this->logo->cloudinary_id
-                . ".jpg";
+            return '//res.cloudinary.com/'
+                .env('CLOUDINARY_CLOUD_NAME')
+                .'/image/upload/c_scale,h_200,w_200,q_auto/'
+                .$this->logo->cloudinary_id
+                .'.jpg';
         }
 
         return '//via.placeholder.com/200x200';
-
     }
-    
-
-
 }
