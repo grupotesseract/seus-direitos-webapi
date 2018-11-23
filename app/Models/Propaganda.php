@@ -6,8 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Propaganda
- * @package App\Models
+ * Class Propaganda.
  * @version November 23, 2018, 6:36 pm BRST
  *
  * @property string nome
@@ -17,11 +16,11 @@ class Propaganda extends Model
     use SoftDeletes;
 
     public $table = 'propagandas';
-    
+
     protected $dates = ['deleted_at'];
 
     public $fillable = [
-        'nome'
+        'nome',
     ];
 
     /**
@@ -31,11 +30,11 @@ class Propaganda extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nome' => 'string'
+        'nome' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
@@ -43,7 +42,6 @@ class Propaganda extends Model
         'nome' => 'required',
         'file' => 'required|file',
     ];
-
 
     /** Array que contem os nomes das nested relations, que devem ser deletadas caso essa entidade seja deletada **/
     public $relacoesDependentes = [
@@ -59,9 +57,8 @@ class Propaganda extends Model
     ];
 
     public $appends = [
-        'url' => 'url'
+        'url' => 'url',
     ];
-
 
     /**
      * Bindando Model Events para controlar o delete.
@@ -76,9 +73,8 @@ class Propaganda extends Model
         });
     }
 
-    
     /**
-     * Cada Propaganda possuí uma Foto
+     * Cada Propaganda possuí uma Foto.
      *
      * @return void
      */
@@ -88,14 +84,10 @@ class Propaganda extends Model
     }
 
     /**
-     * Acessor para a URL da foto
+     * Acessor para a URL da foto.
      */
     public function getURLAttribute()
     {
         return $this->foto ? $this->foto->urlCloudinary : '';
     }
-
-
-
-    
 }

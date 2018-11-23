@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Propaganda;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class PropagandaDataTable extends DataTable
 {
@@ -65,7 +65,7 @@ class PropagandaDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'nome'
+            'nome',
         ];
     }
 
@@ -76,6 +76,6 @@ class PropagandaDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'propagandasdatatable_' . time();
+        return 'propagandasdatatable_'.time();
     }
 }
