@@ -52,6 +52,14 @@ class Video extends Model
         'youtube_id' => 'required',
     ];
 
+
+    /** Array escondendo campos desnecessarios resposta do Eloquent. **/
+    public $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/

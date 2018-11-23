@@ -67,5 +67,8 @@ Route::get('sindicatos/{id}/videos', 'SindicatoAPIController@getVideosPorSindica
 //Video em destaque
 Route::get('video-home', 'VideoAPIController@getVideoHome');
 
+//Informaçoes da HOME do Aplicativo (Videos em destaque e Propagandas)
+Route::get('home', 'HomeAPIController@getHome');
+
 Route::resource('beneficios', 'BeneficioAPIController');
 Route::resource('videos', 'VideoAPIController');
