@@ -47,12 +47,13 @@ class InstituicaoDataTable extends DataTable
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
                 'buttons' => [
-                    'create',
-                    'export',
-                    'print',
-                    'reset',
-                    'reload',
+                    [
+                        'extend'  => 'create',
+                        'text'    => '<i class="fa fa-plus"></i> Criar nova',
+                    ],
                 ],
+                'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
+
             ]);
     }
 
