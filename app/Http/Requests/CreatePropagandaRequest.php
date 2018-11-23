@@ -2,12 +2,11 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Propaganda;
+use Illuminate\Foundation\Http\FormRequest;
 
 class CreatePropagandaRequest extends FormRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -27,5 +26,4 @@ class CreatePropagandaRequest extends FormRequest
     {
         return Propaganda::$rules;
     }
-
 }

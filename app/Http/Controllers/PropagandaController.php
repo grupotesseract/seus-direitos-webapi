@@ -4,24 +4,22 @@ namespace App\Http\Controllers;
 
 use Flash;
 use Response;
-use App\Http\Requests;
 use App\Repositories\FotoRepository;
 use App\DataTables\PropagandaDataTable;
 use App\Repositories\PropagandaRepository;
-use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreatePropagandaRequest;
 use App\Http\Requests\UpdatePropagandaRequest;
 
 class PropagandaController extends AppBaseController
 {
-    /** @var  PropagandaRepository */
+    /** @var PropagandaRepository */
     private $propagandaRepository;
 
-    /** @var  FotoRepository */
+    /** @var FotoRepository */
     private $fotoRepository;
 
     /**
-     * __construct Recebendo os repositorios necessarios para a logica de propagandas
+     * __construct Recebendo os repositorios necessarios para a logica de propagandas.
      *
      * @param PropagandaRepository $propagandaRepo
      * @param FotoRepository $fotoRepo
@@ -78,6 +76,7 @@ class PropagandaController extends AppBaseController
         }
 
         Flash::success('Propaganda criada com sucesso.');
+
         return redirect(route('propagandas.index'));
     }
 
@@ -135,6 +134,7 @@ class PropagandaController extends AppBaseController
 
         if (empty($propaganda)) {
             Flash::error('Propaganda não encontrada');
+
             return redirect(route('propagandas.index'));
         }
 
@@ -149,9 +149,10 @@ class PropagandaController extends AppBaseController
             $retorno = $this->fotoRepository->sendToCloudinary($foto, $publicId);
             $this->fotoRepository->deleteLocal($foto->id);
         }
-        
+
         $propaganda = $this->propagandaRepository->update($request->all(), $id);
         Flash::success('Propaganda atualizada com sucesso.');
+
         return redirect(route('propagandas.index'));
     }
 
@@ -167,6 +168,7 @@ class PropagandaController extends AppBaseController
         $propaganda = $this->propagandaRepository->findWithoutFail($id);
         if (empty($propaganda)) {
             Flash::error('Propaganda não encontrada');
+
             return redirect(route('propagandas.index'));
         }
 

@@ -3,10 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use Auth;
-use Response;
-use Validator;
-use App\Models\User;
-use Illuminate\Http\Request;
 use App\Repositories\VideoRepository;
 use App\Repositories\PropagandaRepository;
 use App\Http\Controllers\AppBaseController;
@@ -18,7 +14,6 @@ use App\Http\Controllers\AppBaseController;
  */
 class HomeAPIController extends AppBaseController
 {
-
     /** @var VideoRepository */
     private $videoRepository;
 
@@ -26,20 +21,19 @@ class HomeAPIController extends AppBaseController
     private $propagandaRepository;
 
     /**
-     * __construct - Com Repositorios necessarios
+     * __construct - Com Repositorios necessarios.
      *
      * @param VideoRepository $videoRepo
      * @param PropagandaRepository $propagandaRepo
      */
-    public function __construct(VideoRepository $videoRepo, PropagandaRepository $propagandaRepo) 
+    public function __construct(VideoRepository $videoRepo, PropagandaRepository $propagandaRepo)
     {
         $this->videoRepository = $videoRepo;
         $this->propagandaRepository = $propagandaRepo;
     }
 
     /**
-     * Metodo para retornar por GET as informacoes da Home do aplicativo
-     *
+     * Metodo para retornar por GET as informacoes da Home do aplicativo.
      */
     public function getHome()
     {
@@ -48,13 +42,9 @@ class HomeAPIController extends AppBaseController
 
         $retorno = [
             'video' => $video->toArray(),
-            'propagandas' =>  $propagandas
+            'propagandas' =>  $propagandas,
         ];
 
         return $this->sendResponse($retorno, 'Video em destaque e Propagandas');
     }
-    
-
-    
-
 }
