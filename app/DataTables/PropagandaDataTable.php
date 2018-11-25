@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\Instituicao;
+use App\Models\Propaganda;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Services\DataTable;
 
-class InstituicaoDataTable extends DataTable
+class PropagandaDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -18,7 +18,7 @@ class InstituicaoDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'instituicaos.datatables_actions');
+        return $dataTable->addColumn('action', 'propagandas.datatables_actions');
     }
 
     /**
@@ -27,7 +27,7 @@ class InstituicaoDataTable extends DataTable
      * @param \App\Models\Post $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Instituicao $model)
+    public function query(Propaganda $model)
     {
         return $model->newQuery();
     }
@@ -66,7 +66,6 @@ class InstituicaoDataTable extends DataTable
     {
         return [
             'nome',
-            'nomecompleto',
         ];
     }
 
@@ -77,6 +76,6 @@ class InstituicaoDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'instituicaosdatatable_'.time();
+        return 'propagandasdatatable_'.time();
     }
 }

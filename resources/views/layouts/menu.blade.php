@@ -66,6 +66,13 @@
     <a href="{!! route('videos.index') !!}"><i class="fa fa-play"></i><span>Videos</span></a>
 </li>
 
+<li class="{{ Request::is('propagandas*') ? 'active' : '' }}">
+    <a href="{!! route('propagandas.index') !!}"><i class="fa fa-image"></i><span>Propagandas</span></a>
+</li>
+
+<li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
+    <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-building"></i><span>Instituições</span></a>
+</li>
 @endrole
 
 
@@ -85,10 +92,10 @@
 <li class="{{ Request::is('faleConoscos*') ? 'active' : '' }}">
     <a href="{!! route('faleConoscos.index') !!}"><i class="fa fa-envelope"></i><span>Fale Conosco</span></a>
 </li>
-@endrole
-
 
 <li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
-    <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-edit"></i><span>Instituicaos</span></a>
+    <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-building"></i><span>Instituições</span></a>
 </li>
+
+@endrole
 
