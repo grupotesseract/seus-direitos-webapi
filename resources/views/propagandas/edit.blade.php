@@ -2,16 +2,18 @@
 
 @section('content')
     <section class="content-header">
-        <h1>Instituições</h1>
+        <h1>
+            Propaganda
+        </h1>
    </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($instituicao, ['route' => ['instituicaos.update', $instituicao->id], 'method' => 'patch']) !!}
+                   {!! Form::model($propaganda, ['route' => ['propagandas.update', $propaganda->id], 'method' => 'patch', 'files' => true]) !!}
 
-                        @include('instituicaos.fields')
+                        @include('propagandas.fields')
 
                    {!! Form::close() !!}
                </div>

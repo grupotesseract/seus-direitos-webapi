@@ -146,5 +146,6 @@ return [
         'title' => 'título',
         'username' => 'usuário',
         'year' => 'ano',
+        'file' => 'para upload de arquivo',
     ],
 ];

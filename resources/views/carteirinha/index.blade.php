@@ -19,7 +19,7 @@
                 <img id="logo-seu-sindicato" src="/img/logo-seusindicato.jpg">
                 <div class="container-infos-sindicato">
                     <div class="container-logo-sindicato">
-                        <img src="{{ $carteirinha->sindicato->logo->url_cloudinary }}" class="img-responsive" align="left">	
+                        <img src="{{ $carteirinha->sindicato->linkLogo }}" class="img-responsive" align="left">	
                     </div>
                     <h2 class="titulo-sindicato" >{{ $carteirinha->sindicato->nome }}</h3>			
                 </div>
