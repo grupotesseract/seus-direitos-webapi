@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Repositories\ConvencaoRepository;
 use App\Http\Requests\CreateConvencaoRequest;
 use App\Http\Requests\UpdateConvencaoRequest;
-use App\DataTables\Scopes\PorSindicatoDoInstituto;
+use App\DataTables\Scopes\PorSindicatoDaInstituicao;
 
 class ConvencaoController extends AppBaseController
 {
