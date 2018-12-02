@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Flash;
 use Response;
+use App\Models\Instituicao;
 use App\DataTables\ConvencaoDataTable;
 use App\Models\Categoria as Categoria;
 use App\Models\Sindicato as Sindicato;
@@ -40,9 +41,9 @@ class ConvencaoController extends AppBaseController
      */
     public function create()
     {
-        $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
+        $instituicaos = Instituicao::all()->pluck('nome', 'id')->toArray();
 
-        return view('convencaos.create')->with('categorias', $categorias);
+        return view('convencaos.create')->with('instituicaos', $instituicaos);
     }
 
     /**
@@ -106,9 +107,9 @@ class ConvencaoController extends AppBaseController
             return redirect(route('convencaos.index'));
         }
 
-        $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
+        $instituicaos = Instituicao::all()->pluck('nome', 'id')->toArray();
 
-        return view('convencaos.edit')->with(['convencao' => $convencao, 'categorias' => $categorias]);
+        return view('convencaos.edit')->with(['convencao' => $convencao, 'instituicaos' => $instituicaos]);
     }
 
     /**
@@ -166,6 +167,11 @@ class ConvencaoController extends AppBaseController
         return redirect(route('convencaos.index'));
     }
 
+    /**
+     * Metodo para retornar as convencoes por sindicato
+     *
+     * @param mixed $idSindicato
+     */
     public function getConvencoesPorSindicato($idSindicato)
     {
         $convencoes = Sindicato::find($idSindicato)->categoria->convencaos;
@@ -173,6 +179,11 @@ class ConvencaoController extends AppBaseController
         return view('convencaos.indexpublico')->with('convencoes', $convencoes);
     }
 
+    /**
+     * Metodo para fazer download do arquivo da Convencao Coletiva  
+     *
+     * @param mixed $id - ID da Convencao
+     */
     public function downloadConvencao($id)
     {
         $convencao = $this->convencaoRepository->findWithoutFail($id);

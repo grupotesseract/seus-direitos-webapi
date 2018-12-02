@@ -33,6 +33,7 @@ class Instituicao extends Model
     protected $casts = [
         'nome' => 'string',
         'nomecompleto' => 'string',
+        'instituicao_id',
     ];
 
     /**
@@ -43,10 +44,25 @@ class Instituicao extends Model
     public static $rules = [
         'nome' => 'required',
         'nomecompleto' => 'required',
+        'instituicao_id' => 'required'
     ];
 
+    /**
+     * Relacao 1xN com App\Models\User
+     * Uma instituição pode ter varios funcionarios
+     */
     public function funcionarios()
     {
         return $this->hasMany(\App\Models\User::class);
     }
+
+    /**
+     * Relacao 1xN com App\Models\Convencao
+     * Uma instituição pode ter varias convencoes
+     */
+    public function convencaos()
+    {
+        return $this->hasMany(\App\Models\Convencao::class);
+    }
+    
 }
