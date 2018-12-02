@@ -23,6 +23,7 @@ class Instituicao extends Model
     public $fillable = [
         'nome',
         'nomecompleto',
+        'sindicato_id',
     ];
 
     /**
@@ -33,7 +34,6 @@ class Instituicao extends Model
     protected $casts = [
         'nome' => 'string',
         'nomecompleto' => 'string',
-        'instituicao_id',
     ];
 
     /**
@@ -44,8 +44,18 @@ class Instituicao extends Model
     public static $rules = [
         'nome' => 'required',
         'nomecompleto' => 'required',
-        'instituicao_id' => 'required'
+        'sindicato_id' => 'required'
     ];
+
+    /**
+     * Toda instituicao esta relacionada com 1 sindicato
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function sindicato()
+    {
+        return $this->belongsTo(\App\Models\Sindicato::class);
+    }
 
     /**
      * Relacao 1xN com App\Models\User

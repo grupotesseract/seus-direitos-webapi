@@ -1,7 +1,7 @@
 <!-- Nome Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('nome', 'Nome:') !!}
-    {!! Form::text('nome', null, ['class' => 'form-control']) !!}
+    {!! Form::label('url_destino', 'Link final da propaganda:') !!}
+    {!! Form::text('url_destino', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group col-sm-6">

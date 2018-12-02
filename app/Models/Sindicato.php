@@ -128,6 +128,14 @@ class Sindicato extends Model
     }
 
     /**
+     * Um Sindicato pode possuir varias instituicoes.
+     */
+    public function instituicoes()
+    {
+        return $this->hasMany(\App\Models\Instituicao::class);
+    }
+
+    /**
      * Cada sindicato possuí um 1 unica Foto de Logo.
      *
      * @return void
