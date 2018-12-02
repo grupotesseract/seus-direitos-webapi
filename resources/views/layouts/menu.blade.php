@@ -73,6 +73,11 @@
 <li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
     <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-building"></i><span>Instituições</span></a>
 </li>
+
+<li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
+    <a href="{!! route('convencaos.index') !!}"><i class="fa fa-calendar-check-o"></i><span>Convenções Coletivas</span></a>
+</li>
+
 @endrole
 
 

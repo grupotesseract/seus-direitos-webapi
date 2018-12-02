@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('css')
+    <script src="/css/app.css"></script>
+@endsection
+
+@section('head_scripts')
+    <script src="/js/app.js"></script>
+@endsection
+
 @section('content')
     <section class="content-header">
         <h1>Instituições</h1>

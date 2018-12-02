@@ -6,8 +6,14 @@
 
 <!-- Nomecompleto Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('nomecompleto', 'Nomecompleto:') !!}
+    {!! Form::label('nomecompleto', 'Nome Completo:') !!}
     {!! Form::text('nomecompleto', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Sindicato Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('sindicato_id', 'Sindicato:') !!}
+    {!! Form::select('sindicato_id', $sindicatos, isset($user) ? $user->sindicato->id : null) !!}
 </div>
 
 <!-- Submit Field -->

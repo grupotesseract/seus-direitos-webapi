@@ -11,8 +11,8 @@
 </div>
 
 <div class="form-group col-sm-12">
-    {!! Form::label('arquivo', 'Categoria:') !!}
-    {!! Form::select('categoria_id', $categorias, isset($convencao) ? $convencao->categoria_id : null , ['placeholder' => 'Escolha uma Categoria', 'class' => 'form-control']) !!}
+    {!! Form::label('categoria_id', 'Instituição:') !!}
+    {!! Form::select('instituicao_id', $instituicaos, isset($convencao) ? $convencao->instituicao_id : null , ['placeholder' => 'Escolha uma Instituição', 'class' => 'form-control']) !!}
 </div>
 
 

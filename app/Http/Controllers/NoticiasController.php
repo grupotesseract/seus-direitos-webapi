@@ -7,6 +7,7 @@ use Cloudder;
 use Response;
 use App\DataTables\NoticiasDataTable;
 use App\Models\Sindicato as Sindicato;
+use App\DataTables\Scopes\PorSindicato;
 use App\Repositories\NoticiasRepository;
 use App\Http\Requests\CreateNoticiasRequest;
 use App\Http\Requests\UpdateNoticiasRequest;
@@ -29,7 +30,9 @@ class NoticiasController extends AppBaseController
      */
     public function index(NoticiasDataTable $noticiasDataTable)
     {
-        return $noticiasDataTable->render('noticias.index');
+        return $noticiasDataTable
+            ->addScope(new PorSindicato(\Auth::user()))
+            ->render('noticias.index');
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Flash;
 use Response;
 use App\DataTables\InstituicaoDataTable;
+use App\Repositories\SindicatoRepository;
 use App\Repositories\InstituicaoRepository;
 use App\Http\Requests\CreateInstituicaoRequest;
 use App\Http\Requests\UpdateInstituicaoRequest;
@@ -14,9 +15,19 @@ class InstituicaoController extends AppBaseController
     /** @var InstituicaoRepository */
     private $instituicaoRepository;
 
-    public function __construct(InstituicaoRepository $instituicaoRepo)
+    /** @var SindicatoRepository */
+    private $sindicatoRepository;
+
+    /**
+     * __construct recebendo dependencias necessarias.
+     *
+     * @param InstituicaoRepository $instituicaoRepo
+     * @param SindicatoRepository $sindicatoRepo
+     */
+    public function __construct(InstituicaoRepository $instituicaoRepo, SindicatoRepository $sindicatoRepo)
     {
         $this->instituicaoRepository = $instituicaoRepo;
+        $this->sindicatoRepository = $sindicatoRepo;
     }
 
     /**
@@ -37,7 +48,9 @@ class InstituicaoController extends AppBaseController
      */
     public function create()
     {
-        return view('instituicaos.create');
+        $sindicatos = $this->sindicatoRepository->getCamposSelect();
+
+        return view('instituicaos.create')->with('sindicatos', $sindicatos);
     }
 
     /**
@@ -95,7 +108,10 @@ class InstituicaoController extends AppBaseController
             return redirect(route('instituicaos.index'));
         }
 
-        return view('instituicaos.edit')->with('instituicao', $instituicao);
+        $sindicatos = $this->sindicatoRepository->getCamposSelect();
+
+        return view('instituicaos.edit')->with('instituicao', $instituicao)
+            ->with('sindicatos', $sindicatos);
     }
 
     /**

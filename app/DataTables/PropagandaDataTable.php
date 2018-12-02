@@ -65,7 +65,7 @@ class PropagandaDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'nome',
+            'url_destino',
         ];
     }
 
