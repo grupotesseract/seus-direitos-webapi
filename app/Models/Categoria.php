@@ -46,5 +46,4 @@ class Categoria extends Model
     {
         return $this->hasMany(\App\Models\Sindicato::class, 'id_categoria');
     }
-
 }

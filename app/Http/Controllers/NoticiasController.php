@@ -33,7 +33,6 @@ class NoticiasController extends AppBaseController
         return $noticiasDataTable
             ->addScope(new PorSindicato(\Auth::user()))
             ->render('noticias.index');
-        
     }
 
     /**
