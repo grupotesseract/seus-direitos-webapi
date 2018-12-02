@@ -44,11 +44,11 @@ class Instituicao extends Model
     public static $rules = [
         'nome' => 'required',
         'nomecompleto' => 'required',
-        'sindicato_id' => 'required'
+        'sindicato_id' => 'required',
     ];
 
     /**
-     * Toda instituicao esta relacionada com 1 sindicato
+     * Toda instituicao esta relacionada com 1 sindicato.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
@@ -59,7 +59,7 @@ class Instituicao extends Model
 
     /**
      * Relacao 1xN com App\Models\User
-     * Uma instituição pode ter varios funcionarios
+     * Uma instituição pode ter varios funcionarios.
      */
     public function funcionarios()
     {
@@ -68,11 +68,10 @@ class Instituicao extends Model
 
     /**
      * Relacao 1xN com App\Models\Convencao
-     * Uma instituição pode ter varias convencoes
+     * Uma instituição pode ter varias convencoes.
      */
     public function convencaos()
     {
         return $this->hasMany(\App\Models\Convencao::class);
     }
-    
 }

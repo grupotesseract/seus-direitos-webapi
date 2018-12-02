@@ -93,12 +93,12 @@ class Propaganda extends Model
     }
 
     /**
-     * Acessor para a URL da propaganda ja formatado
+     * Acessor para a URL da propaganda ja formatado.
      */
     public function getUrlDestinoAttribute()
     {
         $link = $this->attributes['url_destino'];
-        if (preg_match("#[https://,http://]#", $link)) {
+        if (preg_match('#[https://,http://]#', $link)) {
             return $link;
         }
 

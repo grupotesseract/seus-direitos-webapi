@@ -6,7 +6,6 @@ use Flash;
 use Response;
 use App\Models\Instituicao;
 use App\DataTables\ConvencaoDataTable;
-use App\Models\Categoria as Categoria;
 use App\Models\Sindicato as Sindicato;
 use Illuminate\Support\Facades\Storage;
 use App\Repositories\ConvencaoRepository;
@@ -49,7 +48,7 @@ class ConvencaoController extends AppBaseController
         $instituicao = null;
 
         //Se for superadmin mostrar todas instituicoes
-        if ($user->hasRole('superadmin')){
+        if ($user->hasRole('superadmin')) {
             $instituicaos = Instituicao::all()->pluck('nome', 'id')->toArray();
             $instituicao = null;
         }
@@ -119,6 +118,7 @@ class ConvencaoController extends AppBaseController
 
         if (empty($convencao)) {
             Flash::error('Convenção Coletiva não encontrada');
+
             return redirect(route('convencaos.index'));
         }
 
@@ -127,7 +127,7 @@ class ConvencaoController extends AppBaseController
         $instituicao = $convencao->instituicao_id;
 
         //Se for superadmin mostrar todas instituicoes
-        if ($user->hasRole('superadmin')){
+        if ($user->hasRole('superadmin')) {
             $instituicaos = Instituicao::all()->pluck('nome', 'id')->toArray();
         }
 
@@ -139,7 +139,7 @@ class ConvencaoController extends AppBaseController
         return view('convencaos.edit')->with([
             'convencao' => $convencao,
             'instituicao' => $instituicao,
-            'instituicaos' => $instituicaos
+            'instituicaos' => $instituicaos,
         ]);
     }
 
@@ -199,7 +199,7 @@ class ConvencaoController extends AppBaseController
     }
 
     /**
-     * Metodo para retornar as convencoes por sindicato
+     * Metodo para retornar as convencoes por sindicato.
      *
      * @param mixed $idSindicato
      */
@@ -211,7 +211,7 @@ class ConvencaoController extends AppBaseController
     }
 
     /**
-     * Metodo para fazer download do arquivo da Convencao Coletiva  
+     * Metodo para fazer download do arquivo da Convencao Coletiva.
      *
      * @param mixed $id - ID da Convencao
      */

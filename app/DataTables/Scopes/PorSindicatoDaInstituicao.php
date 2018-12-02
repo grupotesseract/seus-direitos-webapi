@@ -27,7 +27,6 @@ class PorSindicatoDaInstituicao implements DataTableScope
      */
     public function apply($query)
     {
-
         if ($this->sindicatoId) {
             $sindicatoId = $this->sindicatoId;
 

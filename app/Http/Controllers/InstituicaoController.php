@@ -19,7 +19,7 @@ class InstituicaoController extends AppBaseController
     private $sindicatoRepository;
 
     /**
-     * __construct recebendo dependencias necessarias
+     * __construct recebendo dependencias necessarias.
      *
      * @param InstituicaoRepository $instituicaoRepo
      * @param SindicatoRepository $sindicatoRepo
@@ -49,6 +49,7 @@ class InstituicaoController extends AppBaseController
     public function create()
     {
         $sindicatos = $this->sindicatoRepository->getCamposSelect();
+
         return view('instituicaos.create')->with('sindicatos', $sindicatos);
     }
 
@@ -108,6 +109,7 @@ class InstituicaoController extends AppBaseController
         }
 
         $sindicatos = $this->sindicatoRepository->getCamposSelect();
+
         return view('instituicaos.edit')->with('instituicao', $instituicao)
             ->with('sindicatos', $sindicatos);
     }

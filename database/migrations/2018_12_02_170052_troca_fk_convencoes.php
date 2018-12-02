@@ -14,7 +14,7 @@ class TrocaFkConvencoes extends Migration
     public function up()
     {
         Schema::table('convencaos', function (Blueprint $table) {
-            
+
             //dropando index e coluna antiga de ref com categoria
             $table->dropForeign(['categoria_id']);
             $table->dropColumn('categoria_id');
@@ -22,7 +22,6 @@ class TrocaFkConvencoes extends Migration
             //incluindo nova coluna e fk para instituicoes
             $table->integer('instituicao_id')->unsigned()->nullable();
             $table->foreign('instituicao_id')->references('id')->on('instituicoes');
-
         });
     }
 
@@ -41,7 +40,6 @@ class TrocaFkConvencoes extends Migration
             //dropando index e coluna antiga de ref com categoria (dropando a nova fk no rollback)
             $table->dropForeign(['instituicao_id']);
             $table->dropColumn('instituicao_id');
-
         });
     }
 }
