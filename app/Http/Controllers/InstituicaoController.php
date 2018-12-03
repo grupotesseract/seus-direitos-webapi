@@ -54,7 +54,7 @@ class InstituicaoController extends AppBaseController
     }
 
     /**
-     * Store a newly created Instituicao in storage.
+     * Store a newly created Instituição in storage.
      *
      * @param CreateInstituicaoRequest $request
      *
@@ -66,7 +66,7 @@ class InstituicaoController extends AppBaseController
 
         $instituicao = $this->instituicaoRepository->create($input);
 
-        Flash::success('Instituicao saved successfully.');
+        Flash::success('Instituição criada com sucesso.');
 
         return redirect(route('instituicaos.index'));
     }
@@ -83,7 +83,7 @@ class InstituicaoController extends AppBaseController
         $instituicao = $this->instituicaoRepository->findWithoutFail($id);
 
         if (empty($instituicao)) {
-            Flash::error('Instituicao not found');
+            Flash::error('Instituição não encontrada');
 
             return redirect(route('instituicaos.index'));
         }
@@ -103,7 +103,7 @@ class InstituicaoController extends AppBaseController
         $instituicao = $this->instituicaoRepository->findWithoutFail($id);
 
         if (empty($instituicao)) {
-            Flash::error('Instituicao not found');
+            Flash::error('Instituição não encontrada');
 
             return redirect(route('instituicaos.index'));
         }
@@ -115,7 +115,7 @@ class InstituicaoController extends AppBaseController
     }
 
     /**
-     * Update the specified Instituicao in storage.
+     * Update the specified Instituição in storage.
      *
      * @param  int              $id
      * @param UpdateInstituicaoRequest $request
@@ -127,20 +127,20 @@ class InstituicaoController extends AppBaseController
         $instituicao = $this->instituicaoRepository->findWithoutFail($id);
 
         if (empty($instituicao)) {
-            Flash::error('Instituicao not found');
+            Flash::error('Instituição não encontrada');
 
             return redirect(route('instituicaos.index'));
         }
 
         $instituicao = $this->instituicaoRepository->update($request->all(), $id);
 
-        Flash::success('Instituicao updated successfully.');
+        Flash::success('Instituição atualizada com sucesso.');
 
         return redirect(route('instituicaos.index'));
     }
 
     /**
-     * Remove the specified Instituicao from storage.
+     * Remove the specified Instituição from storage.
      *
      * @param  int $id
      *
@@ -151,14 +151,14 @@ class InstituicaoController extends AppBaseController
         $instituicao = $this->instituicaoRepository->findWithoutFail($id);
 
         if (empty($instituicao)) {
-            Flash::error('Instituicao not found');
+            Flash::error('Instituição não encontrada');
 
             return redirect(route('instituicaos.index'));
         }
 
         $this->instituicaoRepository->delete($id);
 
-        Flash::success('Instituicao deleted successfully.');
+        Flash::success('Instituição removida com sucesso.');
 
         return redirect(route('instituicaos.index'));
     }
