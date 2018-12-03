@@ -51,6 +51,7 @@ class Noticias extends Model
     public static $rules = [
         'manchete' => 'required',
         'corpo' => 'required',
+        'thumbnail' => 'required|image',
     ];
 
     public function sindicato()

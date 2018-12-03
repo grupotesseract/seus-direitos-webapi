@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Flash;
 use Response;
+use App\Models\Instituicao;
 use App\DataTables\ConvencaoDataTable;
-use App\Models\Categoria as Categoria;
 use App\Models\Sindicato as Sindicato;
 use Illuminate\Support\Facades\Storage;
 use App\Repositories\ConvencaoRepository;
 use App\Http\Requests\CreateConvencaoRequest;
 use App\Http\Requests\UpdateConvencaoRequest;
+use App\DataTables\Scopes\PorSindicatoDaInstituicao;
 
 class ConvencaoController extends AppBaseController
 {
@@ -30,7 +31,9 @@ class ConvencaoController extends AppBaseController
      */
     public function index(ConvencaoDataTable $convencaoDataTable)
     {
-        return $convencaoDataTable->render('convencaos.index');
+        return $convencaoDataTable
+            ->addScope(new PorSindicatoDaInstituicao(\Auth::user()))
+            ->render('convencaos.index');
     }
 
     /**
@@ -40,9 +43,22 @@ class ConvencaoController extends AppBaseController
      */
     public function create()
     {
-        $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
+        $user = \Auth::user();
+        $instituicaos = null;
+        $instituicao = null;
 
-        return view('convencaos.create')->with('categorias', $categorias);
+        //Se for superadmin mostrar todas instituicoes
+        if ($user->hasRole('superadmin')) {
+            $instituicaos = Instituicao::all()->pluck('nome', 'id')->toArray();
+            $instituicao = null;
+        }
+
+        //Se for de um sindicato, mostrar as instituicoes do sindicato apenas
+        else {
+            $instituicaos = $user->sindicato->instituicoes()->pluck('nome', 'id');
+        }
+
+        return view('convencaos.create')->with('instituicaos', $instituicaos);
     }
 
     /**
@@ -106,9 +122,25 @@ class ConvencaoController extends AppBaseController
             return redirect(route('convencaos.index'));
         }
 
-        $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
+        $user = \Auth::user();
+        $instituicaos = null;
+        $instituicao = $convencao->instituicao_id;
 
-        return view('convencaos.edit')->with(['convencao' => $convencao, 'categorias' => $categorias]);
+        //Se for superadmin mostrar todas instituicoes
+        if ($user->hasRole('superadmin')) {
+            $instituicaos = Instituicao::all()->pluck('nome', 'id')->toArray();
+        }
+
+        //Se for de um sindicato, mostrar as instituicoes do sindicato apenas
+        else {
+            $instituicaos = $user->sindicato->instituicoes()->pluck('nome', 'id');
+        }
+
+        return view('convencaos.edit')->with([
+            'convencao' => $convencao,
+            'instituicao' => $instituicao,
+            'instituicaos' => $instituicaos,
+        ]);
     }
 
     /**
@@ -166,6 +198,11 @@ class ConvencaoController extends AppBaseController
         return redirect(route('convencaos.index'));
     }
 
+    /**
+     * Metodo para retornar as convencoes por sindicato.
+     *
+     * @param mixed $idSindicato
+     */
     public function getConvencoesPorSindicato($idSindicato)
     {
         $convencoes = Sindicato::find($idSindicato)->categoria->convencaos;
@@ -173,6 +210,11 @@ class ConvencaoController extends AppBaseController
         return view('convencaos.indexpublico')->with('convencoes', $convencoes);
     }
 
+    /**
+     * Metodo para fazer download do arquivo da Convencao Coletiva.
+     *
+     * @param mixed $id - ID da Convencao
+     */
     public function downloadConvencao($id)
     {
         $convencao = $this->convencaoRepository->findWithoutFail($id);

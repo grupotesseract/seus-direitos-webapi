@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Eloquent as Model;
+use App\Helpers\DeleteModelHelper;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Propaganda.
  * @version November 23, 2018, 6:36 pm BRST
  *
- * @property string nome
+ * @property string url_destino
  */
 class Propaganda extends Model
 {
@@ -20,7 +21,7 @@ class Propaganda extends Model
     protected $dates = ['deleted_at'];
 
     public $fillable = [
-        'nome',
+        'url_destino',
     ];
 
     /**
@@ -30,7 +31,7 @@ class Propaganda extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nome' => 'string',
+        'url_destino' => 'string',
     ];
 
     /**
@@ -39,11 +40,11 @@ class Propaganda extends Model
      * @var array
      */
     public static $rules = [
-        'nome' => 'required',
+        'url_destino' => 'required',
         'file' => 'required|file',
     ];
 
-    /** Array que contem os nomes das nested relations, que devem ser deletadas caso essa entidade seja deletada **/
+    /** Array que contem os url_destinos das nested relations, que devem ser deletadas caso essa entidade seja deletada **/
     public $relacoesDependentes = [
         'foto',
     ];
@@ -89,5 +90,18 @@ class Propaganda extends Model
     public function getURLAttribute()
     {
         return $this->foto ? $this->foto->urlCloudinary : '';
+    }
+
+    /**
+     * Acessor para a URL da propaganda ja formatado.
+     */
+    public function getUrlDestinoAttribute()
+    {
+        $link = $this->attributes['url_destino'];
+        if (preg_match('#[https://,http://]#', $link)) {
+            return $link;
+        }
+
+        return "https://$link";
     }
 }

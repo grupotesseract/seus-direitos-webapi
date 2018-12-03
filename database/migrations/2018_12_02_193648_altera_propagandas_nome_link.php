@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AlteraPropagandasNomeLink extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('propagandas', function (Blueprint $table) {
+            $table->renameColumn('nome', 'url_destino');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('propagandas', function (Blueprint $table) {
+            $table->renameColumn('url_destino', 'nome');
+        });
+    }
+}
