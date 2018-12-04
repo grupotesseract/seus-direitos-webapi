@@ -2,6 +2,8 @@
  * Geral e Portrait
  **/
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 $cor-azul-escuro:#1d2440;
 $cor-azul-claro:#02659c;
 $cor-amarelo-texto:#f6b01c;
@@ -17,6 +19,7 @@ $cor-cinza-sombra:#717171;
 
 .container-geral {
     font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     text-transform:uppercase;
     height:100vh;
     background-color: $cor-rosa-claro;
@@ -38,7 +41,7 @@ $cor-cinza-sombra:#717171;
         .textobottom {
             position: absolute;
             bottom: 2.5%;
-            left: 12%;
+            left: 13%;
             color: $cor-amarelo-texto;
             .fundo-azul-claro {
                 background-color: $cor-azul-claro;
@@ -70,7 +73,7 @@ $cor-cinza-sombra:#717171;
         flex-direction: row;
         justify-content: space-between;
         background-color: $cor-azul-escuro;
-        border: 1px solid $cor-azul-escuro;
+        border: none;
         border-radius: 10px;
 
         text-align: center;
@@ -126,5 +129,30 @@ $cor-cinza-sombra:#717171;
 /**
  * Adaptações landscape
 ***/
-@media all and (orientation:landscape) {
+
+@media all {
+    .msg-troque-orientacao {
+        display:none;
+    }
 }
+
+@media all and (orientation:portrait) {
+    #logo-seu-sindicato {
+        width: 250px;
+    }
+    .container-resto {
+        display:none!important;
+    }
+    .textobottom {
+        display:none!important;
+    }
+    .msg-troque-orientacao {
+        display:block!important;
+        position:absolute;
+        bottom: 30%;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: white;
+    }
+}
+
