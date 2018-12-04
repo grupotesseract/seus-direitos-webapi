@@ -1,18 +1,78 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);@charset "UTF-8";
 
 /**
-* Geral e Portrait
-**/
+ * Geral e Portrait
+ **/
 
-.container-geral {
-  height: 100vh;
-  background-color: black;
-  padding: 20px;
+.bg-amarelo {
+  background-color: #ffdd65;
 }
 
-.container-geral #logo-seu-sindicato {
+.bg-azul-claro {
+  background-color: #02659c;
+}
+
+.bg-azul-escuro {
+  background-color: #1d2440;
+}
+
+.bg-quase-branco {
+  background-color: #fdfeff;
+}
+
+.container-geral {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 100vh;
+  background-color: #fee4d7;
+  padding: 12px;
+}
+
+.container-geral .container-logo-seu-sindicato {
+  background: #1d2440;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 30%;
+  min-width: 30%;
+  position: relative;
+}
+
+.container-geral .container-logo-seu-sindicato #logo-seu-sindicato {
+  width: 90%;
+}
+
+.container-geral .container-logo-seu-sindicato .textobottom {
+  position: absolute;
+  bottom: 1%;
+  right: 8%;
+  color: #f6b01c;
+}
+
+.container-geral .container-logo-seu-sindicato .textobottom .fundo-azul-claro {
+  background-color: #02659c;
   width: 100px;
-  margin: 0.5rem auto;
+  height: 19px;
+}
+
+.container-geral .container-logo-seu-sindicato .textobottom p {
+  font-weight: bold;
+  text-align: right;
+  font-size: 0.8rem;
+  margin-top: -25px;
+  line-height: 1rem;
 }
 
 .container-geral h3 {
@@ -28,6 +88,36 @@
 }
 
 .container-geral .carteirinha {
+  -webkit-box-shadow: 2px 2px 12px 2px #717171;
+          box-shadow: 2px 2px 12px 2px #717171;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #1d2440;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.container-geral .carteirinha .container-resto {
+  height: 100%;
+  width: 70%;
+  background-color: #fdfeff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,83 +125,94 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #fdfeff;
-  border-radius: 20px;
-  text-align: center;
-  height: 90vh;
-  overflow: hidden;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.container-geral .container-infos-sindicato {
-  margin-top: -80px;
-  padding: 20px;
+.container-geral .carteirinha .container-resto span {
+  font-size: 0.9rem;
 }
 
-.container-geral .container-infos-sindicato .container-logo-sindicato {
-  padding: 20px;
+.container-geral .carteirinha .container-resto .label-info-carteirinha {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 5px;
+  background-color: #ffdd65;
+  display: -webkit-inline-box;
+  text-align: -webkit-right;
+  width: 30%;
+}
+
+.container-geral .carteirinha .container-resto .container-infos-sindicato {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.container-geral .container-infos-sindicato .container-logo-sindicato img {
-  height: 200px;
-  width: 200px;
+.container-geral .carteirinha .container-resto .container-infos-sindicato .container-logo-sindicato {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30%;
+  margin: 0 1rem;
+}
+
+.container-geral .carteirinha .container-resto .container-infos-sindicato .container-logo-sindicato img {
+  width: 100px;
+  height: 100px;
+}
+
+.container-geral .carteirinha .container-resto .container-infos-sindicato .container-texto-sindicato {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /**
  * Adaptações landscape
 ***/
 
-@media all and (orientation: landscape) {
-  .container-geral #logo-seu-sindicato {
-    width: 80px;
-    margin: 0.5rem;
-    float: left;
+@media all {
+  .msg-troque-orientacao {
+    display: none;
+  }
+}
+
+@media all and (orientation: portrait) {
+  #logo-seu-sindicato {
+    width: 250px !important;
   }
 
-  .container-geral .carteirinha {
-    display: block;
-    text-align: center;
-    height: 80vh;
+  .container-resto {
+    display: none !important;
   }
 
-  .container-geral .container-infos-sindicato {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  .textobottom {
+    display: none !important;
+  }
+
+  .container-logo-seu-sindicato {
+    width: 100% !important;
+  }
+
+  .msg-troque-orientacao {
+    display: block !important;
+    position: absolute;
+    bottom: 15%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: white;
     width: 100%;
-    margin-top: 3.5rem;
-    padding: 0;
-  }
-
-  .container-geral .container-infos-sindicato .container-logo-sindicato {
-    padding: 0;
-    width: 25vw;
-  }
-
-  .container-geral .container-infos-sindicato .container-logo-sindicato img {
-    height: 120px;
-    width: 120px;
-  }
-
-  .container-geral .container-infos-associado {
-    text-align: left;
-    padding: 10px 25px;
-  }
-
-  .container-geral .container-infos-associado h3 {
-    font-size: 1.2rem;
   }
 }
 

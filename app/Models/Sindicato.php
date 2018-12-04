@@ -160,4 +160,12 @@ class Sindicato extends Model
 
         return '//via.placeholder.com/200x200';
     }
+
+    /**
+     * Acessor para a lista de instituicoes.
+     */
+    public function getListaInstituicoesAttribute()
+    {
+        return $this->instituicoes;
+    }
 }

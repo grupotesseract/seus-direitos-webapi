@@ -24,6 +24,10 @@ class UpdateUserRequest extends FormRequest
      */
     public function rules()
     {
-        return User::$rules;
+        $userRules = User::$updateRules;
+        $idUserAtual = \Request::segment(2);
+        $userRules['email'] = "required|unique:users,email,$idUserAtual";
+
+        return $userRules;
     }
 }

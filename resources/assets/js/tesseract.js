@@ -8,6 +8,7 @@ $(function () {
     bindaSelectCategorias();
     bindaSelectSindicatos();
     bindaSelectInstituicoes();
+    bindaAjaxSelectSindicatosInstituicoes();
 
     /**
      * Funcao para 'clonar' a 1 linha da datatable de cidades e inserir como 
@@ -73,3 +74,37 @@ var bindaSelectInstituicoes = function(){
     }
 };
 
+/**
+ *
+ * Funcao para checar se existe um select de sindicatos e de instituições e preencher as opçoes via ajax
+ */
+var bindaAjaxSelectSindicatosInstituicoes = function(){
+    if ( $('#instituicao_id').length &&  $('#sindicato_id').length ){
+        console.log('bindou');
+        $('#sindicato_id').change(function(event){
+            let idSindicato = event.target.value;
+            $.ajax({
+                url: '/api/sindicatos/'+idSindicato+'/instituicoes',
+                type: 'GET',
+                dataType: 'json',
+                complete: function (jqXHR, textStatus) {
+                    // callback
+                },
+                success: function (data, textStatus, jqXHR) {
+                    if (data.data) {
+                        let novasOps = '<option value="0">Selecione uma instituição</option>';
+                        data.data.forEach(function(el) {
+                            novasOps += '<option value="'+el.id+'">'+el.nomecompleto+'</option>';
+                        });
+
+                        $('#instituicao_id').html(novasOps);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    // error callback
+                }
+            });
+
+        });
+    }
+};
