@@ -32,7 +32,9 @@
                         <div class="container-logo-sindicato">
                             <img src="{{ $carteirinha->sindicato->linkLogo }}" class="img-responsive" align="left">	
                         </div>
-                        <h2 class="negrito titulo-sindicato" >{{ $carteirinha->sindicato->nome }}</h3>			
+                        <div class="container-texto-sindicato">
+                            <h2 class="negrito titulo-sindicato" >{{ $carteirinha->sindicato->nome }}</h3>			
+                        </div>
                     </div>
                     <div>
                         <div class="text-left mb-2">

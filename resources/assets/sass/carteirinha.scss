@@ -34,14 +34,15 @@ $cor-cinza-sombra:#717171;
         height:100%;
         width:30%;
         min-width:30%;
+        position:relative;
 
         #logo-seu-sindicato {
             width: 90%;
         }
         .textobottom {
             position: absolute;
-            bottom: 2.5%;
-            left: 13%;
+            bottom: 1%;
+            right: 8%;
             color: $cor-amarelo-texto;
             .fundo-azul-claro {
                 background-color: $cor-azul-claro;
@@ -112,14 +113,21 @@ $cor-cinza-sombra:#717171;
                 .container-logo-sindicato {
                     display:flex;
                     justify-content:center;
-                    width:33%;
-                    margin:0 1.5rem;
+                    width:30%;
+                    margin:0 0.5rem;
 
                     img {
                         width: 75px;
                         height: 75px;
                     }
                 }
+
+                .container-texto-sindicato {
+                    display:flex;
+                    justify-content:center;
+                    width:70%;
+                }
+                
             }
         }
     }
