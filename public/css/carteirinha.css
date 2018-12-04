@@ -163,22 +163,19 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 30%;
-  margin: 0 0.5rem;
+  margin: 0 1rem;
 }
 
 .container-geral .carteirinha .container-resto .container-infos-sindicato .container-logo-sindicato img {
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
 }
 
 .container-geral .carteirinha .container-resto .container-infos-sindicato .container-texto-sindicato {
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 70%;
 }
 
 /**
