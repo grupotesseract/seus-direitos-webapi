@@ -117,9 +117,8 @@ class User extends Authenticatable
             : '';
     }
 
-
     /**
-     * Acessor para URL final da listagem de acordo com o tipo do User
+     * Acessor para URL final da listagem de acordo com o tipo do User.
      */
     public function getRotaListagemAttribute()
     {
@@ -136,7 +135,5 @@ class User extends Authenticatable
             default:
                 break;
         }
-        
     }
-
 }
