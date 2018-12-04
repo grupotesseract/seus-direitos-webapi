@@ -76,7 +76,7 @@ class SindicatoAPIController extends AppBaseController
     public function getBeneficiosPorSindicato($id)
     {
         /** @var Estado $estado */
-        $sindicato = $this->sindicatoRepository->find($id)->first();
+        $sindicato = $this->sindicatoRepository->find($id);
 
         if (empty($sindicato)) {
             return $this->sendError('Sindicato não encontrado');
@@ -85,10 +85,10 @@ class SindicatoAPIController extends AppBaseController
         $user = Auth::user();
         $user_id = isset($user->id) ? $user->id : 0;
 
-        $urlBeneficio = ['id' => 0, 'nome' => 'Veja aqui sua Carteria Digital: https://www.seusindicato.com.br/carteirinha/'.$user_id];
-
         $retorno = $sindicato->beneficios->toArray();
-        array_push($retorno, $urlBeneficio);
+
+        /*$urlBeneficio = ['id' => 0, 'nome' => 'Veja aqui sua Carteria Digital: https://www.seusindicato.com.br/carteirinha/'.$user_id];
+        array_push($retorno, $urlBeneficio);*/
 
         return $this->sendResponse($retorno, 'Beneficios do '.$sindicato->nome.':');
     }

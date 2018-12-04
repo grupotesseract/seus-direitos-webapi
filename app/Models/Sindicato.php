@@ -47,7 +47,7 @@ class Sindicato extends Model
     public static $rules = [
         'file' => 'max:5000',
         'nome' => 'required',
-        'sigla' => 'required',
+        'sigla' => 'required|max:50',
         'email' => 'required|email',
     ];
 
