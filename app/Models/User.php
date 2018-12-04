@@ -79,36 +79,33 @@ class User extends Authenticatable
         return $this->belongsTo(\App\Models\Instituicao::class);
     }
 
-
     /**
-     * Acessor para o link do logo do sindicato ou um placeholder
+     * Acessor para o link do logo do sindicato ou um placeholder.
      */
     public function getLinkLogoSindicatoAttribute()
     {
-        return $this->sindicato 
+        return $this->sindicato
             ? $this->sindicato->linkLogo
             : 'https://via.placeholder.com/100';
     }
 
     /**
-     * Acessor para o Nome do sindicato ou um texto vazio
-     *
+     * Acessor para o Nome do sindicato ou um texto vazio.
      */
     public function getNomeSindicatoAttribute()
     {
-        return $this->sindicato 
+        return $this->sindicato
             ? $this->sindicato->nome
             : '';
     }
 
     /**
-     * Acessor para o nome da instituicao ou um texto vazio 
+     * Acessor para o nome da instituicao ou um texto vazio.
      */
     public function getNomeInstituicaoAttribute()
     {
-        return $this->instituicao 
+        return $this->instituicao
             ? $this->instituicao->nome
             : '';
     }
-
 }
