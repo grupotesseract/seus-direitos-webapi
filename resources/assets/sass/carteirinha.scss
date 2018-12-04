@@ -37,7 +37,8 @@ $cor-cinza-sombra:#717171;
         }
         .textobottom {
             position: absolute;
-            bottom: 1.5rem;
+            bottom: 2.5%;
+            left: 12%;
             color: $cor-amarelo-texto;
             .fundo-azul-claro {
                 background-color: $cor-azul-claro;
@@ -80,6 +81,7 @@ $cor-cinza-sombra:#717171;
 
         .container-resto {
             height:100%;
+            width:70%;
             background-color: $cor-quase-branco;
             display: flex;
             flex-direction: column;
@@ -111,8 +113,8 @@ $cor-cinza-sombra:#717171;
                     margin:0 1.5rem;
 
                     img {
-                        width: 100%;
-                        height: 100%;
+                        width: 75px;
+                        height: 75px;
                     }
                 }
             }
