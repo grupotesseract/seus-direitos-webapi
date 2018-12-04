@@ -16,6 +16,12 @@
     {!! Form::password('password', ['class' => 'form-control']) !!}
 </div>
 
+<!-- Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('rg', 'RG:') !!}
+    {!! Form::text('rg', null, ['class' => 'form-control']) !!}
+</div>
+
 @if (\Request::segment(2) == 'administradores')
 
     {!! Form::hidden('role', 'superadmin') !!}
@@ -39,6 +45,12 @@
     <div class="form-group col-sm-6">
         {!! Form::label('sindicato_id', 'Sindicato:') !!}
         {!! Form::select('sindicato_id', $sindicatos, isset($user) ? $user->sindicato->id : null) !!}
+    </div>
+
+    <!-- Sindicato Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('instituicao_id', 'Instituição:') !!}
+        {!! Form::select('instituicao_id', $instituicoes, isset($user) ? $user->instituicao->id : null, ['class'=> 'form-control']) !!}
     </div>
 
 @elseif (\Request::segment(2) == 'funcionarios')

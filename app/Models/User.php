@@ -35,6 +35,7 @@ class User extends Authenticatable
         'sindicato_id',
         'cidade_id',
         'instituicao_id',
+        'rg',
     ];
 
     /**
@@ -44,7 +45,7 @@ class User extends Authenticatable
      */
     public static $rules = [
         'name' => 'required',
-        'email' => 'required|unique:users,email',
+        'email' => 'required',
         'password' => 'required',
         'role' => 'required|exists:roles,name',
         'sindicato_id' => 'sometimes|exists:sindicatos,id',
