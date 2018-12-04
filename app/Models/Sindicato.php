@@ -56,7 +56,6 @@ class Sindicato extends Model
         'logo',
     ];
 
-
     /**
      * Bindando Model Events para controlar o delete.
      */
@@ -163,11 +162,10 @@ class Sindicato extends Model
     }
 
     /**
-     * Acessor para a lista de instituicoes
+     * Acessor para a lista de instituicoes.
      */
     public function getListaInstituicoesAttribute()
     {
         return $this->instituicoes;
     }
-
 }

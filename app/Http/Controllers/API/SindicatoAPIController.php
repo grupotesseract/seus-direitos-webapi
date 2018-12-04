@@ -108,9 +108,7 @@ class SindicatoAPIController extends AppBaseController
         }
 
         $retorno = $sindicato->instituicoes->toArray();
+
         return $this->sendResponse($retorno, 'Instituições do sindicato '.$sindicato->nome.':');
     }
-
-
-
 }
