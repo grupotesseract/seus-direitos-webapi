@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Flash;
 use Response;
 use App\Models\Role;
-use App\Models\Instituicao;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
 use App\DataTables\Scopes\PorRole;
