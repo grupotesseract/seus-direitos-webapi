@@ -19,6 +19,9 @@
             <div class="carteirinha m-1">
                 <div class="container-logo-seu-sindicato">
                     <img id="logo-seu-sindicato" src="/img/logo-seusindicato-transparencia.png">
+                    <div class="msg-troque-orientacao">
+                        <p> ROTACIONE SEU DISPOSITIVO</p>
+                    </div>
                     <div class="textobottom">
                         <div class="fundo-azul-claro"></div>
                         <p> PRESENTE<br>NA SUA VIDA</p>
