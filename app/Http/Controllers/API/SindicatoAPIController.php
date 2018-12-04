@@ -92,4 +92,23 @@ class SindicatoAPIController extends AppBaseController
 
         return $this->sendResponse($retorno, 'Beneficios do '.$sindicato->nome.':');
     }
+
+    /**
+     * Metodo para retornar as instituicoes de um sindicato.
+     *
+     * @param $id do Sindicato
+     */
+    public function getInstituicoesPorSindicato($id)
+    {
+        /** @var Estado $estado */
+        $sindicato = $this->sindicatoRepository->findWithoutFail($id);
+
+        if (empty($sindicato)) {
+            return $this->sendError('Sindicato não encontrado');
+        }
+
+        $retorno = $sindicato->instituicoes->toArray();
+
+        return $this->sendResponse($retorno, 'Instituições do sindicato '.$sindicato->nome.':');
+    }
 }

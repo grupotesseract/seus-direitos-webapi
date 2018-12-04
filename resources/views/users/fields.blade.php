@@ -73,8 +73,28 @@
         {!! Form::label('instituicao_id', 'Instituição:') !!}
         {!! Form::select('instituicao_id', $instituicoes, isset($user) ? $user->instituicao->id : null, ['class'=> 'form-control']) !!}
     </div>
+    
+{{-- CASO ESTEJA EDITANDO --}}
+@elseif (\Request::segment(3) == 'edit')
+    {!! Form::hidden('role', $user->roles()->first()->name) !!}
 
+    <!-- Sindicato Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('tipo', 'Tipo:') !!}
+        {!! Form::text('tipo', $user->roles()->first()->display_name, ['class'=> 'form-control', 'disabled']) !!}
+    </div>
 
+    <!-- Sindicato Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('sindicato_id', 'Sindicato:') !!}
+        {!! Form::select('sindicato_id', $sindicatos, isset($user->sindicato) ? $user->sindicato->id : null, ['class' => 'form-control select2']) !!}
+    </div>
+
+    <!-- Sindicato Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('instituicao_id', 'Instituição:') !!}
+        {!! Form::select('instituicao_id', isset($user->sindicato) ? $user->sindicato->instituicoes->pluck('nomecompleto', 'id') : $instituicoes, isset($user->instituicao) ? $user->instituicao->id : null, ['class'=> 'form-control']) !!}
+    </div>
 
 @endif
 

@@ -58,11 +58,14 @@ Route::resource('sindicatos', 'SindicatoAPIController', ['except' => [
     'create', 'edit',
 ]]);
 
-//Listagem de beneficios de 1 estado
+//Listagem de beneficios de 1 sindicato
 Route::get('sindicatos/{id}/beneficios', 'SindicatoAPIController@getBeneficiosPorSindicato');
 
-//Listagem de videos de 1 estado
+//Listagem de videos de 1 sindicato
 Route::get('sindicatos/{id}/videos', 'SindicatoAPIController@getVideosPorSindicato');
+
+//Listagem de beneficios de 1 sindicato
+Route::get('sindicatos/{id}/instituicoes', 'SindicatoAPIController@getInstituicoesPorSindicato');
 
 //Video em destaque
 Route::get('video-home', 'VideoAPIController@getVideoHome');

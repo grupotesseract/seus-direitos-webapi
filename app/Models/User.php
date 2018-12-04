@@ -53,6 +53,14 @@ class User extends Authenticatable
         'cidade_id' => 'sometimes|exists:cidades,id',
     ];
 
+    public static $updateRules = [
+        'name' => 'required',
+        'email' => 'required',
+        'role' => 'required|exists:roles,name',
+        'sindicato_id' => 'sometimes|exists:sindicatos,id',
+        'instituicao_id' => 'sometimes|exists:instituicoes,id',
+    ];
+
     /**
      * Um User pode ser responsavel de um sindicato ou estar associado a um sindicato.
      *
@@ -107,5 +115,25 @@ class User extends Authenticatable
         return $this->instituicao
             ? $this->instituicao->nome
             : '';
+    }
+
+    /**
+     * Acessor para URL final da listagem de acordo com o tipo do User.
+     */
+    public function getRotaListagemAttribute()
+    {
+        switch ($this->roles()->first()->name) {
+            case 'superadmin':
+                return '/usuarios/administradores';
+                break;
+            case 'sindicalista':
+                return '/usuarios/sindicalistas';
+                break;
+            case 'funcionario':
+                return '/usuarios/funcionarios';
+                break;
+            default:
+                break;
+        }
     }
 }
