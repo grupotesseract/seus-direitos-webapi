@@ -9,17 +9,16 @@
         <!-- Normalize CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <style>
-        @import url('https://fonts.googleapis.com/css?family=Roboto:700');
-        </style>
+
         <link rel="stylesheet" href="/css/carteirinha.css">
+        <link rel="manifest" href="/carteirinha/manifest.json">
 
     </head>
     <body>
         <div class="container-geral"> 
             <div class="carteirinha m-1">
                 <div class="container-logo-seu-sindicato">
-                    <img id="logo-seu-sindicato" src="/img/logo-seusindicato.jpg">
+                    <img id="logo-seu-sindicato" src="/img/logo-seusindicato-transparencia.png">
                     <div class="textobottom">
                         <div class="fundo-azul-claro"></div>
                         <p> PRESENTE<br>NA SUA VIDA</p>
@@ -62,5 +61,9 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            screen.orientation.lock('landscape');
+        </script>
     </body>
 </html>

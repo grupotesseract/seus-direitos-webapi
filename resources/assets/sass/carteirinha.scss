@@ -2,6 +2,8 @@
  * Geral e Portrait
  **/
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 $cor-azul-escuro:#1d2440;
 $cor-azul-claro:#02659c;
 $cor-amarelo-texto:#f6b01c;
@@ -37,7 +39,8 @@ $cor-cinza-sombra:#717171;
         }
         .textobottom {
             position: absolute;
-            bottom: 1.5rem;
+            bottom: 15%;
+            left: 13%;
             color: $cor-amarelo-texto;
             .fundo-azul-claro {
                 background-color: $cor-azul-claro;
@@ -69,7 +72,7 @@ $cor-cinza-sombra:#717171;
         flex-direction: row;
         justify-content: space-between;
         background-color: $cor-azul-escuro;
-        border: 1px solid $cor-azul-escuro;
+        border: none;
         border-radius: 10px;
 
         text-align: center;
@@ -125,4 +128,24 @@ $cor-cinza-sombra:#717171;
  * Adaptações landscape
 ***/
 @media all and (orientation:landscape) {
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    .textobottom {
+        bottom: -60%;
+        left: 13%;
+    }
+  }
+    
+
 }

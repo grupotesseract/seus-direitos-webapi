@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);@charset "UTF-8";
 
 /**
  * Geral e Portrait
@@ -54,7 +54,8 @@
 
 .container-geral .container-logo-seu-sindicato .textobottom {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 15%;
+  left: 13%;
   color: #f6b01c;
 }
 
@@ -98,7 +99,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #1d2440;
-  border: 1px solid #1d2440;
+  border: none;
   border-radius: 10px;
   text-align: center;
   -webkit-box-pack: center;
@@ -170,4 +171,24 @@
 /**
  * Adaptações landscape
 ***/
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  html {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  html .textobottom {
+    bottom: -60%;
+    left: 13%;
+  }
+}
 
