@@ -150,11 +150,20 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
+        //Se vier password precisa encryptar antes de salvar no BD
+        if ($request->password) {
+            $request->request->add(['password'=> bcrypt($request->password)]);
+        }
+        //Se nao vier, remover o field da request
+        else {
+            $request->request->remove('password');
+        }
+
         $user = $this->userRepository->update($request->all(), $id);
-
         Flash::success('Usuário atualizado com sucesso.');
+        $redirect = $user->rotaListagem;
 
-        return redirect(route('users.index'));
+        return redirect($redirect);
     }
 
     /**
@@ -167,6 +176,7 @@ class UserController extends AppBaseController
     public function destroy($id)
     {
         $user = $this->userRepository->findWithoutFail($id);
+        $redirect = $user->rotaListagem;
 
         if (empty($user)) {
             Flash::error('Usuário não encontrado');
@@ -178,7 +188,7 @@ class UserController extends AppBaseController
 
         Flash::success('Usuário excluído com sucesso.');
 
-        return redirect(route('users.index'));
+        return redirect($redirect);
     }
 
     /**

@@ -30,8 +30,15 @@ class UserSindicalistaComposer
      */
     public function compose(View $view)
     {
+        //Se o user atual tiver sindicato guardar.
+        $sindicato = \Auth::user()->sindicato ? \Auth::user()->sindicato : null;
         $sindicatos = $this->sindicatos->getCamposSelect();
-        $instituicoes = $this->instituicoes->all()->pluck('nomecompleto', 'id');
+
+        //Pegando lista de instituições de acordo com o sindicato caso exista
+        $instituicoes = $sindicato
+            ? $sindicato->instituicoes->pluck('nomecompleto', 'id')
+            : $this->instituicoes->all()->pluck('nomecompleto', 'id');
+
         $view->with(['sindicatos' => $sindicatos, 'instituicoes' => $instituicoes]);
     }
 }
