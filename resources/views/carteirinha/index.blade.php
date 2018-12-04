@@ -30,10 +30,10 @@
                 <div class="container-resto">
                     <div class="container-infos-sindicato">
                         <div class="container-logo-sindicato">
-                            <img src="{{ $carteirinha->sindicato->linkLogo }}" class="img-responsive" align="left">	
+                            <img src="{{ $carteirinha['logoSindicato'] }}" class="img-responsive" align="left">	
                         </div>
                         <div class="container-texto-sindicato">
-                            <h2 class="negrito titulo-sindicato" >{{ $carteirinha->sindicato->nome }}</h3>			
+                            <h2 class="negrito titulo-sindicato" >{{ $carteirinha['nomeSindicato'] }}</h3>			
                         </div>
                     </div>
                     <div>
@@ -42,7 +42,7 @@
                                 Associado
                             </span>
                             <span class="text-left">
-                                {{ strtoupper($carteirinha->name) }}
+                                {{ $carteirinha['nomeAssociado'] }}
                             </span>
                         </div>
                         <div class="text-left mb-2">
@@ -50,7 +50,7 @@
                                 RG
                             </span>
                             <span class="text-left">
-                                &nbsp;{{ strtoupper( $carteirinha->rg ) }}
+                                &nbsp;{{  $carteirinha['rgAssociado'] }}
                             </span>
 
                         </div>
@@ -59,7 +59,7 @@
                                 Instituição
                             </span>
                             <span class="text-left"> 
-                                {{ strtoupper( $carteirinha->instituicao->nomecompleto ) }}
+                                {{  $carteirinha['nomeInstituicao']  }}
                             </span>
                         </div>
                     </div>
