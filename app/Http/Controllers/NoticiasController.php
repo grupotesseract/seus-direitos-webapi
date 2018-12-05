@@ -12,6 +12,7 @@ use App\Repositories\NoticiasRepository;
 use App\Http\Requests\CreateNoticiasRequest;
 use App\Http\Requests\UpdateNoticiasRequest;
 
+
 class NoticiasController extends AppBaseController
 {
     /** @var NoticiasRepository */

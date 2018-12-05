@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use App\Models\Sindicato;
 use InfyOm\Generator\Common\BaseRepository;
+use Auth;
+
 
 class SindicatoRepository extends BaseRepository
 {
@@ -28,6 +30,14 @@ class SindicatoRepository extends BaseRepository
      **/
     public function getCamposSelect()
     {
-        return Sindicato::pluck('nome', 'id');
+        $user = Auth::user();
+
+        if ($user->hasRole('superadmin')) 
+            $sindicatos = Sindicato::pluck('nome', 'id');        
+        else 
+            $sindicatos = $user->sindicato()->pluck('nome', 'id');
+        
+
+        return $sindicatos;
     }
 }

@@ -4,6 +4,7 @@ namespace App\ViewComposers;
 
 use Illuminate\View\View;
 use App\Repositories\SindicatoRepository;
+use Auth;
 
 class SindicatoSelectComposer
 {
@@ -27,7 +28,8 @@ class SindicatoSelectComposer
      * @return void
      */
     public function compose(View $view)
-    {
+    {       
+
         $sindicatos = $this->sindicatoRepository->getCamposSelect();
 
         $view
