@@ -134,6 +134,7 @@ class Sindicato extends Model
     {
         return $this->hasMany(\App\Models\Instituicao::class);
     }
+    
 
     /**
      * Cada sindicato possuí um 1 unica Foto de Logo.
