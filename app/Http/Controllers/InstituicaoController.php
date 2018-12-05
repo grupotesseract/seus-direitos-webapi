@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Flash;
 use Response;
+use App\DataTables\Scopes\PorSindicato;
 use App\DataTables\InstituicaoDataTable;
 use App\Repositories\SindicatoRepository;
 use App\Repositories\InstituicaoRepository;
 use App\Http\Requests\CreateInstituicaoRequest;
 use App\Http\Requests\UpdateInstituicaoRequest;
-use App\DataTables\Scopes\PorSindicato;
-
 
 class InstituicaoController extends AppBaseController
 {
