@@ -9,6 +9,8 @@ use App\Repositories\SindicatoRepository;
 use App\Repositories\InstituicaoRepository;
 use App\Http\Requests\CreateInstituicaoRequest;
 use App\Http\Requests\UpdateInstituicaoRequest;
+use App\DataTables\Scopes\PorSindicato;
+
 
 class InstituicaoController extends AppBaseController
 {
@@ -38,7 +40,9 @@ class InstituicaoController extends AppBaseController
      */
     public function index(InstituicaoDataTable $instituicaoDataTable)
     {
-        return $instituicaoDataTable->render('instituicaos.index');
+        return $instituicaoDataTable
+            ->addScope(new PorSindicato(\Auth::user()))
+            ->render('instituicaos.index');
     }
 
     /**

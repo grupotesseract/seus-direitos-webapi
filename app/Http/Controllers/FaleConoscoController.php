@@ -9,6 +9,8 @@ use App\DataTables\FaleConoscoDataTable;
 use App\Repositories\FaleConoscoRepository;
 use App\Http\Requests\CreateFaleConoscoRequest;
 use App\Http\Requests\UpdateFaleConoscoRequest;
+use App\DataTables\Scopes\PorSindicato;
+
 
 class FaleConoscoController extends AppBaseController
 {
@@ -28,7 +30,9 @@ class FaleConoscoController extends AppBaseController
      */
     public function index(FaleConoscoDataTable $faleConoscoDataTable)
     {
-        return $faleConoscoDataTable->render('fale_conoscos.index');
+        return $faleConoscoDataTable
+            ->addScope(new PorSindicato(\Auth::user()))
+            ->render('fale_conoscos.index');
     }
 
     /**
