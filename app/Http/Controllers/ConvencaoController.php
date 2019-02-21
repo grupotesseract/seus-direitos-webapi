@@ -7,6 +7,7 @@ use Response;
 use App\Models\Instituicao;
 use App\DataTables\ConvencaoDataTable;
 use App\Models\Sindicato as Sindicato;
+use App\Models\User as User;
 use Illuminate\Support\Facades\Storage;
 use App\Repositories\ConvencaoRepository;
 use App\Http\Requests\CreateConvencaoRequest;
