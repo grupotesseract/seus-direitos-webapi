@@ -203,15 +203,15 @@ class ConvencaoController extends AppBaseController
      *
      * @param mixed $idSindicato
      */
-    public function getConvencoesPorSindicato($idSindicato)
+    public function getConvencoesPorSindicato($idUsuario)
     {
-        $instituicoes = Sindicato::find($idSindicato)->instituicoes;
+        $instituicoes = User::find($idUsuario)->instituicao;
 
         foreach ($instituicoes as $instituicao) {
-            $convencoes[] = $instituicao->convencaos;
+            $convencoes = $instituicao->convencaos;
         }
 
-        return view('convencaos.indexpublico')->with('convencoes', $convencoes[0]);
+        return view('convencaos.indexpublico')->with('convencoes', $convencoes);
     }
 
     /**

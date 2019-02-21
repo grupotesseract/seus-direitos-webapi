@@ -30,8 +30,8 @@ Route::get('saaebauru/convenios/alameda/filmes', 'FilmeController@indexpublic');
 Route::get('saaebauru/convenios/alameda/eventos', 'EventoController@indexpublic');
 Route::get('saaebauru/convenios/alameda/promocoes', 'PromocaoController@indexpublic');
 
-//Listagem de convenções de 1 sindicato
-Route::get('sindicatos/{idSindicato}/convencoes', 'ConvencaoController@getConvencoesPorSindicato');
+//Listagem de convenções de 1 sindicato/usuario
+Route::get('sindicatos/{idUsuario}/convencoes', 'ConvencaoController@getConvencoesPorSindicato');
 
 //Listagem de noticias de 1 sindicato
 Route::get('sindicatos/{idSindicato}/noticias', 'NoticiasController@getNoticiasPorSindicato');
