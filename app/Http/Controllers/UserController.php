@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Flash;
 use Response;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
 use App\DataTables\Scopes\PorRole;
-use App\DataTables\Scopes\PorSindicato;
 use App\Repositories\UserRepository;
+use App\DataTables\Scopes\PorSindicato;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-
-use Auth;
 
 /**
  * @resource User
@@ -231,7 +230,7 @@ class UserController extends AppBaseController
     {
         return $userDT
             ->addScope(new PorRole('funcionario'))
-            ->addScope(new PorSindicato(Auth::user()))            
+            ->addScope(new PorSindicato(Auth::user()))
             ->render('users.lista-funcionarios');
     }
 
