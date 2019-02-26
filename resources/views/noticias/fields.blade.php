@@ -22,7 +22,7 @@
 <!-- Sindicato Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('sindicato_id', 'Sindicato:') !!}
-    {!! Form::select('sindicato_id', $sindicatos, null, ['class' => 'form-control', 'placeholder' => 'Escolha o Sindicato']) !!}
+    {!! Form::select('sindicato_id', $sindicatos, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

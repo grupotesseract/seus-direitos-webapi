@@ -78,6 +78,10 @@
     <a href="{!! route('convencaos.index') !!}"><i class="fa fa-calendar-check-o"></i><span>Convenções Coletivas</span></a>
 </li>
 
+<li class="{{ Request::is('noticias*') ? 'active' : '' }}">
+    <a href="{!! route('noticias.index') !!}"><i class="fa fa-bullhorn"></i><span>Notícias</span></a>
+</li>
+
 @endrole
 
 

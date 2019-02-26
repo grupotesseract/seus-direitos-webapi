@@ -42,7 +42,16 @@ class NoticiasController extends AppBaseController
      */
     public function create()
     {
-        $sindicatos = Sindicato::all()->pluck('nome', 'id')->toArray();
+        
+        $user = \Auth::user();
+
+        if ($user->hasRole('superadmin')) {
+            $sindicatos = Sindicato::all()->pluck('nome', 'id')->toArray();
+        }
+        //Se for de um sindicato, mostrar o sindicato apenas
+        else {
+            $sindicatos = $user->sindicato()->pluck('nome', 'id');            
+        }              
 
         return view('noticias.create')->with('sindicatos', $sindicatos);
     }
