@@ -36,6 +36,7 @@ class User extends Authenticatable
         'cidade_id',
         'instituicao_id',
         'rg',
+        'celular'
     ];
 
     /**
