@@ -15,7 +15,6 @@ class CriarColunaCelularUser extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('celular')->nullable();
-            
         });
     }
 

@@ -42,7 +42,6 @@ class NoticiasController extends AppBaseController
      */
     public function create()
     {
-        
         $user = \Auth::user();
 
         if ($user->hasRole('superadmin')) {
@@ -50,8 +49,8 @@ class NoticiasController extends AppBaseController
         }
         //Se for de um sindicato, mostrar o sindicato apenas
         else {
-            $sindicatos = $user->sindicato()->pluck('nome', 'id');            
-        }              
+            $sindicatos = $user->sindicato()->pluck('nome', 'id');
+        }
 
         return view('noticias.create')->with('sindicatos', $sindicatos);
     }
