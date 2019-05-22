@@ -24,6 +24,7 @@ class Convencao extends Model
         'resumo',
         'arquivo',
         'instituicao_id',
+        'texto'
     ];
 
     /**
@@ -34,6 +35,7 @@ class Convencao extends Model
     protected $casts = [
         'resumo' => 'string',
         'arquivo' => 'string',
+        'texto' => 'string'
     ];
 
     /**
@@ -43,7 +45,7 @@ class Convencao extends Model
      */
     public static $rules = [
         'resumo' => 'required',
-        'arquivo' => 'required',
+        'texto' => 'required',
         'instituicao_id' => 'required',
     ];
 
