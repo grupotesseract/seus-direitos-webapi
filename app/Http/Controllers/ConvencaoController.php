@@ -219,7 +219,7 @@ class ConvencaoController extends AppBaseController
      */
     public function detalhaConvencao($id)
     {
-        $convencao = $this->convencaoRepository->findWithoutFail($id);                
+        $convencao = $this->convencaoRepository->findWithoutFail($id);
 
         return view('convencaos.detalhapublico')->with('convencao', $convencao);
     }

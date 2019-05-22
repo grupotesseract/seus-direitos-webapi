@@ -14,7 +14,7 @@ class CriarColunaTextoConvencoes extends Migration
     public function up()
     {
         Schema::table('convencaos', function (Blueprint $table) {
-            $table->text('texto')->nullable(); 
+            $table->text('texto')->nullable();
             $table->dropColumn('arquivo');
         });
     }
@@ -28,7 +28,7 @@ class CriarColunaTextoConvencoes extends Migration
     {
         Schema::table('convencaos', function (Blueprint $table) {
             $table->dropColumn('texto');
-            $table->text('arquivo')->nullable(); 
+            $table->text('arquivo')->nullable();
         });
     }
 }

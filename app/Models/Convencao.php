@@ -24,7 +24,7 @@ class Convencao extends Model
         'resumo',
         'arquivo',
         'instituicao_id',
-        'texto'
+        'texto',
     ];
 
     /**
@@ -35,7 +35,7 @@ class Convencao extends Model
     protected $casts = [
         'resumo' => 'string',
         'arquivo' => 'string',
-        'texto' => 'string'
+        'texto' => 'string',
     ];
 
     /**
