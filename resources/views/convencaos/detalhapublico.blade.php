@@ -56,18 +56,19 @@
 <!-- AJUSTAR TAMANHO DA IMAGEM -->
 <!-- TRADUZIR LABELS -->
 
-<div class="container">
+<div class="container" style="margin-right: 100px">
     
-    @foreach ($convencoes as $convencao)
-        <div class="row filme">
+    <div class="row filme">
 
-            <div class="col-lg-12">
-                <h2>{{$convencao->resumo}}</h2>    
-                <a class="btn btn-primary pull-left" href="{{ url('detalhaconvencao/'.$convencao->id) }}">Visualizar</a>    
-            </div>
-
+        <div class="col-lg-9">
+            <h2>{{$convencao->resumo}}</h2>                
         </div>
-    @endforeach
+
+        <div class="col-lg-12">
+            {!! $convencao->texto !!}                
+        </div>
+
+    </div>
 
 </div>
 

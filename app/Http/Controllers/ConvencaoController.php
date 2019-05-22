@@ -73,11 +73,11 @@ class ConvencaoController extends AppBaseController
     {
         //$arquivo = $request->file('arquivo')->store('arquivos_convencao');
 
-        $arquivo = Storage::putFile('arquivos_convencao', $request->file('arquivo'), 'public');
+        //$arquivo = Storage::putFile('arquivos_convencao', $request->file('arquivo'), 'public');
 
         $input = $request->all();
 
-        $input['arquivo'] = $arquivo;
+        //$input['arquivo'] = $arquivo;
 
         $convencao = $this->convencaoRepository->create($input);
 
@@ -162,11 +162,11 @@ class ConvencaoController extends AppBaseController
             return redirect(route('convencaos.index'));
         }
 
-        $arquivo = $request->file('arquivo')->store('arquivos_convencao');
+        //$arquivo = $request->file('arquivo')->store('arquivos_convencao');
 
         $input = $request->all();
 
-        $input['arquivo'] = $arquivo;
+        //$input['arquivo'] = $arquivo;
 
         $convencao = $this->convencaoRepository->update($input, $id);
 
@@ -217,11 +217,10 @@ class ConvencaoController extends AppBaseController
      *
      * @param mixed $id - ID da Convencao
      */
-    public function downloadConvencao($id)
+    public function detalhaConvencao($id)
     {
-        $convencao = $this->convencaoRepository->findWithoutFail($id);
-        $arquivo = storage_path('app/'.$convencao->arquivo);
+        $convencao = $this->convencaoRepository->findWithoutFail($id);                
 
-        return response()->download($arquivo);
+        return view('convencaos.detalhapublico')->with('convencao', $convencao);
     }
 }
