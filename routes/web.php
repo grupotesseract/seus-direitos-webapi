@@ -36,7 +36,7 @@ Route::get('sindicatos/{idUsuario}/convencoes', 'ConvencaoController@getConvenco
 //Listagem de noticias de 1 sindicato
 Route::get('sindicatos/{idSindicato}/noticias', 'NoticiasController@getNoticiasPorSindicato');
 
-Route::get('downloadconvencao/{id}', 'ConvencaoController@downloadConvencao');
+Route::get('detalhaconvencao/{id}', 'ConvencaoController@detalhaConvencao');
 Route::get('detalhanoticia/{id}', 'NoticiasController@detalhaNoticia');
 
 /*

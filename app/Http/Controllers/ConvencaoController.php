@@ -217,11 +217,10 @@ class ConvencaoController extends AppBaseController
      *
      * @param mixed $id - ID da Convencao
      */
-    public function downloadConvencao($id)
+    public function detalhaConvencao($id)
     {
-        $convencao = $this->convencaoRepository->findWithoutFail($id);
-        $arquivo = storage_path('app/'.$convencao->arquivo);
+        $convencao = $this->convencaoRepository->findWithoutFail($id);                
 
-        return response()->download($arquivo);
+        return view('convencaos.detalhapublico')->with('convencao', $convencao);
     }
 }
