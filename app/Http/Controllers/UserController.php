@@ -6,13 +6,17 @@ use Auth;
 use Flash;
 use Response;
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
 use App\DataTables\Scopes\PorRole;
 use App\Repositories\UserRepository;
+use Maatwebsite\Excel\Facades\Excel;
 use App\DataTables\Scopes\PorSindicato;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Repositories\SindicatoRepository;
+use App\Repositories\InstituicaoRepository;
 
 /**
  * @resource User
@@ -24,9 +28,14 @@ class UserController extends AppBaseController
     /** @var UserRepository */
     private $userRepository;
 
-    public function __construct(UserRepository $userRepo)
-    {
+    public function __construct(
+        UserRepository $userRepo,
+        SindicatoRepository $sindicatoRepo,
+        InstituicaoRepository $instituicaoRepo
+    ) {
         $this->userRepository = $userRepo;
+        $this->sindicatoRepository = $sindicatoRepo;
+        $this->instituicaoRepository = $instituicaoRepo;
     }
 
     /**
@@ -58,6 +67,58 @@ class UserController extends AppBaseController
     public function createSindicalista()
     {
         return view('users.create-sindicalista');
+    }
+
+    /**
+     * Form para importação de usuários.
+     *
+     * @return Response
+     */
+    public function importarUsuarios()
+    {
+        return view('users.importacao');
+    }
+
+    /**
+     * Método para importação de usuários.
+     *
+     * @return Response
+     */
+    public function postAssociadosImportacao(Request $request)
+    {
+        Excel::load(
+            $request->file('excel'), function ($reader) {
+
+                // Getting all results
+                $results = $reader->get();
+
+                // ->all() is a wrapper for ->get() and will work the same
+                $results = $reader->all();
+
+                $results->each(
+                    function ($result) {
+                        $sindicato = $this->sindicatoRepository->findByField(['nome' => $result->sindicato]);
+                        $instituicao = $this->instituicaoRepository->findByField(['nome' => $result->instituicao]);
+
+                        $input['name'] = $result->nome;
+                        $input['email'] = $result->email;
+                        $input['password'] = bcrypt('123321');
+                        $input['sindicato_id'] = $sindicato->first()->id;
+                        $input['instituicao_id'] = $instituicao->first()->id;
+
+                        $user = $this->userRepository->create($input);
+                        $role = Role::where('name', 'funcionario')->first();
+
+                        if ($user && $role) {
+                            $user->attachRole($role);
+                        }
+                    }
+                );
+            }
+        );
+        Flash::success('Usuários inseridos com sucesso.');
+
+        return redirect('usuarios/funcionarios');
     }
 
     /**
