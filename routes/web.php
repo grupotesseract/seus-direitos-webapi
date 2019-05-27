@@ -60,6 +60,8 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('usuarios/administradores/{id}/edit', 'UserController@edit');
     Route::get('usuarios/sindicalistas/{id}/edit', 'UserController@edit');
     Route::get('usuarios/funcionarios/{id}/edit', 'UserController@edit');
+    Route::get('usuarios/importar', 'UserController@importarUsuarios');
+    Route::post('usuarios/importar', 'UserController@postAssociadosImportacao');
 
     Route::resource('categorias', 'CategoriaController');
     Route::resource('sindicatos', 'SindicatoController');
