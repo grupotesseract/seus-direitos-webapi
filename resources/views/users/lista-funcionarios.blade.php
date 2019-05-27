@@ -4,6 +4,7 @@
     <section class="content-header">
         <h1>Listagem de usuários do tipo Funcionário - Feitos pelo Aplicativo</h1>
         <a class="btn btn-primary pull-right" style="margin-top: -5px;margin-bottom: 5px" href="/usuarios/funcionarios/create">Criar novo</a>
+        <a class="btn btn-primary pull-right" style="margin-top: -5px;margin-bottom: 5px" href="/usuarios/importar">Importar Planilha</a>
     </section>
     <div class="content">
         <div class="clearfix"></div>
