@@ -27,6 +27,7 @@ class UserController extends AppBaseController
 {
     /** @var UserRepository */
     private $userRepository;
+    private $teveErro;
 
     public function __construct(
         UserRepository $userRepo,
@@ -86,7 +87,7 @@ class UserController extends AppBaseController
      */
     public function postAssociadosImportacao(Request $request)
     {
-        $teveErro = false;
+        $this->teveErro = false;
 
         Excel::load(
             $request->file('excel'), function ($reader) {
@@ -123,14 +124,14 @@ class UserController extends AppBaseController
                                 $user->attachRole($role);
                             }
                         } else {
-                            $teveErro = true;
+                            $this->teveErro = true;
                         }
                     }
                 );
             }
         );
 
-        if (! $teveErro) {
+        if (!$this->teveErro) {
             Flash::success('Planilha importada com sucesso.');
         } else {
             Flash::success('Planilha importada com sucesso, porém alguns registros possuem erros! Verifique se os sindicatos e instituições estão cadastrados');
