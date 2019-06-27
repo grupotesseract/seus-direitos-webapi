@@ -62,6 +62,22 @@
                                 {{  $carteirinha['nomeInstituicao']  }}
                             </span>
                         </div>
+                        <div class="text-left mb-2">
+                            <span class="label-info-carteirinha ">
+                                Validade
+                            </span>
+                            <span class="text-left"> 
+                                {{  $carteirinha['nomeInstituicao']  }}
+                            </span>
+                        </div>
+                        <div class="text-left mb-2">
+                            <span class="label-info-carteirinha ">
+                                Matrícula
+                            </span>
+                            <span class="text-left"> 
+                                {{  $carteirinha['nomeInstituicao']  }}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

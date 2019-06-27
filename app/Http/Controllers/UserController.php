@@ -86,6 +86,8 @@ class UserController extends AppBaseController
      */
     public function postAssociadosImportacao(Request $request)
     {
+        $teveErro = false;
+        
         Excel::load(
             $request->file('excel'), function ($reader) {
 
@@ -100,23 +102,39 @@ class UserController extends AppBaseController
                         $sindicato = $this->sindicatoRepository->findByField(['nome' => $result->sindicato]);
                         $instituicao = $this->instituicaoRepository->findByField(['nome' => $result->instituicao]);
 
-                        $input['name'] = $result->nome;
-                        $input['email'] = $result->email;
-                        $input['password'] = bcrypt('123321');
-                        $input['sindicato_id'] = $sindicato->first()->id;
-                        $input['instituicao_id'] = $instituicao->first()->id;
+                        if ($sindicato->count() > 0 && $instituicao->count() > 0) {
+                            $input['name'] = $result->nome;
+                            $input['email'] = $result->email;
+                            $input['password'] = bcrypt('123321');
+                            $input['sindicato_id'] = $sindicato->first()->id;
+                            $input['instituicao_id'] = $instituicao->first()->id;
 
-                        $user = $this->userRepository->create($input);
-                        $role = Role::where('name', 'funcionario')->first();
+                            $user = $this->userRepository->firstOrNew(
+                                [
+                                    'email' => $input['email']
+                                ]
+                            );
 
-                        if ($user && $role) {
-                            $user->attachRole($role);
+                            $user->fill($input);
+                            $user->save();
+                            $role = Role::where('name', 'funcionario')->first();
+
+                            if ($user && $role && !$user->hasRole('funcionario')) {
+                                $user->attachRole($role);
+                            }
+                        } else {
+                            $teveErro = true;
                         }
                     }
                 );
             }
         );
-        Flash::success('Usuários inseridos com sucesso.');
+        
+        if (!$teveErro) {
+            Flash::success('Planilha importada com sucesso.');
+        } else {
+            Flash::success('Planilha importada com sucesso, porém alguns registros possuem erros! Verifique se os sindicatos e instituições estão cadastrados');
+        }
 
         return redirect('usuarios/funcionarios');
     }
