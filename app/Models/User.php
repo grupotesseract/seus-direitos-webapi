@@ -38,7 +38,7 @@ class User extends Authenticatable
         'rg',
         'celular',
         'matricula',
-        'validade_carteirinha'
+        'validade_carteirinha',
     ];
 
     /**
