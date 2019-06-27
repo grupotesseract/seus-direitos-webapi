@@ -131,7 +131,7 @@ class UserController extends AppBaseController
             }
         );
 
-        if (!$this->teveErro) {
+        if (! $this->teveErro) {
             Flash::success('Planilha importada com sucesso.');
         } else {
             Flash::success('Planilha importada com sucesso, porém alguns registros possuem erros! Verifique se os sindicatos e instituições estão cadastrados');
