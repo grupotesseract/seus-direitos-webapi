@@ -87,7 +87,7 @@ class UserController extends AppBaseController
     public function postAssociadosImportacao(Request $request)
     {
         $teveErro = false;
-        
+
         Excel::load(
             $request->file('excel'), function ($reader) {
 
@@ -111,7 +111,7 @@ class UserController extends AppBaseController
 
                             $user = $this->userRepository->firstOrNew(
                                 [
-                                    'email' => $input['email']
+                                    'email' => $input['email'],
                                 ]
                             );
 
@@ -119,7 +119,7 @@ class UserController extends AppBaseController
                             $user->save();
                             $role = Role::where('name', 'funcionario')->first();
 
-                            if ($user && $role && !$user->hasRole('funcionario')) {
+                            if ($user && $role && ! $user->hasRole('funcionario')) {
                                 $user->attachRole($role);
                             }
                         } else {
@@ -129,8 +129,8 @@ class UserController extends AppBaseController
                 );
             }
         );
-        
-        if (!$teveErro) {
+
+        if (! $teveErro) {
             Flash::success('Planilha importada com sucesso.');
         } else {
             Flash::success('Planilha importada com sucesso, porém alguns registros possuem erros! Verifique se os sindicatos e instituições estão cadastrados');
