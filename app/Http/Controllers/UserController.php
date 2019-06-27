@@ -340,6 +340,8 @@ class UserController extends AppBaseController
             'nomeAssociado' => $user->name,
             'rgAssociado' => $user->rg,
             'nomeInstituicao' => $user->nomeInstituicao,
+            'matricula' => $user->matricula,
+            'validade_carteirinha' => $user->validade_carteirinha,
         ];
 
         return view('carteirinha.index')->with('carteirinha', $carteirinha);
