@@ -67,7 +67,7 @@
                                 Validade
                             </span>
                             <span class="text-left"> 
-                                {{  $carteirinha['matricula']  }}
+                                {{  $carteirinha['validade_carteirinha']  }}
                             </span>
                         </div>
                         <div class="text-left mb-2">
@@ -75,7 +75,7 @@
                                 Matrícula
                             </span>
                             <span class="text-left"> 
-                                {{  $carteirinha['validade_carteirinha']  }}
+                                {{  $carteirinha['matricula']  }}
                             </span>
                         </div>
                     </div>
