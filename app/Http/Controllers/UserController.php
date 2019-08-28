@@ -101,18 +101,29 @@ class UserController extends AppBaseController
                 $results->each(
                     function ($result) {
                         $sindicato = $this->sindicatoRepository->findByField(['nome' => $result->sindicato]);
-                        $instituicao = $this->instituicaoRepository->findByField(['nome' => $result->instituicao]);
+                        if (!is_null($result->instituicao) || $result->instituicao != '') {
+                            $instituicao = $this->instituicaoRepository->firstOrCreate(['nome' => $result->instituicao, 'nomecompleto' => $result->instituicao]);
+                        }
 
-                        if ($sindicato->count() > 0 && $instituicao->count() > 0) {
-                            $input['name'] = $result->nome;
+                        if ($sindicato->count() > 0) {
+                            
+                            $input['name'] = strtoupper($result->nome);
                             $input['email'] = $result->email;
-                            $input['password'] = bcrypt('123321');
+                            $rg_formatado = str_replace('.', '', $result->rg);
+                            $rg_formatado = str_replace('-', '', $rg_formatado);
+                            $input['password'] = bcrypt('ss'.$rg_formatado);
                             $input['sindicato_id'] = $sindicato->first()->id;
-                            $input['instituicao_id'] = $instituicao->first()->id;
-
+                            if (isset($instituicao)) {
+                                $input['instituicao_id'] = $instituicao->first()->id;
+                            }
+                            $input['rg'] = $rg_formatado;
+                            $input['matricula'] = $result->matricula;
+                            $input['validade_carteirinha'] = $result->validade_carteirinha;
+                            
                             $user = $this->userRepository->firstOrNew(
                                 [
                                     'email' => $input['email'],
+                                    'rg' => $input['rg']
                                 ]
                             );
 

@@ -48,7 +48,7 @@ class User extends Authenticatable
      */
     public static $rules = [
         'name' => 'required',
-        'email' => 'required',
+        'email' => 'required|unique:users',
         'password' => 'required',
         'role' => 'required|exists:roles,name',
         'sindicato_id' => 'sometimes|exists:sindicatos,id',
