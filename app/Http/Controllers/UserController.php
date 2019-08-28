@@ -101,12 +101,11 @@ class UserController extends AppBaseController
                 $results->each(
                     function ($result) {
                         $sindicato = $this->sindicatoRepository->findByField(['nome' => $result->sindicato]);
-                        if (!is_null($result->instituicao) || $result->instituicao != '') {
+                        if (! is_null($result->instituicao) || $result->instituicao != '') {
                             $instituicao = $this->instituicaoRepository->firstOrCreate(['nome' => $result->instituicao, 'nomecompleto' => $result->instituicao]);
                         }
 
                         if ($sindicato->count() > 0) {
-                            
                             $input['name'] = strtoupper($result->nome);
                             $input['email'] = $result->email;
                             $rg_formatado = str_replace('.', '', $result->rg);
@@ -119,11 +118,11 @@ class UserController extends AppBaseController
                             $input['rg'] = $rg_formatado;
                             $input['matricula'] = $result->matricula;
                             $input['validade_carteirinha'] = $result->validade_carteirinha;
-                            
+
                             $user = $this->userRepository->firstOrNew(
                                 [
                                     'email' => $input['email'],
-                                    'rg' => $input['rg']
+                                    'rg' => $input['rg'],
                                 ]
                             );
 
