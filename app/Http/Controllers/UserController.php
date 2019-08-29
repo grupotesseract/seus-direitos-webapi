@@ -7,6 +7,8 @@ use Flash;
 use Response;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Sindicato;
+use App\Models\Instituicao;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
 use App\DataTables\Scopes\PorRole;
@@ -89,58 +91,50 @@ class UserController extends AppBaseController
     {
         $this->teveErro = false;
 
-        Excel::load(
-            $request->file('excel'), function ($reader) {
+        $arquivo = \Storage::putFile('importacoes', $request->file('excel'));
 
-                // Getting all results
-                $results = $reader->get();
+        Excel::filter('chunk')->load('storage/app/'.$arquivo)->chunk(100, function ($results) {
 
-                // ->all() is a wrapper for ->get() and will work the same
-                $results = $reader->all();
+            foreach($results as $row) {   
+                
+                $sindicato = Sindicato::where('nome', $row['sindicato'])->first();
+                if (!is_null($row['instituicao']) || $row['instituicao'] != '') {
+                    $instituicao = Instituicao::firstOrCreate(['nome' => $row['instituicao'], 'nomecompleto' => $row['instituicao']]);
+                } 
 
-                $results->each(
-                    function ($result) {
-                        $sindicato = $this->sindicatoRepository->findByField(['nome' => $result->sindicato]);
-                        if (!is_null($result->instituicao) || $result->instituicao != '') {
-                            $instituicao = $this->instituicaoRepository->firstOrCreate(['nome' => $result->instituicao, 'nomecompleto' => $result->instituicao]);
-                        }
-
-                        if ($sindicato->count() > 0) {
-                            
-                            $input['name'] = strtoupper($result->nome);
-                            $input['email'] = $result->email;
-                            $rg_formatado = str_replace('.', '', $result->rg);
-                            $rg_formatado = str_replace('-', '', $rg_formatado);
-                            $input['password'] = bcrypt('ss'.$rg_formatado);
-                            $input['sindicato_id'] = $sindicato->first()->id;
-                            if (isset($instituicao)) {
-                                $input['instituicao_id'] = $instituicao->first()->id;
-                            }
-                            $input['rg'] = $rg_formatado;
-                            $input['matricula'] = $result->matricula;
-                            $input['validade_carteirinha'] = $result->validade_carteirinha;
-                            
-                            $user = $this->userRepository->firstOrNew(
-                                [
-                                    'email' => $input['email'],
-                                    'rg' => $input['rg']
-                                ]
-                            );
-
-                            $user->fill($input);
-                            $user->save();
-                            $role = Role::where('name', 'funcionario')->first();
-
-                            if ($user && $role && ! $user->hasRole('funcionario')) {
-                                $user->attachRole($role);
-                            }
-                        } else {
-                            $this->teveErro = true;
-                        }
+                if ($sindicato->count() > 0) {
+                    
+                    $input['name'] = strtoupper($row['nome']);
+                    $input['email'] = $row['email'];
+                    $rg_formatado = str_replace('.', '', $row['rg']);
+                    $rg_formatado = str_replace('-', '', $rg_formatado);
+                    $input['password'] = bcrypt('ss'.$rg_formatado);
+                    $input['sindicato_id'] = $sindicato->first()->id;
+                    if (isset($instituicao)) {
+                        $input['instituicao_id'] = $instituicao->first()->id;
                     }
-                );
+                    $input['rg'] = $rg_formatado;
+                    $input['matricula'] = $row['matricula'];
+                    $input['validade_carteirinha'] = $row['validade'];
+                    
+                    $user = User::firstOrNew(
+                        [
+                            'email' => $input['email'],
+                            'rg' => $input['rg']
+                        ]
+                    );
+
+                    $user->fill($input);
+                    $user->save();
+                    $role = Role::where('name', 'funcionario')->first();
+
+                    if ($user && $role && ! $user->hasRole('funcionario')) {
+                        $user->attachRole($role);
+                    }
+                } 
             }
-        );
+            
+        });
 
         if (! $this->teveErro) {
             Flash::success('Planilha importada com sucesso.');
