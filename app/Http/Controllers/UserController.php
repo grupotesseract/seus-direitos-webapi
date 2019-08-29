@@ -94,16 +94,13 @@ class UserController extends AppBaseController
         $arquivo = \Storage::putFile('importacoes', $request->file('excel'));
 
         Excel::filter('chunk')->load('storage/app/'.$arquivo)->chunk(100, function ($results) {
-
-            foreach($results as $row) {   
-                
+            foreach ($results as $row) {
                 $sindicato = Sindicato::where('nome', $row['sindicato'])->first();
-                if (!is_null($row['instituicao']) || $row['instituicao'] != '') {
+                if (! is_null($row['instituicao']) || $row['instituicao'] != '') {
                     $instituicao = Instituicao::firstOrCreate(['nome' => $row['instituicao'], 'nomecompleto' => $row['instituicao']]);
-                } 
+                }
 
                 if ($sindicato->count() > 0) {
-                    
                     $input['name'] = strtoupper($row['nome']);
                     $input['email'] = $row['email'];
                     $rg_formatado = str_replace('.', '', $row['rg']);
@@ -116,11 +113,11 @@ class UserController extends AppBaseController
                     $input['rg'] = $rg_formatado;
                     $input['matricula'] = $row['matricula'];
                     $input['validade_carteirinha'] = $row['validade'];
-                    
+
                     $user = User::firstOrNew(
                         [
                             'email' => $input['email'],
-                            'rg' => $input['rg']
+                            'rg' => $input['rg'],
                         ]
                     );
 
@@ -131,9 +128,8 @@ class UserController extends AppBaseController
                     if ($user && $role && ! $user->hasRole('funcionario')) {
                         $user->attachRole($role);
                     }
-                } 
+                }
             }
-            
         });
 
         if (! $this->teveErro) {
