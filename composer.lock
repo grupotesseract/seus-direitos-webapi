@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8fe204179fd336fa695f15ffb6971da7",
+    "content-hash": "bb882c5bc2b682311c7ca9203da524a4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1009,12 +1009,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/adminlte-templates.git",
-                "reference": "8110978575380b6fc69ba26a979f927320b48f21"
+                "reference": "bc81707296f169e6780360effd0834c23dfed464"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/8110978575380b6fc69ba26a979f927320b48f21",
-                "reference": "8110978575380b6fc69ba26a979f927320b48f21",
+                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/bc81707296f169e6780360effd0834c23dfed464",
+                "reference": "bc81707296f169e6780360effd0834c23dfed464",
                 "shasum": ""
             },
             "require": {
@@ -1053,7 +1053,7 @@
                 "laravel",
                 "templates"
             ],
-            "time": "2017-11-25T04:43:54+00:00"
+            "time": "2019-05-16T03:24:12+00:00"
         },
         {
             "name": "infyomlabs/laravel-generator",
@@ -1061,12 +1061,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/laravel-generator.git",
-                "reference": "bf34df143a6ded4a6c6483223bcf38d13d90be26"
+                "reference": "21232f1d740c48bba08fabf3f06a2c1a8f570c64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/bf34df143a6ded4a6c6483223bcf38d13d90be26",
-                "reference": "bf34df143a6ded4a6c6483223bcf38d13d90be26",
+                "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/21232f1d740c48bba08fabf3f06a2c1a8f570c64",
+                "reference": "21232f1d740c48bba08fabf3f06a2c1a8f570c64",
                 "shasum": ""
             },
             "require": {
@@ -1119,7 +1119,7 @@
                 "test",
                 "view"
             ],
-            "time": "2017-11-25T05:18:22+00:00"
+            "time": "2019-09-04T18:25:17+00:00"
         },
         {
             "name": "intervention/image",
@@ -1279,7 +1279,7 @@
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
-            "name": "jeremeamia/SuperClosure",
+            "name": "jeremeamia/superclosure",
             "version": "2.3.0",
             "source": {
                 "type": "git",
@@ -3163,6 +3163,46 @@
             "time": "2018-03-05T13:21:52+00:00"
         },
         {
+            "name": "shipping-docker/vessel",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shipping-docker/vessel.git",
+                "reference": "65cf285a5647f7593d49f8da665ac1399b904c80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shipping-docker/vessel/zipball/65cf285a5647f7593d49f8da665ac1399b904c80",
+                "reference": "65cf285a5647f7593d49f8da665ac1399b904c80",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Vessel\\VesselServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vessel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Fidao",
+                    "email": "fideloper@gmail.com"
+                }
+            ],
+            "description": "Simple Docker dev environments",
+            "time": "2019-01-24T14:17:03+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.0.2",
             "source": {
@@ -4904,18 +4944,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -5573,6 +5613,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2018-01-06T05:45:45+00:00"
         },
         {
@@ -6210,8 +6251,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
