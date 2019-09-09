@@ -3,7 +3,7 @@
 ## Requirements
 
 - **Install [Docker](https://docs.docker.com/install/)**
-- ***[Post Install Linux](https://docs.docker.com/install/linux/linux-postinstall/)**
+- **[Post Install Linux](https://docs.docker.com/install/linux/linux-postinstall/)**
 - **Install [Docker Compose](https://docs.docker.com/compose/install/)**
 - **Install [Yarn](https://yarnpkg.com/lang/pt-br/docs/install/#debian-stable)**
 
