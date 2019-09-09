@@ -13,7 +13,7 @@ The Rest of the tools will run from inside the containers.
 
 ```bash
 git clone https://github.com/grupotesseract/seus-direitos-webapi.git
-cd abenepi-2019
+cd seus-direitos-webapi
 ```
 
 ## Setup
