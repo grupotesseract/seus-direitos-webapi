@@ -7,9 +7,10 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="icon" type="image/png" href="">
 
-	<!-- Fonts -->
+	{{-- Bootstrap 4.1.3 --}}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	
-	<!-- CSS/SASS -->
+	{{-- Custom SCSS --}}
 	<link href="{{ asset('css/landingpage.css') }}" rel="stylesheet">
 </head>
 	

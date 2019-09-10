@@ -76,7 +76,7 @@ module.exports = __webpack_require__(11);
 /***/ 11:
 /***/ (function(module, exports) {
 
-console.log('teste');
+
 
 /***/ })
 
