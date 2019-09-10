@@ -10,5 +10,6 @@
 	<!-- Fonts -->
 	
 	<!-- CSS/SASS -->
+	<link href="{{ asset('css/landingpage.css') }}" rel="stylesheet">
 </head>
 	

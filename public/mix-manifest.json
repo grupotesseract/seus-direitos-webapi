@@ -3,5 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/welcome.css": "/css/welcome.css",
     "/css/carteirinha.css": "/css/carteirinha.css",
-    "/js/welcome.js": "/js/welcome.js"
+    "/css/landingpage.css": "/css/landingpage.css",
+    "/js/welcome.js": "/js/welcome.js",
+    "/js/landingpage.js": "/js/landingpage.js"
 }
