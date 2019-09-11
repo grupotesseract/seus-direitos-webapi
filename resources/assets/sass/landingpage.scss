@@ -1,6 +1,39 @@
-$rosa-1: #feebbb;
-$amarelo-1: #ffe063;
-$amarelo-2: #f9b208;
-$laranja-1: #e95b11;
-$azul-1: #5eb6e8;
-$azul-2: #0195e5;
+$pink-1: #feebbb;
+$yellow-1: #ffe063;
+$yellow-2: #f9b208;
+$oranje-1: #e95b11;
+$blue-1: #5eb6e8;
+$blue-2: #0195e5;
+
+.header {
+  div {
+    &:first-child {
+      height: 100px;
+      background-color: $pink-1;
+    }
+    &:last-child {
+      height: 400px;
+      background-color: $yellow-1;
+    }
+  }
+}
+
+.login {
+  background-color: $blue-2;
+  height: 500px;
+}
+
+.menu {
+  height: 200px;
+  background-color: $yellow-2;
+}
+
+.video-news {
+  height: 400px;
+  background-color: $oranje-1;
+}
+
+.syndicates {
+  height: 200px;
+  background-color: $blue-1;
+}

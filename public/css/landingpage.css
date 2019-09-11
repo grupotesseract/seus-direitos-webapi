@@ -1,0 +1,30 @@
+.header div:first-child {
+  height: 100px;
+  background-color: #feebbb;
+}
+
+.header div:last-child {
+  height: 400px;
+  background-color: #ffe063;
+}
+
+.login {
+  background-color: #0195e5;
+  height: 500px;
+}
+
+.menu {
+  height: 200px;
+  background-color: #f9b208;
+}
+
+.video-news {
+  height: 400px;
+  background-color: #e95b11;
+}
+
+.syndicates {
+  height: 200px;
+  background-color: #5eb6e8;
+}
+
