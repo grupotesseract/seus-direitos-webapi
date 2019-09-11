@@ -1,18 +1,25 @@
-$pink-1: #feebbb;
+$pink-1: #fce5d7;
 $yellow-1: #ffe063;
 $yellow-2: #f9b208;
 $oranje-1: #e95b11;
 $blue-1: #5eb6e8;
 $blue-2: #0195e5;
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .header {
   div {
     &:first-child {
-      height: 100px;
       background-color: $pink-1;
+
+      img {
+        height: 70px;
+      }
     }
     &:last-child {
-      height: 400px;
+      padding: 0 15px;
       background-color: $yellow-1;
     }
   }

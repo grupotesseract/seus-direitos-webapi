@@ -1,10 +1,17 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .header div:first-child {
-  height: 100px;
-  background-color: #feebbb;
+  background-color: #fce5d7;
+}
+
+.header div:first-child img {
+  height: 70px;
 }
 
 .header div:last-child {
-  height: 400px;
+  padding: 0 15px;
   background-color: #ffe063;
 }
 
