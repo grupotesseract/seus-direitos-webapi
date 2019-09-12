@@ -1,18 +1,70 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
+  color: #1c1a1f;
 }
 
-.header div:first-child {
+.logo {
   background-color: #fce5d7;
 }
 
-.header div:first-child img {
+.logo img {
   height: 70px;
 }
 
-.header div:last-child {
-  padding: 0 15px;
+.hero {
+  padding: 2rem 1rem;
   background-color: #ffe063;
+}
+
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+  color: #2c669c;
+}
+
+.hero h2 {
+  margin-top: 0;
+  color: #2c669c;
+  position: relative;
+}
+
+.hero h2:after {
+  content: "";
+  width: 4rem;
+  height: 0.4rem;
+  background-color: #e95b11;
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+}
+
+.hero .button {
+  padding: 0.8rem;
+  border: 2px solid #2c669c;
+  color: #2c669c;
+  font-size: 1.5rem;
+  width: 7rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.hero > div:last-child h3 {
+  color: #2c669c;
+  position: relative;
+}
+
+.hero > div:last-child h3:after {
+  content: "";
+  width: 2.5rem;
+  height: 0.3rem;
+  background-color: #e95b11;
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+}
+
+.hero > div:last-child h3:last-child {
+  margin-bottom: 0;
 }
 
 .login {
@@ -33,5 +85,10 @@ html {
 .syndicates {
   height: 200px;
   background-color: #5eb6e8;
+}
+
+footer {
+  height: 3rem;
+  background-color: #1c1a1f;
 }
 

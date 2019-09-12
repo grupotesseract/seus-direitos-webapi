@@ -6,5 +6,7 @@
 		@yield('content')
 
 		@include('landing-page.scripts')
+		
+		@include('landing-page.footer')
 	</body>
 </html>
