@@ -14,6 +14,10 @@
 	{{-- Bootstrap 5.10.2 --}}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"
 		integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" />
+
+	{{-- Fonts --}}
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+
 	{{-- Custom SCSS --}}
 	<link href="{{ asset('css/landingpage.css') }}" rel="stylesheet">
 </head>
