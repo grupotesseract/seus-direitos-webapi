@@ -203,6 +203,16 @@ html {
 
 .menu {
   background-color: $yellow-2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 0;
+
+  img {
+    display: block;
+    width: 9rem;
+    margin: 1rem;
+  }
 }
 
 .video-news {

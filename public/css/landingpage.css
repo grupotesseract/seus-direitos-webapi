@@ -192,6 +192,21 @@ html {
 
 .menu {
   background-color: #f9b208;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 0;
+}
+
+.menu img {
+  display: block;
+  width: 9rem;
+  margin: 1rem;
 }
 
 .video-news {

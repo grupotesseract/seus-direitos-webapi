@@ -72,7 +72,12 @@
         alt="Conveções Coletivas">
     <img src="https://res.cloudinary.com/tesseract/image/upload/v1567982771/seus-direitos/home-noticias.png"
         alt="Notícias">
-
+    <img src="https://res.cloudinary.com/tesseract/image/upload/v1567982771/seus-direitos/home-beneficios.png"
+        alt="Benefícios">
+    <img src="https://res.cloudinary.com/tesseract/image/upload/v1567982771/seus-direitos/home-colonia-de-ferias.png"
+        alt="Colônia de Férias">
+    <img src="https://res.cloudinary.com/tesseract/image/upload/v1567982771/seus-direitos/home-concorra-a-premios.png"
+        alt="Concorra a Prêmios">
 </div>
 
 <div class="video-news">
