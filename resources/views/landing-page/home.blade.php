@@ -20,15 +20,50 @@
         <h3>LEIA NOTÍCIAS</h3>
         <h3>CONHEÇA BENEFÍCIOS</h3>
         <h3>FALE COM<br>
-        REPRESENTANTES<br>
-        DA SUA CATEGORIA</h3>
+            REPRESENTANTES<br>
+            DA SUA CATEGORIA</h3>
         <h3>UTILIZE A<br>
-        CARTEIRINHA VIRTUAL</h3>
+            CARTEIRINHA VIRTUAL</h3>
     </div>
 </div>
 
 <div class="login">
+    <h1>AINDA NÃO É<br>
+        CADASTRADO?</h1>
+    <h2>SOLICITE O SEU ACESSO:</h2>
+    <h3>canalseusdireitos@gmail.com</h3>
 
+    <h2>Já é cadastrado?</h2>
+    <h3>Faça seu login:</h3>
+    <form method="post" action="{{ url('/login') }}">
+        {!! csrf_field() !!}
+
+        <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
+            <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+            @endif
+        </div>
+
+        <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+            <input type="password" class="form-control" placeholder="Password" name="password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            @if ($errors->has('password'))
+            <span class="help-block">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+            @endif
+        </div>
+
+        <button type="submit" class="">Entrar</button>
+
+        <label>
+            <input type="checkbox" name="remember"> Lembre-me
+        </label>
+    </form>
 </div>
 
 <div class="menu">
