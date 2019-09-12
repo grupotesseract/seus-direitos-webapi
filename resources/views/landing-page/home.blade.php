@@ -58,8 +58,9 @@
 
         <button type="submit" class="submit-button">entrar</button>
 
-        <label>
-            <input type="checkbox" name="remember"> lembre-me
+        <label>lembre-me
+            <input type="checkbox" name="remember">
+            <span class="checkmark"></span>
         </label>
     </form>
 </div>
