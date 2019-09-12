@@ -34,13 +34,12 @@
     <h3>canalseusdireitos@gmail.com</h3>
 
     <h2>Já é cadastrado?</h2>
-    <h3>Faça seu login:</h3>
+    <h3>Faça seu login</h3>
     <form method="post" action="{{ url('/login') }}">
         {!! csrf_field() !!}
 
         <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
-            <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="email">
             @if ($errors->has('email'))
             <span class="help-block">
                 <strong>{{ $errors->first('email') }}</strong>
@@ -48,9 +47,8 @@
             @endif
         </div>
 
-        <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-            <input type="password" class="form-control" placeholder="Password" name="password">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
+            <input type="password" class="form-control" name="password" placeholder="senha">
             @if ($errors->has('password'))
             <span class="help-block">
                 <strong>{{ $errors->first('password') }}</strong>
@@ -58,10 +56,10 @@
             @endif
         </div>
 
-        <button type="submit" class="">Entrar</button>
+        <button type="submit" class="submit-button">entrar</button>
 
         <label>
-            <input type="checkbox" name="remember"> Lembre-me
+            <input type="checkbox" name="remember"> lembre-me
         </label>
     </form>
 </div>
