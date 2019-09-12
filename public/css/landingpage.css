@@ -43,9 +43,17 @@ html {
   border: 2px solid #2c669c;
   color: #2c669c;
   font-size: 1.5rem;
-  width: 7rem;
-  margin-right: 0.5rem;
+  width: 7.5rem;
   display: inline-block;
+}
+
+.hero .button i {
+  font-size: 1.8rem;
+  margin-right: 0.7rem;
+}
+
+.hero .button:first-of-type {
+  margin-right: 0.5rem;
 }
 
 .hero > div:last-child h3 {
