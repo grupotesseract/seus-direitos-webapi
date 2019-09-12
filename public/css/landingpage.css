@@ -210,8 +210,42 @@ html {
 }
 
 .video-news {
-  height: 400px;
   background-color: #e95b11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4rem 0;
+}
+
+.video-news .video {
+  position: relative;
+}
+
+.video-news .video iframe {
+  border: none;
+}
+
+.video-news .video h3 {
+  position: absolute;
+  right: 0;
+  bottom: -3.5rem;
+  padding: 0.3rem 0.5rem;
+  background-color: white;
+  color: #2c669c;
+}
+
+.video-news .news > div:first-child {
+  background-image: url("https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 360px;
+  height: 315px;
 }
 
 .syndicates {

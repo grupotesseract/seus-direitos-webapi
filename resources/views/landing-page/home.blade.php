@@ -81,7 +81,17 @@
 </div>
 
 <div class="video-news">
+    <div class="video">
+        <iframe width="360" height="315" src="https://www.youtube.com/embed/LXb3EKWsInQ">
+        </iframe>
 
+        <h3>MAIS VÍDEOS ></h3>
+    </div>
+
+    <div class="news">
+        <div></div>
+        <div></div>
+    </div>
 </div>
 
 <div class="syndicates">

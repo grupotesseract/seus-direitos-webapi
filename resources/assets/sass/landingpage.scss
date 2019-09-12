@@ -216,8 +216,41 @@ html {
 }
 
 .video-news {
-  height: 400px;
   background-color: $oranje-1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 0;
+
+  .video {
+    position: relative;
+
+    iframe {
+      border: none;
+    }
+
+    h3 {
+      position: absolute;
+      right: 0;
+      bottom: -3.5rem;
+      padding: 0.3rem 0.5rem;
+      background-color: $white-1;
+      color: $blue-3;
+    }
+  }
+
+  .news {
+    > div {
+      &:first-child {
+        background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 360px;
+        height: 315px;
+      }
+    }
+  }
 }
 
 .syndicates {
