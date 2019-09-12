@@ -38,22 +38,24 @@
     <form method="post" action="{{ url('/login') }}">
         {!! csrf_field() !!}
 
-        <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
-            <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="email">
+        <div class="form-group">
             @if ($errors->has('email'))
             <span class="help-block">
                 <strong>{{ $errors->first('email') }}</strong>
             </span>
             @endif
+            <input type="email" class="form-control {{ $errors->has('email') ? ' has-error' : '' }}" name="email"
+                value="{{ old('email') }}" placeholder="email">
         </div>
 
-        <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
-            <input type="password" class="form-control" name="password" placeholder="senha">
+        <div class="form-group">
             @if ($errors->has('password'))
             <span class="help-block">
                 <strong>{{ $errors->first('password') }}</strong>
             </span>
             @endif
+            <input type="password" class="form-control {{ $errors->has('password') ? ' has-error' : '' }}"
+                name="password" placeholder="senha">
         </div>
 
         <button type="submit" class="submit-button">entrar</button>
@@ -66,6 +68,10 @@
 </div>
 
 <div class="menu">
+    <img src="https://res.cloudinary.com/tesseract/image/upload/v1567982771/seus-direitos/home-convencoes-coletivas.png"
+        alt="Conveções Coletivas">
+    <img src="https://res.cloudinary.com/tesseract/image/upload/v1567982771/seus-direitos/home-noticias.png"
+        alt="Notícias">
 
 </div>
 

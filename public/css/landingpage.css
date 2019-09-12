@@ -1,5 +1,5 @@
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #1c1a1f;
 }
 
@@ -112,6 +112,14 @@ html {
   margin-bottom: 0.9rem;
 }
 
+.login .form-group .has-error {
+  border: 2px solid red;
+}
+
+.login .form-group .help-block {
+  color: white;
+}
+
 .login .submit-button {
   background-color: #e95b11;
   color: white;
@@ -183,7 +191,6 @@ html {
 }
 
 .menu {
-  height: 200px;
   background-color: #f9b208;
 }
 

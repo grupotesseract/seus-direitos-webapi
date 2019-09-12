@@ -9,7 +9,7 @@ $blue-3: #2c669c;
 $black-1: #1c1a1f;
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: $black-1;
 }
 
@@ -25,7 +25,8 @@ html {
   padding: 2rem 1rem;
   background-color: $yellow-1;
 
-  h1, h2 {
+  h1,
+  h2 {
     margin-top: 0;
     color: $blue-3;
   }
@@ -67,7 +68,6 @@ html {
   }
 
   > div {
-
     &:last-child {
       h3 {
         color: $blue-3;
@@ -94,13 +94,16 @@ html {
 .login {
   padding: 2rem 1rem;
   background-color: $blue-2;
-  
-  h1, h2, h3 {
+
+  h1,
+  h2,
+  h3 {
     margin-top: 0;
     color: $white-1;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     margin-bottom: 0.4rem;
   }
 
@@ -120,6 +123,14 @@ html {
       border: none;
       box-sizing: border-box;
       margin-bottom: 0.9rem;
+    }
+
+    .has-error {
+      border: 2px solid red;
+    }
+
+    .help-block {
+      color: $white-1;
     }
   }
 
@@ -165,11 +176,11 @@ html {
         display: none;
       }
     }
-    
+
     &:hover input ~ .checkmark {
       background-color: #ccc;
     }
-    
+
     input:checked ~ .checkmark {
       background-color: $oranje-1;
     }
@@ -177,7 +188,7 @@ html {
     input:checked ~ .checkmark:after {
       display: block;
     }
-    
+
     .checkmark:after {
       left: 9px;
       top: 5px;
@@ -191,7 +202,6 @@ html {
 }
 
 .menu {
-  height: 200px;
   background-color: $yellow-2;
 }
 
