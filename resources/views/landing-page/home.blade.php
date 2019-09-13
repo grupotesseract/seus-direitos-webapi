@@ -105,6 +105,13 @@
 </div>
 
 <div class="syndicates">
+    <h2>SINDICATOS<br>
+        BENEFICIADOS</h2>
 
+    <div class="syndicate"></div>
+    <div class="syndicate"></div>
+    <div class="syndicate"></div>
+    <div class="syndicate"></div>
+    <div class="syndicate"></div>
 </div>
 @endsection
