@@ -3,6 +3,13 @@ html {
   color: #1c1a1f;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 900;
+}
+
 .logo {
   background-color: #fce5d7;
 }
@@ -45,7 +52,6 @@ html {
   border: 2px solid #2c669c;
   color: #2c669c;
   font-size: 1.5rem;
-  width: 7.5rem;
   display: inline-block;
 }
 
@@ -246,6 +252,27 @@ html {
   background-size: cover;
   width: 360px;
   height: 315px;
+  margin-top: 4rem;
+}
+
+@media only screen and (min-width: 750px) {
+  .video-news .news > div:first-child {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+}
+
+.video-news .news .news-card {
+  background-color: #fce5d7;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 360px;
+  color: #2c669c;
+}
+
+.video-news .news .news-card > h3:last-of-type {
+  text-align: right;
 }
 
 .syndicates {
