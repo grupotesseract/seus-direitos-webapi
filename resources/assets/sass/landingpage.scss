@@ -13,7 +13,10 @@ html {
   color: $black-1;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 900;
 }
 
@@ -70,7 +73,7 @@ h1, h2, h3, h4 {
     }
   }
 
-  > div {
+  >div {
     &:last-child {
       h3 {
         color: $blue-3;
@@ -180,15 +183,15 @@ h1, h2, h3, h4 {
       }
     }
 
-    &:hover input ~ .checkmark {
+    &:hover input~.checkmark {
       background-color: #ccc;
     }
 
-    input:checked ~ .checkmark {
+    input:checked~.checkmark {
       background-color: $oranje-1;
     }
 
-    input:checked ~ .checkmark:after {
+    input:checked~.checkmark:after {
       display: block;
     }
 
@@ -209,12 +212,12 @@ h1, h2, h3, h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 2rem 0 1rem 1rem;
 
   img {
     display: block;
     width: 9rem;
-    margin: 1rem;
+    margin: 0 1rem 1rem 0;
   }
 }
 
@@ -243,7 +246,7 @@ h1, h2, h3, h4 {
   }
 
   .news {
-    > div {
+    >div {
       &:first-child {
         background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg');
         background-repeat: no-repeat;
@@ -252,6 +255,7 @@ h1, h2, h3, h4 {
         width: 360px;
         height: 315px;
         margin-top: 4rem;
+
         @media only screen and (min-width: 750px) {
           margin-top: 0;
           margin-left: 2rem;
@@ -265,8 +269,8 @@ h1, h2, h3, h4 {
       box-sizing: border-box;
       width: 360px;
       color: $blue-3;
-      
-      > h3:last-of-type {
+
+      >h3:last-of-type {
         text-align: right;
       }
     }
