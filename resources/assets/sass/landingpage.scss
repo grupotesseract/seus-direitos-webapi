@@ -282,11 +282,20 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 0 1rem 1rem;
 
   h2 {
     margin-top: 0;
     width: 100%;
+    text-align: center;
+    margin: 0 1rem 1rem 0;
+
+    @media (min-width: 992px) {
+      width: auto;
+      text-align: left;
+      height: 4rem;
+      align-self: center;
+    }
   }
 
   .syndicate {
@@ -294,7 +303,7 @@ h4 {
     background-color: $white-1;
     width: 8rem;
     height: 8rem;
-    margin: 1rem;
+    margin: 0 1rem 1rem 0;
   }
 }
 

@@ -285,12 +285,24 @@ h4 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 1rem;
+  padding: 2rem 0 1rem 1rem;
 }
 
 .syndicates h2 {
   margin-top: 0;
   width: 100%;
+  text-align: center;
+  margin: 0 1rem 1rem 0;
+}
+
+@media (min-width: 992px) {
+  .syndicates h2 {
+    width: auto;
+    text-align: left;
+    height: 4rem;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
 }
 
 .syndicates .syndicate {
@@ -298,7 +310,7 @@ h4 {
   background-color: white;
   width: 8rem;
   height: 8rem;
-  margin: 1rem;
+  margin: 0 1rem 1rem 0;
 }
 
 footer {
