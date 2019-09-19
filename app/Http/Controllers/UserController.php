@@ -97,7 +97,13 @@ class UserController extends AppBaseController
             foreach ($results as $row) {
                 $sindicato = Sindicato::where('nome', $row['sindicato'])->first();
                 if (! is_null($row['instituicao']) || $row['instituicao'] != '') {
-                    $instituicao = Instituicao::firstOrCreate(['nome' => $row['instituicao'], 'nomecompleto' => $row['instituicao']]);
+                    $instituicao = Instituicao::firstOrCreate(
+                        [
+                            'nome' => $row['instituicao'], 
+                            'nomecompleto' => $row['instituicao'],
+                            'sindicato_id' => $sindicato->id,
+                        ]
+                    );
                 }
 
                 if ($sindicato->count() > 0) {
