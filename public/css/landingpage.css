@@ -180,6 +180,11 @@ h4 {
   margin-bottom: 2rem;
 }
 
+.login .login-container {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
 .login .form-group .form-control {
   width: 100%;
   padding: 0.9rem;
