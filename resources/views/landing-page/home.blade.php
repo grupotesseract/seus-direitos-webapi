@@ -7,7 +7,7 @@
 </div>
 
 <div class="hero">
-    <div>
+    <div class="hero-1">
         <h1>O APP</h1>
         <h2>DO TRABALHADOR</h2>
         <h3>Todas as informações sobre sua categoria de trabalho, em um mesmo lugar.</h3>
@@ -16,7 +16,11 @@
         <div class="button"><i class="fab fa-android"></i>Android</div>
     </div>
 
-    <div>
+    <div class="hero-2">
+        <img src="https://res.cloudinary.com/tesseract/image/upload/v1568925429/seus-direitos/mao-app.png" alt="Mockup Seu Sindicato">
+    </div>
+
+    <div class="hero-3">
         <h3>LEIA NOTÍCIAS</h3>
         <h3>CONHEÇA BENEFÍCIOS</h3>
         <h3>FALE COM<br>

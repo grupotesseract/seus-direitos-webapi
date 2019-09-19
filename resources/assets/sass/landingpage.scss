@@ -25,12 +25,17 @@ h4 {
 
   img {
     height: 70px;
+
+    @media (min-width: 992px) {
+      padding: 1rem;
+    }
   }
 }
 
 .hero {
   padding: 2rem 1rem;
   background-color: $yellow-1;
+  box-sizing: border-box;
 
   h1,
   h2 {
@@ -56,43 +61,87 @@ h4 {
     }
   }
 
-  .button {
-    padding: 0.8rem;
-    border: 2px solid $blue-3;
-    color: $blue-3;
-    font-size: 1.5rem;
-    display: inline-block;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    i {
-      font-size: 1.8rem;
-      margin-right: 0.7rem;
+  @media (min-width: 992px) {
+    padding: 2rem 1rem 0;
+  }
+
+  .hero-1 {
+    max-width: 20rem;
+
+    .button {
+      padding: 0.8rem;
+      border: 2px solid $blue-3;
+      color: $blue-3;
+      font-size: 1.5rem;
+      display: inline-block;
+
+      i {
+        font-size: 1.8rem;
+        margin-right: 0.7rem;
+      }
+
+      &:first-of-type {
+        margin-right: 0.5rem;
+      }
     }
 
-    &:first-of-type {
-      margin-right: 0.5rem;
+    @media (min-width: 768px) {
+      margin-right: 1rem;
+    }
+
+    @media (min-width: 992px) {
+      width: 20rem;
     }
   }
 
-  >div {
-    &:last-child {
-      h3 {
-        color: $blue-3;
-        position: relative;
+  .hero-2 {
+    display: none;
+    width: 15rem;
 
-        &:after {
-          content: "";
-          width: 2.5rem;
-          height: 0.3rem;
-          background-color: $oranje-1;
-          position: absolute;
-          left: 0;
-          bottom: -0.4rem;
-        }
+    img {
+      width: 100%;
+      display: block;
+    }
 
-        &:last-child {
-          margin-bottom: 0;
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
+
+  .hero-3 {
+    h3 {
+      color: $blue-3;
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 2.5rem;
+        height: 0.3rem;
+        background-color: $oranje-1;
+        position: absolute;
+        left: 0;
+        bottom: -0.4rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (min-width: 768px) {
+        &:first-child {
+          margin-top: 0;
         }
       }
+    }
+
+    @media (min-width: 992px) {
+      width: 14rem;
     }
   }
 }
