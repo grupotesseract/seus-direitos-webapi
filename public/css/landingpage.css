@@ -26,6 +26,12 @@ h4 {
   }
 }
 
+@media (min-width: 1200px) {
+  .logo {
+    width: 70%;
+  }
+}
+
 .hero {
   padding: 2rem 1rem;
   background-color: #ffe063;
@@ -73,6 +79,12 @@ h4 {
 @media (min-width: 992px) {
   .hero {
     padding: 2rem 1rem 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    width: 70%;
   }
 }
 
@@ -180,6 +192,14 @@ h4 {
 .login h3:first-of-type {
   color: #ffe063;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .login {
+    width: 30%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
 }
 
 .login .login-container {
