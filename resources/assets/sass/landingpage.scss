@@ -8,6 +8,32 @@ $blue-2: #0195e5;
 $blue-3: #2c669c;
 $black-1: #1c1a1f;
 
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
 html {
   font-family: "Roboto", sans-serif;
   color: $black-1;
@@ -237,15 +263,15 @@ h4 {
       }
     }
 
-    &:hover input~.checkmark {
+    &:hover input ~ .checkmark {
       background-color: #ccc;
     }
 
-    input:checked~.checkmark {
+    input:checked ~ .checkmark {
       background-color: $oranje-1;
     }
 
-    input:checked~.checkmark:after {
+    input:checked ~ .checkmark:after {
       display: block;
     }
 
@@ -278,14 +304,21 @@ h4 {
 .video-news {
   background-color: $oranje-1;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 4rem 0;
+
+  @media only screen and (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 
   .video {
     position: relative;
 
     iframe {
+      width: 360px;
+      height: 315px;
       border: none;
     }
 
@@ -300,9 +333,14 @@ h4 {
   }
 
   .news {
-    >div {
+    @media only screen and (min-width: 1200px) {
+      display: flex;
+      justify-content: center;
+    }
+
+    .news-image {
       &:first-child {
-        background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg');
+        background-image: url("https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -310,21 +348,25 @@ h4 {
         height: 315px;
         margin-top: 4rem;
 
-        @media only screen and (min-width: 750px) {
+        @media only screen and (min-width: 1200px) {
           margin-top: 0;
           margin-left: 2rem;
         }
       }
     }
 
-    .news-card {
+    .news-text {
       background-color: $pink-1;
       padding: 1em;
       box-sizing: border-box;
       width: 360px;
       color: $blue-3;
 
-      >h3:last-of-type {
+      p {
+        @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 5, $bgColor: white);
+      }
+
+      > h3:last-of-type {
         text-align: right;
       }
     }

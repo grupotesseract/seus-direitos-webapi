@@ -89,16 +89,17 @@
 
 <div class="video-news">
     <div class="video">
-        <iframe width="360" height="315" src="https://www.youtube.com/embed/LXb3EKWsInQ">
+        {{-- <iframe width="360" height="315" src="https://www.youtube.com/embed/LXb3EKWsInQ"> --}}
+        <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ">
         </iframe>
 
         <h3>MAIS VÍDEOS ></h3>
     </div>
 
     <div class="news">
-        <div></div>
+        <div class="news-image"></div>
 
-        <div class="news-card">
+        <div class="news-text">
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
