@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::view('/landingpage', 'landing-page.home');
+Route::view('/landingpage/news', 'landing-page.news');
 
 Route::get('/admin', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
