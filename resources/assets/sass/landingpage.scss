@@ -9,20 +9,22 @@ $blue-3: #2c669c;
 $black-1: #1c1a1f;
 
 /* mixin for multiline */
-@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
   overflow: hidden;
   position: relative;
   line-height: $lineHeight;
-  max-height: $lineHeight * $lineCount; 
+  max-height: $lineHeight * $lineCount;
   text-align: justify;
   margin-right: -1em;
   padding-right: 1em;
+
   &:before {
     content: '...';
     position: absolute;
     right: 0;
     bottom: 0;
   }
+
   &:after {
     content: '';
     position: absolute;
@@ -46,6 +48,18 @@ h4 {
   font-weight: 900;
 }
 
+.header {
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "logo login"
+      "hero login"
+    ;
+  }
+}
+
 .logo {
   background-color: $pink-1;
 
@@ -58,7 +72,12 @@ h4 {
   }
 
   @media (min-width: 1200px) {
-    width: 70%;
+    display: flex;
+    grid-area: logo;
+
+    img {
+      margin: auto;
+    }
   }
 }
 
@@ -102,7 +121,7 @@ h4 {
   }
 
   @media (min-width: 1200px) {
-    width: 70%;
+    grid-area: hero;
   }
 
   .hero-1 {
@@ -145,6 +164,15 @@ h4 {
 
     @media (min-width: 992px) {
       display: block;
+    }
+
+    @media (min-width: 1200px) {
+      position: relative;
+
+      img {
+        position: absolute;
+        bottom: 0;
+      }
     }
   }
 
@@ -206,8 +234,8 @@ h4 {
   }
 
   @media (min-width: 1200px) {
-    width: 30%;
-    box-sizing: border-box;
+    grid-area: login;
+    // box-sizing: border-box;
   }
 
   .login-container {
@@ -276,15 +304,15 @@ h4 {
       }
     }
 
-    &:hover input ~ .checkmark {
+    &:hover input~.checkmark {
       background-color: #ccc;
     }
 
-    input:checked ~ .checkmark {
+    input:checked~.checkmark {
       background-color: $oranje-1;
     }
 
-    input:checked ~ .checkmark:after {
+    input:checked~.checkmark:after {
       display: block;
     }
 
@@ -379,7 +407,7 @@ h4 {
         @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 5, $bgColor: white);
       }
 
-      > h3:last-of-type {
+      >h3:last-of-type {
         text-align: right;
       }
     }
