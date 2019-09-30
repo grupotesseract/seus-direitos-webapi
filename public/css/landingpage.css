@@ -684,3 +684,30 @@ footer {
           transform: rotate(45deg);
 }
 
+.title-news {
+  background-color: #ffe063;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title-news a,
+.title-news a:visited,
+.title-news a:hover,
+.title-news a:active {
+  text-decoration: none;
+  color: #e95b11;
+}
+
+.title-news h1,
+.title-news h2 {
+  margin: 0;
+}
+

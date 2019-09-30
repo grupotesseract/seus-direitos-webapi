@@ -165,3 +165,24 @@
     }
   }
 }
+
+.title-news {
+  background-color: $yellow-1;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: $oranje-1;
+  }
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  h1 {
+
+  }
+}
