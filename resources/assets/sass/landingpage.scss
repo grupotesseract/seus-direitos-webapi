@@ -19,14 +19,14 @@ $black-1: #1c1a1f;
   padding-right: 1em;
 
   &:before {
-    content: '...';
+    content: "...";
     position: absolute;
     right: 0;
     bottom: 0;
   }
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     width: 1em;
