@@ -17,6 +17,8 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
+Route::view('/landingpage', 'landing-page.home');
+
 Route::get('/admin', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
