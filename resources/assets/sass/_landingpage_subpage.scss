@@ -1,4 +1,9 @@
 .header-subpage {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: "logo-subpage";
+
   @media (min-width: 1200px) {
     display: grid;
     grid-template-columns: auto 850px;
@@ -13,19 +18,26 @@
   img {
     height: 70px;
 
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       padding: 1rem;
     }
   }
 
   @media (min-width: 1200px) {
+    display: flex;
     grid-area: logo-subpage;
+
+    img {
+      height: 90px;
+      margin: auto;
+    }
   }
 }
 
 .login-subpage {
   padding: 1rem;
   background-color: $blue-2;
+  display: none;
 
   h1,
   h2,
@@ -45,6 +57,10 @@
     &:first-of-type {
       color: $yellow-1;
     }
+  }
+
+  @media (min-width: 768px) {
+    display: block;
   }
 
   @media (min-width: 1200px) {

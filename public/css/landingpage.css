@@ -495,6 +495,13 @@ footer {
   background-color: #1c1a1f;
 }
 
+.header-subpage {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: "logo-subpage";
+}
+
 @media (min-width: 1200px) {
   .header-subpage {
     display: grid;
@@ -512,7 +519,7 @@ footer {
   height: 70px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .logo-subpage img {
     padding: 1rem;
   }
@@ -520,13 +527,22 @@ footer {
 
 @media (min-width: 1200px) {
   .logo-subpage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     grid-area: logo-subpage;
+  }
+
+  .logo-subpage img {
+    height: 90px;
+    margin: auto;
   }
 }
 
 .login-subpage {
   padding: 1rem;
   background-color: #0195e5;
+  display: none;
 }
 
 .login-subpage h1,
@@ -547,6 +563,12 @@ footer {
 
 .login-subpage h3:first-of-type {
   color: #ffe063;
+}
+
+@media (min-width: 768px) {
+  .login-subpage {
+    display: block;
+  }
 }
 
 @media (min-width: 1200px) {
