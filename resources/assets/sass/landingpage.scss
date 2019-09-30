@@ -19,10 +19,11 @@ $black-1: #1c1a1f;
   padding-right: 1em;
 
   &:before {
-    content: "...";
+    content: "\00a0...";
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 1rem;
+    bottom: 1px;
+    background: $bgColor;
   }
 
   &:after {

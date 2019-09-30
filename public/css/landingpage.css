@@ -432,10 +432,11 @@ h4 {
 }
 
 .video-news .news .news-text p:before {
-  content: "...";
+  content: "\A0...";
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 1rem;
+  bottom: 1px;
+  background: #fce5d7;
 }
 
 .video-news .news .news-text p:after {
@@ -445,7 +446,7 @@ h4 {
   width: 1em;
   height: 1em;
   margin-top: 0.2em;
-  background: white;
+  background: #fce5d7;
 }
 
 .video-news .news .news-text > h3:last-of-type {
@@ -491,7 +492,7 @@ h4 {
 }
 
 footer {
-  height: 3rem;
+  height: 4rem;
   background-color: #1c1a1f;
 }
 
@@ -709,5 +710,153 @@ footer {
 .title-news h1,
 .title-news h2 {
   margin: 0;
+}
+
+.news-gallery {
+  background-color: #f9b208;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 0 4rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .news-gallery {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 2rem 0 1rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .news-gallery {
+    padding: 4rem 0 2rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .news-gallery .news-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 1rem 1rem 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .news-gallery .news-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 2rem 2rem 0;
+  }
+}
+
+.news-gallery .news-box .news-image {
+  background-image: url("https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 360px;
+  height: 315px;
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .news-gallery .news-box .news-image {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .news-gallery .news-box .news-image {
+    width: 280px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .news-gallery .news-box .news-image {
+    width: 230px;
+    height: 320px;
+  }
+}
+
+.news-gallery .news-box .news-text {
+  background-color: #fce5d7;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 360px;
+  color: #2c669c;
+}
+
+.news-gallery .news-box .news-text p {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 8.4em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+.news-gallery .news-box .news-text p:before {
+  content: "\A0...";
+  position: absolute;
+  right: 1rem;
+  bottom: 1px;
+  background: #fce5d7;
+}
+
+.news-gallery .news-box .news-text p:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: #fce5d7;
+}
+
+.news-gallery .news-box .news-text > h3:first-of-type {
+  margin-top: 0;
+}
+
+.news-gallery .news-box .news-text > h3:last-of-type {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .news-gallery .news-box .news-text {
+    width: 280px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .news-gallery .news-box .news-text {
+    width: 230px;
+    height: 320px;
+  }
 }
 
