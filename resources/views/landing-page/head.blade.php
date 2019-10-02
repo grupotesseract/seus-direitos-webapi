@@ -19,5 +19,5 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 
 	{{-- Custom SCSS --}}
-	<link href="{{ asset('css/landingpage.css') }}" rel="stylesheet">
+	@yield('css')
 </head>

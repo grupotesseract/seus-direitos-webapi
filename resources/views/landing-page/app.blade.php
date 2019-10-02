@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-	@include('landing-page.head')
+@include('landing-page.head')
 
-	<body>
-		@yield('content')
+<body>
+	@yield('content')
 
-		@include('landing-page.scripts')
-		
-		@include('landing-page.footer')
-	</body>
+	@include('landing-page.scripts')
+
+	@include('landing-page.footer')
+</body>
+
 </html>
