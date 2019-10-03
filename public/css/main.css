@@ -346,3 +346,36 @@ p {
   }
 }
 
+.videos-title {
+  background-color: #5eb6e8;
+}
+
+.videos-title .content {
+  padding: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  .videos-title .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.videos-title .content a {
+  color: #e95b11;
+}
+
+.videos-title .content a:hover,
+.videos-title .content a:active {
+  color: #f17a3c;
+}
+
