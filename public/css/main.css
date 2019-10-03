@@ -75,16 +75,10 @@ html {
   }
 }
 
-@media only screen and (min-width: 1200px) {
-  html {
-    font-size: 20px;
-  }
-}
-
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5rem;
   color: #1c1a1f;
 }
@@ -146,6 +140,7 @@ p {
             align-items: center;
     -ms-flex-line-pack: center;
         align-content: center;
+    height: 14rem;
   }
 }
 
@@ -169,6 +164,185 @@ p {
 @media only screen and (min-width: 1200px) {
   .header .content img {
     width: 18rem;
+  }
+}
+
+.login {
+  background-color: #0095c5;
+}
+
+@media only screen and (min-width: 1200px) {
+  .login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 14rem;
+    width: 44rem;
+  }
+}
+
+.login .content {
+  padding: 1rem;
+  max-width: 360px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.login .content h2,
+.login .content p {
+  color: white;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-1 {
+    padding-right: 1rem;
+    border-right: 2px solid white;
+  }
+}
+
+.login .content .login-1 > p:last-of-type {
+  color: #ffe063;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-1 > p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.login .content .login-2 p,
+.login .content .login-2 h2 {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-2 {
+    margin: 0 1rem;
+  }
+}
+
+.login .content .login-2 p {
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-2 p {
+    margin-bottom: 0;
+  }
+}
+
+.login .content .login-3 form .form-group .form-control {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 0.9rem;
+}
+
+.login .content .login-3 form .form-group .has-error {
+  border: 2px solid red;
+}
+
+.login .content .login-3 form .form-group .help-block {
+  color: white;
+}
+
+.login .content .login-3 form .submit-button {
+  background-color: #e95b11;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  margin-bottom: 0.9rem;
+  border: none;
+  width: 100%;
+}
+
+.login .content .login-3 form label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.login .content .login-3 form label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.login .content .login-3 form label .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.login .content .login-3 form label .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.login .content .login-3 form label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.login .content .login-3 form label input:checked ~ .checkmark {
+  background-color: #e95b11;
+}
+
+.login .content .login-3 form label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.login .content .login-3 form label .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-3 form {
+    width: 14rem;
   }
 }
 
