@@ -69,6 +69,18 @@ html {
   /*for using REM units*/
 }
 
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
@@ -88,40 +100,75 @@ h6 {
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 0.67rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  margin-bottom: 0.83rem;
 }
 
 h3 {
   font-size: 1.17rem;
-  margin-bottom: 1rem;
 }
 
 h4 {
   font-size: 1rem;
-  margin-bottom: 1.33rem;
 }
 
 h5 {
   font-size: .83rem;
-  margin-bottom: 1.67rem;
 }
 
 h6 {
   font-size: .67rem;
-  margin-bottom: 2.33rem;
 }
 
 p {
   font-size: 1rem;
-  margin-bottom: 1rem;
 }
 
-h1 {
-  color: red;
+.header {
+  background-color: #fce5d7;
+}
+
+.header .content {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .header .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+.header .content img {
+  width: 12rem;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .header .content img {
+    width: 14rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .header .content img {
+    width: 16rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header .content img {
+    width: 18rem;
+  }
 }
 
