@@ -24,6 +24,11 @@ class UserDataTable extends DataTable
 
                 return $temRoles ? $model->roles->first()->display_name : '';
             })
+            ->addColumn('instituicao', function ($model) {
+                $temInstituicao = $model->instituicao()->exists();
+
+                return $temInstituicao ? $model->instituicao->first()->nome : '';
+            })
             ->addColumn('action', 'users.datatables_actions');
     }
 
@@ -78,6 +83,8 @@ class UserDataTable extends DataTable
             ['name' => 'name', 'data' => 'name', 'title' => 'Nome'],
             ['name' => 'email', 'data' => 'email', 'title' => 'Email'],
             'tipo',
+            'instituicao',
+            'rg',
         ];
     }
 
