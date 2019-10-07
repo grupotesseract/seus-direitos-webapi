@@ -33,14 +33,20 @@ class AuthAPIController extends AppBaseController
      */
     public function login()
     {
-        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+        if (filter_var(request('email'), FILTER_VALIDATE_EMAIL)) {
+            $arrayAuth = ['email' => request('email'), 'password' => request('password')];
+        } else {
+            $arrayAuth = ['rg' => request('email'), 'password' => request('password')];
+        }
+
+        if (Auth::attempt($arrayAuth)) {
             $user = Auth::user();
             $user->load('sindicato');
             $success['token'] = $user->createToken(env('AUTH_API_TOKEN'))->accessToken;
 
             return response()->json(['success' => $success, 'data' => $user], $this->successStatus);
         } else {
-            return response()->json(['error'=>'Unauthorised'], 401);
+            return response()->json(['error'=>'Unauthorized'], 401);
         }
     }
 

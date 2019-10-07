@@ -7,6 +7,8 @@ use Flash;
 use Response;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Sindicato;
+use App\Models\Instituicao;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
 use App\DataTables\Scopes\PorRole;
@@ -27,6 +29,7 @@ class UserController extends AppBaseController
 {
     /** @var UserRepository */
     private $userRepository;
+    private $teveErro;
 
     public function __construct(
         UserRepository $userRepo,
@@ -86,37 +89,60 @@ class UserController extends AppBaseController
      */
     public function postAssociadosImportacao(Request $request)
     {
-        Excel::load(
-            $request->file('excel'), function ($reader) {
+        $this->teveErro = false;
 
-                // Getting all results
-                $results = $reader->get();
+        $arquivo = \Storage::putFile('importacoes', $request->file('excel'));
 
-                // ->all() is a wrapper for ->get() and will work the same
-                $results = $reader->all();
+        Excel::filter('chunk')->load('storage/app/'.$arquivo)->chunk(100, function ($results) {
+            foreach ($results as $row) {
+                $sindicato = Sindicato::where('nome', $row['sindicato'])->first();
+                if (! is_null($row['instituicao']) || $row['instituicao'] != '') {
+                    $instituicao = Instituicao::firstOrCreate(
+                        [
+                            'nome' => $row['instituicao'], 
+                            'nomecompleto' => $row['instituicao'],
+                            'sindicato_id' => $sindicato->id,
+                        ]
+                    );
+                }
 
-                $results->each(
-                    function ($result) {
-                        $sindicato = $this->sindicatoRepository->findByField(['nome' => $result->sindicato]);
-                        $instituicao = $this->instituicaoRepository->findByField(['nome' => $result->instituicao]);
-
-                        $input['name'] = $result->nome;
-                        $input['email'] = $result->email;
-                        $input['password'] = bcrypt('123321');
-                        $input['sindicato_id'] = $sindicato->first()->id;
-                        $input['instituicao_id'] = $instituicao->first()->id;
-
-                        $user = $this->userRepository->create($input);
-                        $role = Role::where('name', 'funcionario')->first();
-
-                        if ($user && $role) {
-                            $user->attachRole($role);
-                        }
+                if ($sindicato->count() > 0) {
+                    $input['name'] = strtoupper($row['nome']);
+                    $input['email'] = $row['email'];
+                    $rg_formatado = str_replace('.', '', $row['rg']);
+                    $rg_formatado = str_replace('-', '', $rg_formatado);
+                    $input['password'] = bcrypt('ss'.$rg_formatado);
+                    $input['sindicato_id'] = $sindicato->id;
+                    if (isset($instituicao)) {
+                        $input['instituicao_id'] = $instituicao->id;
                     }
-                );
+                    $input['rg'] = $rg_formatado;
+                    $input['matricula'] = $row['matricula'];
+                    $input['validade_carteirinha'] = $row['validade'];
+
+                    $user = User::firstOrNew(
+                        [
+                            'email' => $input['email'],
+                            'rg' => $input['rg'],
+                        ]
+                    );
+
+                    $user->fill($input);
+                    $user->save();
+                    $role = Role::where('name', 'funcionario')->first();
+
+                    if ($user && $role && ! $user->hasRole('funcionario')) {
+                        $user->attachRole($role);
+                    }
+                }
             }
-        );
-        Flash::success('Usuários inseridos com sucesso.');
+        });
+
+        if (! $this->teveErro) {
+            Flash::success('Planilha importada com sucesso.');
+        } else {
+            Flash::success('Planilha importada com sucesso, porém alguns registros possuem erros! Verifique se os sindicatos e instituições estão cadastrados');
+        }
 
         return redirect('usuarios/funcionarios');
     }
@@ -322,6 +348,8 @@ class UserController extends AppBaseController
             'nomeAssociado' => $user->name,
             'rgAssociado' => $user->rg,
             'nomeInstituicao' => $user->nomeInstituicao,
+            'matricula' => $user->matricula,
+            'validade_carteirinha' => $user->validade_carteirinha,
         ];
 
         return view('carteirinha.index')->with('carteirinha', $carteirinha);
