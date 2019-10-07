@@ -99,7 +99,7 @@ class UserController extends AppBaseController
                 if (! is_null($row['instituicao']) || $row['instituicao'] != '') {
                     $instituicao = Instituicao::firstOrCreate(
                         [
-                            'nome' => $row['instituicao'], 
+                            'nome' => $row['instituicao'],
                             'nomecompleto' => $row['instituicao'],
                             'sindicato_id' => $sindicato->id,
                         ]
