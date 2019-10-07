@@ -27,7 +27,7 @@ class UserDataTable extends DataTable
             ->addColumn('instituicao', function ($model) {
                 $temInstituicao = $model->instituicao()->exists();
 
-                return $temInstituicao ? $model->instituicao->first()->nome : '';
+                return $temInstituicao ? $model->instituicao->nome : '';
             })
             ->addColumn('action', 'users.datatables_actions');
     }
