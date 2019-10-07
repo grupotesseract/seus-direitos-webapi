@@ -379,3 +379,101 @@ p {
   color: #f17a3c;
 }
 
+.videos-gallery {
+  background-color: #0095c5;
+}
+
+.videos-gallery .content {
+  padding: 2rem 1rem 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .videos-gallery .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2rem 0 1rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .videos-gallery .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.videos-gallery .content .video-box {
+  margin: 2rem 15px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 330px;
+}
+
+@media only screen and (min-width: 768px) {
+  .videos-gallery .content .video-box {
+    margin: 0 1rem 1rem 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .videos-gallery .content .video-box {
+    width: 550px;
+    margin-bottom: 3rem;
+  }
+}
+
+.videos-gallery .content .video-box iframe {
+  width: 330px;
+  height: 300px;
+  border: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .videos-gallery .content .video-box iframe {
+    width: 360px;
+    height: 315px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .videos-gallery .content .video-box iframe {
+    width: 550px;
+    height: 450px;
+  }
+}
+
+.videos-gallery .content .video-box h2 {
+  color: white;
+  margin: 0.7rem 0 0.5rem;
+}
+
+footer {
+  height: 3rem;
+  background-color: #1c1a1f;
+}
+

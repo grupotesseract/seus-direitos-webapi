@@ -18,4 +18,23 @@
 	</div>
 </div>
 
+<div class="videos-gallery">
+	<div class="content">
+		@for ($i = 0; $i < 6; $i++)
+			<div class="video-box">
+				<iframe src="https://www.youtube.com/embed/LXb3EKWsInQ">
+				</iframe>
+
+				<div class="text">
+					<h2>{{ $i }} TÍTULO DO VIDEO</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+						dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</div>
+			</div>
+		@endfor
+	</div>
+</div>
+
+@include('landing-page.partials.footer')
+
 @endsection
