@@ -28,6 +28,18 @@
     {!! Form::text('rg', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('matricula', 'Matricula:') !!}
+    {!! Form::text('matricula', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('validade_carteirinha', 'Validade da Carteirinha:') !!}
+    {!! Form::text('validade_carteirinha', null, ['class' => 'form-control']) !!}
+</div>
+
 
 @if (\Request::segment(2) == 'administradores')
 

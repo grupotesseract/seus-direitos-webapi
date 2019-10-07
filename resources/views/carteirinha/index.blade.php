@@ -62,6 +62,22 @@
                                 {{  $carteirinha['nomeInstituicao']  }}
                             </span>
                         </div>
+                        <div class="text-left mb-2">
+                            <span class="label-info-carteirinha ">
+                                Validade
+                            </span>
+                            <span class="text-left"> 
+                                {{  \Carbon\Carbon::parse($carteirinha['validade_carteirinha'])->format('d/m/Y')  }}
+                            </span>
+                        </div>
+                        <div class="text-left mb-2">
+                            <span class="label-info-carteirinha ">
+                                Matrícula
+                            </span>
+                            <span class="text-left"> 
+                                {{  $carteirinha['matricula']  }}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
