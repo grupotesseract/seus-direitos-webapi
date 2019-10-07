@@ -7,7 +7,7 @@
 
 	@include('landing-page.scripts')
 
-	@include('landing-page.footer')
+	@include('landing-page.partials.footer')
 </body>
 
 </html>

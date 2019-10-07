@@ -405,10 +405,10 @@ p {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     padding: 2rem 0 1rem 1rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -416,6 +416,9 @@ p {
   .videos-gallery .content {
     max-width: 1200px;
     margin: 0 auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -437,6 +440,7 @@ p {
 @media only screen and (min-width: 768px) {
   .videos-gallery .content .video-box {
     margin: 0 1rem 1rem 0;
+    width: 360px;
   }
 }
 

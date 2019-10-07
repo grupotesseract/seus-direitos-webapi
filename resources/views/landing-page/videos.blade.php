@@ -35,6 +35,4 @@
 	</div>
 </div>
 
-@include('landing-page.partials.footer')
-
 @endsection
