@@ -67,7 +67,7 @@
                                 Validade
                             </span>
                             <span class="text-left"> 
-                                {{  \Carbon\Carbon::parse($carteirinha['validade_carteirinha'])->format('d/m/Y')  }}
+                                {{  $carteirinha['validade_carteirinha']  }}
                             </span>
                         </div>
                         <div class="text-left mb-2">
