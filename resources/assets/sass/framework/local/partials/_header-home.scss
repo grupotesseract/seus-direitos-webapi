@@ -78,7 +78,8 @@
 		}
 
 		.login-2 {
-			p, h2 {
+			p,
+			h2 {
 				white-space: nowrap;
 				font-weight: 500;
 			}
@@ -108,103 +109,121 @@
 	}
 }
 
-
-
 .hero-home {
 	background-color: $yellow-1;
-	padding: 2rem 1rem;
-	box-sizing: border-box;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
 
-	@media (min-width: 768px) {
-	}
-
-	@media (min-width: 992px) {
-		padding: 2rem 1rem 0;
-	}
-
-	.hero-1 {
-		h1,
-		h2 {
-			color: $blue-3;
-		}
-
-		h2, h3, h4 {
-			margin-bottom: 1rem;
-		}
-
-		h2 {
-			position: relative;
+	.content {
+		padding: 2rem 1rem;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		width: 22rem;
+		margin: 0 auto;
 	
-			&:after {
-				content: '';
-				width: 4rem;
-				height: 0.4rem;
-				background-color: $oranje-1;
-				position: absolute;
-				left: 0;
-				bottom: -0.5rem;
-			}
+		@media (min-width: 768px) {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			width: auto;
 		}
 
-		.button {
-			padding: 0.8rem;
-			border: 2px solid $blue-3;
-			color: $blue-3;
-			font-size: 1.5rem;
-			display: inline-block;
-			margin-right: 1rem;
-
-			i {
-				font-size: 1.8rem;
-				margin-right: 0.5rem;
+		.hero-1 {	
+			@media (min-width: 768px) {
+				margin-right: 2rem;
 			}
 
-			&:last-of-type {
-				margin-right: 0;
+			h1,
+			h2 {
+				color: $blue-3;
+			}
+	
+			h2,
+			h3,
+			h4 {
 				margin-bottom: 1rem;
 			}
-		}
-	}
-
-	.hero-2 {
-		display: none;
-
-		img {
-			width: 100%;
-			display: block;
-		}
-
-		@media (min-width: 992px) {
-			display: block;
-		}
-
-		@media (min-width: 1200px) {
-			position: relative;
-
-			img {
-				position: absolute;
-				bottom: 0;
+	
+			h2 {
+				position: relative;
+	
+				&:after {
+					content: '';
+					width: 4rem;
+					height: 0.4rem;
+					background-color: $oranje-1;
+					position: absolute;
+					left: 0;
+					bottom: -0.5rem;
+				}
+			}
+	
+			.button {
+				padding: 0.8rem;
+				border: 2px solid $blue-3;
+				color: $blue-3;
+				font-size: 1.5rem;
+				display: inline-block;
+				margin-right: 1rem;
+	
+				i {
+					font-size: 1.8rem;
+					margin-right: 0.5rem;
+				}
+	
+				&:last-of-type {
+					margin-right: 0;
+					margin-bottom: 1rem;
+	
+					@media (min-width: 768px) {
+						margin-bottom: 0;
+					}
+				}
 			}
 		}
-	}
-
-	.hero-3 {
-		h3 {
-			color: $blue-3;
-			position: relative;
-			margin-bottom: 1rem;
-
-			&:after {
-				content: '';
-				width: 2.5rem;
-				height: 0.3rem;
-				background-color: $oranje-1;
-				position: absolute;
-				left: 0;
-				bottom: -0.4rem;
+	
+		.hero-2 {
+			display: none;
+	
+			img {
+				width: 100%;
+				display: block;
+			}
+	
+			@media (min-width: 992px) {
+				display: block;
+			}
+	
+			@media (min-width: 1200px) {
+				position: relative;
+	
+				img {
+					position: absolute;
+					bottom: 0;
+				}
+			}
+		}
+	
+		.hero-3 {
+			h3 {
+				color: $blue-3;
+				position: relative;
+				margin-bottom: 1rem;
+	
+				&:after {
+					content: '';
+					width: 2.5rem;
+					height: 0.3rem;
+					background-color: $oranje-1;
+					position: absolute;
+					left: 0;
+					bottom: -0.4rem;
+				}
+			
+				&:last-of-type {
+					@media (min-width: 768px) {
+						margin-bottom: 0;
+					}
+				}
 			}
 		}
 	}

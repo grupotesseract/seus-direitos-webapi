@@ -574,41 +574,61 @@ p {
 
 .hero-home {
   background-color: #ffe063;
+}
+
+.hero-home .content {
   padding: 2rem 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 22rem;
+  margin: 0 auto;
 }
 
-@media (min-width: 992px) {
-  .hero-home {
-    padding: 2rem 1rem 0;
+@media (min-width: 768px) {
+  .hero-home .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
   }
 }
 
-.hero-home .hero-1 h1,
-.hero-home .hero-1 h2 {
+@media (min-width: 768px) {
+  .hero-home .content .hero-1 {
+    margin-right: 2rem;
+  }
+}
+
+.hero-home .content .hero-1 h1,
+.hero-home .content .hero-1 h2 {
   color: #2c669c;
 }
 
-.hero-home .hero-1 h2,
-.hero-home .hero-1 h3,
-.hero-home .hero-1 h4 {
+.hero-home .content .hero-1 h2,
+.hero-home .content .hero-1 h3,
+.hero-home .content .hero-1 h4 {
   margin-bottom: 1rem;
 }
 
-.hero-home .hero-1 h2 {
+.hero-home .content .hero-1 h2 {
   position: relative;
 }
 
-.hero-home .hero-1 h2:after {
+.hero-home .content .hero-1 h2:after {
   content: '';
   width: 4rem;
   height: 0.4rem;
@@ -618,7 +638,7 @@ p {
   bottom: -0.5rem;
 }
 
-.hero-home .hero-1 .button {
+.hero-home .content .hero-1 .button {
   padding: 0.8rem;
   border: 2px solid #2c669c;
   color: #2c669c;
@@ -627,49 +647,55 @@ p {
   margin-right: 1rem;
 }
 
-.hero-home .hero-1 .button i {
+.hero-home .content .hero-1 .button i {
   font-size: 1.8rem;
   margin-right: 0.5rem;
 }
 
-.hero-home .hero-1 .button:last-of-type {
+.hero-home .content .hero-1 .button:last-of-type {
   margin-right: 0;
   margin-bottom: 1rem;
 }
 
-.hero-home .hero-2 {
+@media (min-width: 768px) {
+  .hero-home .content .hero-1 .button:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.hero-home .content .hero-2 {
   display: none;
 }
 
-.hero-home .hero-2 img {
+.hero-home .content .hero-2 img {
   width: 100%;
   display: block;
 }
 
 @media (min-width: 992px) {
-  .hero-home .hero-2 {
+  .hero-home .content .hero-2 {
     display: block;
   }
 }
 
 @media (min-width: 1200px) {
-  .hero-home .hero-2 {
+  .hero-home .content .hero-2 {
     position: relative;
   }
 
-  .hero-home .hero-2 img {
+  .hero-home .content .hero-2 img {
     position: absolute;
     bottom: 0;
   }
 }
 
-.hero-home .hero-3 h3 {
+.hero-home .content .hero-3 h3 {
   color: #2c669c;
   position: relative;
   margin-bottom: 1rem;
 }
 
-.hero-home .hero-3 h3:after {
+.hero-home .content .hero-3 h3:after {
   content: '';
   width: 2.5rem;
   height: 0.3rem;
@@ -677,6 +703,12 @@ p {
   position: absolute;
   left: 0;
   bottom: -0.4rem;
+}
+
+@media (min-width: 768px) {
+  .hero-home .content .hero-3 h3:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .menu {
