@@ -32,7 +32,9 @@
 			<iframe src="https://www.youtube.com/embed/3mGKzUxYeFY">
 			</iframe>
 
-			<h3>MAIS VÍDEOS ></h3>
+			<a href="/landingpage/videos" target="_blank">
+				<h3>MAIS VÍDEOS ></h3>
+			</a>
 		</div>
 
 		<div class="news">
