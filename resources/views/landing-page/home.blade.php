@@ -62,10 +62,17 @@
 		SINDICATOS<br>
 		BENEFICIADOS <span class="arrow">&gt;</span></h2>
 
-	<img src="https://res.cloudinary.com/tesseract/image/upload/v1570499371/seus-direitos/sindicato-sintshogastro.png"
-		alt="SINTSHOGASTRO - SCR">
-	<img src="https://res.cloudinary.com/tesseract/image/upload/v1570495756/seus-direitos/sindicato-sitteemare.png"
-		alt="SITTEEMARE">
-	<img src="https://res.cloudinary.com/tesseract/image/upload/v1570495756/seus-direitos/sindicato-saae.png" alt="SAAE">
+	<a href="https://www.sintshogastro.org.br" target="_blank">
+		<img src="https://res.cloudinary.com/tesseract/image/upload/v1570499371/seus-direitos/sindicato-sintshogastro.png"
+			alt="SINTSHOGASTRO - SCR">
+	</a>
+	<a href="https://www.sinteemar.com.br" target="_blank">
+		<img src="https://res.cloudinary.com/tesseract/image/upload/v1570495756/seus-direitos/sindicato-sitteemare.png"
+			alt="SITTEEMARE">
+	</a>
+	<a href="http://www.saaebauru.com.br/do/Home" target="_blank">
+		<img src="https://res.cloudinary.com/tesseract/image/upload/v1570495756/seus-direitos/sindicato-saae.png"
+			alt="SAAE">
+	</a>
 </div>
 @endsection
