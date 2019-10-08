@@ -354,7 +354,7 @@ p {
   padding: 1rem;
 }
 
-@media only screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .logo-home .content {
     max-width: 1200px;
     margin: 0 auto;
@@ -366,7 +366,6 @@ p {
             align-items: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    height: 14rem;
   }
 }
 
@@ -375,19 +374,19 @@ p {
   display: block;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .logo-home .content img {
     width: 14rem;
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .logo-home .content img {
     width: 16rem;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .logo-home .content img {
     width: 18rem;
   }
@@ -397,13 +396,13 @@ p {
   background-color: #0095c5;
 }
 
-@media only screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .login-home {
     position: absolute;
     top: 0;
     right: 0;
-    height: 14rem;
-    width: 44rem;
+    height: 550.34px;
+    width: 26%;
   }
 }
 
@@ -420,7 +419,7 @@ p {
           flex-direction: column;
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .login-home .content {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -435,15 +434,35 @@ p {
   }
 }
 
+@media (min-width: 1200px) {
+  .login-home .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    height: 550.34px;
+  }
+}
+
 .login-home .content h2,
 .login-home .content p {
   color: white;
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .login-home .content .login-1 {
     padding-right: 1rem;
     border-right: 2px solid white;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-1 {
+    padding-right: 0;
+    border-right: none;
   }
 }
 
@@ -452,9 +471,15 @@ p {
   margin-bottom: 1rem;
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .login-home .content .login-1 > p:last-of-type {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-1 > p:last-of-type {
+    margin-bottom: 1rem;
   }
 }
 
@@ -464,9 +489,15 @@ p {
   font-weight: 500;
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .login-home .content .login-2 {
     margin: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-2 {
+    margin: 0;
   }
 }
 
@@ -474,9 +505,15 @@ p {
   margin-bottom: 0.5rem;
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .login-home .content .login-2 p {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-2 p {
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -566,9 +603,15 @@ p {
           transform: rotate(45deg);
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .login-home .content .login-3 form {
     width: 14rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-3 form {
+    width: auto;
   }
 }
 
@@ -604,6 +647,16 @@ p {
         -ms-flex-align: center;
             align-items: center;
     width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-home .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
 }
 
@@ -664,7 +717,11 @@ p {
 }
 
 .hero-home .content .hero-2 {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   display: none;
+  width: 15rem;
+  margin-bottom: -2rem;
 }
 
 .hero-home .content .hero-2 img {
@@ -678,24 +735,14 @@ p {
   }
 }
 
-@media (min-width: 1200px) {
-  .hero-home .content .hero-2 {
-    position: relative;
-  }
-
-  .hero-home .content .hero-2 img {
-    position: absolute;
-    bottom: 0;
-  }
-}
-
-.hero-home .content .hero-3 h3 {
+.hero-home .content .hero-3 h4 {
   color: #2c669c;
   position: relative;
   margin-bottom: 1rem;
+  line-height: 1.2rem;
 }
 
-.hero-home .content .hero-3 h3:after {
+.hero-home .content .hero-3 h4:after {
   content: '';
   width: 2.5rem;
   height: 0.3rem;
@@ -706,7 +753,7 @@ p {
 }
 
 @media (min-width: 768px) {
-  .hero-home .content .hero-3 h3:last-of-type {
+  .hero-home .content .hero-3 h4:last-of-type {
     margin-bottom: 0;
   }
 }

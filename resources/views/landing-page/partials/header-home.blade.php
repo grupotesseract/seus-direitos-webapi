@@ -68,22 +68,22 @@
 				<div class="button"><i class="fab fa-android"></i>Android</div>
 			</div>
 		
-			{{-- <div class="hero-2">
+			<div class="hero-2">
 				<img src="https://res.cloudinary.com/tesseract/image/upload/v1568925429/seus-direitos/mao-app.png"
 					alt="Mockup Seu Sindicato">
-			</div> --}}
+			</div>
 		
 			<div class="hero-3">
-				<h3>VEJA AS CONVENÇÕES<br>
+				<h4>VEJA AS CONVENÇÕES<br>
 				COLETIVAS DA SUA<br>
-				CATEGORIA</h3>
-				<h3>LEIA NOTÍCIAS</h3>
-				<h3>CONHEÇA BENEFÍCIOS</h3>
-				<h3>FALE COM<br>
+				CATEGORIA</h4>
+				<h4>LEIA NOTÍCIAS</h4>
+				<h4>CONHEÇA BENEFÍCIOS</h4>
+				<h4>FALE COM<br>
 					REPRESENTANTES<br>
-					DA SUA CATEGORIA</h3>
-				<h3>UTILIZE A<br>
-					CARTEIRINHA VIRTUAL</h3>
+					DA SUA CATEGORIA</h4>
+				<h4>UTILIZE A<br>
+					CARTEIRINHA VIRTUAL</h4>
 			</div>
 	</div>
 </div>

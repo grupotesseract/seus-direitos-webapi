@@ -4,28 +4,27 @@
 	.content {
 		padding: 1rem;
 
-		@media only screen and (min-width: 1200px) {
+		@media (min-width: 1200px) {
 			max-width: 1200px;
 			margin: 0 auto;
 			display: flex;
 			align-items: center;
 			align-content: center;
-			height: 14rem;
 		}
 
 		img {
 			width: 12rem;
 			display: block;
 
-			@media only screen and (min-width: 768px) {
+			@media (min-width: 768px) {
 				width: 14rem;
 			}
 
-			@media only screen and (min-width: 992px) {
+			@media (min-width: 992px) {
 				width: 16rem;
 			}
 
-			@media only screen and (min-width: 1200px) {
+			@media (min-width: 1200px) {
 				width: 18rem;
 			}
 		}
@@ -35,12 +34,12 @@
 .login-home {
 	background-color: $blue-2;
 
-	@media only screen and (min-width: 1200px) {
+	@media (min-width: 1200px) {
 		position: absolute;
 		top: 0;
 		right: 0;
-		height: 14rem;
-		width: 44rem;
+		height: 550.34px;
+		width: 26%;
 	}
 
 	.content {
@@ -50,10 +49,16 @@
 		display: flex;
 		flex-direction: column;
 
-		@media only screen and (min-width: 992px) {
+		@media (min-width: 992px) {
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
+		}
+
+		@media (min-width: 1200px) {
+			flex-direction: column;
+			align-items: stretch;
+			height: 550.34px;
 		}
 
 		h2,
@@ -62,17 +67,26 @@
 		}
 
 		.login-1 {
-			@media only screen and (min-width: 992px) {
+			@media (min-width: 992px) {
 				padding-right: 1rem;
 				border-right: 2px solid $white-1;
+			}
+
+			@media (min-width: 1200px) {
+				padding-right: 0;
+				border-right: none;
 			}
 
 			> p:last-of-type {
 				color: $yellow-1;
 				margin-bottom: 1rem;
 
-				@media only screen and (min-width: 992px) {
+				@media (min-width: 992px) {
 					margin-bottom: 0;
+				}
+
+				@media (min-width: 1200px) {
+					margin-bottom: 1rem;
 				}
 			}
 		}
@@ -84,15 +98,23 @@
 				font-weight: 500;
 			}
 
-			@media only screen and (min-width: 992px) {
+			@media (min-width: 992px) {
 				margin: 0 1rem;
+			}
+
+			@media (min-width: 1200px) {
+				margin: 0;
 			}
 
 			p {
 				margin-bottom: 0.5rem;
 
-				@media only screen and (min-width: 992px) {
+				@media (min-width: 992px) {
 					margin-bottom: 0;
+				}
+
+				@media (min-width: 1200px) {
+					margin-bottom: 0.5rem;
 				}
 			}
 		}
@@ -101,8 +123,12 @@
 			form {
 				@include loginForm();
 
-				@media only screen and (min-width: 992px) {
+				@media (min-width: 992px) {
 					width: 14rem;
+				}
+
+				@media (min-width: 1200px) {
+					width: auto;
 				}
 			}
 		}
@@ -127,6 +153,12 @@
 			width: auto;
 		}
 
+		@media (min-width: 1200px) {
+			max-width: 1200px;
+			margin: 0 auto;
+			justify-content: start;
+		}
+		
 		.hero-1 {	
 			@media (min-width: 768px) {
 				margin-right: 2rem;
@@ -182,7 +214,10 @@
 		}
 	
 		.hero-2 {
+			align-self: flex-end;
 			display: none;
+			width: 15rem;
+			margin-bottom: -2rem;
 	
 			img {
 				width: 100%;
@@ -192,22 +227,14 @@
 			@media (min-width: 992px) {
 				display: block;
 			}
-	
-			@media (min-width: 1200px) {
-				position: relative;
-	
-				img {
-					position: absolute;
-					bottom: 0;
-				}
-			}
 		}
 	
 		.hero-3 {
-			h3 {
+			h4 {
 				color: $blue-3;
 				position: relative;
 				margin-bottom: 1rem;
+				line-height: 1.2rem;
 	
 				&:after {
 					content: '';
