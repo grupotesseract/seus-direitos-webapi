@@ -855,18 +855,14 @@ p {
   }
 }
 
-.video-news .content .news .news-image:first-child {
-  background-image: url("https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.video-news .content .news .news-image {
   width: 360px;
   height: 315px;
   margin-top: 6rem;
 }
 
 @media only screen and (min-width: 1200px) {
-  .video-news .content .news .news-image:first-child {
+  .video-news .content .news .news-image {
     margin-top: 0;
     margin-left: 2rem;
   }

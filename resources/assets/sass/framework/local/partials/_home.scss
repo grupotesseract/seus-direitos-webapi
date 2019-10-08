@@ -34,7 +34,7 @@
 		align-items: center;
 		flex-direction: column;
 		padding: 4rem 0;
-	
+
 		@media only screen and (min-width: 1200px) {
 			flex-direction: row;
 			justify-content: center;
@@ -43,13 +43,13 @@
 		.video {
 			position: relative;
 			height: 315px;
-	
+
 			iframe {
 				width: 360px;
 				height: 315px;
 				border: none;
 			}
-	
+
 			h3 {
 				position: absolute;
 				right: 0;
@@ -59,37 +59,31 @@
 				color: $blue-3;
 			}
 		}
-	
+
 		.news {
 			@media only screen and (min-width: 1200px) {
 				display: flex;
 				justify-content: center;
 			}
-	
+
 			.news-image {
-				&:first-child {
-					background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg');
-					background-repeat: no-repeat;
-					background-position: center;
-					background-size: cover;
-					width: 360px;
-					height: 315px;
-					margin-top: 6rem;
-	
-					@media only screen and (min-width: 1200px) {
-						margin-top: 0;
-						margin-left: 2rem;
-					}
+				width: 360px;
+				height: 315px;
+				margin-top: 6rem;
+
+				@media only screen and (min-width: 1200px) {
+					margin-top: 0;
+					margin-left: 2rem;
 				}
 			}
-	
+
 			.news-text {
 				background-color: $pink-1;
 				padding: 1em;
 				box-sizing: border-box;
 				width: 360px;
 				color: $blue-3;
-	
+
 				@media only screen and (min-width: 1200px) {
 					width: 300px;
 				}
@@ -97,7 +91,7 @@
 				h4 {
 					$lineHeight: 1.2em;
 				}
-	
+
 				p {
 					margin-bottom: 1rem;
 
@@ -107,11 +101,11 @@
 						$bgColor: $pink-1
 					);
 				}
-	
+
 				> h4:first-of-type {
 					margin-bottom: 1rem;
 				}
-	
+
 				> h4:last-of-type {
 					text-align: right;
 				}

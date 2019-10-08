@@ -36,7 +36,11 @@
 		</div>
 
 		<div class="news">
-			<div class="news-image"></div>
+			<div class="news-image" style="
+			background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;"></div>
 
 			<div class="news-text">
 				<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
