@@ -29,7 +29,7 @@
 	<div class="content">
 		<div class="video">
 			{{-- <iframe width="360" height="315" src="https://www.youtube.com/embed/LXb3EKWsInQ"> --}}
-			<iframe src="https://www.youtube.com/embed/LXb3EKWsInQ">
+			<iframe src="https://www.youtube.com/embed/3mGKzUxYeFY">
 			</iframe>
 
 			<h3>MAIS VÍDEOS ></h3>
@@ -37,20 +37,18 @@
 
 		<div class="news">
 			<div class="news-image" style="
-			background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg');
+			background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1570464222/seus-direitos/carteira-de-trabalho-digital_1.jpg');
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;"></div>
 
 			<div class="news-text">
-				<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-					dolore magna aliqua.</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-					ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-					fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-					deserunt mollit anim id est laborum.</p>
-				<h4>LEIA MAIS ></h4>
+				<h3>Carteiro de Trabalho Digital</h3>
+				<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos 
+					contar com a Carteira de Trabalho Digital, disponível para ser baixada 
+					no seu smartphone. 
+					A Secretaria de Trabalho do Ministério da Economia diz que a mudança irá proporcionar facilidades para trabalhadores e empregados com redução de burocracia e custos.</p>
+				<h3>LEIA MAIS ></h3>
 			</div>
 		</div>
 	</div>
@@ -67,7 +65,7 @@
 			alt="SINTSHOGASTRO - SCR">
 	</a>
 	<a href="https://www.sinteemar.com.br" target="_blank">
-		<img src="https://res.cloudinary.com/tesseract/image/upload/v1570495756/seus-direitos/sindicato-sitteemare.png"
+		<img src="https://res.cloudinary.com/tesseract/image/upload/v1570538595/seus-direitos/WhatsApp_Image_2019-10-04_at_17.17.34.jpg"
 			alt="SITTEEMARE">
 	</a>
 	<a href="http://www.saaebauru.com.br/do/Home" target="_blank">
