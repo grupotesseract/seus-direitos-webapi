@@ -796,6 +796,9 @@ p {
 
 .video-news {
   background-color: #e95b11;
+}
+
+.video-news .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -810,7 +813,7 @@ p {
 }
 
 @media only screen and (min-width: 1200px) {
-  .video-news {
+  .video-news .content {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -823,6 +826,7 @@ p {
 
 .video-news .content .video {
   position: relative;
+  height: 315px;
 }
 
 .video-news .content .video iframe {
@@ -834,7 +838,7 @@ p {
 .video-news .content .video h3 {
   position: absolute;
   right: 0;
-  bottom: -3.5rem;
+  bottom: -3rem;
   padding: 0.3rem 0.5rem;
   background-color: white;
   color: #2c669c;
@@ -858,7 +862,7 @@ p {
   background-size: cover;
   width: 360px;
   height: 315px;
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -877,7 +881,14 @@ p {
   color: #2c669c;
 }
 
+@media only screen and (min-width: 1200px) {
+  .video-news .content .news .news-text {
+    width: 300px;
+  }
+}
+
 .video-news .content .news .news-text p {
+  margin-bottom: 1rem;
   overflow: hidden;
   position: relative;
   line-height: 1.2em;
@@ -905,7 +916,11 @@ p {
   background: #fce5d7;
 }
 
-.video-news .content .news .news-text > h3:last-of-type {
+.video-news .content .news .news-text > h4:first-of-type {
+  margin-bottom: 1rem;
+}
+
+.video-news .content .news .news-text > h4:last-of-type {
   text-align: right;
 }
 
