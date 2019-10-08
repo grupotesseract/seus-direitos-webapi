@@ -10,44 +10,44 @@ $black-1: #1c1a1f;
 
 /* mixin for multiline */
 @mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
-  overflow: hidden;
-  position: relative;
-  line-height: $lineHeight;
-  max-height: $lineHeight * $lineCount;
-  text-align: justify;
-  margin-right: -1em;
-  padding-right: 1em;
+	overflow: hidden;
+	position: relative;
+	line-height: $lineHeight;
+	max-height: $lineHeight * $lineCount;
+	text-align: justify;
+	margin-right: -1em;
+	padding-right: 1em;
 
-  &:before {
-    content: "\00a0...";
-    position: absolute;
-    right: 1rem;
-    bottom: 1px;
-    background: $bgColor;
-  }
+	&:before {
+		content: '\00a0...';
+		position: absolute;
+		right: 1rem;
+		bottom: 1px;
+		background: $bgColor;
+	}
 
-  &:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.2em;
-    background: $bgColor;
-  }
+	&:after {
+		content: '';
+		position: absolute;
+		right: 0;
+		width: 1em;
+		height: 1em;
+		margin-top: 0.2em;
+		background: $bgColor;
+	}
 }
 
 html {
-  font-family: "Roboto", sans-serif;
-  color: $black-1;
+	font-family: 'Roboto', sans-serif;
+	color: $black-1;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-weight: 900;
+	font-weight: 900;
 }
 
-@import "landingpage_home";
-@import "landingpage_subpage";
+@import 'landingpage_home';
+@import 'landingpage_subpage';

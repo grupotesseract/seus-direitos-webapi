@@ -4,166 +4,171 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
-$cor-azul-escuro:#1d2440;
-$cor-azul-claro:#02659c;
-$cor-amarelo-texto:#f6b01c;
-$cor-amarelo-bg:#ffdd65;
-$cor-quase-branco:#fdfeff;
-$cor-rosa-claro:#fee4d7;
-$cor-cinza-sombra:#717171;
+$cor-azul-escuro: #1d2440;
+$cor-azul-claro: #02659c;
+$cor-amarelo-texto: #f6b01c;
+$cor-amarelo-bg: #ffdd65;
+$cor-quase-branco: #fdfeff;
+$cor-rosa-claro: #fee4d7;
+$cor-cinza-sombra: #717171;
 
-.bg-amarelo { background-color: $cor-amarelo-bg; }
-.bg-azul-claro { background-color: $cor-azul-claro; }
-.bg-azul-escuro { background-color: $cor-azul-escuro; }
-.bg-quase-branco { background-color: $cor-quase-branco; }
-
-.container-geral {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    text-transform:uppercase;
-    height:100vh;
-    background-color: $cor-rosa-claro;
-    padding: 12px;
-
-    .container-logo-seu-sindicato {
-        background:$cor-azul-escuro;
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        align-items:center;
-        height:100%;
-        width:30%;
-        min-width:30%;
-        position:relative;
-
-        #logo-seu-sindicato {
-            width: 90%;
-        }
-        .textobottom {
-            position: absolute;
-            bottom: 1%;
-            right: 8%;
-            color: $cor-amarelo-texto;
-            .fundo-azul-claro {
-                background-color: $cor-azul-claro;
-                width: 100px;
-                height: 19px;
-            }
-            p {
-                font-weight: bold;
-                text-align: right;
-                font-size: 0.8rem;
-                margin-top:-25px;
-                line-height:1rem;
-            }
-        }
-    }
-
-    h3 {
-        font-size: 1.15rem;
-    }
-    .titulo-sindicato {
-        font-size: 1.35rem;
-    }
-    .negrito {
-        font-weight:bold;
-    }
-    .carteirinha {
-        box-shadow: 2px 2px 12px 2px $cor-cinza-sombra;
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: $cor-azul-escuro;
-        border: none;
-        border-radius: 10px;
-
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        height:90vh;
-        overflow:hidden;
-
-        .container-resto {
-            height:100%;
-            width:70%;
-            background-color: $cor-quase-branco;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-
-            span {
-                font-size:0.9rem;
-            }
-
-            .label-info-carteirinha {
-                padding-top: 3px;
-                padding-bottom: 3px;
-                padding-right: 5px;
-                background-color: $cor-amarelo-bg;
-                display: -webkit-inline-box;
-                text-align: -webkit-right;
-                width:30%;
-            }
-
-            .container-infos-sindicato {
-                display:flex;
-                justify-content: center;
-                align-items: center;
-
-                .container-logo-sindicato {
-                    display:flex;
-                    justify-content:center;
-                    width:30%;
-                    margin:0 1rem;
-
-                    img {
-                        width: 100px;
-                        height: 100px;
-                    }
-                }
-
-                .container-texto-sindicato {
-                    width:70%;
-                    display:flex;
-                }
-                
-            }
-        }
-    }
+.bg-amarelo {
+	background-color: $cor-amarelo-bg;
+}
+.bg-azul-claro {
+	background-color: $cor-azul-claro;
+}
+.bg-azul-escuro {
+	background-color: $cor-azul-escuro;
+}
+.bg-quase-branco {
+	background-color: $cor-quase-branco;
 }
 
+.container-geral {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	height: 100vh;
+	background-color: $cor-rosa-claro;
+	padding: 12px;
+
+	.container-logo-seu-sindicato {
+		background: $cor-azul-escuro;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 30%;
+		min-width: 30%;
+		position: relative;
+
+		#logo-seu-sindicato {
+			width: 90%;
+		}
+		.textobottom {
+			position: absolute;
+			bottom: 1%;
+			right: 8%;
+			color: $cor-amarelo-texto;
+			.fundo-azul-claro {
+				background-color: $cor-azul-claro;
+				width: 100px;
+				height: 19px;
+			}
+			p {
+				font-weight: bold;
+				text-align: right;
+				font-size: 0.8rem;
+				margin-top: -25px;
+				line-height: 1rem;
+			}
+		}
+	}
+
+	h3 {
+		font-size: 1.15rem;
+	}
+	.titulo-sindicato {
+		font-size: 1.35rem;
+	}
+	.negrito {
+		font-weight: bold;
+	}
+	.carteirinha {
+		box-shadow: 2px 2px 12px 2px $cor-cinza-sombra;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		background-color: $cor-azul-escuro;
+		border: none;
+		border-radius: 10px;
+
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		height: 90vh;
+		overflow: hidden;
+
+		.container-resto {
+			height: 100%;
+			width: 70%;
+			background-color: $cor-quase-branco;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+
+			span {
+				font-size: 0.9rem;
+			}
+
+			.label-info-carteirinha {
+				padding-top: 3px;
+				padding-bottom: 3px;
+				padding-right: 5px;
+				background-color: $cor-amarelo-bg;
+				display: -webkit-inline-box;
+				text-align: -webkit-right;
+				width: 30%;
+			}
+
+			.container-infos-sindicato {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.container-logo-sindicato {
+					display: flex;
+					justify-content: center;
+					width: 30%;
+					margin: 0 1rem;
+
+					img {
+						width: 100px;
+						height: 100px;
+					}
+				}
+
+				.container-texto-sindicato {
+					width: 70%;
+					display: flex;
+				}
+			}
+		}
+	}
+}
 
 /**
  * Adaptações landscape
 ***/
 
 @media all {
-    .msg-troque-orientacao {
-        display:none;
-    }
+	.msg-troque-orientacao {
+		display: none;
+	}
 }
 
-@media all and (orientation:portrait) {
-    #logo-seu-sindicato {
-        width: 250px!important;
-    }
-    .container-resto {
-        display:none!important;
-    }
-    .textobottom {
-        display:none!important;
-    }
-    .container-logo-seu-sindicato {
-        width:100%!important;
-    }
-    .msg-troque-orientacao {
-        display:block!important;
-        position:absolute;
-        bottom: 15%;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
-        color: white;
-        width:100%;
-    }
+@media all and (orientation: portrait) {
+	#logo-seu-sindicato {
+		width: 250px !important;
+	}
+	.container-resto {
+		display: none !important;
+	}
+	.textobottom {
+		display: none !important;
+	}
+	.container-logo-seu-sindicato {
+		width: 100% !important;
+	}
+	.msg-troque-orientacao {
+		display: block !important;
+		position: absolute;
+		bottom: 15%;
+		font-family: 'Roboto', sans-serif;
+		font-weight: bold;
+		color: white;
+		width: 100%;
+	}
 }
-

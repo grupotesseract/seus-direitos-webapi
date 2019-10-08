@@ -1,0 +1,109 @@
+.logo {
+	background-color: $pink-1;
+
+	.content {
+		padding: 1rem;
+
+		@media only screen and (min-width: 1200px) {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			align-content: center;
+			height: 14rem;
+		}
+
+		img {
+			width: 12rem;
+			display: block;
+
+			@media only screen and (min-width: 768px) {
+				width: 14rem;
+			}
+
+			@media only screen and (min-width: 992px) {
+				width: 16rem;
+			}
+
+			@media only screen and (min-width: 1200px) {
+				width: 18rem;
+			}
+		}
+	}
+}
+
+.login {
+	background-color: $blue-2;
+
+	@media only screen and (min-width: 1200px) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 14rem;
+		width: 44rem;
+	}
+
+	.content {
+		padding: 1rem;
+		max-width: 360px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+
+		@media only screen and (min-width: 992px) {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		h2,
+		p {
+			color: $white-1;
+		}
+
+		.login-1 {
+			@media only screen and (min-width: 992px) {
+				padding-right: 1rem;
+				border-right: 2px solid $white-1;
+			}
+
+			> p:last-of-type {
+				color: $yellow-1;
+				margin-bottom: 1rem;
+
+				@media only screen and (min-width: 992px) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.login-2 {
+			p, h2 {
+				white-space: nowrap;
+				font-weight: 500;
+			}
+
+			@media only screen and (min-width: 992px) {
+				margin: 0 1rem;
+			}
+
+			p {
+				margin-bottom: 0.5rem;
+
+				@media only screen and (min-width: 992px) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.login-3 {
+			form {
+				@include loginForm();
+
+				@media only screen and (min-width: 992px) {
+					width: 14rem;
+				}
+			}
+		}
+	}
+}

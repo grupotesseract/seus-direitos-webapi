@@ -1,0 +1,1109 @@
+/* mixin for multiline */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+figure {
+  margin: 0;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+cite {
+  font-style: normal;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  /*for using REM units*/
+}
+
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: #1c1a1f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: .83rem;
+}
+
+h6 {
+  font-size: .67rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.logo {
+  background-color: #fce5d7;
+}
+
+.logo .content {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .logo .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    height: 14rem;
+  }
+}
+
+.logo .content img {
+  width: 12rem;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo .content img {
+    width: 14rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .logo .content img {
+    width: 16rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .logo .content img {
+    width: 18rem;
+  }
+}
+
+.login {
+  background-color: #0095c5;
+}
+
+@media only screen and (min-width: 1200px) {
+  .login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 14rem;
+    width: 44rem;
+  }
+}
+
+.login .content {
+  padding: 1rem;
+  max-width: 360px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.login .content h2,
+.login .content p {
+  color: white;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-1 {
+    padding-right: 1rem;
+    border-right: 2px solid white;
+  }
+}
+
+.login .content .login-1 > p:last-of-type {
+  color: #ffe063;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-1 > p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.login .content .login-2 p,
+.login .content .login-2 h2 {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-2 {
+    margin: 0 1rem;
+  }
+}
+
+.login .content .login-2 p {
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-2 p {
+    margin-bottom: 0;
+  }
+}
+
+.login .content .login-3 form .form-group .form-control {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 0.9rem;
+}
+
+.login .content .login-3 form .form-group .has-error {
+  border: 2px solid red;
+}
+
+.login .content .login-3 form .form-group .help-block {
+  color: white;
+}
+
+.login .content .login-3 form .submit-button {
+  background-color: #e95b11;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  margin-bottom: 0.9rem;
+  border: none;
+  width: 100%;
+}
+
+.login .content .login-3 form label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.login .content .login-3 form label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.login .content .login-3 form label .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.login .content .login-3 form label .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.login .content .login-3 form label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.login .content .login-3 form label input:checked ~ .checkmark {
+  background-color: #e95b11;
+}
+
+.login .content .login-3 form label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.login .content .login-3 form label .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media only screen and (min-width: 992px) {
+  .login .content .login-3 form {
+    width: 14rem;
+  }
+}
+
+.logo-home {
+  background-color: #fce5d7;
+}
+
+.logo-home .content {
+  padding: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .logo-home .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+.logo-home .content img {
+  width: 12rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .logo-home .content img {
+    width: 14rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .logo-home .content img {
+    width: 16rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo-home .content img {
+    width: 18rem;
+  }
+}
+
+.login-home {
+  background-color: #0095c5;
+}
+
+@media (min-width: 1200px) {
+  .login-home {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 550.34px;
+    width: 26%;
+  }
+}
+
+.login-home .content {
+  padding: 1rem;
+  max-width: 360px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .login-home .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    height: 550.34px;
+  }
+}
+
+.login-home .content h2,
+.login-home .content p {
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .login-home .content .login-1 {
+    padding-right: 1rem;
+    border-right: 2px solid white;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-1 {
+    padding-right: 0;
+    border-right: none;
+  }
+}
+
+.login-home .content .login-1 > p:last-of-type {
+  color: #ffe063;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 992px) {
+  .login-home .content .login-1 > p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-1 > p:last-of-type {
+    margin-bottom: 1rem;
+  }
+}
+
+.login-home .content .login-2 p,
+.login-home .content .login-2 h2 {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+@media (min-width: 992px) {
+  .login-home .content .login-2 {
+    margin: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-2 {
+    margin: 0;
+  }
+}
+
+.login-home .content .login-2 p {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .login-home .content .login-2 p {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-2 p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.login-home .content .login-3 form .form-group .form-control {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 0.9rem;
+}
+
+.login-home .content .login-3 form .form-group .has-error {
+  border: 2px solid red;
+}
+
+.login-home .content .login-3 form .form-group .help-block {
+  color: white;
+}
+
+.login-home .content .login-3 form .submit-button {
+  background-color: #e95b11;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  margin-bottom: 0.9rem;
+  border: none;
+  width: 100%;
+}
+
+.login-home .content .login-3 form label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.login-home .content .login-3 form label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.login-home .content .login-3 form label .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.login-home .content .login-3 form label .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.login-home .content .login-3 form label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.login-home .content .login-3 form label input:checked ~ .checkmark {
+  background-color: #e95b11;
+}
+
+.login-home .content .login-3 form label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.login-home .content .login-3 form label .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media (min-width: 992px) {
+  .login-home .content .login-3 form {
+    width: 14rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-home .content .login-3 form {
+    width: auto;
+  }
+}
+
+.hero-home {
+  background-color: #ffe063;
+}
+
+.hero-home .content {
+  padding: 2rem 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 22rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .hero-home .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-home .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-home .content .hero-1 {
+    margin-right: 2rem;
+  }
+}
+
+.hero-home .content .hero-1 h1,
+.hero-home .content .hero-1 h2 {
+  color: #2c669c;
+}
+
+.hero-home .content .hero-1 h2,
+.hero-home .content .hero-1 h3,
+.hero-home .content .hero-1 h4 {
+  margin-bottom: 1rem;
+}
+
+.hero-home .content .hero-1 h2 {
+  position: relative;
+}
+
+.hero-home .content .hero-1 h2:after {
+  content: '';
+  width: 4rem;
+  height: 0.4rem;
+  background-color: #e95b11;
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+}
+
+.hero-home .content .hero-1 .button {
+  padding: 0.8rem;
+  border: 2px solid #2c669c;
+  color: #2c669c;
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.hero-home .content .hero-1 .button i {
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+.hero-home .content .hero-1 .button:last-of-type {
+  margin-right: 0;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-home .content .hero-1 .button:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.hero-home .content .hero-2 {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: none;
+  width: 15rem;
+  margin-bottom: -2rem;
+}
+
+.hero-home .content .hero-2 img {
+  width: 100%;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .hero-home .content .hero-2 {
+    display: block;
+  }
+}
+
+.hero-home .content .hero-3 h4 {
+  color: #2c669c;
+  position: relative;
+  margin-bottom: 1rem;
+  line-height: 1.2rem;
+}
+
+.hero-home .content .hero-3 h4:after {
+  content: '';
+  width: 2.5rem;
+  height: 0.3rem;
+  background-color: #e95b11;
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+}
+
+@media (min-width: 768px) {
+  .hero-home .content .hero-3 h4:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.menu {
+  background-color: #f9b208;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem 0 1rem 1rem;
+}
+
+.menu h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 1rem 1rem 0;
+  color: #ffe063;
+}
+
+@media (min-width: 1200px) {
+  .menu h2 {
+    width: auto;
+    text-align: right;
+    height: 4rem;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+}
+
+.menu img {
+  display: block;
+  width: 9rem;
+  margin: 0 1rem 1rem 0;
+}
+
+.video-news {
+  background-color: #e95b11;
+}
+
+.video-news .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4rem 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  .video-news .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.video-news .content .video {
+  position: relative;
+  height: 315px;
+}
+
+.video-news .content .video iframe {
+  width: 360px;
+  height: 315px;
+  border: none;
+}
+
+.video-news .content .video h3 {
+  position: absolute;
+  right: 0;
+  bottom: -3rem;
+  padding: 0.3rem 0.5rem;
+  background-color: white;
+  color: #2c669c;
+}
+
+@media only screen and (min-width: 1200px) {
+  .video-news .content .news {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.video-news .content .news .news-image {
+  width: 360px;
+  height: 315px;
+  margin-top: 6rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .video-news .content .news .news-image {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+}
+
+.video-news .content .news .news-text {
+  background-color: #fce5d7;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 360px;
+  color: #2c669c;
+}
+
+@media only screen and (min-width: 1200px) {
+  .video-news .content .news .news-text {
+    width: 300px;
+  }
+}
+
+.video-news .content .news .news-text p {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 6em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+.video-news .content .news .news-text p:before {
+  content: '\A0...';
+  position: absolute;
+  right: 1rem;
+  bottom: 1px;
+  background: #fce5d7;
+}
+
+.video-news .content .news .news-text p:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: #fce5d7;
+}
+
+.video-news .content .news .news-text > h4:first-of-type {
+  margin-bottom: 1rem;
+}
+
+.video-news .content .news .news-text > h4:last-of-type {
+  text-align: right;
+}
+
+.syndicates {
+  background-color: #5eb6e8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem 0 1rem 1rem;
+}
+
+.syndicates h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 1rem 1rem 0;
+}
+
+@media (min-width: 1200px) {
+  .syndicates h2 {
+    width: auto;
+    text-align: left;
+    height: 4rem;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+}
+
+.syndicates h2 span {
+  font-size: 1.1rem;
+  color: #ffe063;
+}
+
+.syndicates h2 .arrow {
+  display: none;
+  font-size: inherit;
+  color: #1c1a1f;
+}
+
+@media (min-width: 1200px) {
+  .syndicates h2 .arrow {
+    display: inline;
+  }
+}
+
+.syndicates img {
+  display: block;
+  height: 8rem;
+  margin: 0 1rem 1rem 0;
+}
+
+.videos-title {
+  background-color: #5eb6e8;
+}
+
+.videos-title .content {
+  padding: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  .videos-title .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.videos-title .content a {
+  color: #e95b11;
+}
+
+.videos-title .content a:hover,
+.videos-title .content a:active {
+  color: #f17a3c;
+}
+
+.videos-gallery {
+  background-color: #0095c5;
+}
+
+.videos-gallery .content {
+  padding: 2rem 1rem 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .videos-gallery .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 2rem 0 1rem 1rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .videos-gallery .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.videos-gallery .content .video-box {
+  margin: 2rem 15px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 330px;
+}
+
+@media only screen and (min-width: 768px) {
+  .videos-gallery .content .video-box {
+    margin: 0 1rem 1rem 0;
+    width: 360px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .videos-gallery .content .video-box {
+    width: 550px;
+    margin-bottom: 3rem;
+  }
+}
+
+.videos-gallery .content .video-box iframe {
+  width: 330px;
+  height: 300px;
+  border: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .videos-gallery .content .video-box iframe {
+    width: 360px;
+    height: 315px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .videos-gallery .content .video-box iframe {
+    width: 550px;
+    height: 450px;
+  }
+}
+
+.videos-gallery .content .video-box h2 {
+  color: white;
+  margin: 0.7rem 0 0.5rem;
+}
+
+footer {
+  height: 3rem;
+  background-color: #1c1a1f;
+}
+
