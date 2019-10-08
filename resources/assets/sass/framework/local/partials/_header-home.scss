@@ -1,4 +1,4 @@
-.logo {
+.logo-home {
 	background-color: $pink-1;
 
 	.content {
@@ -32,7 +32,7 @@
 	}
 }
 
-.login {
+.login-home {
 	background-color: $blue-2;
 
 	@media only screen and (min-width: 1200px) {
@@ -103,6 +103,108 @@
 				@media only screen and (min-width: 992px) {
 					width: 14rem;
 				}
+			}
+		}
+	}
+}
+
+
+
+.hero-home {
+	background-color: $yellow-1;
+	padding: 2rem 1rem;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@media (min-width: 768px) {
+	}
+
+	@media (min-width: 992px) {
+		padding: 2rem 1rem 0;
+	}
+
+	.hero-1 {
+		h1,
+		h2 {
+			color: $blue-3;
+		}
+
+		h2, h3, h4 {
+			margin-bottom: 1rem;
+		}
+
+		h2 {
+			position: relative;
+	
+			&:after {
+				content: '';
+				width: 4rem;
+				height: 0.4rem;
+				background-color: $oranje-1;
+				position: absolute;
+				left: 0;
+				bottom: -0.5rem;
+			}
+		}
+
+		.button {
+			padding: 0.8rem;
+			border: 2px solid $blue-3;
+			color: $blue-3;
+			font-size: 1.5rem;
+			display: inline-block;
+			margin-right: 1rem;
+
+			i {
+				font-size: 1.8rem;
+				margin-right: 0.5rem;
+			}
+
+			&:last-of-type {
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	.hero-2 {
+		display: none;
+
+		img {
+			width: 100%;
+			display: block;
+		}
+
+		@media (min-width: 992px) {
+			display: block;
+		}
+
+		@media (min-width: 1200px) {
+			position: relative;
+
+			img {
+				position: absolute;
+				bottom: 0;
+			}
+		}
+	}
+
+	.hero-3 {
+		h3 {
+			color: $blue-3;
+			position: relative;
+			margin-bottom: 1rem;
+
+			&:after {
+				content: '';
+				width: 2.5rem;
+				height: 0.3rem;
+				background-color: $oranje-1;
+				position: absolute;
+				left: 0;
+				bottom: -0.4rem;
 			}
 		}
 	}

@@ -1,0 +1,147 @@
+.menu {
+	background-color: $yellow-2;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 2rem 0 1rem 1rem;
+
+	h2 {
+		width: 100%;
+		text-align: center;
+		margin: 0 1rem 1rem 0;
+		color: $yellow-1;
+
+		@media (min-width: 1200px) {
+			width: auto;
+			text-align: right;
+			height: 4rem;
+			align-self: center;
+		}
+	}
+
+	img {
+		display: block;
+		width: 9rem;
+		margin: 0 1rem 1rem 0;
+	}
+}
+
+.video-news {
+	background-color: $oranje-1;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 4rem 0;
+
+	@media only screen and (min-width: 1200px) {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.content {
+		.video {
+			position: relative;
+	
+			iframe {
+				width: 360px;
+				height: 315px;
+				border: none;
+			}
+	
+			h3 {
+				position: absolute;
+				right: 0;
+				bottom: -3.5rem;
+				padding: 0.3rem 0.5rem;
+				background-color: $white-1;
+				color: $blue-3;
+			}
+		}
+	
+		.news {
+			@media only screen and (min-width: 1200px) {
+				display: flex;
+				justify-content: center;
+			}
+	
+			.news-image {
+				&:first-child {
+					background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1568317127/seus-direitos/carteira-de-trabalho.jpg');
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+					width: 360px;
+					height: 315px;
+					margin-top: 4rem;
+	
+					@media only screen and (min-width: 1200px) {
+						margin-top: 0;
+						margin-left: 2rem;
+					}
+				}
+			}
+	
+			.news-text {
+				background-color: $pink-1;
+				padding: 1em;
+				box-sizing: border-box;
+				width: 360px;
+				color: $blue-3;
+	
+				p {
+					@include multiLineEllipsis(
+						$lineHeight: 1.2em,
+						$lineCount: 5,
+						$bgColor: $pink-1
+					);
+				}
+	
+				> h3:last-of-type {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+.syndicates {
+	background-color: $blue-1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 2rem 0 1rem 1rem;
+
+	h2 {
+		width: 100%;
+		text-align: center;
+		margin: 0 1rem 1rem 0;
+
+		@media (min-width: 1200px) {
+			width: auto;
+			text-align: left;
+			height: 4rem;
+			align-self: center;
+		}
+
+		span {
+			font-size: 1.1rem;
+			color: $yellow-1;
+		}
+
+		.arrow {
+			display: none;
+			font-size: inherit;
+			color: $black-1;
+
+			@media (min-width: 1200px) {
+				display: inline;
+			}
+		}
+	}
+
+	img {
+		display: block;
+		height: 8rem;
+		margin: 0 1rem 1rem 0;
+	}
+}
