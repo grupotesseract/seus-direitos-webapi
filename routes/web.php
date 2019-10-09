@@ -91,7 +91,6 @@ Route::resource('instituicaos', 'InstituicaoController');
 
 Route::resource('propagandas', 'PropagandaController');
 
-
 Route::resource('noticiasLandings', 'NoticiasLandingController');
 
 Route::resource('videosLandings', 'VideosLandingController');
