@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\VideosLanding;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class VideosLandingDataTable extends DataTable
 {
@@ -47,20 +47,20 @@ class VideosLandingDataTable extends DataTable
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
                 'buttons' => [
-									[
-											'extend'  => 'create',
-											'text'    => '<i class="fa fa-plus"></i> Criar novo',
-									],
-									[
-											'extend'  => 'collection',
-											'text'    => '<i class="fa fa-download"></i> Exportar',
-											'buttons' => [
-													'csv',
-													'excel',
-											],
-									],
-							],
-								'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
+                                    [
+                                            'extend'  => 'create',
+                                            'text'    => '<i class="fa fa-plus"></i> Criar novo',
+                                    ],
+                                    [
+                                            'extend'  => 'collection',
+                                            'text'    => '<i class="fa fa-download"></i> Exportar',
+                                            'buttons' => [
+                                                    'csv',
+                                                    'excel',
+                                            ],
+                                    ],
+                            ],
+                                'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
             ]);
     }
 
@@ -74,7 +74,7 @@ class VideosLandingDataTable extends DataTable
         return [
             'titulo',
             'descricao',
-            'codigo_video'
+            'codigo_video',
         ];
     }
 
@@ -85,6 +85,6 @@ class VideosLandingDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'videos_landingsdatatable_' . time();
+        return 'videos_landingsdatatable_'.time();
     }
 }

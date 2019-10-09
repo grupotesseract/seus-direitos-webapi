@@ -6,8 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class VideosLanding
- * @package App\Models
+ * Class VideosLanding.
  * @version October 8, 2019, 4:23 pm BRT
  *
  * @property string titulo
@@ -19,15 +18,13 @@ class VideosLanding extends Model
     use SoftDeletes;
 
     public $table = 'videos_landings';
-    
 
     protected $dates = ['deleted_at'];
-
 
     public $fillable = [
         'titulo',
         'descricao',
-        'codigo_video'
+        'codigo_video',
     ];
 
     /**
@@ -38,19 +35,17 @@ class VideosLanding extends Model
     protected $casts = [
         'titulo' => 'string',
         'descricao' => 'string',
-        'codigo_video' => 'string'
+        'codigo_video' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
         'titulo' => 'required',
         'descricao' => 'required',
-        'codigo_video' => 'required'
+        'codigo_video' => 'required',
     ];
-
-    
 }
