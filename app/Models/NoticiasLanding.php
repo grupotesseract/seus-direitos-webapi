@@ -6,8 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class NoticiasLanding
- * @package App\Models
+ * Class NoticiasLanding.
  * @version October 8, 2019, 4:18 pm BRT
  *
  * @property string titulo
@@ -19,16 +18,14 @@ class NoticiasLanding extends Model
     use SoftDeletes;
 
     public $table = 'noticias_landings';
-    
 
     protected $dates = ['deleted_at'];
-
 
     public $fillable = [
         'titulo',
         'texto',
         'imagem',
-        'extensao'
+        'extensao',
     ];
 
     /**
@@ -40,18 +37,16 @@ class NoticiasLanding extends Model
         'titulo' => 'string',
         'texto' => 'string',
         'imagem' => 'string',
-        'extensao' => 'string'
+        'extensao' => 'string',
     ];
 
     /**
-     * Validation rules
+     * Validation rules.
      *
      * @var array
      */
     public static $rules = [
         'titulo' => 'required',
-        'texto' => 'required'
+        'texto' => 'required',
     ];
-
-    
 }

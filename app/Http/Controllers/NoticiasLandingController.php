@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Cloudder;
+use Response;
 use App\DataTables\NoticiasLandingDataTable;
-use App\Http\Requests;
+use App\Repositories\NoticiasLandingRepository;
 use App\Http\Requests\CreateNoticiasLandingRequest;
 use App\Http\Requests\UpdateNoticiasLandingRequest;
-use App\Repositories\NoticiasLandingRepository;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
-use Cloudder;
 
 class NoticiasLandingController extends AppBaseController
 {
-    /** @var  NoticiasLandingRepository */
+    /** @var NoticiasLandingRepository */
     private $noticiasLandingRepository;
 
     public function __construct(NoticiasLandingRepository $noticiasLandingRepo)
@@ -52,14 +50,14 @@ class NoticiasLandingController extends AppBaseController
      */
     public function store(CreateNoticiasLandingRequest $request)
     {
-				$cloud = Cloudder::upload($request->file('imagem_form')->path());
+        $cloud = Cloudder::upload($request->file('imagem_form')->path());
 
-				$extensao = $request->file('imagem_form')->extension();
-				$publicId = Cloudder::getPublicId();
+        $extensao = $request->file('imagem_form')->extension();
+        $publicId = Cloudder::getPublicId();
 
-				$request->request->add(['imagem' => $publicId, 'extensao' => $extensao]);
+        $request->request->add(['imagem' => $publicId, 'extensao' => $extensao]);
 
-				$input = $request->all();
+        $input = $request->all();
 
         $noticiasLanding = $this->noticiasLandingRepository->create($input);
 
@@ -126,16 +124,16 @@ class NoticiasLandingController extends AppBaseController
             return redirect(route('noticiasLandings.index'));
         }
 
-				$cloud = Cloudder::upload($request->file('imagem_form')->path());
+        $cloud = Cloudder::upload($request->file('imagem_form')->path());
 
-				$extensao = $request->file('imagem_form')->extension();
-				$publicId = Cloudder::getPublicId();
+        $extensao = $request->file('imagem_form')->extension();
+        $publicId = Cloudder::getPublicId();
 
-				$request->request->add(['imagem' => $publicId, 'extensao' => $extensao]);
+        $request->request->add(['imagem' => $publicId, 'extensao' => $extensao]);
 
-				$input = $request->all();
-				
-				$noticiasLanding = $this->noticiasLandingRepository->update($request->all(), $id);
+        $input = $request->all();
+
+        $noticiasLanding = $this->noticiasLandingRepository->update($request->all(), $id);
 
         Flash::success('Notícia atualizada com sucesso');
 
