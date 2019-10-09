@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use Response;
 use App\DataTables\VideosLandingDataTable;
-use App\Http\Requests;
+use App\Repositories\VideosLandingRepository;
 use App\Http\Requests\CreateVideosLandingRequest;
 use App\Http\Requests\UpdateVideosLandingRequest;
-use App\Repositories\VideosLandingRepository;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class VideosLandingController extends AppBaseController
 {
-    /** @var  VideosLandingRepository */
+    /** @var VideosLandingRepository */
     private $videosLandingRepository;
 
     public function __construct(VideosLandingRepository $videosLandingRepo)

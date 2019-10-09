@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\NoticiasLanding;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class NoticiasLandingDataTable extends DataTable
 {
@@ -47,20 +47,20 @@ class NoticiasLandingDataTable extends DataTable
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
                 'buttons' => [
-									[
-											'extend'  => 'create',
-											'text'    => '<i class="fa fa-plus"></i> Criar novo',
-									],
-									[
-											'extend'  => 'collection',
-											'text'    => '<i class="fa fa-download"></i> Exportar',
-											'buttons' => [
-													'csv',
-													'excel',
-											],
-									],
-							],
-								'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
+                                    [
+                                            'extend'  => 'create',
+                                            'text'    => '<i class="fa fa-plus"></i> Criar novo',
+                                    ],
+                                    [
+                                            'extend'  => 'collection',
+                                            'text'    => '<i class="fa fa-download"></i> Exportar',
+                                            'buttons' => [
+                                                    'csv',
+                                                    'excel',
+                                            ],
+                                    ],
+                            ],
+                                'language' => ['url' => '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'],
             ]);
     }
 
@@ -74,7 +74,7 @@ class NoticiasLandingDataTable extends DataTable
         return [
             'titulo',
             'texto',
-            'imagem'
+            'imagem',
         ];
     }
 
@@ -85,6 +85,6 @@ class NoticiasLandingDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'noticias_landingsdatatable_' . time();
+        return 'noticias_landingsdatatable_'.time();
     }
 }
