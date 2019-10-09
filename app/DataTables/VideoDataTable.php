@@ -50,7 +50,7 @@ class VideoDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '100px'])
+            ->addAction(['width' => '100px', 'title' => 'Ações'])
             ->parameters([
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],

@@ -82,6 +82,14 @@
     <a href="{!! route('noticias.index') !!}"><i class="fa fa-bullhorn"></i><span>Notícias</span></a>
 </li>
 
+<li class="{{ Request::is('noticiasLandings*') ? 'active' : '' }}">
+	<a href="{!! route('noticiasLandings.index') !!}"><i class="fa fa-edit"></i><span>Noticias Landings</span></a>
+</li>
+
+<li class="{{ Request::is('videosLandings*') ? 'active' : '' }}">
+	<a href="{!! route('videosLandings.index') !!}"><i class="fa fa-edit"></i><span>Videos Landings</span></a>
+</li>
+
 @endrole
 
 
@@ -107,4 +115,5 @@
 </li>
 
 @endrole
+
 
