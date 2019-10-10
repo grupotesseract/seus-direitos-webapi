@@ -51,6 +51,10 @@
 					no seu smartphone.
 					A Secretaria de Trabalho do Ministério da Economia diz que a mudança irá proporcionar facilidades para
 					trabalhadores e empregados com redução de burocracia e custos.</p>
+
+					<a href="/landingpage/news">
+						<h3>LEIA MAIS &gt;</h3>
+					</a>
 			</div>
 
 			<a href="/landingpage/news">

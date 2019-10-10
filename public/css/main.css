@@ -859,7 +859,7 @@ p {
   }
 }
 
-.video-news .content .news a h3 {
+.video-news .content .news > a h3 {
   position: absolute;
   right: 0;
   bottom: -3rem;
@@ -920,6 +920,11 @@ p {
   height: 1em;
   margin-top: 0.2em;
   background: #fce5d7;
+}
+
+.video-news .content .news .news-text > a h3 {
+  text-align: right;
+  margin-bottom: 0;
 }
 
 .syndicates {

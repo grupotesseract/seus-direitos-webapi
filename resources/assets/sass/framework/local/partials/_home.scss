@@ -68,7 +68,7 @@
         justify-content: center;
 			}
 			
-			a {
+			> a {
 				h3 {
 					position: absolute;
 					right: 0;
@@ -113,7 +113,14 @@
           @include multiLineEllipsis($lineHeight: 1.2em,
             $lineCount: 6,
 						$bgColor: $pink-1);
-        }
+				}
+			
+				> a {
+					h3 {
+						text-align: right;
+						margin-bottom: 0;					
+					}
+				}
       }
     }
   }
