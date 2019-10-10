@@ -1,157 +1,162 @@
 .menu {
-	background-color: $yellow-2;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 2rem 0 1rem 1rem;
+  background-color: $yellow-2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 0 1rem 1rem;
 
-	h2 {
-		width: 100%;
-		text-align: center;
-		margin: 0 1rem 1rem 0;
-		color: $yellow-1;
+  h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 1rem 1rem 0;
+    color: $yellow-1;
 
-		@media (min-width: 1200px) {
-			width: auto;
-			text-align: right;
-			height: 4rem;
-			align-self: center;
-		}
-	}
+    @media (min-width: 1200px) {
+      width: auto;
+      text-align: right;
+      height: 4rem;
+      align-self: center;
+    }
+  }
 
-	img {
-		display: block;
-		width: 9rem;
-		margin: 0 1rem 1rem 0;
-	}
+  img {
+    display: block;
+    width: 9rem;
+    margin: 0 1rem 1rem 0;
+  }
 }
 
 .video-news {
-	background-color: $oranje-1;
+  background-color: $oranje-1;
 
-	.content {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		padding: 4rem 0;
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 0 6rem;
 
-		@media only screen and (min-width: 1200px) {
-			flex-direction: row;
-			justify-content: center;
-		}
+    @media only screen and (min-width: 1200px) {
+      flex-direction: row;
+      justify-content: center;
+    }
 
-		.video {
+    .video {
+      position: relative;
+      height: 315px;
+
+      iframe {
+        width: 360px;
+        height: 315px;
+        border: none;
+      }
+
+      h3 {
+        position: absolute;
+        right: 0;
+        bottom: -3rem;
+        padding: 0.3rem 0.5rem;
+        background-color: $white-1;
+        color: $blue-3;
+      }
+    }
+
+    .news {
 			position: relative;
-			height: 315px;
-
-			iframe {
-				width: 360px;
-				height: 315px;
-				border: none;
+			
+      @media only screen and (min-width: 1200px) {
+        display: flex;
+        justify-content: center;
 			}
-
-			h3 {
-				position: absolute;
-				right: 0;
-				bottom: -3rem;
-				padding: 0.3rem 0.5rem;
-				background-color: $white-1;
-				color: $blue-3;
-			}
-		}
-
-		.news {
-			@media only screen and (min-width: 1200px) {
-				display: flex;
-				justify-content: center;
-			}
-
-			.news-image {
-				width: 360px;
-				height: 315px;
-				margin-top: 6rem;
-
-				@media only screen and (min-width: 1200px) {
-					margin-top: 0;
-					margin-left: 2rem;
+			
+			a {
+				h3 {
+					position: absolute;
+					right: 0;
+					bottom: -3rem;
+					padding: 0.3rem 0.5rem;
+					background-color: $white-1;
+					color: $blue-3;					
 				}
 			}
 
-			.news-text {
-				background-color: $pink-1;
-				padding: 1em;
-				box-sizing: border-box;
-				width: 360px;
-				color: $blue-3;
+      .news-image {
+        width: 360px;
+        height: 315px;
+        margin-top: 6rem;
 
-				@media only screen and (min-width: 1200px) {
-					width: 300px;
-				}
+        @media only screen and (min-width: 1200px) {
+          margin-top: 0;
+          margin-left: 2rem;
+        }
+      }
 
-				h4 {
-					$lineHeight: 1.2em;
-				}
+      .news-text {
+        background-color: $pink-1;
+        padding: 1em;
+        box-sizing: border-box;
+        width: 360px;
+        color: $blue-3;
 
-				p {
-					margin-bottom: 1rem;
+        @media only screen and (min-width: 1200px) {
+          width: 300px;
+        }
 
-					@include multiLineEllipsis(
-						$lineHeight: 1.2em,
-						$lineCount: 5,
-						$bgColor: $pink-1
-					);
-				}
+        h3 {
+          line-height: 1.2em;
+          margin-bottom: 1rem;
+        }
 
-				> h4:first-of-type {
-					margin-bottom: 1rem;
-				}
+        p {
+          margin-bottom: 1rem;						
+					color: $blue-2;
 
-				> h4:last-of-type {
-					text-align: right;
-				}
-			}
-		}
-	}
+          @include multiLineEllipsis($lineHeight: 1.2em,
+            $lineCount: 6,
+						$bgColor: $pink-1);
+        }
+      }
+    }
+  }
 }
 
 .syndicates {
-	background-color: $blue-1;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 2rem 0 1rem 1rem;
+  background-color: $blue-1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 0 1rem 1rem;
 
-	h2 {
-		width: 100%;
-		text-align: center;
-		margin: 0 1rem 1rem 0;
+  h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 1rem 1rem 0;
 
-		@media (min-width: 1200px) {
-			width: auto;
-			text-align: left;
-			height: 4rem;
-			align-self: center;
-		}
+    @media (min-width: 1200px) {
+      width: auto;
+      text-align: left;
+      height: 4rem;
+      align-self: center;
+    }
 
-		span {
-			font-size: 1.1rem;
-			color: $yellow-1;
-		}
+    span {
+      font-size: 1.1rem;
+      color: $yellow-1;
+    }
 
-		.arrow {
-			display: none;
-			font-size: inherit;
-			color: $black-1;
+    .arrow {
+      display: none;
+      font-size: inherit;
+      color: $black-1;
 
-			@media (min-width: 1200px) {
-				display: inline;
-			}
-		}
-	}
+      @media (min-width: 1200px) {
+        display: inline;
+      }
+    }
+  }
 
-	img {
-		display: block;
-		height: 8rem;
-		margin: 0 1rem 1rem 0;
-	}
+  img {
+    display: block;
+    height: 8rem;
+    margin: 0 1rem 1rem 0;
+  }
 }

@@ -33,7 +33,7 @@
 			</iframe>
 
 			<a href="/landingpage/videos" target="_blank">
-				<h3>MAIS VÍDEOS ></h3>
+				<h3>MAIS VÍDEOS &gt;</h3>
 			</a>
 		</div>
 
@@ -45,13 +45,17 @@
 			background-size: cover;"></div>
 
 			<div class="news-text">
-				<h3>Carteiro de Trabalho Digital</h3>
-				<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos 
-					contar com a Carteira de Trabalho Digital, disponível para ser baixada 
-					no seu smartphone. 
-					A Secretaria de Trabalho do Ministério da Economia diz que a mudança irá proporcionar facilidades para trabalhadores e empregados com redução de burocracia e custos.</p>
-				<h3>LEIA MAIS ></h3>
+				<h3>Carteira de Trabalho Digital</h3>
+				<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos
+					contar com a Carteira de Trabalho Digital, disponível para ser baixada
+					no seu smartphone.
+					A Secretaria de Trabalho do Ministério da Economia diz que a mudança irá proporcionar facilidades para
+					trabalhadores e empregados com redução de burocracia e custos.</p>
 			</div>
+
+			<a href="/landingpage/news" target="_blank">
+				<h3>MAIS NOTÍCIAS &gt;</h3>
+			</a>
 		</div>
 	</div>
 </div>
@@ -67,7 +71,8 @@
 			alt="SINTSHOGASTRO - SCR">
 	</a>
 	<a href="https://www.sinteemar.com.br" target="_blank">
-		<img src="https://res.cloudinary.com/tesseract/image/upload/v1570538595/seus-direitos/WhatsApp_Image_2019-10-04_at_17.17.34.jpg"
+		<img
+			src="https://res.cloudinary.com/tesseract/image/upload/v1570538595/seus-direitos/WhatsApp_Image_2019-10-04_at_17.17.34.jpg"
 			alt="SITTEEMARE">
 	</a>
 	<a href="http://www.saaebauru.com.br/do/Home" target="_blank">

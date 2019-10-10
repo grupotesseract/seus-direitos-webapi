@@ -809,7 +809,7 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 4rem 0;
+  padding: 4rem 0 6rem;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -844,6 +844,10 @@ p {
   color: #2c669c;
 }
 
+.video-news .content .news {
+  position: relative;
+}
+
 @media only screen and (min-width: 1200px) {
   .video-news .content .news {
     display: -webkit-box;
@@ -853,6 +857,15 @@ p {
         -ms-flex-pack: center;
             justify-content: center;
   }
+}
+
+.video-news .content .news a h3 {
+  position: absolute;
+  right: 0;
+  bottom: -3rem;
+  padding: 0.3rem 0.5rem;
+  background-color: white;
+  color: #2c669c;
 }
 
 .video-news .content .news .news-image {
@@ -883,12 +896,18 @@ p {
   }
 }
 
+.video-news .content .news .news-text h3 {
+  line-height: 1.2em;
+  margin-bottom: 1rem;
+}
+
 .video-news .content .news .news-text p {
   margin-bottom: 1rem;
+  color: #0095c5;
   overflow: hidden;
   position: relative;
   line-height: 1.2em;
-  max-height: 6em;
+  max-height: 7.2em;
   text-align: justify;
   margin-right: -1em;
   padding-right: 1em;
@@ -910,14 +929,6 @@ p {
   height: 1em;
   margin-top: 0.2em;
   background: #fce5d7;
-}
-
-.video-news .content .news .news-text > h4:first-of-type {
-  margin-bottom: 1rem;
-}
-
-.video-news .content .news .news-text > h4:last-of-type {
-  text-align: right;
 }
 
 .syndicates {
