@@ -145,7 +145,7 @@
 		flex-direction: column;
 		width: 22rem;
 		margin: 0 auto;
-	
+
 		@media (min-width: 768px) {
 			flex-direction: row;
 			justify-content: center;
@@ -158,8 +158,8 @@
 			margin: 0 auto;
 			justify-content: start;
 		}
-		
-		.hero-1 {	
+
+		.hero-1 {
 			@media (min-width: 768px) {
 				margin-right: 2rem;
 			}
@@ -168,16 +168,16 @@
 			h2 {
 				color: $blue-3;
 			}
-	
+
 			h2,
 			h3,
 			h4 {
 				margin-bottom: 1rem;
 			}
-	
+
 			h2 {
 				position: relative;
-	
+
 				&:after {
 					content: '';
 					width: 4rem;
@@ -188,7 +188,7 @@
 					bottom: -0.5rem;
 				}
 			}
-	
+
 			.button {
 				padding: 0.8rem;
 				border: 2px solid $blue-3;
@@ -196,46 +196,46 @@
 				font-size: 1.5rem;
 				display: inline-block;
 				margin-right: 1rem;
-	
+
 				i {
 					font-size: 1.8rem;
 					margin-right: 0.5rem;
 				}
-	
+
 				&:last-of-type {
 					margin-right: 0;
 					margin-bottom: 1rem;
-	
+
 					@media (min-width: 768px) {
 						margin-bottom: 0;
 					}
 				}
 			}
 		}
-	
+
 		.hero-2 {
 			align-self: flex-end;
 			display: none;
 			width: 15rem;
 			margin-bottom: -2rem;
-	
+
 			img {
 				width: 100%;
 				display: block;
 			}
-	
+
 			@media (min-width: 992px) {
 				display: block;
 			}
 		}
-	
+
 		.hero-3 {
 			h4 {
 				color: $blue-3;
 				position: relative;
 				margin-bottom: 1rem;
 				line-height: 1.2rem;
-	
+
 				&:after {
 					content: '';
 					width: 2.5rem;
@@ -245,7 +245,7 @@
 					left: 0;
 					bottom: -0.4rem;
 				}
-			
+
 				&:last-of-type {
 					@media (min-width: 768px) {
 						margin-bottom: 0;
