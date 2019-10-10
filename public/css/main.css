@@ -140,7 +140,7 @@ p {
             align-items: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    height: 14rem;
+    height: 11rem;
   }
 }
 
@@ -176,7 +176,7 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    height: 14rem;
+    height: 11rem;
     width: 44rem;
   }
 }
@@ -256,11 +256,11 @@ p {
 
 .login .content .login-3 form .form-group .form-control {
   width: 100%;
-  padding: 0.9rem;
+  padding: 0.5rem;
   border: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .login .content .login-3 form .form-group .has-error {
@@ -275,8 +275,8 @@ p {
   background-color: #e95b11;
   color: white;
   font-size: 1.2rem;
-  padding: 0.5em;
-  margin-bottom: 0.9rem;
+  padding: 0.3em;
+  margin-bottom: 0.5rem;
   border: none;
   width: 100%;
 }
@@ -519,11 +519,11 @@ p {
 
 .login-home .content .login-3 form .form-group .form-control {
   width: 100%;
-  padding: 0.9rem;
+  padding: 0.5rem;
   border: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .login-home .content .login-3 form .form-group .has-error {
@@ -538,8 +538,8 @@ p {
   background-color: #e95b11;
   color: white;
   font-size: 1.2rem;
-  padding: 0.5em;
-  margin-bottom: 0.9rem;
+  padding: 0.3em;
+  margin-bottom: 0.5rem;
   border: none;
   width: 100%;
 }
