@@ -908,17 +908,8 @@ p {
   position: relative;
   line-height: 1.2em;
   max-height: 7.2em;
-  text-align: justify;
   margin-right: -1em;
   padding-right: 1em;
-}
-
-.video-news .content .news .news-text p:before {
-  content: '\A0...';
-  position: absolute;
-  right: 1rem;
-  bottom: 1px;
-  background: #fce5d7;
 }
 
 .video-news .content .news .news-text p:after {

@@ -32,7 +32,7 @@
 			<iframe src="https://www.youtube.com/embed/3mGKzUxYeFY">
 			</iframe>
 
-			<a href="/landingpage/videos" target="_blank">
+			<a href="/landingpage/videos">
 				<h3>MAIS VÍDEOS &gt;</h3>
 			</a>
 		</div>
@@ -53,7 +53,7 @@
 					trabalhadores e empregados com redução de burocracia e custos.</p>
 			</div>
 
-			<a href="/landingpage/news" target="_blank">
+			<a href="/landingpage/news">
 				<h3>MAIS NOTÍCIAS &gt;</h3>
 			</a>
 		</div>
