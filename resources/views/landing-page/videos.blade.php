@@ -1,4 +1,4 @@
-@extends('landing-page.app')
+@extends('landing-page.partials.app')
 
 @section('css')
 <link href="{{ asset('css/main.css') }}" rel="stylesheet">

@@ -1,36 +1,48 @@
-@extends('landing-page.app')
+@extends('landing-page.partials.app')
 
 @section('css')
-<link href="{{ asset('css/landingpage.css') }}" rel="stylesheet">
+<link href="{{ asset('css/main.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
 
-@include('landing-page.header')
+@include('landing-page.partials.header')
 
-<div class="title-news">
-	<h1>NOTÍCIAS</h1>
-	<a href="/landingpage">
-		<h2>&lt; voltar</h2>
-	</a>
+<div class="news-title">
+	<div class="content">
+		<h1>NOTÍCIAS</h1>
+		<a href="/landingpage">
+			<h2>&lt; voltar</h2>
+		</a>
+	</div>
 </div>
 
 <div class="news-gallery">
-	@for ($i = 0; $i < 10; $i++)
-		<div class="news-box">
-			<div class="news-image"></div>
+	<div class="content">
+		@for ($i = 0; $i < 8; $i++) <div class="news-box">
+			<div class="news-image" style="
+				background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1570464222/seus-direitos/carteira-de-trabalho-digital_1.jpg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;"></div>
 
 			<div class="news-text">
-				<h3>{{ $i }} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-					ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-					fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-					deserunt mollit anim id est laborum.</p>
-				<h3>LEIA MAIS ></h3>
+				<h3>Carteira de Trabalho Digital</h3>
+				<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos
+					contar com a Carteira de Trabalho Digital, disponível para ser baixada
+					no seu smartphone.
+					A Secretaria de Trabalho do Ministério da Economia diz que a mudança irá proporcionar facilidades para
+					trabalhadores e empregados com redução de burocracia e custos.A partir do dia 24 de setembro de 2019 nós
+					Brasileiros podemos
+					contar com a Carteira de Trabalho Digital, disponível para ser baixada
+					no seu smartphone.</p>
+
+				<a href="/landingpage/news">
+					<h3>LEIA MAIS &gt;</h3>
+				</a>
 			</div>
-		</div>
-	@endfor
+	</div> @endfor
+</div>
 </div>
 
 @endsection
