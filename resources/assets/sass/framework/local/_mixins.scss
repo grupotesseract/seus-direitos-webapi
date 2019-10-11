@@ -8,13 +8,13 @@
 	margin-right: -1em;
 	padding-right: 1em;
 
-	// &:before {
-	// 	content: '\00a0...';
-	// 	position: absolute;
-	// 	right: 1rem;
-	// 	bottom: 1px;
-	// 	background: $bgColor;
-	// }
+	&:before {
+		content: '\00a0...';
+		position: absolute;
+		right: 1rem;
+		bottom: 1rem;
+		background: $bgColor;
+	}
 
 	&:after {
 		content: '';

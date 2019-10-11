@@ -50,7 +50,9 @@
 					contar com a Carteira de Trabalho Digital, disponível para ser baixada
 					no seu smartphone.
 					A Secretaria de Trabalho do Ministério da Economia diz que a mudança irá proporcionar facilidades para
-					trabalhadores e empregados com redução de burocracia e custos.</p>
+					trabalhadores e empregados com redução de burocracia e custos.A partir do dia 24 de setembro de 2019 nós Brasileiros podemos
+					contar com a Carteira de Trabalho Digital, disponível para ser baixada
+					no seu smartphone.</p>
 
 					<a href="/landingpage/news">
 						<h3>LEIA MAIS &gt;</h3>
