@@ -37,7 +37,7 @@
 					contar com a Carteira de Trabalho Digital, disponível para ser baixada
 					no seu smartphone.</p>
 
-				<a href="/landingpage/news">
+				<a href="/landingpage/news/1">
 					<h3>LEIA MAIS &gt;</h3>
 				</a>
 			</div>

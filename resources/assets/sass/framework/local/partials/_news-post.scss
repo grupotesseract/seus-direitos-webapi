@@ -1,0 +1,25 @@
+.news-post-title {
+	background-color: $yellow-1;
+
+	.content {
+		padding: 2rem 1rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@media only screen and (min-width: 1200px) {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		a {
+			color: $oranje-1;
+			transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+
+			&:hover,
+			&:active {
+				color: lighten($oranje-1, 10%);
+			}
+		}
+	}
+}
