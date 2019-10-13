@@ -15,6 +15,8 @@
 			<h2>&lt; voltar</h2>
 		</a>
 	</div>
+	
+	<h3>13.08.2019</h3>
 </div>
 
 <div class="news-post-image">

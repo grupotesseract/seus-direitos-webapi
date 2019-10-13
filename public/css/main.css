@@ -1379,7 +1379,7 @@ p {
 }
 
 .news-post-title .content {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1391,6 +1391,12 @@ p {
           align-items: center;
 }
 
+@media only screen and (min-width: 992px) {
+  .news-post-title .content {
+    padding: 3rem 1rem 1rem;
+  }
+}
+
 @media only screen and (min-width: 1200px) {
   .news-post-title .content {
     max-width: 1200px;
@@ -1398,8 +1404,13 @@ p {
   }
 }
 
+.news-post-title .content h1 {
+  line-height: 2rem;
+}
+
 .news-post-title .content a {
   color: #e95b11;
+  white-space: nowrap;
   -webkit-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
   transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
@@ -1407,6 +1418,97 @@ p {
 .news-post-title .content a:hover,
 .news-post-title .content a:active {
   color: #f17a3c;
+}
+
+.news-post-title h3 {
+  color: #0095c5;
+  padding: 0 1rem 1rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .news-post-title h3 {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.news-post-image {
+  background-color: #ffe063;
+}
+
+.news-post-image .content {
+  padding: 0 1rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .news-post-image .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.news-post-image .content .image {
+  width: 100%;
+  height: 18rem;
+}
+
+@media only screen and (min-width: 576px) {
+  .news-post-image .content .image {
+    height: 34rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .news-post-image .content .image {
+    height: 28rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .news-post-image .content .image {
+    height: 26rem;
+  }
+}
+
+.news-post-text {
+  background-color: #f9b208;
+}
+
+.news-post-text .content {
+  padding: 0 1rem 2rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .news-post-text .content {
+    padding: 0 1rem 3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .news-post-text .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.news-post-text .content .text {
+  background-color: white;
+  padding: 2rem 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .news-post-text .content .text {
+    padding: 3rem 2rem;
+  }
+}
+
+.news-post-text .content .text p {
+  margin-bottom: 1rem;
+  color: #2c669c;
+}
+
+.news-post-text .content .text p:last-of-type {
+  margin-bottom: 0;
 }
 
 footer {
