@@ -1,7 +1,7 @@
 <div class="logo">
 	<div class="content">
 		<a href="/landingpage">
-			<img src="https://res.cloudinary.com/tesseract/image/upload/v1567982771/seus-direitos/logo-seu-sindicato.png"
+			<img src="https://res.cloudinary.com/tesseract/image/upload/v1571013539/seus-direitos/logo-seu-sindicato.png"
 				alt="Logo Seu Sindicato">
 		</a>
 	</div>
