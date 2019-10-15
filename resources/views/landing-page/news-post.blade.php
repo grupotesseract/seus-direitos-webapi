@@ -11,7 +11,7 @@
 <div class="news-post-title">
 	<div class="content">
 		<h1>Carteira de Trabalho Digital</h1>
-		<a href="/landingpage">
+		<a href="javascript:history.back()">
 			<h2>&lt; voltar</h2>
 		</a>
 	</div>
@@ -32,15 +32,12 @@
 <div class="news-post-text">
 	<div class="content">
 		<div class="text">
-			<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos
-				contar com a Carteira de Trabalho Digital, disponível para ser baixada
-				no seu smartphone.</p>
-
-			<p>A Secretaria de Trabalho do Ministério da Economia diz que a mudança irá proporcionar facilidades para
-				trabalhadores e empregados com redução de burocracia e custos.A partir do dia 24 de setembro de 2019 nós
-				Brasileiros podemos
-				contar com a Carteira de Trabalho Digital, disponível para ser baixada
-				no seu smartphone.</p>
+				<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos contar com a Carteira de Trabalho Digital, 
+					disponível para ser baixada no seu smartphone. A Secretaria de Trabalho do Ministério da Economia diz que a mudança 
+					irá proporcionar facilidades para trabalhadores e empregados com redução de burocracia e custos. 
+					Dando como exemplo: O trabalhador ao ser contratado não precisara mais apresentar a carteira em papel, 
+					basta informar o CPF a quem está realizando a contratação e o registro de trabalho será realizado na forma digital.
+				</p>
 		</div>
 	</div>
 </div>
