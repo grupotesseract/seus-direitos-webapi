@@ -1,0 +1,137 @@
+.news-title {
+	background-color: $yellow-1;
+
+	.content {
+		padding: 2rem 1rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@media only screen and (min-width: 1200px) {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		a {
+			color: $oranje-1;
+			transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+
+			&:hover,
+			&:active {
+				color: lighten($oranje-1, 10%);
+			}
+		}
+	}
+}
+
+.news-gallery {
+	background-color: $yellow-2;
+
+	.content {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 4rem 1rem;
+
+		@media (min-width: 1200px) {
+			width: 1200px;
+			margin: 0 auto;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 4rem 0 1.5rem 1rem;
+		}
+
+		.news-box {
+			position: relative;
+			margin-bottom: 2rem;
+
+			@media (min-width: 1200px) {
+				display: flex;
+				justify-content: center;
+				margin-right: 1rem;
+				margin-bottom: 2.5rem;
+			}
+
+			.news-image {
+				width: 100%;
+				height: 18rem;
+
+				@media (min-width: 576px) {
+					width: 34rem;
+					height: 34rem * 9 / 16;
+				}
+
+				@media (min-width: 1200px) {
+					width: 31rem * 3 / 5;
+					height: 31rem * 9 / 16;
+				}
+			}
+
+			.news-text {
+				background-color: $pink-1;
+				padding: 1em;
+				box-sizing: border-box;
+				width: 100%;
+				color: $blue-3;
+				overflow: hidden;
+				height: 18rem * 2 / 3;
+
+				@media (min-width: 576px) {
+					width: 34rem;
+					height: 34rem * 3 / 8;
+				}
+
+				@media (min-width: 1200px) {
+					width: 31rem * 2 / 5;
+					height: 31rem * 9 / 16;
+				}
+
+				> h3 {
+					line-height: 1.2rem;
+					margin-bottom: 1rem;
+				}
+
+				p {
+					margin-bottom: 1rem;
+					color: $blue-2;
+					line-height: 1.2rem;
+				}
+
+				> a {
+					h3 {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						padding: 0 1rem 1rem 0;
+						width: 100%;
+						background-color: $pink-1;
+						text-align: right;
+
+						@media (min-width: 1200px) {
+							width: 31rem * 2 / 5;
+						}
+
+						&:before {
+							content: '';
+							position: absolute;
+							top: -2rem;
+							left: 0;
+							width: 100%;
+							height: 2rem;
+							background-image: linear-gradient(
+								to top,
+								$pink-1,
+								rgba(255, 0, 0, 0)
+							);
+
+							@media (min-width: 1200px) {
+								width: 31rem * 2 / 5;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

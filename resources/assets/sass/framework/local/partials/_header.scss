@@ -10,7 +10,7 @@
 			display: flex;
 			align-items: center;
 			align-content: center;
-			height: 14rem;
+			height: 11rem;
 		}
 
 		img {
@@ -39,7 +39,7 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		height: 14rem;
+		height: 11rem;
 		width: 44rem;
 	}
 
@@ -78,7 +78,8 @@
 		}
 
 		.login-2 {
-			p, h2 {
+			p,
+			h2 {
 				white-space: nowrap;
 				font-weight: 500;
 			}

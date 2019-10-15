@@ -1,7 +1,9 @@
 <div class="logo-home">
 	<div class="content">
-		<img src="https://res.cloudinary.com/tesseract/image/upload/v1567982771/seus-direitos/logo-seu-sindicato.png"
-			alt="Logo Seu Sindicato">
+		<a href="/landingpage">
+			<img src="https://res.cloudinary.com/tesseract/image/upload/v1571013539/seus-direitos/logo-seu-sindicato.png"
+				alt="Logo Seu Sindicato">
+		</a>
 	</div>
 </div>
 
@@ -56,34 +58,34 @@
 
 <div class="hero-home">
 	<div class="content">
-			<div class="hero-1">
-				<h1>O APP</h1>
-				<h2>DO TRABALHADOR</h2>
-				<h3>Todas as informações sobre<br>
-					sua categoria de trabalho,<br>
-					em um mesmo lugar.</h3>
-				<h4>Modernize a forma de comunicação entre o<br>
-					Sindicato e os trabalhadores da categoria.</h4>
-				<div class="button"><i class="fab fa-apple"></i>Iphone</div>
-				<div class="button"><i class="fab fa-android"></i>Android</div>
-			</div>
-		
-			<div class="hero-2">
-				<img src="https://res.cloudinary.com/tesseract/image/upload/v1568925429/seus-direitos/mao-app.png"
-					alt="Mockup Seu Sindicato">
-			</div>
-		
-			<div class="hero-3">
-				<h4>VEJA AS CONVENÇÕES<br>
+		<div class="hero-1">
+			<h1>O APP</h1>
+			<h2>DO TRABALHADOR</h2>
+			<h3>Todas as informações sobre<br>
+				sua categoria de trabalho,<br>
+				em um mesmo lugar.</h3>
+			<h4>Modernize a forma de comunicação entre o<br>
+				Sindicato e os trabalhadores da categoria.</h4>
+			<div class="button"><i class="fab fa-apple"></i>Iphone</div>
+			<div class="button"><i class="fab fa-android"></i>Android</div>
+		</div>
+
+		<div class="hero-2">
+			<img src="https://res.cloudinary.com/tesseract/image/upload/v1568925429/seus-direitos/mao-app.png"
+				alt="Mockup Seu Sindicato">
+		</div>
+
+		<div class="hero-3">
+			<h4>VEJA AS CONVENÇÕES<br>
 				COLETIVAS DA SUA<br>
 				CATEGORIA</h4>
-				<h4>LEIA NOTÍCIAS</h4>
-				<h4>CONHEÇA BENEFÍCIOS</h4>
-				<h4>FALE COM<br>
-					REPRESENTANTES<br>
-					DA SUA CATEGORIA</h4>
-				<h4>UTILIZE A<br>
-					CARTEIRINHA VIRTUAL</h4>
-			</div>
+			<h4>LEIA NOTÍCIAS</h4>
+			<h4>CONHEÇA BENEFÍCIOS</h4>
+			<h4>FALE COM<br>
+				REPRESENTANTES<br>
+				DA SUA CATEGORIA</h4>
+			<h4>UTILIZE A<br>
+				CARTEIRINHA VIRTUAL</h4>
+		</div>
 	</div>
 </div>
