@@ -82,12 +82,24 @@
     <a href="{!! route('noticias.index') !!}"><i class="fa fa-bullhorn"></i><span>Notícias</span></a>
 </li>
 
-<li class="{{ Request::is('noticiasLandings*') ? 'active' : '' }}">
-	<a href="{!! route('noticiasLandings.index') !!}"><i class="fa fa-edit"></i><span>Noticias Landings</span></a>
-</li>
+<li class="treeview">
+	<a href="#">
+			<i class="fa fa-group"></i>
+			<span>Landing Page</span>
+			<i class="fa fa-angle-left pull-right"></i>
+	</a>
+	
+	<ul class="treeview-menu">
+		<li class="{{ Request::is('noticiasLandings*') ? 'active' : '' }}">
+			<a href="{!! route('noticiasLandings.index') !!}"><i class="fa fa-edit"></i><span>Noticias</span></a>
+		</li>
 
-<li class="{{ Request::is('videosLandings*') ? 'active' : '' }}">
-	<a href="{!! route('videosLandings.index') !!}"><i class="fa fa-edit"></i><span>Videos Landings</span></a>
+		<li class="{{ Request::is('videosLandings*') ? 'active' : '' }}">
+			<a href="{!! route('videosLandings.index') !!}"><i class="fa fa-edit"></i><span>Videos</span></a>
+		</li>
+	</ul>
+
+
 </li>
 
 @endrole

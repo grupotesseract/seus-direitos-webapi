@@ -6,7 +6,7 @@
 
 <!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', 'Nome:') !!}
     <p>{!! $user->name !!}</p>
 </div>
 
@@ -16,27 +16,65 @@
     <p>{!! $user->email !!}</p>
 </div>
 
-<!-- Password Field -->
+<!-- Name Field -->
+<div class="form-group">
+	{!! Form::label('celular', 'Celular:') !!}
+	<p>{!! $user->celular !!}</p>
+</div>
+
+<!-- Email Field -->
+<div class="form-group">
+	{!! Form::label('rg', 'RG:') !!}
+	<p>{!! $user->rg !!}</p>
+</div>
+
+<!-- Name Field -->
+<div class="form-group">
+	{!! Form::label('matricula', 'Matricula:') !!}
+	<p>{!! $user->matricula !!}</p>
+</div>
+
+<!-- Email Field -->
+<div class="form-group">
+	{!! Form::label('validade_carteirinha', 'Validade da Carteirinha:') !!}
+	<p>{!! $user->validade_carteirinha !!}</p>
+</div>
+
+<!-- Name Field -->
+<div class="form-group">
+	{!! Form::label('sindicato', 'Sindicato:') !!}
+	<p>{!! isset($user->sindicato) ? $user->sindicato->nome : '' !!}</p>
+</div>
+
+<!-- Email Field -->
+<div class="form-group">
+	{!! Form::label('instituicao', 'Instituição') !!}
+	<p>{!! isset($user->instituicao) ? $user->instituicao->nome : '' !!}</p>
+</div>
+
+
+
+{{-- <!-- Password Field -->
 <div class="form-group">
     {!! Form::label('password', 'Password:') !!}
     <p>{!! $user->password !!}</p>
-</div>
+</div> --}}
 
 <!-- Remember Token Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     {!! Form::label('remember_token', 'Remember Token:') !!}
     <p>{!! $user->remember_token !!}</p>
-</div>
+</div> --}}
 
 <!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $user->created_at !!}</p>
+    {!! Form::label('created_at', 'Criado em:') !!}
+    <p>{!! $user->created_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $user->updated_at !!}</p>
+    {!! Form::label('updated_at', 'Atualizado em:') !!}
+    <p>{!! $user->updated_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 

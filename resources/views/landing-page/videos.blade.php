@@ -1,4 +1,4 @@
-@extends('landing-page.app')
+@extends('landing-page.partials.app')
 
 @section('css')
 <link href="{{ asset('css/main.css') }}" rel="stylesheet">
@@ -20,7 +20,7 @@
 
 <div class="videos-gallery">
 	<div class="content">
-		@for ($i = 0; $i < 6; $i++)
+		@for ($i = 0; $i < 5; $i++)
 			<div class="video-box">
 				<iframe src="https://www.youtube.com/embed/LXb3EKWsInQ">
 				</iframe>

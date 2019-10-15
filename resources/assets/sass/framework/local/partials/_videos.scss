@@ -14,11 +14,12 @@
 
 		a {
 			color: $oranje-1;
-		}
+			transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 
-		a:hover,
-		a:active {
-			color: lighten($oranje-1, 10%);
+			&:hover,
+			&:active {
+				color: lighten($oranje-1, 10%);
+			}
 		}
 	}
 }
@@ -80,7 +81,7 @@
 
 			h2 {
 				color: $white-1;
-				margin: 0.7rem 0 0.5rem;
+				margin: 0.8rem 0 0.5rem;
 			}
 		}
 	}

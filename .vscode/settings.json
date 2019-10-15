@@ -1,7 +1,7 @@
 {
-    "prettier.useTabs": true,
-    "blade.format.enable": true,
-    "editor.insertSpaces": false,
+	"prettier.useTabs": true,
+	"blade.format.enable": true,
+	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"editor.tabSize": 2
 }
