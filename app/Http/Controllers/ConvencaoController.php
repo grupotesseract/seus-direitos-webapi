@@ -206,10 +206,14 @@ class ConvencaoController extends AppBaseController
      */
     public function getConvencoesPorSindicato($idUsuario)
     {
-        $instituicao = User::find($idUsuario)->instituicao;
-        $convencoes = $instituicao->convencaos;
-
-        return view('convencaos.indexpublico')->with('convencoes', $convencoes);
+				$instituicao = User::find($idUsuario)->instituicao;
+			
+				if (!is_null($instituicao)) {
+					
+					$convencoes = $instituicao->convencaos;
+					return view('convencaos.indexpublico')->with('convencoes', $convencoes);
+					
+				}
     }
 
     /**
