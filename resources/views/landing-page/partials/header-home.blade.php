@@ -66,8 +66,8 @@
 				em um mesmo lugar.</h3>
 			<h4>Modernize a forma de comunicação entre o<br>
 				Sindicato e os trabalhadores da categoria.</h4>
-			<div class="button"><i class="fab fa-apple"></i>Iphone</div>
-			<div class="button"><i class="fab fa-android"></i>Android</div>
+			<div class="button"><a href="https://apps.apple.com/br/app/seus-direitos/id1388142302" target="_blank"><i class="fab fa-apple"></i>Iphone</a></div>
+			<div class="button"><a href="https://play.google.com/store/apps/details?id=com.seusdireitos2" target="_blank"><i class="fab fa-android"></i>Android</a></div>
 		</div>
 
 		<div class="hero-2">
