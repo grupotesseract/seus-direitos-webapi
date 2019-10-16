@@ -50,13 +50,13 @@ class ConvencaoController extends AppBaseController
 
         //Se for superadmin mostrar todas instituicoes
         if ($user->hasRole('superadmin')) {
-            $instituicaos = Instituicao::all()->pluck('nome', 'id')->toArray();
+            $instituicaos = Instituicao::all()->pluck('nomecompleto', 'id')->toArray();
             $instituicao = null;
         }
 
         //Se for de um sindicato, mostrar as instituicoes do sindicato apenas
         else {
-            $instituicaos = $user->sindicato->instituicoes()->pluck('nome', 'id');
+            $instituicaos = $user->sindicato->instituicoes()->pluck('nomecompleto', 'id');
         }
 
         return view('convencaos.create')->with('instituicaos', $instituicaos);
@@ -129,12 +129,12 @@ class ConvencaoController extends AppBaseController
 
         //Se for superadmin mostrar todas instituicoes
         if ($user->hasRole('superadmin')) {
-            $instituicaos = Instituicao::all()->pluck('nome', 'id')->toArray();
+            $instituicaos = Instituicao::all()->pluck('nomecompleto', 'id')->toArray();
         }
 
         //Se for de um sindicato, mostrar as instituicoes do sindicato apenas
         else {
-            $instituicaos = $user->sindicato->instituicoes()->pluck('nome', 'id');
+            $instituicaos = $user->sindicato->instituicoes()->pluck('nomecompleto', 'id');
         }
 
         return view('convencaos.edit')->with([
