@@ -203,6 +203,7 @@ class SindicatoController extends AppBaseController
 				$sindicatoWithTrashed = Sindicato::withTrashed()->find($id);
 
 				if ($sindicatoWithTrashed->trashed()) {
+					$sindicatoWithTrashed->associados()->restore();
 					$sindicatoWithTrashed->restore();					
 
 					Flash::success('Sindicato restaurado com successo.');
@@ -215,7 +216,8 @@ class SindicatoController extends AppBaseController
             return redirect(route('sindicatos.index'));
         }
 
-        $this->sindicatoRepository->delete($id);
+				$this->sindicatoRepository->delete($id);
+				$sindicato->associados()->delete();
 
         Flash::success('Sindicato excluído com successo.');
 

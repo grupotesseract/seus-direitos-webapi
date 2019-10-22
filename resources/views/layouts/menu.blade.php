@@ -47,7 +47,7 @@
 </li>
 
 <li class="{{ Request::is('trashed/sindicatos*') ? 'active' : '' }}">
-	<a href="{!! 'trashed/sindicatos' !!}"><i class="fa fa-bank"></i><span>Sindicatos Excluídos</span></a>
+	<a href="{!! url('trashed/sindicatos') !!}"><i class="fa fa-bank"></i><span>Sindicatos Excluídos</span></a>
 </li>
 
 
