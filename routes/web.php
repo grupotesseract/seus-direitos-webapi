@@ -69,29 +69,32 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::post('usuarios/importar', 'UserController@postAssociadosImportacao');
 
     Route::resource('categorias', 'CategoriaController');
-    Route::resource('sindicatos', 'SindicatoController');
+		Route::resource('sindicatos', 'SindicatoController');
+		Route::get('trashed/sindicatos', 'SindicatoController@indexTrashed');
     Route::resource('eventos', 'EventoController');
     Route::resource('promocaos', 'PromocaoController');
     Route::resource('beneficios', 'BeneficioController');
     Route::resource('videos', 'VideoController');
 
-    Route::post('videos/{id}/destaque', 'VideoController@postVideoDestaque');
+		Route::post('videos/{id}/destaque', 'VideoController@postVideoDestaque');
+		
+		Route::resource('convencaos', 'ConvencaoController');
+
+		Route::resource('noticias', 'NoticiasController');
+
+		Route::resource('faleConoscos', 'FaleConoscoController');
+
+		Route::get('faleconosco/{id}', 'FaleConoscoController@createApp');
+
+		Route::get('carteirinha/{id}', 'UserController@getCarteirinha');
+
+		Route::resource('instituicaos', 'InstituicaoController');
+
+		Route::resource('propagandas', 'PropagandaController');
+
+		Route::resource('noticiasLandings', 'NoticiasLandingController');
+
+		Route::resource('videosLandings', 'VideosLandingController');
+
 });
 
-Route::resource('convencaos', 'ConvencaoController');
-
-Route::resource('noticias', 'NoticiasController');
-
-Route::resource('faleConoscos', 'FaleConoscoController');
-
-Route::get('faleconosco/{id}', 'FaleConoscoController@createApp');
-
-Route::get('carteirinha/{id}', 'UserController@getCarteirinha');
-
-Route::resource('instituicaos', 'InstituicaoController');
-
-Route::resource('propagandas', 'PropagandaController');
-
-Route::resource('noticiasLandings', 'NoticiasLandingController');
-
-Route::resource('videosLandings', 'VideosLandingController');

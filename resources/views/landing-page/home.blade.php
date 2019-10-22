@@ -70,7 +70,7 @@
 	<h2>
 		<span>visite o site dos</span><br>
 		SINDICATOS<br>
-		BENEFICIADOS <span class="arrow">&gt;</span></h2>
+		JÁ CADASTRADOS <span class="arrow">&gt;</span></h2>
 
 	<a href="https://www.sintshogastro.org.br" target="_blank">
 		<img src="https://res.cloudinary.com/tesseract/image/upload/v1570499371/seus-direitos/sindicato-sintshogastro.png"

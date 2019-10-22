@@ -11,6 +11,7 @@ use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
+use \App\Models\Sindicato;
 
 /**
  * @resource Sindicato
@@ -48,6 +49,21 @@ class SindicatoController extends AppBaseController
 
         return view('sindicatos.index')
             ->with('sindicatos', $sindicatos);
+		}
+		
+		/**
+     * Display a listing of the Sindicato.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function indexTrashed(Request $request)
+    {
+        $this->sindicatoRepository->pushCriteria(new RequestCriteria($request));
+        $sindicatos = $this->sindicatoRepository->onlyTrashed()->get();
+
+        return view('sindicatos.index')
+            ->with('sindicatos', $sindicatos); 
     }
 
     /**
@@ -184,8 +200,16 @@ class SindicatoController extends AppBaseController
     public function destroy($id)
     {
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
+				$sindicatoWithTrashed = Sindicato::withTrashed()->find($id);
 
-        if (empty($sindicato)) {
+				if ($sindicatoWithTrashed->trashed()) {
+					$sindicatoWithTrashed->restore();					
+
+					Flash::success('Sindicato restaurado com successo.');
+					return redirect(route('sindicatos.index'));
+				}
+				
+				if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
 
             return redirect(route('sindicatos.index'));
