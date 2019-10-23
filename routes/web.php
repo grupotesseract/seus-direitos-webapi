@@ -70,32 +70,30 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::post('usuarios/importar', 'UserController@postAssociadosImportacao');
 
     Route::resource('categorias', 'CategoriaController');
-		Route::resource('sindicatos', 'SindicatoController');
-		Route::get('trashed/sindicatos', 'SindicatoController@indexTrashed');
+    Route::resource('sindicatos', 'SindicatoController');
+    Route::get('trashed/sindicatos', 'SindicatoController@indexTrashed');
     Route::resource('eventos', 'EventoController');
     Route::resource('promocaos', 'PromocaoController');
     Route::resource('beneficios', 'BeneficioController');
     Route::resource('videos', 'VideoController');
 
-		Route::post('videos/{id}/destaque', 'VideoController@postVideoDestaque');
-		
-		Route::resource('convencaos', 'ConvencaoController');
+    Route::post('videos/{id}/destaque', 'VideoController@postVideoDestaque');
 
-		Route::resource('noticias', 'NoticiasController');
+    Route::resource('convencaos', 'ConvencaoController');
 
-		Route::resource('faleConoscos', 'FaleConoscoController');
+    Route::resource('noticias', 'NoticiasController');
 
-		Route::get('faleconosco/{id}', 'FaleConoscoController@createApp');
+    Route::resource('faleConoscos', 'FaleConoscoController');
 
-		Route::get('carteirinha/{id}', 'UserController@getCarteirinha');
+    Route::get('faleconosco/{id}', 'FaleConoscoController@createApp');
 
-		Route::resource('instituicaos', 'InstituicaoController');
+    Route::get('carteirinha/{id}', 'UserController@getCarteirinha');
 
-		Route::resource('propagandas', 'PropagandaController');
+    Route::resource('instituicaos', 'InstituicaoController');
 
-		Route::resource('noticiasLandings', 'NoticiasLandingController');
+    Route::resource('propagandas', 'PropagandaController');
 
-		Route::resource('videosLandings', 'VideosLandingController');
+    Route::resource('noticiasLandings', 'NoticiasLandingController');
 
+    Route::resource('videosLandings', 'VideosLandingController');
 });
-

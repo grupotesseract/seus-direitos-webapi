@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Flash;
 use Response;
+use App\Models\Sindicato;
 use Illuminate\Http\Request;
 use App\DataTables\CidadeDataTable;
 use App\Repositories\FotoRepository;
@@ -11,7 +12,6 @@ use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
 use Prettus\Repository\Criteria\RequestCriteria;
-use \App\Models\Sindicato;
 
 /**
  * @resource Sindicato
@@ -49,9 +49,9 @@ class SindicatoController extends AppBaseController
 
         return view('sindicatos.index')
             ->with('sindicatos', $sindicatos);
-		}
-		
-		/**
+    }
+
+    /**
      * Display a listing of the Sindicato.
      *
      * @param Request $request
@@ -63,7 +63,7 @@ class SindicatoController extends AppBaseController
         $sindicatos = $this->sindicatoRepository->onlyTrashed()->get();
 
         return view('sindicatos.index')
-            ->with('sindicatos', $sindicatos); 
+            ->with('sindicatos', $sindicatos);
     }
 
     /**
@@ -200,24 +200,25 @@ class SindicatoController extends AppBaseController
     public function destroy($id)
     {
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
-				$sindicatoWithTrashed = Sindicato::withTrashed()->find($id);
+        $sindicatoWithTrashed = Sindicato::withTrashed()->find($id);
 
-				if ($sindicatoWithTrashed->trashed()) {
-					$sindicatoWithTrashed->associados()->restore();
-					$sindicatoWithTrashed->restore();					
+        if ($sindicatoWithTrashed->trashed()) {
+            $sindicatoWithTrashed->associados()->restore();
+            $sindicatoWithTrashed->restore();
 
-					Flash::success('Sindicato restaurado com successo.');
-					return redirect(route('sindicatos.index'));
-				}
-				
-				if (empty($sindicato)) {
+            Flash::success('Sindicato restaurado com successo.');
+
+            return redirect(route('sindicatos.index'));
+        }
+
+        if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
 
             return redirect(route('sindicatos.index'));
         }
 
-				$this->sindicatoRepository->delete($id);
-				$sindicato->associados()->delete();
+        $this->sindicatoRepository->delete($id);
+        $sindicato->associados()->delete();
 
         Flash::success('Sindicato excluído com successo.');
 

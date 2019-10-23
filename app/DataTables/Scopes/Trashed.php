@@ -13,7 +13,6 @@ class Trashed implements DataTableScope
      */
     public function __construct()
     {
-        
     }
 
     /**
@@ -24,6 +23,6 @@ class Trashed implements DataTableScope
      */
     public function apply($query)
     {
-    	return $query->onlyTrashed();
+        return $query->onlyTrashed();
     }
 }

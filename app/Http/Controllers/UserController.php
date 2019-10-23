@@ -266,20 +266,21 @@ class UserController extends AppBaseController
      */
     public function destroy($id)
     {
-				$user = $this->userRepository->findWithoutFail($id);
-				$userWithTrashed = User::withTrashed()->find($id);
+        $user = $this->userRepository->findWithoutFail($id);
+        $userWithTrashed = User::withTrashed()->find($id);
 
-				$redirect = $userWithTrashed->rotaListagem;
-				
-				if ($userWithTrashed->trashed()) {
-					$userWithTrashed->restore();
-					Flash::success('Usuário restaurado com successo.');
-					return redirect($redirect);
-				}
+        $redirect = $userWithTrashed->rotaListagem;
 
-				$redirect = $user->rotaListagem;
+        if ($userWithTrashed->trashed()) {
+            $userWithTrashed->restore();
+            Flash::success('Usuário restaurado com successo.');
 
-        if (empty($user)) { 
+            return redirect($redirect);
+        }
+
+        $redirect = $user->rotaListagem;
+
+        if (empty($user)) {
             Flash::error('Usuário não encontrado');
 
             return redirect(route('users.index'));
@@ -330,9 +331,9 @@ class UserController extends AppBaseController
             ->addScope(new PorRole('funcionario'))
             ->addScope(new PorSindicato(Auth::user()))
             ->render('users.lista-funcionarios');
-		}
-		
-		/**
+    }
+
+    /**
      * Rota para mostrar apenas usuarios com role de 'funcionario'.
      *
      * @param Request $request
@@ -341,7 +342,7 @@ class UserController extends AppBaseController
     public function getFuncionariosTrashed(UserDataTable $userDT)
     {
         return $userDT
-						->addScope(new Trashed())
+                        ->addScope(new Trashed())
             ->addScope(new PorRole('funcionario'))
             ->addScope(new PorSindicato(Auth::user()))
             ->render('users.lista-funcionarios');
