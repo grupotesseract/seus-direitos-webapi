@@ -21,7 +21,12 @@
             <a href="{{ url('usuarios/funcionarios') }}"> 
                 &nbsp; Associados
             </a>
-        </li>
+				</li>
+				<li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
+						<a href="{{ url('trashed/usuarios/funcionarios') }}">
+								&nbsp; Associados Excluídos
+						</a>
+				</li>
         <li class="{{ Request::is('usuarios') ? 'active' : '' }}">
             <a href="{{ url('usuarios') }}"> 
                 &nbsp; Todos
@@ -34,7 +39,11 @@
 @role('sindicalista')
     <li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
         <a href="{{ url('usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Associados </a>
-    </li>
+		</li>
+		
+		<li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
+			<a href="{{ url('trashed/usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Associados Excluídos</a>
+		</li>
 @endrole
 
 @role('superadmin')
