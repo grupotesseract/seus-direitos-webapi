@@ -140,7 +140,7 @@ p {
             align-items: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    height: 11rem;
+    height: 9rem;
   }
 }
 
@@ -176,7 +176,7 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    height: 11rem;
+    height: 9rem;
     width: 44rem;
   }
 }
@@ -356,6 +356,12 @@ p {
 @media only screen and (min-width: 992px) {
   .login .content .login-3 form {
     width: 14rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .login .content .login-3 form label {
+    display: none;
   }
 }
 
