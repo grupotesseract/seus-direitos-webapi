@@ -8,6 +8,16 @@
 </div>
 
 <div class="login-home">
+	<div class="navigation-home">
+		<a href="/landingpage/videos">
+			<h2>VÍDEOS</h2>
+		</a>
+
+		<a href="/landingpage/news">
+			<h2>NOTÍCIAS</h2>
+		</a>
+	</div>
+
 	<div class="content">
 		<div class="login-1">
 			<h2>AINDA NÃO É<br>
@@ -66,8 +76,10 @@
 				em um mesmo lugar.</h3>
 			<h4>Modernize a forma de comunicação entre o<br>
 				Sindicato e os trabalhadores da categoria.</h4>
-			<div class="button"><a href="https://apps.apple.com/br/app/seus-direitos/id1388142302" target="_blank"><i class="fab fa-apple"></i>Iphone</a></div>
-			<div class="button"><a href="https://play.google.com/store/apps/details?id=com.seusdireitos2" target="_blank"><i class="fab fa-android"></i>Android</a></div>
+			<div class="button"><a href="https://apps.apple.com/br/app/seus-direitos/id1388142302" target="_blank"><i
+						class="fab fa-apple"></i>Iphone</a></div>
+			<div class="button"><a href="https://play.google.com/store/apps/details?id=com.seusdireitos2" target="_blank"><i
+						class="fab fa-android"></i>Android</a></div>
 		</div>
 
 		<div class="hero-2">

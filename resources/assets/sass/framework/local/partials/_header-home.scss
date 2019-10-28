@@ -33,6 +33,7 @@
 
 .login-home {
 	background-color: $blue-2;
+	position: relative;
 
 	@media (min-width: 1200px) {
 		position: absolute;
@@ -40,6 +41,44 @@
 		right: 0;
 		height: 536.67px;
 		width: 26%;
+	}
+
+	.navigation-home {
+		display: none;
+		position: absolute;
+		left: -292px;
+		top: 58px;
+
+		@media (min-width: 1200px) {
+			display: block;
+		}
+
+		a {
+			color: $yellow-2;
+			transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+			display: inline-block;
+			margin: 1rem 2rem 1.5rem 0;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: $blue-2;
+			}
+
+			h2 {
+				position: relative;
+
+				&:after {
+					content: '';
+					width: 2.5rem;
+					height: 0.3rem;
+					background-color: $yellow-2;
+					position: absolute;
+					left: 0;
+					bottom: -0.4rem;
+				}
+			}
+		}
 	}
 
 	.content {
