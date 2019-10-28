@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use Auth;
 use Response;
 use Validator;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
