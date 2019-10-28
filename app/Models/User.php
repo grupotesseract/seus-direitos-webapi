@@ -5,12 +5,14 @@ namespace App\Models;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
     use HasApiTokens, Notifiable;
+    use SoftDeletes;
 
     public $table = 'users';
 

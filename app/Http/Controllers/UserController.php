@@ -12,6 +12,7 @@ use App\Models\Instituicao;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
 use App\DataTables\Scopes\PorRole;
+use App\DataTables\Scopes\Trashed;
 use App\Repositories\UserRepository;
 use Maatwebsite\Excel\Facades\Excel;
 use App\DataTables\Scopes\PorSindicato;
@@ -266,6 +267,17 @@ class UserController extends AppBaseController
     public function destroy($id)
     {
         $user = $this->userRepository->findWithoutFail($id);
+        $userWithTrashed = User::withTrashed()->find($id);
+
+        $redirect = $userWithTrashed->rotaListagem;
+
+        if ($userWithTrashed->trashed()) {
+            $userWithTrashed->restore();
+            Flash::success('Usuário restaurado com successo.');
+
+            return redirect($redirect);
+        }
+
         $redirect = $user->rotaListagem;
 
         if (empty($user)) {
@@ -316,6 +328,21 @@ class UserController extends AppBaseController
     public function getFuncionarios(UserDataTable $userDT)
     {
         return $userDT
+            ->addScope(new PorRole('funcionario'))
+            ->addScope(new PorSindicato(Auth::user()))
+            ->render('users.lista-funcionarios');
+    }
+
+    /**
+     * Rota para mostrar apenas usuarios com role de 'funcionario'.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getFuncionariosTrashed(UserDataTable $userDT)
+    {
+        return $userDT
+                        ->addScope(new Trashed())
             ->addScope(new PorRole('funcionario'))
             ->addScope(new PorSindicato(Auth::user()))
             ->render('users.lista-funcionarios');

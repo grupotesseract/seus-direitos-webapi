@@ -39,4 +39,9 @@ class SindicatoRepository extends BaseRepository
 
         return $sindicatos;
     }
+
+    public function onlyTrashed()
+    {
+        return $this->model->onlyTrashed();
+    }
 }

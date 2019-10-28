@@ -21,7 +21,12 @@
             <a href="{{ url('usuarios/funcionarios') }}"> 
                 &nbsp; Associados
             </a>
-        </li>
+				</li>
+				<li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
+						<a href="{{ url('trashed/usuarios/funcionarios') }}">
+								&nbsp; Associados Excluídos
+						</a>
+				</li>
         <li class="{{ Request::is('usuarios') ? 'active' : '' }}">
             <a href="{{ url('usuarios') }}"> 
                 &nbsp; Todos
@@ -34,7 +39,11 @@
 @role('sindicalista')
     <li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
         <a href="{{ url('usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Associados </a>
-    </li>
+		</li>
+		
+		<li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
+			<a href="{{ url('trashed/usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Associados Excluídos</a>
+		</li>
 @endrole
 
 @role('superadmin')
@@ -45,6 +54,11 @@
 <li class="{{ Request::is('sindicatos*') ? 'active' : '' }}">
     <a href="{!! route('sindicatos.index') !!}"><i class="fa fa-bank"></i><span>Sindicatos</span></a>
 </li>
+
+<li class="{{ Request::is('trashed/sindicatos*') ? 'active' : '' }}">
+	<a href="{!! url('trashed/sindicatos') !!}"><i class="fa fa-bank"></i><span>Sindicatos Excluídos</span></a>
+</li>
+
 
 <li class="{{ Request::is('filmes*') ? 'active' : '' }}">
     <a href="{!! route('filmes.index') !!}"><i class="fa fa-film"></i><span>Filmes</span></a>

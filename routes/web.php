@@ -58,6 +58,7 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('usuarios/administradores', 'UserController@getAdmins');
     Route::get('usuarios/sindicalistas', 'UserController@getSindicalistas');
     Route::get('usuarios/funcionarios', 'UserController@getFuncionarios');
+    Route::get('trashed/usuarios/funcionarios', 'UserController@getFuncionariosTrashed');
     Route::get('usuarios/administradores/create', 'UserController@createAdmin');
     Route::get('usuarios/sindicalistas/create', 'UserController@createSindicalista');
     Route::get('usuarios/funcionarios/create', 'UserController@createFuncionario');
@@ -70,28 +71,29 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::resource('categorias', 'CategoriaController');
     Route::resource('sindicatos', 'SindicatoController');
+    Route::get('trashed/sindicatos', 'SindicatoController@indexTrashed');
     Route::resource('eventos', 'EventoController');
     Route::resource('promocaos', 'PromocaoController');
     Route::resource('beneficios', 'BeneficioController');
     Route::resource('videos', 'VideoController');
 
     Route::post('videos/{id}/destaque', 'VideoController@postVideoDestaque');
+
+    Route::resource('convencaos', 'ConvencaoController');
+
+    Route::resource('noticias', 'NoticiasController');
+
+    Route::resource('faleConoscos', 'FaleConoscoController');
+
+    Route::get('faleconosco/{id}', 'FaleConoscoController@createApp');
+
+    Route::get('carteirinha/{id}', 'UserController@getCarteirinha');
+
+    Route::resource('instituicaos', 'InstituicaoController');
+
+    Route::resource('propagandas', 'PropagandaController');
+
+    Route::resource('noticiasLandings', 'NoticiasLandingController');
+
+    Route::resource('videosLandings', 'VideosLandingController');
 });
-
-Route::resource('convencaos', 'ConvencaoController');
-
-Route::resource('noticias', 'NoticiasController');
-
-Route::resource('faleConoscos', 'FaleConoscoController');
-
-Route::get('faleconosco/{id}', 'FaleConoscoController@createApp');
-
-Route::get('carteirinha/{id}', 'UserController@getCarteirinha');
-
-Route::resource('instituicaos', 'InstituicaoController');
-
-Route::resource('propagandas', 'PropagandaController');
-
-Route::resource('noticiasLandings', 'NoticiasLandingController');
-
-Route::resource('videosLandings', 'VideosLandingController');

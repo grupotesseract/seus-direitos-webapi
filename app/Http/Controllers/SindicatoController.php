@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Flash;
 use Response;
+use App\Models\Sindicato;
 use Illuminate\Http\Request;
 use App\DataTables\CidadeDataTable;
 use App\Repositories\FotoRepository;
@@ -45,6 +46,21 @@ class SindicatoController extends AppBaseController
     {
         $this->sindicatoRepository->pushCriteria(new RequestCriteria($request));
         $sindicatos = $this->sindicatoRepository->all();
+
+        return view('sindicatos.index')
+            ->with('sindicatos', $sindicatos);
+    }
+
+    /**
+     * Display a listing of the Sindicato.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function indexTrashed(Request $request)
+    {
+        $this->sindicatoRepository->pushCriteria(new RequestCriteria($request));
+        $sindicatos = $this->sindicatoRepository->onlyTrashed()->get();
 
         return view('sindicatos.index')
             ->with('sindicatos', $sindicatos);
@@ -184,6 +200,16 @@ class SindicatoController extends AppBaseController
     public function destroy($id)
     {
         $sindicato = $this->sindicatoRepository->findWithoutFail($id);
+        $sindicatoWithTrashed = Sindicato::withTrashed()->find($id);
+
+        if ($sindicatoWithTrashed->trashed()) {
+            $sindicatoWithTrashed->associados()->restore();
+            $sindicatoWithTrashed->restore();
+
+            Flash::success('Sindicato restaurado com successo.');
+
+            return redirect(route('sindicatos.index'));
+        }
 
         if (empty($sindicato)) {
             Flash::error('Sindicato não encontrado');
@@ -192,6 +218,7 @@ class SindicatoController extends AppBaseController
         }
 
         $this->sindicatoRepository->delete($id);
+        $sindicato->associados()->delete();
 
         Flash::success('Sindicato excluído com successo.');
 
