@@ -140,7 +140,7 @@ p {
             align-items: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    height: 11rem;
+    height: 9rem;
   }
 }
 
@@ -176,7 +176,7 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    height: 11rem;
+    height: 9rem;
     width: 44rem;
   }
 }
@@ -359,6 +359,12 @@ p {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .login .content .login-3 form label {
+    display: none;
+  }
+}
+
 .logo-home {
   background-color: #fce5d7;
 }
@@ -407,6 +413,7 @@ p {
 
 .login-home {
   background-color: #0095c5;
+  position: relative;
 }
 
 @media (min-width: 1200px) {
@@ -417,6 +424,47 @@ p {
     height: 536.67px;
     width: 26%;
   }
+}
+
+.login-home .navigation-home {
+  display: none;
+  position: absolute;
+  left: -292px;
+  top: 58px;
+}
+
+@media (min-width: 1200px) {
+  .login-home .navigation-home {
+    display: block;
+  }
+}
+
+.login-home .navigation-home a {
+  color: #f9b208;
+  -webkit-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  display: inline-block;
+  margin: 1rem 2rem 1.5rem 0;
+}
+
+.login-home .navigation-home a:hover,
+.login-home .navigation-home a:active,
+.login-home .navigation-home a:focus {
+  color: #0095c5;
+}
+
+.login-home .navigation-home a h2 {
+  position: relative;
+}
+
+.login-home .navigation-home a h2:after {
+  content: '';
+  width: 2.5rem;
+  height: 0.3rem;
+  background-color: #f9b208;
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
 }
 
 .login-home .content {
@@ -1097,7 +1145,8 @@ p {
 }
 
 .videos-title .content a:hover,
-.videos-title .content a:active {
+.videos-title .content a:active,
+.videos-title .content a:focus {
   color: #f17a3c;
 }
 
@@ -1229,7 +1278,8 @@ p {
 }
 
 .news-title .content a:hover,
-.news-title .content a:active {
+.news-title .content a:active,
+.news-title .content a:focus {
   color: #f17a3c;
 }
 
@@ -1416,7 +1466,8 @@ p {
 }
 
 .news-post-title .content a:hover,
-.news-post-title .content a:active {
+.news-post-title .content a:active,
+.news-post-title .content a:focus {
   color: #f17a3c;
 }
 
