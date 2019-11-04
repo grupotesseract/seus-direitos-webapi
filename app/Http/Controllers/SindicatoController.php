@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
-use App\Models\Sindicato;
-use Illuminate\Http\Request;
 use App\DataTables\CidadeDataTable;
-use App\Repositories\FotoRepository;
-use App\Repositories\SindicatoRepository;
 use App\Http\Requests\CreateSindicatoRequest;
 use App\Http\Requests\UpdateSindicatoRequest;
+use App\Models\Sindicato;
+use App\Repositories\FotoRepository;
+use App\Repositories\SindicatoRepository;
+use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 /**
  * @resource Sindicato

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Cloudder;
-use Response;
 use App\DataTables\NoticiasLandingDataTable;
-use App\Repositories\NoticiasLandingRepository;
 use App\Http\Requests\CreateNoticiasLandingRequest;
 use App\Http\Requests\UpdateNoticiasLandingRequest;
 use App\Models\NoticiasLanding;
 use App\Models\VideosLanding;
+use App\Repositories\NoticiasLandingRepository;
+use Cloudder;
+use Flash;
+use Response;
 
 class NoticiasLandingController extends AppBaseController
 {
@@ -167,20 +167,19 @@ class NoticiasLandingController extends AppBaseController
 
         return redirect(route('noticiasLandings.index'));
     }
-    
+
     public function getLandingPage()
     {
         $noticiaLanding = NoticiasLanding::latest()->get()->first();
         $videoLanding = VideosLanding::latest()->get()->first();
 
-        
         return view('landing-page.home')->with(['noticiaLanding' => $noticiaLanding, 'videoLanding' => $videoLanding]);
     }
 
     public function getLandingPageNews()
     {
         $noticiasLanding = NoticiasLanding::all();
-        
+
         return view('landing-page.news')->with('noticiasLanding', $noticiasLanding);
     }
 
@@ -193,14 +192,14 @@ class NoticiasLandingController extends AppBaseController
 
             return redirect(route('noticiasLandings.index'));
         }
-        
+
         return view('landing-page.news-post')->with('noticiasLanding', $noticiasLanding);
     }
 
     public function getLandingPageVideos()
     {
         $videosLanding = VideosLanding::all();
-        
+
         return view('landing-page.videos')->with('videosLanding', $videosLanding);
     }
 }

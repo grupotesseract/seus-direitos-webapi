@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use Response;
-use App\Models\Video;
-use Illuminate\Http\Request;
-use App\Repositories\VideoRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\API\CreateVideoAPIRequest;
 use App\Http\Requests\API\UpdateVideoAPIRequest;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Models\Video;
+use App\Repositories\VideoRepository;
+use Illuminate\Http\Request;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 /**
  * Class VideoController.

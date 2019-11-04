@@ -2,9 +2,9 @@
 
 namespace App\ViewComposers;
 
-use Illuminate\View\View;
-use App\Repositories\SindicatoRepository;
 use App\Repositories\InstituicaoRepository;
+use App\Repositories\SindicatoRepository;
+use Illuminate\View\View;
 
 class UserSindicalistaComposer
 {

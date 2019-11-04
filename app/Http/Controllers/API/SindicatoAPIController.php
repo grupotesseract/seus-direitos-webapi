@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use Auth;
-use Response;
+use App\Http\Controllers\AppBaseController;
 use App\Models\Sindicato;
-use Illuminate\Http\Request;
 use App\Presenters\SindicatoPresenter;
 use App\Repositories\SindicatoRepository;
-use App\Http\Controllers\AppBaseController;
-use Prettus\Repository\Criteria\RequestCriteria;
+use Auth;
+use Illuminate\Http\Request;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 /**
  * @resource Sindicato API

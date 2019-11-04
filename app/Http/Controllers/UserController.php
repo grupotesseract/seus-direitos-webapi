@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Flash;
-use Response;
-use App\Models\Role;
-use App\Models\User;
-use App\Models\Sindicato;
-use App\Models\Instituicao;
-use Illuminate\Http\Request;
-use App\DataTables\UserDataTable;
 use App\DataTables\Scopes\PorRole;
-use App\DataTables\Scopes\Trashed;
-use App\Repositories\UserRepository;
-use Maatwebsite\Excel\Facades\Excel;
 use App\DataTables\Scopes\PorSindicato;
+use App\DataTables\Scopes\Trashed;
+use App\DataTables\UserDataTable;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Repositories\SindicatoRepository;
+use App\Models\Instituicao;
+use App\Models\Role;
+use App\Models\Sindicato;
+use App\Models\User;
 use App\Repositories\InstituicaoRepository;
+use App\Repositories\SindicatoRepository;
+use App\Repositories\UserRepository;
+use Auth;
+use Flash;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use Response;
 
 /**
  * @resource User

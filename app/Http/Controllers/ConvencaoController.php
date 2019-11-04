@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
-use App\Models\Instituicao;
-use App\Models\User as User;
 use App\DataTables\ConvencaoDataTable;
-use App\Models\Sindicato as Sindicato;
-use Illuminate\Support\Facades\Storage;
-use App\Repositories\ConvencaoRepository;
+use App\DataTables\Scopes\PorSindicatoDaInstituicao;
 use App\Http\Requests\CreateConvencaoRequest;
 use App\Http\Requests\UpdateConvencaoRequest;
-use App\DataTables\Scopes\PorSindicatoDaInstituicao;
+use App\Models\Instituicao;
+use App\Models\Sindicato as Sindicato;
+use App\Models\User as User;
+use App\Repositories\ConvencaoRepository;
+use Flash;
+use Illuminate\Support\Facades\Storage;
+use Response;
 
 class ConvencaoController extends AppBaseController
 {

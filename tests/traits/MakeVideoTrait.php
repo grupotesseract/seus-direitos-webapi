@@ -1,8 +1,8 @@
 <?php
 
 use App\Models\Video;
-use Faker\Factory as Faker;
 use App\Repositories\VideoRepository;
+use Faker\Factory as Faker;
 
 trait MakeVideoTrait
 {
