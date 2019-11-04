@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use Auth;
-use App\Repositories\VideoRepository;
-use App\Repositories\PropagandaRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\PropagandaRepository;
+use App\Repositories\VideoRepository;
+use Auth;
 
 /**
  * @resource HOME API, servindo as informaçoes que aparecem na HOME do aplicativo

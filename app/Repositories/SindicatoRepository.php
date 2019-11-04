@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use Auth;
 use App\Models\Sindicato;
+use Auth;
 use InfyOm\Generator\Common\BaseRepository;
 
 class SindicatoRepository extends BaseRepository

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Cloudder;
-use Response;
 use App\DataTables\NoticiasDataTable;
-use App\Models\Sindicato as Sindicato;
 use App\DataTables\Scopes\PorSindicato;
-use App\Repositories\NoticiasRepository;
 use App\Http\Requests\CreateNoticiasRequest;
 use App\Http\Requests\UpdateNoticiasRequest;
+use App\Models\Sindicato as Sindicato;
+use App\Repositories\NoticiasRepository;
+use Cloudder;
+use Flash;
+use Response;
 
 class NoticiasController extends AppBaseController
 {

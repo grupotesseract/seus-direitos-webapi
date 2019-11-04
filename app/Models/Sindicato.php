@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
 use App\Helpers\DeleteModelHelper;
+use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use Response;
-use App\Models\Categoria;
-use Illuminate\Http\Request;
-use App\Repositories\CategoriaRepository;
 use App\Http\Controllers\AppBaseController;
-use Prettus\Repository\Criteria\RequestCriteria;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use App\Http\Requests\API\CreateCategoriaAPIRequest;
 use App\Http\Requests\API\UpdateCategoriaAPIRequest;
+use App\Models\Categoria;
+use App\Repositories\CategoriaRepository;
+use Illuminate\Http\Request;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 /**
  * @resource Categoria API

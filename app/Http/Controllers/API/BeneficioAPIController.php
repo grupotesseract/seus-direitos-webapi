@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use Response;
-use App\Models\Beneficio;
-use Illuminate\Http\Request;
-use App\Repositories\BeneficioRepository;
 use App\Http\Controllers\AppBaseController;
-use Prettus\Repository\Criteria\RequestCriteria;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use App\Http\Requests\API\CreateBeneficioAPIRequest;
 use App\Http\Requests\API\UpdateBeneficioAPIRequest;
+use App\Models\Beneficio;
+use App\Repositories\BeneficioRepository;
+use Illuminate\Http\Request;
+use InfyOm\Generator\Criteria\LimitOffsetCriteria;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 /**
  * Class BeneficioController.

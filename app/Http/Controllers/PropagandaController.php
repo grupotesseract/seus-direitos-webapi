@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
-use App\Repositories\FotoRepository;
 use App\DataTables\PropagandaDataTable;
-use App\Repositories\PropagandaRepository;
 use App\Http\Requests\CreatePropagandaRequest;
 use App\Http\Requests\UpdatePropagandaRequest;
+use App\Repositories\FotoRepository;
+use App\Repositories\PropagandaRepository;
+use Flash;
+use Response;
 
 class PropagandaController extends AppBaseController
 {

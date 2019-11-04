@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
-use Illuminate\Http\Request;
-use App\Repositories\CategoriaRepository;
 use App\Http\Requests\CreateCategoriaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
+use App\Repositories\CategoriaRepository;
+use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 /**
  * @resource Categoria

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
 use App\DataTables\VideosLandingDataTable;
-use App\Repositories\VideosLandingRepository;
 use App\Http\Requests\CreateVideosLandingRequest;
 use App\Http\Requests\UpdateVideosLandingRequest;
+use App\Repositories\VideosLandingRepository;
+use Flash;
+use Response;
 
 class VideosLandingController extends AppBaseController
 {
