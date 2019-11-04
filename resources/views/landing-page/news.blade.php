@@ -19,26 +19,23 @@
 
 <div class="news-gallery">
 	<div class="content">
-		@for ($i = 0; $i < 8; $i++) <div class="news-box">
-			<div class="news-image" style="
-				background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1570464222/seus-direitos/carteira-de-trabalho-digital_1.jpg');
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: cover;"></div>
+		@foreach ($noticiasLanding as $noticiaLanding)
+			<div class="news-box">
+				<div class="news-image" style="
+					background-image: url('http://res.cloudinary.com/fernandes/image/upload/{{$noticiaLanding->imagem}}.{{$noticiaLanding->extensao}}');
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;"></div>
 
-			<div class="news-text">
-				<h3>Carteira de Trabalho Digital</h3>
-				<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos contar com a Carteira de Trabalho Digital, 
-					disponível para ser baixada no seu smartphone. A Secretaria de Trabalho do Ministério da Economia diz que a mudança 
-					irá proporcionar facilidades para trabalhadores e empregados com redução de burocracia e custos. 
-					Dando como exemplo: O trabalhador ao ser contratado não precisara mais apresentar a carteira em papel, 
-					basta informar o CPF a quem está realizando a contratação e o registro de trabalho será realizado na forma digital.
-				</p>
-				<a href="/landingpage/news/1">
-					<h3>LEIA MAIS &gt;</h3>
-				</a>
-			</div>
-	</div> @endfor
+				<div class="news-text">
+					<h3>{{ $noticiaLanding->titulo }}</h3>
+					{!! $noticiaLanding->texto !!}
+				<a href="/landingpage/news/{{ $noticiaLanding->id }}">
+						<h3>LEIA MAIS &gt;</h3>
+					</a>
+				</div>
+		</div>				
+		@endforeach
 </div>
 </div>
 

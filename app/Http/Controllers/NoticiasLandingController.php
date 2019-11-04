@@ -126,12 +126,14 @@ class NoticiasLandingController extends AppBaseController
             return redirect(route('noticiasLandings.index'));
         }
 
-        $cloud = Cloudder::upload($request->file('imagem_form')->path());
+        if ($request->file) {
+            $cloud = Cloudder::upload($request->file('imagem_form')->path());
 
-        $extensao = $request->file('imagem_form')->extension();
-        $publicId = Cloudder::getPublicId();
+            $extensao = $request->file('imagem_form')->extension();
+            $publicId = Cloudder::getPublicId();
 
-        $request->request->add(['imagem' => $publicId, 'extensao' => $extensao]);
+            $request->request->add(['imagem' => $publicId, 'extensao' => $extensao]);
+        }
 
         $input = $request->all();
 
@@ -164,14 +166,41 @@ class NoticiasLandingController extends AppBaseController
         Flash::success('Notícia excluída com sucesso');
 
         return redirect(route('noticiasLandings.index'));
-		}
-		
-		public function getLandingPage()
-		{
-				$noticiaLanding = NoticiasLanding::first();
-				$videoLanding = VideosLanding::first();
+    }
+    
+    public function getLandingPage()
+    {
+        $noticiaLanding = NoticiasLanding::latest()->get()->first();
+        $videoLanding = VideosLanding::latest()->get()->first();
 
-				
-				return view('landing-page.home')->with(['noticiaLanding' => $noticiaLanding, 'videoLanding' => $videoLanding]);
-		}
+        
+        return view('landing-page.home')->with(['noticiaLanding' => $noticiaLanding, 'videoLanding' => $videoLanding]);
+    }
+
+    public function getLandingPageNews()
+    {
+        $noticiasLanding = NoticiasLanding::all();
+        
+        return view('landing-page.news')->with('noticiasLanding', $noticiasLanding);
+    }
+
+    public function getLandingPageNew($id)
+    {
+        $noticiasLanding = $this->noticiasLandingRepository->findWithoutFail($id);
+
+        if (empty($noticiasLanding)) {
+            Flash::error('Notícia não encontrada');
+
+            return redirect(route('noticiasLandings.index'));
+        }
+        
+        return view('landing-page.news-post')->with('noticiasLanding', $noticiasLanding);
+    }
+
+    public function getLandingPageVideos()
+    {
+        $videosLanding = VideosLanding::all();
+        
+        return view('landing-page.videos')->with('videosLanding', $videosLanding);
+    }
 }

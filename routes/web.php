@@ -17,7 +17,7 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::get('/landingpage', 'NoticiasLandingController@getLandingPage');
+Route::get('/', 'NoticiasLandingController@getLandingPage');
 Route::get('/landingpage/videos', 'NoticiasLandingController@getLandingPageVideos');
 Route::get('/landingpage/news', 'NoticiasLandingController@getLandingPageNews');
 Route::get('/landingpage/news/{id}', 'NoticiasLandingController@getLandingPageNew');
