@@ -1,3 +1,15 @@
+<style>
+		.container-logo-sindicato {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+					-ms-flex-pack: center;
+							justify-content: center;
+			width: 30%;
+			margin: 0 1rem;
+		}
+</style> 
 <!-- Nome Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nome', 'Nome:') !!}
@@ -37,3 +49,16 @@
         'label' => 'Logo do Sindicato:'
     ])
 </div>
+
+
+@if (isset($sindicato))
+	@if ($sindicato->logo)
+		<div class="form-group col-sm-6">
+			<div class="container-logo-sindicato">	
+				<img src="{{$sindicato->logo->urlCloudinary}}" alt="Logo do sindicato" class="img-responsive">
+			</div>
+		</div>
+	@else
+			<p>Nenhum logo adicionado - <a href="{{route('sindicatos.edit', $sindicato->id)}}"> Editar</a> </p> 
+	@endif
+@endif

@@ -29,7 +29,7 @@
 	<div class="content">
 		<div class="video">
 			{{-- <iframe width="360" height="315" src="https://www.youtube.com/embed/LXb3EKWsInQ"> --}}
-			<iframe src="https://www.youtube.com/embed/3mGKzUxYeFY">
+			<iframe src="https://www.youtube.com/embed/{{ $videoLanding->codigo_video }}">
 			</iframe>
 
 			<a href="/landingpage/videos">
@@ -39,22 +39,16 @@
 
 		<div class="news">
 			<div class="news-image" style="
-			background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1570464222/seus-direitos/carteira-de-trabalho-digital_1.jpg');
+			background-image: url('http://res.cloudinary.com/fernandes/image/upload/{{$noticiaLanding->imagem}}.{{$noticiaLanding->extensao}}');
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;"></div>
 
 			<div class="news-text">
-				<h3>Carteira de Trabalho Digital</h3>
-				<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos
-					contar com a Carteira de Trabalho Digital, disponível para ser baixada
-					no seu smartphone.
-					A Secretaria de Trabalho do Ministério da Economia diz que a mudança irá proporcionar facilidades para
-					trabalhadores e empregados com redução de burocracia e custos.A partir do dia 24 de setembro de 2019 nós Brasileiros podemos
-					contar com a Carteira de Trabalho Digital, disponível para ser baixada
-					no seu smartphone.</p>
+				<h3>{{ $noticiaLanding->titulo }}</h3>
+					{!! $noticiaLanding->texto !!}
 
-					<a href="/landingpage/news/1">
+			<a href="/landingpage/news/{{$noticiaLanding->id}}">
 						<h3>LEIA MAIS &gt;</h3>
 					</a>
 			</div>

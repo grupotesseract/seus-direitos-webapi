@@ -10,19 +10,19 @@
 
 <div class="news-post-title">
 	<div class="content">
-		<h1>Carteira de Trabalho Digital</h1>
+		<h1>{{$noticiasLanding->titulo}}</h1>
 		<a href="javascript:history.back()">
 			<h2>&lt; voltar</h2>
 		</a>
 	</div>
 	
-	<h3>13.08.2019</h3>
+	<h3>{{$noticiasLanding->created_at->format('d-m-Y')}}</h3>
 </div>
 
 <div class="news-post-image">
 	<div class="content">
 		<div class="image" style="
-				background-image: url('https://res.cloudinary.com/tesseract/image/upload/v1570464222/seus-direitos/carteira-de-trabalho-digital_1.jpg');
+				background-image: url('http://res.cloudinary.com/fernandes/image/upload/{{$noticiasLanding->imagem}}.{{$noticiasLanding->extensao}}');
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: cover;"></div>
@@ -32,12 +32,7 @@
 <div class="news-post-text">
 	<div class="content">
 		<div class="text">
-				<p>A partir do dia 24 de setembro de 2019 nós Brasileiros podemos contar com a Carteira de Trabalho Digital, 
-					disponível para ser baixada no seu smartphone. A Secretaria de Trabalho do Ministério da Economia diz que a mudança 
-					irá proporcionar facilidades para trabalhadores e empregados com redução de burocracia e custos. 
-					Dando como exemplo: O trabalhador ao ser contratado não precisara mais apresentar a carteira em papel, 
-					basta informar o CPF a quem está realizando a contratação e o registro de trabalho será realizado na forma digital.
-				</p>
+			{!! $noticiasLanding->texto !!}
 		</div>
 	</div>
 </div>

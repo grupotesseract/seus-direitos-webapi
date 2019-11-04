@@ -112,7 +112,7 @@ class UserController extends AppBaseController
                     $input['email'] = $row['email'];
                     $rg_formatado = str_replace('.', '', $row['rg']);
                     $rg_formatado = str_replace('-', '', $rg_formatado);
-                    $input['password'] = bcrypt('ss'.$rg_formatado);
+                    $input['password'] = bcrypt($rg_formatado);
                     $input['sindicato_id'] = $sindicato->id;
                     if (isset($instituicao)) {
                         $input['instituicao_id'] = $instituicao->id;
