@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Cloudder;
-use Response;
-use Illuminate\Http\Request;
-use App\Repositories\PromocaoRepository;
 use App\Http\Requests\CreatePromocaoRequest;
 use App\Http\Requests\UpdatePromocaoRequest;
+use App\Repositories\PromocaoRepository;
+use Cloudder;
+use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 class PromocaoController extends AppBaseController
 {

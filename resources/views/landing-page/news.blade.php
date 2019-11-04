@@ -11,7 +11,7 @@
 <div class="news-title">
 	<div class="content">
 		<h1>NOTÍCIAS</h1>
-		<a href="/landingpage">
+		<a href="/">
 			<h2>&lt; voltar</h2>
 		</a>
 	</div>

@@ -29,33 +29,38 @@
 	<div class="content">
 		<div class="video">
 			{{-- <iframe width="360" height="315" src="https://www.youtube.com/embed/LXb3EKWsInQ"> --}}
-			<iframe src="https://www.youtube.com/embed/{{ $videoLanding->codigo_video }}">
-			</iframe>
+			@isset($videoLanding)
+				<iframe src="https://www.youtube.com/embed/{{ $videoLanding->codigo_video }}">
+				</iframe>
 
-			<a href="/landingpage/videos">
-				<h3>MAIS VÍDEOS &gt;</h3>
-			</a>
+				<a href="/landingpage/videos">
+					<h3>MAIS VÍDEOS &gt;</h3>
+				</a>
+					
+			@endisset
 		</div>
 
 		<div class="news">
-			<div class="news-image" style="
-			background-image: url('http://res.cloudinary.com/fernandes/image/upload/{{$noticiaLanding->imagem}}.{{$noticiaLanding->extensao}}');
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: cover;"></div>
+			@isset($noticiaLanding)
+				<div class="news-image" style="
+				background-image: url('http://res.cloudinary.com/fernandes/image/upload/{{$noticiaLanding->imagem}}.{{$noticiaLanding->extensao}}');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;"></div>
 
-			<div class="news-text">
-				<h3>{{ $noticiaLanding->titulo }}</h3>
-					{!! $noticiaLanding->texto !!}
+				<div class="news-text">
+					<h3>{{ $noticiaLanding->titulo }}</h3>
+						{!! $noticiaLanding->texto !!}
 
-			<a href="/landingpage/news/{{$noticiaLanding->id}}">
-						<h3>LEIA MAIS &gt;</h3>
-					</a>
-			</div>
+				<a href="/landingpage/news/{{$noticiaLanding->id}}">
+							<h3>LEIA MAIS &gt;</h3>
+						</a>
+				</div>
 
-			<a href="/landingpage/news">
-				<h3>MAIS NOTÍCIAS &gt;</h3>
-			</a>
+				<a href="/landingpage/news">
+					<h3>MAIS NOTÍCIAS &gt;</h3>
+				</a>					
+			@endisset
 		</div>
 	</div>
 </div>

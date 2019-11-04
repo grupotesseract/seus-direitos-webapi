@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\Scopes\PorSindicato;
+use App\DataTables\VideoDataTable;
+use App\Http\Requests\CreateVideoRequest;
+use App\Http\Requests\UpdateVideoRequest;
+use App\Repositories\VideoRepository;
 use Auth;
 use Flash;
 use Response;
-use App\DataTables\VideoDataTable;
-use App\Repositories\VideoRepository;
-use App\DataTables\Scopes\PorSindicato;
-use App\Http\Requests\CreateVideoRequest;
-use App\Http\Requests\UpdateVideoRequest;
 
 class VideoController extends AppBaseController
 {

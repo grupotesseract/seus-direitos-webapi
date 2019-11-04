@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
 use App\DataTables\VideosLandingDataTable;
-use App\Repositories\VideosLandingRepository;
 use App\Http\Requests\CreateVideosLandingRequest;
 use App\Http\Requests\UpdateVideosLandingRequest;
+use App\Repositories\VideosLandingRepository;
+use Flash;
+use Response;
 
 class VideosLandingController extends AppBaseController
 {
@@ -53,7 +53,7 @@ class VideosLandingController extends AppBaseController
 
         $videosLanding = $this->videosLandingRepository->create($input);
 
-        Flash::success('Videos Landing saved successfully.');
+        Flash::success('Vídeo salvo com sucesso');
 
         return redirect(route('videosLandings.index'));
     }
@@ -70,7 +70,7 @@ class VideosLandingController extends AppBaseController
         $videosLanding = $this->videosLandingRepository->findWithoutFail($id);
 
         if (empty($videosLanding)) {
-            Flash::error('Videos Landing not found');
+            Flash::error('Video não encontrado');
 
             return redirect(route('videosLandings.index'));
         }
@@ -90,7 +90,7 @@ class VideosLandingController extends AppBaseController
         $videosLanding = $this->videosLandingRepository->findWithoutFail($id);
 
         if (empty($videosLanding)) {
-            Flash::error('Videos Landing not found');
+            Flash::error('Video não encontrado');
 
             return redirect(route('videosLandings.index'));
         }
@@ -111,14 +111,14 @@ class VideosLandingController extends AppBaseController
         $videosLanding = $this->videosLandingRepository->findWithoutFail($id);
 
         if (empty($videosLanding)) {
-            Flash::error('Videos Landing not found');
+            Flash::error('Video não encontrado');
 
             return redirect(route('videosLandings.index'));
         }
 
         $videosLanding = $this->videosLandingRepository->update($request->all(), $id);
 
-        Flash::success('Videos Landing updated successfully.');
+        Flash::success('Video atualizado com sucesso');
 
         return redirect(route('videosLandings.index'));
     }
@@ -135,14 +135,14 @@ class VideosLandingController extends AppBaseController
         $videosLanding = $this->videosLandingRepository->findWithoutFail($id);
 
         if (empty($videosLanding)) {
-            Flash::error('Videos Landing not found');
+            Flash::error('Video não encontrado');
 
             return redirect(route('videosLandings.index'));
         }
 
         $this->videosLandingRepository->delete($id);
 
-        Flash::success('Videos Landing deleted successfully.');
+        Flash::success('Video excluído com sucesso');
 
         return redirect(route('videosLandings.index'));
     }

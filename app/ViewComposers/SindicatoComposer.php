@@ -2,9 +2,9 @@
 
 namespace App\ViewComposers;
 
-use Illuminate\View\View;
-use App\Repositories\EstadoRepository;
 use App\Repositories\CategoriaRepository;
+use App\Repositories\EstadoRepository;
+use Illuminate\View\View;
 
 class SindicatoComposer
 {

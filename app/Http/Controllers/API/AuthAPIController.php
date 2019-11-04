@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController;
+use App\Repositories\UserRepository;
 use Auth;
+use Illuminate\Http\Request;
 use Response;
 use Validator;
-use Illuminate\Http\Request;
-use App\Repositories\UserRepository;
-use App\Http\Controllers\AppBaseController;
 
 /**
  * @resource Auth API

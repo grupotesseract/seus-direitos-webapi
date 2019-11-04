@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\BeneficioDataTable;
+use App\DataTables\Scopes\PorSindicato;
+use App\Http\Requests\CreateBeneficioRequest;
+use App\Repositories\BeneficioRepository;
 use Auth;
 use Flash;
 use Response;
-use App\DataTables\BeneficioDataTable;
-use App\DataTables\Scopes\PorSindicato;
-use App\Repositories\BeneficioRepository;
-use App\Http\Requests\CreateBeneficioRequest;
 
 class BeneficioController extends AppBaseController
 {
