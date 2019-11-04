@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Response;
-use App\Models\Sindicato as Sindicato;
-use App\DataTables\Scopes\PorSindicato;
 use App\DataTables\FaleConoscoDataTable;
-use App\Repositories\FaleConoscoRepository;
+use App\DataTables\Scopes\PorSindicato;
 use App\Http\Requests\CreateFaleConoscoRequest;
 use App\Http\Requests\UpdateFaleConoscoRequest;
+use App\Models\Sindicato as Sindicato;
+use App\Repositories\FaleConoscoRepository;
+use Flash;
+use Response;
 
 class FaleConoscoController extends AppBaseController
 {

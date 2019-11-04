@@ -1,8 +1,8 @@
 <?php
 
 use App\Models\Beneficio;
-use Faker\Factory as Faker;
 use App\Repositories\BeneficioRepository;
+use Faker\Factory as Faker;
 
 trait MakeBeneficioTrait
 {

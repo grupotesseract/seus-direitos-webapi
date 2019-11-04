@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Flash;
-use Cloudder;
-use Response;
-use Illuminate\Http\Request;
-use App\Repositories\FilmeRepository;
 use App\Http\Requests\CreateFilmeRequest;
 use App\Http\Requests\UpdateFilmeRequest;
+use App\Repositories\FilmeRepository;
+use Cloudder;
+use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
 
 class FilmeController extends AppBaseController
 {
