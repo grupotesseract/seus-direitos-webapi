@@ -17,10 +17,10 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::view('/landingpage', 'landing-page.home');
-Route::view('/landingpage/videos', 'landing-page.videos');
-Route::view('/landingpage/news', 'landing-page.news');
-Route::view('/landingpage/news/{id}', 'landing-page.news-post');
+Route::get('/', 'NoticiasLandingController@getLandingPage');
+Route::get('/landingpage/videos', 'NoticiasLandingController@getLandingPageVideos');
+Route::get('/landingpage/news', 'NoticiasLandingController@getLandingPageNews');
+Route::get('/landingpage/news/{id}', 'NoticiasLandingController@getLandingPageNew');
 
 Route::get('/admin', 'HomeController@index');
 Route::get('/home', 'HomeController@index');

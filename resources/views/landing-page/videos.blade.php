@@ -12,7 +12,7 @@
 	<div class="content">
 		<h1>VÍDEOS</h1>
 		
-		<a href="/landingpage">
+		<a href="/">
 			<h2>&lt; voltar</h2>
 		</a>
 	</div>
@@ -20,18 +20,19 @@
 
 <div class="videos-gallery">
 	<div class="content">
-		@for ($i = 0; $i < 5; $i++)
+		
+		@foreach ($videosLanding as $videoLanding)
 			<div class="video-box">
-				<iframe src="https://www.youtube.com/embed/LXb3EKWsInQ">
+				<iframe src="https://www.youtube.com/embed/{{ $videoLanding->codigo_video }}">
 				</iframe>
 
 				<div class="text">
-					<h2>{{ $i }} TÍTULO DO VIDEO</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore magna aliqua. Ut enim ad minim veniam.</p>
+					<h2>{{ $videoLanding->titulo }}</h2>
+					<p>{{ $videoLanding->descricao }}</p>
 				</div>
-			</div>
-		@endfor
+			</div>	
+		@endforeach		
+		
 	</div>
 </div>
 
