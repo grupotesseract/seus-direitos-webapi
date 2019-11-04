@@ -73,8 +73,6 @@ class NoticiasLandingDataTable extends DataTable
     {
         return [
             'titulo',
-            'texto',
-            'imagem',
         ];
     }
 

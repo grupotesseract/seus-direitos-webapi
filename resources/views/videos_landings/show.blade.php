@@ -11,7 +11,7 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('videos_landings.show_fields')
-                    <a href="{!! route('videosLandings.index') !!}" class="btn btn-default">Back</a>
+                    <a href="{!! route('videosLandings.index') !!}" class="btn btn-default">Voltar</a>
                 </div>
             </div>
         </div>

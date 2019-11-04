@@ -9,6 +9,8 @@ use App\DataTables\NoticiasLandingDataTable;
 use App\Repositories\NoticiasLandingRepository;
 use App\Http\Requests\CreateNoticiasLandingRequest;
 use App\Http\Requests\UpdateNoticiasLandingRequest;
+use App\Models\NoticiasLanding;
+use App\Models\VideosLanding;
 
 class NoticiasLandingController extends AppBaseController
 {
@@ -162,5 +164,14 @@ class NoticiasLandingController extends AppBaseController
         Flash::success('Notícia excluída com sucesso');
 
         return redirect(route('noticiasLandings.index'));
-    }
+		}
+		
+		public function getLandingPage()
+		{
+				$noticiaLanding = NoticiasLanding::first();
+				$videoLanding = VideosLanding::first();
+
+				
+				return view('landing-page.home')->with(['noticiaLanding' => $noticiaLanding, 'videoLanding' => $videoLanding]);
+		}
 }
