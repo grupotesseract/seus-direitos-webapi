@@ -49,7 +49,7 @@ Route::get('detalhanoticia/{id}', 'NoticiasController@detalhaNoticia');
 Route::get('sindicatos/{idUsuario}/convencoes', 'ConvencaoController@getConvencoesPorSindicato');
 Route::get('sindicatos/{idSindicato}/noticias', 'NoticiasController@getNoticiasPorSindicato');
 Route::get('faleconosco/{idSindicato}', 'FaleConoscoController@createApp');
-
+Route::resource('faleConoscos', 'FaleConoscoController');    
 /*
  * Rotas protegidas
  */
@@ -89,7 +89,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::resource('noticias', 'NoticiasController');
 
-    Route::resource('faleConoscos', 'FaleConoscoController');    
+    
 
     
     Route::resource('instituicaos', 'InstituicaoController');
