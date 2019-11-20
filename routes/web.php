@@ -37,7 +37,6 @@ Route::get('saaebauru/convenios/alameda/promocoes', 'PromocaoController@indexpub
 
 //Listagem de convenções de 1 sindicato/usuario
 
-
 //Listagem de noticias de 1 sindicato
 
 Route::get('carteirinha/{id}', 'UserController@getCarteirinha');
@@ -49,7 +48,7 @@ Route::get('detalhanoticia/{id}', 'NoticiasController@detalhaNoticia');
 Route::get('sindicatos/{idUsuario}/convencoes', 'ConvencaoController@getConvencoesPorSindicato');
 Route::get('sindicatos/{idSindicato}/noticias', 'NoticiasController@getNoticiasPorSindicato');
 Route::get('faleconosco/{idSindicato}', 'FaleConoscoController@createApp');
-Route::resource('faleConoscos', 'FaleConoscoController');    
+Route::resource('faleConoscos', 'FaleConoscoController');
 /*
  * Rotas protegidas
  */
@@ -89,9 +88,6 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::resource('noticias', 'NoticiasController');
 
-    
-
-    
     Route::resource('instituicaos', 'InstituicaoController');
 
     Route::resource('propagandas', 'PropagandaController');
