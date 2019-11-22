@@ -22,7 +22,6 @@ class Sindicato extends Model
         'nome',
         'sigla',
         'nome_responsavel',
-        'id_categoria',
         'email',
     ];
 

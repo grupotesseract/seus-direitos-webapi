@@ -41,14 +41,6 @@ class Categoria extends Model
         'nome' => 'required',
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function sindicatos()
-    {
-        return $this->hasMany(\App\Models\Sindicato::class, 'id_categoria');
-		} 
-		
 		public function sindicato()
     {
         return $this->belongsTo(\App\Models\Sindicato::class);

@@ -51,8 +51,8 @@ class CategoriaController extends AppBaseController
     public function create()
     {
 				$user = Auth::user();				
-				$sindicatos = $user->sindicato()->pluck('nome', 'id');	
-				return view('categorias.create')->with('sindicatos', $sindicatos);;
+				$sindicato = $user->sindicato;	
+				return view('categorias.create')->with('sindicato', $sindicato);;
     }
 
     /**
@@ -64,8 +64,8 @@ class CategoriaController extends AppBaseController
      */
     public function store(CreateCategoriaRequest $request)
     {
-        $input = $request->all();
-
+				$input = $request->all();
+				
         $categoria = $this->categoriaRepository->create($input);
 
         Flash::success('Categoria salva com sucesso.');
@@ -105,7 +105,7 @@ class CategoriaController extends AppBaseController
 				$categoria = $this->categoriaRepository->findWithoutFail($id);
 
 				$user = Auth::user();				
-				$sindicatos = $user->sindicato()->pluck('nome', 'id');
+				$sindicato = $user->sindicato;	
 
         if (empty($categoria)) {
             Flash::error('Categoria não encontrada');
@@ -113,7 +113,7 @@ class CategoriaController extends AppBaseController
             return redirect(route('categorias.index'));
         }
 
-        return view('categorias.edit')->with(['categoria' => $categoria, 'sindicatos' => $sindicatos]);
+        return view('categorias.edit')->with(['categoria' => $categoria, 'sindicato' => $sindicato]);
     }
 
     /**

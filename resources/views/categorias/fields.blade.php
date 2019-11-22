@@ -6,8 +6,7 @@
  
 <!-- Sindicato Field -->
 <div class="form-group col-sm-6">
-	{!! Form::label('sindicato_id', 'Sindicato:') !!}
-	{!! Form::select('sindicato_id', $sindicatos, isset($categoria->sindicato) ? $categoria->sindicato->id : null, ['class' => 'form-control select2']) !!}
+	{!! Form::hidden('sindicato_id', $sindicato->id) !!}
 </div>
 
 <!-- Submit Field -->

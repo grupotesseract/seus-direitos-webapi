@@ -23,7 +23,7 @@ class Convencao extends Model
     public $fillable = [
         'resumo',
         'arquivo',
-        'instituicao_id',
+        'categoria_id',
         'texto',
     ];
 
@@ -46,7 +46,7 @@ class Convencao extends Model
     public static $rules = [
         'resumo' => 'required',
         'texto' => 'required',
-        'instituicao_id' => 'required',
+        'categoria_id' => 'required',
     ];
 
     public function instituicao()
