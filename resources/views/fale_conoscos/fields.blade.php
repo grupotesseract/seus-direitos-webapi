@@ -20,6 +20,6 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
     <!-- <a href="{!! route('faleConoscos.index') !!}" class="btn btn-default">Cancel</a> -->
 </div>
