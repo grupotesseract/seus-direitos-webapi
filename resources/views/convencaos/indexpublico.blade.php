@@ -38,16 +38,17 @@
 <div class="convencoes-coletivas">
 	<div>
 		@foreach ($convencoes as $convencao)
-		<div class="">
-
-			<div class="">
-				<h4>{{$convencao->resumo}}</h4>
-				<a class="" href="{{ url('detalhaconvencao/'.$convencao->id) }}"></a>
-			</div>
-
-		</div>
+		<a class="" href="{{ url('detalhaconvencao/'.$convencao->id) }}">
+			<h3>{{$convencao->resumo}}</h3>
+		</a>
 		@endforeach
 	</div>
 </div>
+
+<style>
+	footer {
+		display: none;
+	}
+</style>
 
 @endsection
