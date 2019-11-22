@@ -1596,12 +1596,13 @@ p {
 }
 
 .convencoes-coletivas-header > div > div:first-of-type {
+  margin-right: 1rem;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
   border-right: 20px solid white;
   border-bottom: 10px solid transparent;
-  margin-right: 1rem;
+  cursor: pointer;
 }
 
 .convencoes-coletivas-header > div > div:last-of-type h4:last-of-type {
@@ -1614,6 +1615,57 @@ p {
   background-color: white;
   margin: 0 auto;
   border: none;
+}
+
+.app-pesquisar {
+  background-color: #2c669c;
+}
+
+.app-pesquisar > div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.app-pesquisar > div form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-pesquisar > div form i {
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.6rem 0.5rem 0.4rem;
+}
+
+.app-pesquisar > div form input {
+  color: white;
+  background-color: #2c669c;
+  border: none;
+  padding: 0.3rem 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid white;
+  width: 80%;
+}
+
+.app-pesquisar > div form input::-webkit-input-placeholder {
+  color: white;
+}
+
+.app-pesquisar > div form input::-ms-input-placeholder {
+  color: white;
+}
+
+.app-pesquisar > div form input::placeholder {
+  color: white;
 }
 
 .convencoes-coletivas {

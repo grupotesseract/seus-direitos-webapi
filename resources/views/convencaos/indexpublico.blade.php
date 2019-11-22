@@ -14,7 +14,7 @@
 
 <div class="convencoes-coletivas-header">
 	<div>
-		<div>			
+		<div onclick="window.close();">
 		</div>
 
 		<div>
@@ -25,7 +25,15 @@
 	</div>
 </div>
 
-<div class="app-pesquisar"></div>
+<div class="app-pesquisar">
+	<div>
+		<form method="post" action="">
+			{!! csrf_field() !!}
+			<i class="fas fa-search"></i>
+			<input type="text" name="search" placeholder="BUSCAR">
+		</form>
+	</div>
+</div>
 
 <div class="convencoes-coletivas">
 	<div>

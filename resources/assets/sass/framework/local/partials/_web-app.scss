@@ -23,12 +23,13 @@
 
 		> div {
 			&:first-of-type {
+				margin-right: 1rem;
 				width: 0;
 				height: 0;
 				border-top: 10px solid transparent;
 				border-right: 20px solid $white-1;
 				border-bottom: 10px solid transparent;
-				margin-right: 1rem;		
+				cursor: pointer;
 			}
 
 			&:last-of-type {
@@ -46,6 +47,42 @@
 			}
 		}
 	}
+}
+
+.app-pesquisar {
+	background-color: $blue-3;
+
+	> div {
+		@include container-app;
+		padding: 0.5rem;
+		text-align: center;
+
+		form {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			i {
+				color: $white-1;
+				font-size: 1.5rem;
+				padding: 0.6rem 0.5rem 0.4rem;
+			}
+	
+			input {
+				color: $white-1;
+				background-color: $blue-3;
+				border: none;
+				padding: 0.3rem 0;
+				font-size: 1.5rem;
+				border-bottom: 2px solid $white-1;
+				width: 80%;
+			}
+	
+			input::placeholder {
+				color: $white-1;
+			}
+		}
+	}	
 }
 
 .convencoes-coletivas {
