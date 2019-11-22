@@ -180,7 +180,7 @@ class NoticiasController extends AppBaseController
 
     public function getNoticiasPorSindicato($idSindicato)
     {
-        $noticias = Sindicato::find($idSindicato)->noticias;
+        $noticias = Sindicato::find($idSindicato)->noticias()->orderBy('created_at', 'DESC')->get();
 
         return view('noticias.indexpublico')->with('noticias', $noticias);
     }

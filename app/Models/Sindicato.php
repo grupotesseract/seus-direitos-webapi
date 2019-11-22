@@ -125,6 +125,11 @@ class Sindicato extends Model
     public function noticias()
     {
         return $this->hasMany(\App\Models\Noticias::class);
+		}
+		
+		public function categorias()
+    {
+        return $this->hasMany(\App\Models\Categoria::class);
     }
 
     /**

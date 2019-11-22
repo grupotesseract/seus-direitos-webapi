@@ -17,7 +17,8 @@ class Categoria extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $fillable = [
-        'nome',
+				'nome',
+				'sindicato_id'
     ];
 
     /**
@@ -28,6 +29,7 @@ class Categoria extends Model
     protected $casts = [
         'id' => 'integer',
         'nome' => 'string',
+        'sindicato_id' => 'integer',
     ];
 
     /**
@@ -45,5 +47,10 @@ class Categoria extends Model
     public function sindicatos()
     {
         return $this->hasMany(\App\Models\Sindicato::class, 'id_categoria');
+		} 
+		
+		public function sindicato()
+    {
+        return $this->belongsTo(\App\Models\Sindicato::class);
     }
 }
