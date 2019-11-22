@@ -3,7 +3,7 @@
 
 	> div {
 		@include container-app;
-		padding: 1rem;
+		padding: 0.5rem 1rem;
 		text-align: center;
 		color: $white-1;
 	}
@@ -14,7 +14,7 @@
 
 	> div {
 		@include container-app;
-		padding: 1rem;
+		padding: 0.5rem 1rem;
 		text-align: center;
 		color: $white-1;
 		display: flex;

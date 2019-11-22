@@ -1569,7 +1569,7 @@ p {
 .app-header > div {
   max-width: 800px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   color: white;
 }
@@ -1581,7 +1581,7 @@ p {
 .convencoes-coletivas-header > div {
   max-width: 800px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   color: white;
   display: -webkit-box;
