@@ -1562,6 +1562,69 @@ p {
   margin-bottom: 0;
 }
 
+.app-header {
+  background-color: #5eb6e8;
+}
+
+.app-header > div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.convencoes-coletivas-header {
+  background-color: #e95b11;
+}
+
+.convencoes-coletivas-header > div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.convencoes-coletivas-header > div > div:first-of-type {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 20px solid white;
+  border-bottom: 10px solid transparent;
+  margin-right: 1rem;
+}
+
+.convencoes-coletivas-header > div > div:last-of-type h4:last-of-type {
+  font-weight: 300;
+}
+
+.convencoes-coletivas-header > div > div:last-of-type hr {
+  width: 3rem;
+  height: 2px;
+  background-color: white;
+  margin: 0 auto;
+  border: none;
+}
+
+.convencoes-coletivas {
+  background-color: white;
+}
+
+.convencoes-coletivas > div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 footer {
   height: 3rem;
   background-color: #1c1a1f;
