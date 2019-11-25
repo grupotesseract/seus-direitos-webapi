@@ -77,9 +77,9 @@ class User extends Authenticatable
     public function sindicato()
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
-		}
-		
-		public function categoria()
+    }
+
+    public function categoria()
     {
         return $this->belongsTo(\App\Models\Categoria::class);
     }

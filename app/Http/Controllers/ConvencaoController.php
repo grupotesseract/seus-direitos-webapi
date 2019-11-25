@@ -205,7 +205,7 @@ class ConvencaoController extends AppBaseController
      */
     public function getConvencoesPorSindicato($idUsuario)
     {
-				$categoria = User::find($idUsuario)->categoria;
+        $categoria = User::find($idUsuario)->categoria;
 
         if (! is_null($categoria)) {
             $convencoes = $categoria->convencaos;
