@@ -44,5 +44,14 @@ class Categoria extends Model
 		public function sindicato()
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
+		}
+		
+		/**
+     * Relacao 1xN com App\Models\Convencao
+     * Uma instituição pode ter varias convencoes.
+     */
+    public function convencaos()
+    {
+        return $this->hasMany(\App\Models\Convencao::class);
     }
 }

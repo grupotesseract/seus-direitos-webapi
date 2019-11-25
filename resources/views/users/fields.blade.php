@@ -70,7 +70,13 @@
     <div class="form-group col-sm-6">
         {!! Form::label('instituicao_id', 'Instituição:') !!}
         {!! Form::select('instituicao_id', $instituicoes, isset($user) ? $user->instituicao->id : null, ['class'=> 'form-control']) !!}
-    </div>
+		</div>
+		
+		<!-- Categoria Field -->
+    <div class="form-group col-sm-6">
+			{!! Form::label('categoria_id', 'Categoria:') !!}
+			{!! Form::select('categoria_id', $categorias, isset($user->categoria) ? $user->categoria->id : null, ['class' => 'form-control select2']) !!}
+		</div>
 
 @elseif (\Request::segment(2) == 'funcionarios')
     {!! Form::hidden('role', 'funcionario') !!}
@@ -91,7 +97,13 @@
     <div class="form-group col-sm-6">
         {!! Form::label('instituicao_id', 'Instituição:') !!}
         {!! Form::select('instituicao_id', $instituicoes, isset($user) ? $user->instituicao->id : null, ['class'=> 'form-control']) !!}
-    </div>
+		</div>
+		
+		<!-- Categoria Field -->
+    <div class="form-group col-sm-6">
+			{!! Form::label('categoria_id', 'Categoria:') !!}
+			{!! Form::select('categoria_id', $categorias, isset($user->categoria) ? $user->categoria->id : null, ['class' => 'form-control select2']) !!}
+		</div>
     
 {{-- CASO ESTEJA EDITANDO --}}
 @elseif (\Request::segment(3) == 'edit')
@@ -113,7 +125,13 @@
     <div class="form-group col-sm-6">
         {!! Form::label('instituicao_id', 'Instituição:') !!}
         {!! Form::select('instituicao_id', isset($user->sindicato) ? $user->sindicato->instituicoes->pluck('nomecompleto', 'id') : $instituicoes, isset($user->instituicao) ? $user->instituicao->id : null, ['class'=> 'form-control']) !!}
-    </div>
+		</div>
+		
+		<!-- Categoria Field -->
+    <div class="form-group col-sm-6">
+			{!! Form::label('categoria_id', 'Categoria:') !!}
+			{!! Form::select('categoria_id', $categorias, isset($user->categoria) ? $user->categoria->id : null, ['class' => 'form-control select2']) !!}
+		</div>
 
 @endif
 

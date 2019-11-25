@@ -49,8 +49,8 @@ class Convencao extends Model
         'categoria_id' => 'required',
     ];
 
-    public function instituicao()
+    public function categoria()
     {
-        return $this->belongsTo(\App\Models\Instituicao::class);
+        return $this->belongsTo(\App\Models\Categoria::class);
     }
 }

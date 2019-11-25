@@ -37,6 +37,7 @@ class User extends Authenticatable
         'sindicato_id',
         'cidade_id',
         'instituicao_id',
+        'categoria_id',
         'rg',
         'celular',
         'matricula',
@@ -56,6 +57,7 @@ class User extends Authenticatable
         'sindicato_id' => 'sometimes|exists:sindicatos,id',
         'instituicao_id' => 'sometimes|exists:instituicoes,id',
         'cidade_id' => 'sometimes|exists:cidades,id',
+        'categoria_id' => 'sometimes|exists:categorias,id',
     ];
 
     public static $updateRules = [
@@ -64,6 +66,7 @@ class User extends Authenticatable
         'role' => 'required|exists:roles,name',
         'sindicato_id' => 'sometimes|exists:sindicatos,id',
         'instituicao_id' => 'sometimes|exists:instituicoes,id',
+        'categoria_id' => 'sometimes|exists:categorias,id',
     ];
 
     /**
@@ -74,6 +77,11 @@ class User extends Authenticatable
     public function sindicato()
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
+		}
+		
+		public function categoria()
+    {
+        return $this->belongsTo(\App\Models\Categoria::class);
     }
 
     /**

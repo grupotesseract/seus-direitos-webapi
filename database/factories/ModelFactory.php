@@ -72,6 +72,5 @@ $factory->define(App\Models\Sindicato::class, function (Faker\Generator $faker) 
         'nome' => $nome,
         'nome_responsavel' => $faker->name,
         'sigla' => strtoupper($sigla),
-        'id_categoria' => \App\Models\Categoria::orderByRaw('RANDOM()')->first()->id,
     ];
 });
