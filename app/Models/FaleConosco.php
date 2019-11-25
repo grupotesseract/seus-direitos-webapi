@@ -47,5 +47,10 @@ class FaleConosco extends Model
         'assunto' => 'required',
         'texto' => 'required',
         'sindicato_id' => 'required',
-    ];
+		];
+		
+		public function sindicato()
+    {
+        return $this->belongsTo(\App\Models\Sindicato::class);
+    }
 }

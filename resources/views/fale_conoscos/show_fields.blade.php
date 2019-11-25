@@ -18,19 +18,19 @@
 
 <!-- Sindicato Id Field -->
 <div class="form-group">
-    {!! Form::label('sindicato_id', 'Sindicato Id:') !!}
-    <p>{!! $faleConosco->sindicato_id !!}</p>
+    {!! Form::label('sindicato_id', 'Sindicato:') !!}
+    <p>{!! $faleConosco->sindicato->nome !!}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $faleConosco->created_at !!}</p>
+    {!! Form::label('created_at', 'Criado em:') !!}
+    <p>{!! $faleConosco->created_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $faleConosco->updated_at !!}</p>
+    {!! Form::label('updated_at', 'Atualizado em:') !!}
+    <p>{!! $faleConosco->updated_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 
