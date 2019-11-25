@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class RemoveColunaCategoriaid extends Migration
 {
@@ -14,7 +14,7 @@ class RemoveColunaCategoriaid extends Migration
     public function up()
     {
         Schema::table('sindicatos', function (Blueprint $table) {
-						$table->dropColumn('id_categoria');
+            $table->dropColumn('id_categoria');
         });
     }
 
@@ -26,8 +26,8 @@ class RemoveColunaCategoriaid extends Migration
     public function down()
     {
         Schema::table('sindicatos', function (Blueprint $table) {
-						$table->integer('id_categoria')->unsigned()->nullable();
-						$table->foreign('id_categoria')->references('id')->on('categorias');
+            $table->integer('id_categoria')->unsigned()->nullable();
+            $table->foreign('id_categoria')->references('id')->on('categorias');
         });
     }
 }

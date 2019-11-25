@@ -5,7 +5,6 @@ namespace App\ViewComposers;
 use App\Models\Categoria;
 use App\Repositories\InstituicaoRepository;
 use App\Repositories\SindicatoRepository;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class UserSindicalistaComposer
@@ -39,9 +38,9 @@ class UserSindicalistaComposer
         //Pegando lista de instituições de acordo com o sindicato caso exista
         $instituicoes = $sindicato
             ? $sindicato->instituicoes->pluck('nomecompleto', 'id')
-						: $this->instituicoes->all()->pluck('nomecompleto', 'id');
-						
-				$categorias = $sindicato ? $sindicato->categorias->pluck('nome', 'id') : Categoria::all()->pluck('nome', 'id');
+                        : $this->instituicoes->all()->pluck('nomecompleto', 'id');
+
+        $categorias = $sindicato ? $sindicato->categorias->pluck('nome', 'id') : Categoria::all()->pluck('nome', 'id');
 
         $view->with(['sindicatos' => $sindicatos, 'instituicoes' => $instituicoes, 'categorias' => $categorias]);
     }
