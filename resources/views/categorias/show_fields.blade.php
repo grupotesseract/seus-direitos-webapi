@@ -12,19 +12,15 @@
 
 <!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $categoria->created_at !!}</p>
+    {!! Form::label('created_at', 'Criado em:') !!}
+    <p>{!! $categoria->created_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $categoria->updated_at !!}</p>
+    {!! Form::label('updated_at', 'Atualizado em:') !!}
+    <p>{!! $categoria->updated_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 
-<!-- Deleted At Field -->
-<div class="form-group">
-    {!! Form::label('deleted_at', 'Deleted At:') !!}
-    <p>{!! $categoria->deleted_at !!}</p>
-</div>
+
 

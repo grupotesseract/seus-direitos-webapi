@@ -18,13 +18,13 @@
 
 <!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $convencao->created_at !!}</p>
+	{!! Form::label('created_at', 'Criado em:') !!}
+	<p>{!! $convencao->created_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $convencao->updated_at !!}</p>
+	{!! Form::label('updated_at', 'Atualizado em:') !!}
+	<p>{!! $convencao->updated_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 

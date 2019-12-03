@@ -123,23 +123,25 @@ class ConvencaoController extends AppBaseController
         }
 
         $user = \Auth::user();
-        $instituicaos = null;
-        $instituicao = $convencao->instituicao_id;
+				$categoria = $convencao->categoria_id;
+				
+				$categorias = null;
 
         //Se for superadmin mostrar todas instituicoes
         if ($user->hasRole('superadmin')) {
-            $instituicaos = Instituicao::all()->pluck('nomecompleto', 'id')->toArray();
+            $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
         }
 
         //Se for de um sindicato, mostrar as instituicoes do sindicato apenas
         else {
-            $instituicaos = $user->sindicato->instituicoes()->pluck('nomecompleto', 'id');
-        }
+            $categorias = $user->sindicato->categorias()->pluck('nome', 'id');
+        }				
+
 
         return view('convencaos.edit')->with([
             'convencao' => $convencao,
-            'instituicao' => $instituicao,
-            'instituicaos' => $instituicaos,
+            'categoria' => $categoria,
+            'categorias' => $categorias,
         ]);
     }
 
