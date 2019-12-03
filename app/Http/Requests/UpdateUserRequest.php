@@ -28,6 +28,6 @@ class UpdateUserRequest extends FormRequest
         $idUserAtual = \Request::segment(2);
         $userRules['email'] = "required|unique:users,email,$idUserAtual";
 
-        return $userRules; 
+        return $userRules;
     }
 }
