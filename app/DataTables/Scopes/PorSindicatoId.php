@@ -2,7 +2,6 @@
 
 namespace App\DataTables\Scopes;
 
-use App\Models\User;
 use Yajra\DataTables\Contracts\DataTableScope;
 
 class PorSindicatoId implements DataTableScope
