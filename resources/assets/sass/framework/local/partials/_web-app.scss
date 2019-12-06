@@ -3,7 +3,7 @@
 
 	> div {
 		@include container-app;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 1.5rem;
 		text-align: center;
 		color: $white-1;
 	}
@@ -129,7 +129,7 @@
 .noticias {
 	> div {
 		@include container-app;
-		padding: 2rem;
+		padding: 1.5rem;
 
 		img {
 			width: 100%;

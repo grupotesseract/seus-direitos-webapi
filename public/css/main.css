@@ -1569,7 +1569,7 @@ p {
 .app-header > div {
   max-width: 768px;
   margin: 0 auto;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   text-align: center;
   color: white;
 }
@@ -1716,7 +1716,7 @@ p {
 .noticias-header > div {
   max-width: 768px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   text-align: center;
   color: white;
   display: -webkit-box;
@@ -1738,6 +1738,7 @@ p {
   border-bottom: 15px solid transparent;
   cursor: pointer;
   position: relative;
+  margin-right: 1rem;
 }
 
 .noticias-header > div > div:nth-child(1) a {
@@ -1760,19 +1761,14 @@ p {
   border: none;
 }
 
-.noticias-header > div > div:nth-child(3) {
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-right: 15px solid white;
-  border-bottom: 15px solid transparent;
-  cursor: pointer;
+.noticias-header > div img {
+  height: 2.5rem;
 }
 
 .noticias > div {
   max-width: 768px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .noticias > div img {
@@ -1847,7 +1843,7 @@ p {
 .fale-conosco-header > div {
   max-width: 768px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   text-align: center;
   color: white;
   display: -webkit-box;
@@ -1869,6 +1865,7 @@ p {
   border-bottom: 15px solid transparent;
   cursor: pointer;
   position: relative;
+  margin-right: 1rem;
 }
 
 .fale-conosco-header > div > div:nth-child(1) a {
@@ -1891,13 +1888,8 @@ p {
   border: none;
 }
 
-.fale-conosco-header > div > div:nth-child(3) {
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-right: 15px solid white;
-  border-bottom: 15px solid transparent;
-  cursor: pointer;
+.fale-conosco-header > div img {
+  height: 2.5rem;
 }
 
 .fale-conosco > div {

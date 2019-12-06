@@ -22,8 +22,7 @@
 			<hr>
 		</div>
 
-		<div>
-		</div>
+		<img src="https://res.cloudinary.com/tesseract/image/upload/v1575653723/seus-direitos/icone-noticia.png" alt="Ícone Nótícias">
 	</div>
 </div>
 
