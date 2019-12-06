@@ -1709,6 +1709,26 @@ p {
   text-decoration: underline;
 }
 
+.convencoes-coletivas-interno > div {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.convencoes-coletivas-interno > div img {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.convencoes-coletivas-interno > div h3 {
+  color: #0095c5;
+  margin-bottom: 0.5rem;
+}
+
+.convencoes-coletivas-interno > div p {
+  color: #2c669c;
+}
+
 .noticias-header {
   background-color: #f9b208;
 }
@@ -1895,7 +1915,7 @@ p {
 .fale-conosco > div {
   max-width: 768px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .fale-conosco > div h3,
@@ -1944,26 +1964,6 @@ p {
 
 .fale-conosco > div form .has-error {
   border: 2px solid red;
-}
-
-.convencoes-coletivas-interno > div {
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.convencoes-coletivas-interno > div img {
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-
-.convencoes-coletivas-interno > div h3 {
-  color: #0095c5;
-  margin-bottom: 0.5rem;
-}
-
-.convencoes-coletivas-interno > div p {
-  color: #2c669c;
 }
 
 footer {

@@ -23,8 +23,7 @@
 			<hr>
 		</div>
 
-		<div>
-		</div>
+		<img src="https://res.cloudinary.com/tesseract/image/upload/v1575653724/seus-direitos/icone-balao-conversa.png" alt="Ícone Fale Conosco">
 	</div>
 </div>
 
