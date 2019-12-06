@@ -55,7 +55,7 @@
 				placeholder="TEXTO"></textarea>
 		</div>
 
-		<p>Para podermos respondê-lo,<br>deixe seu contato:</p>
+		<p>Caso queira um retorno, <br>deixe seu contato:</p>
 
 		<div class="form-group">
 			@if ($errors->has('email'))
