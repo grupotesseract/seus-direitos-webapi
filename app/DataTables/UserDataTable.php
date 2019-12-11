@@ -83,8 +83,8 @@ class UserDataTable extends DataTable
             ['name' => 'name', 'data' => 'name', 'title' => 'Nome'],
             ['name' => 'email', 'data' => 'email', 'title' => 'Email'],
             'tipo',
-						'instituicao',
-						'matricula',
+                        'instituicao',
+                        'matricula',
             'rg',
         ];
     }

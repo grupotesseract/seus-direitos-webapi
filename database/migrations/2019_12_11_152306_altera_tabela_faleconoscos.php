@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AlteraTabelaFaleconoscos extends Migration
 {
@@ -14,8 +14,8 @@ class AlteraTabelaFaleconoscos extends Migration
     public function up()
     {
         Schema::table('fale_conoscos', function (Blueprint $table) {
-						$table->string('email')->nullable();
-						$table->string('telefone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('telefone')->nullable();
         });
     }
 
