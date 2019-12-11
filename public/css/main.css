@@ -1669,6 +1669,10 @@ p {
   color: white;
 }
 
+.app-pesquisar > div form input:-ms-input-placeholder {
+  color: white;
+}
+
 .app-pesquisar > div form input::-ms-input-placeholder {
   color: white;
 }
@@ -1936,6 +1940,11 @@ p {
 
 .fale-conosco > div form input::-webkit-input-placeholder,
 .fale-conosco > div form textarea::-webkit-input-placeholder {
+  color: #0095c5;
+}
+
+.fale-conosco > div form input:-ms-input-placeholder,
+.fale-conosco > div form textarea:-ms-input-placeholder {
   color: #0095c5;
 }
 

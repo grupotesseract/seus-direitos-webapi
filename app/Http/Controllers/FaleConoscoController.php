@@ -53,7 +53,7 @@ class FaleConoscoController extends AppBaseController
     {
         $sindicato = Sindicato::find($idSindicato);
 
-        return view('fale_conoscos.create_app')->with('sindicato', $sindicato);
+				return view('fale_conoscos.create_app')->with('sindicato', $sindicato);
     }
 
     /**
@@ -65,8 +65,8 @@ class FaleConoscoController extends AppBaseController
      */
     public function store(CreateFaleConoscoRequest $request)
     {
-        $input = $request->all();
-
+				$input = $request->all();
+				
         $faleConosco = $this->faleConoscoRepository->create($input);
 
         $sindicato = Sindicato::find($input['sindicato_id']);

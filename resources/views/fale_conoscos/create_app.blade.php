@@ -8,7 +8,7 @@
 
 <div class="app-header">
 	<div>
-		<h4>Sindicato dos Auxiliares Administrativos Escolar de Bauru e Região</h4>
+		<h4>{{$sindicato->nome}}</h4>
 	</div>
 </div>
 
@@ -29,6 +29,7 @@
 
 <div class="fale-conosco">
 	<div>
+		@include('flash::message')
 		<h3>Alguma dúvida, sugestão ou crítica?<br>Escreva para nós.</h3>
 
 		{!! Form::open(['route' => 'faleConoscos.store']) !!}

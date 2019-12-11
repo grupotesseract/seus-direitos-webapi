@@ -8,14 +8,14 @@
 
 <div class="app-header">
 	<div>
-		<h4>Sindicato dos Auxiliares Administrativos Escolar de Bauru e Região</h4>
+		<h4>{{$noticia->sindicato->nome}}</h4>
 	</div>
 </div>
 
 <div class="noticias-header">
 	<div>
 		<div>
-			<a href="/sindicatos/1/noticias"></a>
+			<a href="/sindicatos/{{$noticia->sindicato->id}}/noticias"></a>
 		</div>
 
 		<div>

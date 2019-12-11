@@ -25,7 +25,7 @@
 	</div>
 </div>
 
-<div class="app-pesquisar">
+{{-- <div class="app-pesquisar">
 	<div>
 		<form method="post" action="">
 			{!! csrf_field() !!}
@@ -33,7 +33,7 @@
 			<input type="text" name="search" placeholder="BUSCAR">
 		</form>
 	</div>
-</div>
+</div> --}}
 
 <div class="convencoes-coletivas">
 	<div>
