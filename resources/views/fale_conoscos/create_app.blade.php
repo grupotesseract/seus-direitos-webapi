@@ -23,8 +23,7 @@
 			<hr>
 		</div>
 
-		<div>
-		</div>
+		<img src="https://res.cloudinary.com/tesseract/image/upload/v1575653724/seus-direitos/icone-balao-conversa.png" alt="Ícone Fale Conosco">
 	</div>
 </div>
 
@@ -56,7 +55,7 @@
 				placeholder="TEXTO"></textarea>
 		</div>
 
-		<p>Para podermos respondê-lo,<br>deixe seu contato:</p>
+		<p>Caso queira um retorno, <br>deixe seu contato:</p>
 
 		<div class="form-group">
 			@if ($errors->has('email'))
