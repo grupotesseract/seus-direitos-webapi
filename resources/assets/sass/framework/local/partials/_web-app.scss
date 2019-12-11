@@ -1,0 +1,222 @@
+.app-header {
+	background-color: $blue-1;
+
+	> div {
+		@include container-app;
+		padding: 0.5rem 1rem;
+		text-align: center;
+		color: $white-1;
+	}
+}
+
+.convencoes-coletivas-header {
+	background-color: $oranje-1;
+
+	> div {
+		@include container-app;
+		padding: 0.5rem 1rem;
+		text-align: center;
+		color: $white-1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		> div {
+			&:first-of-type {
+				margin-right: 1rem;
+				width: 0;
+				height: 0;
+				border-top: 15px solid transparent;
+				border-right: 15px solid $white-1;
+				border-bottom: 15px solid transparent;
+				cursor: pointer;
+			}
+
+			&:last-of-type {
+				h4:last-of-type {
+					font-weight: 300;
+				}
+
+				hr {
+					width: 2rem;
+					height: 2px;
+					background-color: $white-1;
+					margin: 0 auto;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+.app-pesquisar {
+	background-color: $blue-3;
+
+	> div {
+		@include container-app;
+		padding: 0.5rem;
+		text-align: center;
+
+		form {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			i {
+				color: $white-1;
+				font-size: 1.5rem;
+				padding: 0.6rem 0.5rem 0.4rem;
+			}
+
+			input {
+				color: $white-1;
+				background-color: $blue-3;
+				border: none;
+				padding: 0.3rem 0;
+				font-size: 1.5rem;
+				border-bottom: 2px solid $white-1;
+				width: 80%;
+			}
+
+			input::placeholder {
+				color: $white-1;
+			}
+		}
+	}
+}
+
+.convencoes-coletivas {
+	background-color: $white-1;
+
+	> div {
+		@include container-app;
+		padding: 1rem;
+
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: 8rem;
+		grid-gap: 1rem;
+
+		a {
+			background-color: $blue-1;
+			display: block;
+			padding: 1rem;
+			display: flex;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			color: $white-1;
+			text-decoration: underline;
+		}
+	}
+}
+
+.noticias-header {
+	background-color: $yellow-2;
+
+	> div {
+		@include container-app;
+		padding: 1rem 2rem;
+		text-align: center;
+		color: $white-1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		> div {
+			&:nth-child(1) {
+				width: 0;
+				height: 0;
+				border-top: 15px solid transparent;
+				border-right: 15px solid $white-1;
+				border-bottom: 15px solid transparent;
+				cursor: pointer;
+			}
+
+			&:nth-child(2) {
+				h2 {
+					margin-bottom: 0.5rem;
+				}
+
+				hr {
+					width: 2rem;
+					height: 2px;
+					background-color: $white-1;
+					margin: 0 auto;
+					border: none;
+				}
+			}
+
+			&:nth-child(3) {
+				width: 0;
+				height: 0;
+				border-top: 15px solid transparent;
+				border-right: 15px solid $white-1;
+				border-bottom: 15px solid transparent;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.noticias {
+	> div {
+		@include container-app;
+		padding: 2rem;
+
+		img {
+			width: 100%;
+			margin-bottom: 0.5rem;
+		}
+
+		h3 {
+			color: $blue-2;
+		}
+
+		> h3 {
+			margin-bottom: 0.5rem;
+		}
+
+		p {
+			color: $blue-3;
+			margin-bottom: 0.5rem;
+			overflow: hidden;
+			height: 4.5rem;
+		}
+
+		a	h3 {
+			text-align: right;
+			position: relative;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: -2.5rem;
+				left: 0;
+				width: 100%;
+				height: 2rem;
+				background-image: linear-gradient(
+					to top,
+					$white-1,
+					rgba(255, 0, 0, 0)
+				);
+			}
+		}
+	}
+}
+
+.noticias-pink {
+	background-color: $pink-1;
+
+	> div {
+		a	h3 {
+			&:before {
+				background-image: linear-gradient(
+					to top,
+					$pink-1,
+					rgba(255, 0, 0, 0)
+				);
+			}
+		}
+	}
+}

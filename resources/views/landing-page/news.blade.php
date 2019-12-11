@@ -20,23 +20,23 @@
 <div class="news-gallery">
 	<div class="content">
 		@foreach ($noticiasLanding as $noticiaLanding)
-			<div class="news-box">
-				<div class="news-image" style="
+		<div class="news-box">
+			<div class="news-image" style="
 					background-image: url('http://res.cloudinary.com/fernandes/image/upload/{{$noticiaLanding->imagem}}.{{$noticiaLanding->extensao}}');
 					background-repeat: no-repeat;
 					background-position: center;
 					background-size: cover;"></div>
 
-				<div class="news-text">
-					<h3>{{ $noticiaLanding->titulo }}</h3>
-					{!! $noticiaLanding->texto !!}
+			<div class="news-text">
+				<h3>{{ $noticiaLanding->titulo }}</h3>
+				{!! $noticiaLanding->texto !!}
 				<a href="/landingpage/news/{{ $noticiaLanding->id }}">
-						<h3>LEIA MAIS &gt;</h3>
-					</a>
-				</div>
-		</div>				
+					<h3>LEIA MAIS &gt;</h3>
+				</a>
+			</div>
+		</div>
 		@endforeach
-</div>
+	</div>
 </div>
 
 @endsection
