@@ -15,7 +15,7 @@
 <div class="convencoes-coletivas-header">
 	<div>
 		<div>
-			<a href="/sindicatos/4/convencoes"></a>
+			<a href=""></a>
 		</div>
 
 		<div>
