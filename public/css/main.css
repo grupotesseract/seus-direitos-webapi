@@ -1603,6 +1603,15 @@ p {
   border-right: 15px solid white;
   border-bottom: 15px solid transparent;
   cursor: pointer;
+  position: relative;
+}
+
+.convencoes-coletivas-header > div > div:first-of-type a {
+  width: 15px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: -15px;
 }
 
 .convencoes-coletivas-header > div > div:last-of-type h4:last-of-type {
@@ -1943,6 +1952,26 @@ p {
 
 .fale-conosco > div form .has-error {
   border: 2px solid red;
+}
+
+.convencoes-coletivas-interno > div {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.convencoes-coletivas-interno > div img {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.convencoes-coletivas-interno > div h3 {
+  color: #0095c5;
+  margin-bottom: 0.5rem;
+}
+
+.convencoes-coletivas-interno > div p {
+  color: #2c669c;
 }
 
 footer {
