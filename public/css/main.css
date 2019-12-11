@@ -1831,6 +1831,120 @@ p {
   color: #2c669c;
 }
 
+.fale-conosco-header {
+  background-color: #0095c5;
+}
+
+.fale-conosco-header > div {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: center;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fale-conosco-header > div > div:nth-child(1) {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 15px solid white;
+  border-bottom: 15px solid transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.fale-conosco-header > div > div:nth-child(1) a {
+  width: 15px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: -15px;
+}
+
+.fale-conosco-header > div > div:nth-child(2) h2 {
+  margin-bottom: 0.5rem;
+}
+
+.fale-conosco-header > div > div:nth-child(2) hr {
+  width: 2rem;
+  height: 2px;
+  background-color: white;
+  margin: 0 auto;
+  border: none;
+}
+
+.fale-conosco-header > div > div:nth-child(3) {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 15px solid white;
+  border-bottom: 15px solid transparent;
+  cursor: pointer;
+}
+
+.fale-conosco > div {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.fale-conosco > div h3,
+.fale-conosco > div p {
+  color: #2c669c;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.fale-conosco > div form input,
+.fale-conosco > div form textarea {
+  padding: 0.3rem;
+  border: 2px solid #f9b208;
+  color: #0095c5;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.fale-conosco > div form input::-webkit-input-placeholder,
+.fale-conosco > div form textarea::-webkit-input-placeholder {
+  color: #0095c5;
+}
+
+.fale-conosco > div form input::-ms-input-placeholder,
+.fale-conosco > div form textarea::-ms-input-placeholder {
+  color: #0095c5;
+}
+
+.fale-conosco > div form input::placeholder,
+.fale-conosco > div form textarea::placeholder {
+  color: #0095c5;
+}
+
+.fale-conosco > div form button {
+  padding: 0.6rem;
+  background-color: #f9b208;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.fale-conosco > div form .help-block {
+  color: red;
+}
+
+.fale-conosco > div form .has-error {
+  border: 2px solid red;
+}
+
 footer {
   height: 3rem;
   background-color: #1c1a1f;
