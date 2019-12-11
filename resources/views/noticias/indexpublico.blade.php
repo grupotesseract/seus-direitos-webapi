@@ -34,16 +34,16 @@
 	<div class="noticias noticias-pink">
 		@endif
 		<div>
-				<img src="http://res.cloudinary.com/fernandes/image/upload/{{$noticia->thumbnailid}}.{{$noticia->extensao}}"
-					class="" alt="">
+			<img src="http://res.cloudinary.com/fernandes/image/upload/{{ $noticia->thumbnailid }}.{{ $noticia->extensao }}"
+				alt="{{$noticia->thumbnailid}}">
 
-				<h3>{{$noticia->manchete}}</h3>
+			<h3>{{ $noticia->manchete }}</h3>
 
-				{!! $noticia->corpo !!}
+			{!! $noticia->corpo !!}
 
-				<a href="{{ url('detalhanoticia/'.$noticia->id) }}">
-					<h3>LEIA MAIS &gt;</h3>
-				</a>
+			<a href="{{ url('detalhanoticia/'.$noticia->id) }}">
+				<h3>LEIA MAIS &gt;</h3>
+			</a>
 		</div>
 	</div>
 	@endforeach

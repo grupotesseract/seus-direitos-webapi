@@ -1728,6 +1728,15 @@ p {
   border-right: 15px solid white;
   border-bottom: 15px solid transparent;
   cursor: pointer;
+  position: relative;
+}
+
+.noticias-header > div > div:nth-child(1) a {
+  width: 15px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: -15px;
 }
 
 .noticias-header > div > div:nth-child(2) h2 {
@@ -1800,6 +1809,26 @@ p {
 .noticias-pink > div a h3:before {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#fce5d7), to(rgba(255, 0, 0, 0)));
   background-image: linear-gradient(to top, #fce5d7, rgba(255, 0, 0, 0));
+}
+
+.noticias-interno > div {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.noticias-interno > div img {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.noticias-interno > div h3 {
+  color: #0095c5;
+  margin-bottom: 0.5rem;
+}
+
+.noticias-interno > div p {
+  color: #2c669c;
 }
 
 footer {
