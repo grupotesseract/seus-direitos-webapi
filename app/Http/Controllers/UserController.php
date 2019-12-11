@@ -332,9 +332,9 @@ class UserController extends AppBaseController
             ->addScope(new PorRole('funcionario'))
             ->addScope(new PorSindicato(Auth::user()))
             ->render('users.lista-funcionarios');
-		}
-		
-		/**
+    }
+
+    /**
      * Rota para mostrar apenas usuarios com role de 'funcionario'.
      *
      * @param Request $request
