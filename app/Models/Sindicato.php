@@ -55,18 +55,18 @@ class Sindicato extends Model
         'logo',
     ];
 
-    /**
-     * Bindando Model Events para controlar o delete.
-     */
-    public static function boot()
-    {
-        parent::boot();
+    // /**
+    //  * Bindando Model Events para controlar o delete.
+    //  */
+    // public static function boot()
+    // {
+    //     parent::boot();
 
-        //Bindando o deleting para remover as relationships dependentes
-        static::deleting(function ($model) {
-            DeleteModelHelper::deleteRelationships($model);
-        });
-    }
+    //     //Bindando o deleting para remover as relationships dependentes
+    //     static::deleting(function ($model) {
+    //         DeleteModelHelper::deleteRelationships($model);
+    //     });
+    // }
 
     /**
      * Um Sindicato pode estar presente em varias cidades.

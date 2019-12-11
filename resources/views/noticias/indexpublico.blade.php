@@ -1,78 +1,55 @@
-@extends('layout-welcome.head')
+@extends('landing-page.partials.app')
 
-<style>
-    
-    .filme {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        border-bottom: 1px solid gray;
-    }
+@section('css')
+<link href="{{ asset('css/main.css') }}" rel="stylesheet">
+@endsection
 
-    
+@section('content')
 
-    .filme h2, .filme h3 {
-        color: #6c6c6c;
-        text-transform: uppercase;
-    }
-
-    .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        horizontal-align: middle;
-
-    }
-
-    .logo {
-        margin: 0 auto;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    p {
-        margin: 0 0 10px;
-    }
-
-    .section {
-        position: relative;
-    }
-
-    img {
-        vertical-align: middle;
-    }
-
-    body {
-        font-family: 'Hind', sans-serif;
-    }
-    
-</style>
-
-
-<!-- INCLUIR CABEÇALHO DO ALAMEDA -->
-<!-- AJUSTAR TAMANHO DA IMAGEM -->
-<!-- TRADUZIR LABELS -->
-
-<div class="container" style="margin-right: 20px">
-    
-    @foreach ($noticias as $noticia)
-        <div class="row filme">
-            <a href="{{ url('detalhanoticia/'.$noticia->id) }}">
-                <div class="col-lg-3">
-                    <img style="margin-left: 10px" width="387" height="512" src="http://res.cloudinary.com/fernandes/image/upload/{{$noticia->thumbnailid}}.{{$noticia->extensao}}" class="img-responsive wp-post-image" alt="">          
-                </div>
-
-                <div class="col-lg-9">
-                    <h2>{{$noticia->manchete}}</h2>                
-                </div>
-            </a>
-
-
-        </div>
-    @endforeach
-
+<div class="app-header">
+	<div>
+		<h4>{{$sindicato->nome}}</h4>
+	</div>
 </div>
 
+<div class="noticias-header">
+	<div>
+		<div onclick="window.close();">
+		</div>
+
+		<div>
+			<h2>NOTÍCIAS</h2>
+			<hr>
+		</div>
+
+		<img src="https://res.cloudinary.com/tesseract/image/upload/v1575653723/seus-direitos/icone-noticia.png" alt="Ícone Nótícias">
+	</div>
+</div>
+
+@foreach ($noticias as $noticia)
+@if($loop->iteration % 2 != 0)
+<div class="noticias">
+	@else
+	<div class="noticias noticias-pink">
+		@endif
+		<div>
+			<img src="http://res.cloudinary.com/fernandes/image/upload/{{ $noticia->thumbnailid }}.{{ $noticia->extensao }}"
+				alt="{{$noticia->thumbnailid}}">
+
+			<h3>{{ $noticia->manchete }}</h3>
+
+			{!! $noticia->corpo !!}
+
+			<a href="{{ url('detalhanoticia/'.$noticia->id) }}">
+				<h3>LEIA MAIS &gt;</h3>
+			</a>
+		</div>
+	</div>
+	@endforeach
+
+	<style>
+		footer {
+			display: none;
+		}
+	</style>
+	@endsection

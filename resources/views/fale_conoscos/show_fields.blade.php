@@ -16,6 +16,18 @@
     <p>{!! $faleConosco->texto !!}</p>
 </div>
 
+<!-- email Field -->
+<div class="form-group">
+	{!! Form::label('email', 'Email:') !!}
+	<p>{!! $faleConosco->email !!}</p>
+</div>
+
+<!-- Telefone Field -->
+<div class="form-group">
+	{!! Form::label('telefone', 'Telefone:') !!}
+	<p>{!! $faleConosco->telefone !!}</p>
+</div>
+
 <!-- Sindicato Id Field -->
 <div class="form-group">
     {!! Form::label('sindicato_id', 'Sindicato:') !!}
