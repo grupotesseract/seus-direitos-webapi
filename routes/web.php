@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::resource('users', 'UserController');
 
     Route::get('sindicatos/{idSindicato}/usuarios', 'UserController@getFuncionariosSindicato');
+    Route::get('instituicaos/{idInstituicao}/usuarios', 'UserController@getFuncionariosInstituicao');
     Route::get('usuarios', 'UserController@getAll');
     Route::get('usuarios/administradores', 'UserController@getAdmins');
     Route::get('usuarios/sindicalistas', 'UserController@getSindicalistas');
