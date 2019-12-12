@@ -4,7 +4,8 @@
     <section class="content-header">
         <h1>
             Instituição
-        </h1>
+				</h1>
+				<a href={{ $instituicao->id.'/usuarios' }} class="btn btn-primary">Visualizar Associados</a>
     </section>
     <div class="content">
         <div class="box box-primary">

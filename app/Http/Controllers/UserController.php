@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\Scopes\PorRole;
 use App\DataTables\Scopes\PorSindicato;
 use App\DataTables\Scopes\PorSindicatoId;
+use App\DataTables\Scopes\PorInstituicaoId;
 use App\DataTables\Scopes\Trashed;
 use App\DataTables\UserDataTable;
 use App\Http\Requests\CreateUserRequest;
@@ -345,6 +346,20 @@ class UserController extends AppBaseController
         return $userDT
             ->addScope(new PorRole('funcionario'))
             ->addScope(new PorSindicatoId($idSindicato))
+            ->render('users.lista-funcionarios');
+		}
+		
+		/**
+     * Rota para mostrar apenas usuarios com role de 'funcionario'.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function getFuncionariosInstituicao(UserDataTable $userDT, $idInstituicao)
+    {
+        return $userDT
+            ->addScope(new PorRole('funcionario'))
+            ->addScope(new PorInstituicaoId($idInstituicao))
             ->render('users.lista-funcionarios');
     }
 
