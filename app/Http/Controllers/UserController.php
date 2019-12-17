@@ -10,6 +10,7 @@ use App\DataTables\Scopes\Trashed;
 use App\DataTables\UserDataTable;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Categoria;
 use App\Models\Instituicao;
 use App\Models\Role;
 use App\Models\Sindicato;
@@ -98,8 +99,9 @@ class UserController extends AppBaseController
 
         Excel::filter('chunk')->load('storage/app/'.$arquivo)->chunk(100, function ($results) {
             foreach ($results as $row) {
-                $sindicato = Sindicato::where('nome', $row['sindicato'])->first();
-                if (! is_null($row['instituicao']) || $row['instituicao'] != '') {
+								$sindicato = Sindicato::where('nome', $row['sindicato'])->first();
+
+								if (! is_null($row['instituicao']) || $row['instituicao'] != '') {
                     $instituicao = Instituicao::firstOrCreate(
                         [
                             'nome' => $row['instituicao'],
@@ -107,7 +109,16 @@ class UserController extends AppBaseController
                             'sindicato_id' => $sindicato->id,
                         ]
                     );
-                }
+								}
+								
+								if (! is_null($row['categoria']) || $row['categoria'] != '') {
+										$categoria = Categoria::firstOrCreate(
+												[
+														'nome' => $row['categoria'],
+														'sindicato_id' => $sindicato->id,
+												]
+										);
+								}
 
                 if ($sindicato->count() > 0) {
                     $input['name'] = strtoupper($row['nome']);
@@ -116,12 +127,21 @@ class UserController extends AppBaseController
                     $rg_formatado = str_replace('-', '', $rg_formatado);
                     $input['password'] = bcrypt($rg_formatado);
                     $input['sindicato_id'] = $sindicato->id;
+                    
                     if (isset($instituicao)) {
                         $input['instituicao_id'] = $instituicao->id;
-                    }
+										}
+
+										if (isset($categoria)) {
+												$input['categoria_id'] = $categoria->id;
+										}
+
                     $input['rg'] = $rg_formatado;
                     $input['matricula'] = $row['matricula'];
-                    $input['validade_carteirinha'] = $row['validade'];
+										
+										if (isset($row['validade'])) {
+											$input['validade_carteirinha'] = $row['validade'];
+										}
 
                     $user = User::firstOrNew(
                         [
