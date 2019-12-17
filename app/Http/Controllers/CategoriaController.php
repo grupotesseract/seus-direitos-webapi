@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateCategoriaRequest;
 use App\Repositories\CategoriaRepository;
 use Flash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -34,7 +35,9 @@ class CategoriaController extends AppBaseController
     public function index(Request $request)
     {
         $this->categoriaRepository->pushCriteria(new RequestCriteria($request));
-        $categorias = $this->categoriaRepository->all();
+				//$categorias = $this->categoriaRepository->all();
+				$user = Auth::user();
+				$categorias = $user->sindicato->categorias;				
 
         return view('categorias.index')
             ->with('categorias', $categorias);
@@ -47,7 +50,9 @@ class CategoriaController extends AppBaseController
      */
     public function create()
     {
-        return view('categorias.create');
+				$user = Auth::user();				
+				$sindicato = $user->sindicato;	
+				return view('categorias.create')->with('sindicato', $sindicato);;
     }
 
     /**
@@ -59,11 +64,11 @@ class CategoriaController extends AppBaseController
      */
     public function store(CreateCategoriaRequest $request)
     {
-        $input = $request->all();
-
+				$input = $request->all();
+				
         $categoria = $this->categoriaRepository->create($input);
 
-        Flash::success('Categoria saved successfully.');
+        Flash::success('Categoria salva com sucesso.');
 
         return redirect(route('categorias.index'));
     }
@@ -80,7 +85,7 @@ class CategoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('Categoria not found');
+            Flash::error('Categoria não encontrada');
 
             return redirect(route('categorias.index'));
         }
@@ -97,15 +102,18 @@ class CategoriaController extends AppBaseController
      */
     public function edit($id)
     {
-        $categoria = $this->categoriaRepository->findWithoutFail($id);
+				$categoria = $this->categoriaRepository->findWithoutFail($id);
+
+				$user = Auth::user();				
+				$sindicato = $user->sindicato;	
 
         if (empty($categoria)) {
-            Flash::error('Categoria not found');
+            Flash::error('Categoria não encontrada');
 
             return redirect(route('categorias.index'));
         }
 
-        return view('categorias.edit')->with('categoria', $categoria);
+        return view('categorias.edit')->with(['categoria' => $categoria, 'sindicato' => $sindicato]);
     }
 
     /**
@@ -121,14 +129,14 @@ class CategoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('Categoria not found');
+            Flash::error('Categoria não encontrada');
 
             return redirect(route('categorias.index'));
         }
 
         $categoria = $this->categoriaRepository->update($request->all(), $id);
 
-        Flash::success('Categoria updated successfully.');
+        Flash::success('Categoria atualizada com sucesso.');
 
         return redirect(route('categorias.index'));
     }
@@ -145,14 +153,14 @@ class CategoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('Categoria not found');
+            Flash::error('Categoria não encontrada');
 
             return redirect(route('categorias.index'));
         }
 
         $this->categoriaRepository->delete($id);
 
-        Flash::success('Categoria deleted successfully.');
+        Flash::success('Categoria excluída com sucesso');
 
         return redirect(route('categorias.index'));
     }

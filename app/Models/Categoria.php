@@ -17,7 +17,8 @@ class Categoria extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $fillable = [
-        'nome',
+				'nome',
+				'sindicato_id'
     ];
 
     /**
@@ -28,6 +29,7 @@ class Categoria extends Model
     protected $casts = [
         'id' => 'integer',
         'nome' => 'string',
+        'sindicato_id' => 'integer',
     ];
 
     /**
@@ -39,11 +41,17 @@ class Categoria extends Model
         'nome' => 'required',
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function sindicatos()
+		public function sindicato()
     {
-        return $this->hasMany(\App\Models\Sindicato::class, 'id_categoria');
+        return $this->belongsTo(\App\Models\Sindicato::class);
+		}
+		
+		/**
+     * Relacao 1xN com App\Models\Convencao
+     * Uma instituição pode ter varias convencoes.
+     */
+    public function convencaos()
+    {
+        return $this->hasMany(\App\Models\Convencao::class);
     }
 }

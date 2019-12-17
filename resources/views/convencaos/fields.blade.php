@@ -5,9 +5,14 @@
 </div>
 
 
-<div class="form-group col-sm-12">
-    {!! Form::label('categoria_id', 'Instituição:') !!}
-    {!! Form::select('instituicao_id', $instituicaos, isset($convencao) ? $convencao->instituicao_id : null , ['placeholder' => 'Escolha uma Instituição', 'class' => 'form-control']) !!}
+<!-- Categoria Field -->
+<div class="form-group col-sm-6">
+	{!! Form::label('categoria_id', 'Categoria:') !!}
+	<div class="row">
+			<div class="col-xs-12">
+					{!! Form::select('categoria_id', $categorias, isset($convencao) ? $convencao->categoria_id : null, ['class' => 'form-control select2']) !!}
+			</div>
+	</div>
 </div>
 
 <!-- Texto Field -->

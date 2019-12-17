@@ -2,10 +2,11 @@
 
 namespace App\DataTables\Scopes;
 
+use App\Models\Sindicato;
 use App\Models\User;
 use Yajra\DataTables\Contracts\DataTableScope;
 
-class PorSindicatoDaInstituicao implements DataTableScope
+class PorCategoriasdoSindicato implements DataTableScope
 {
     private $sindicatoId;
 
@@ -28,12 +29,12 @@ class PorSindicatoDaInstituicao implements DataTableScope
     public function apply($query)
     {
         if ($this->sindicatoId) {
-            $sindicatoId = $this->sindicatoId;
+						$sindicatoId = $this->sindicatoId;
+						$categoriasIds = Sindicato::find($sindicatoId)->categorias()->pluck('id');
 
-            //Filtrando query para mostrar apenas os registros que tiverem instituicao e sindicato_id da instituicao igual ao do usuario logado.
-            return $query->whereHas('instituicao', function ($qInstituicao) use ($sindicatoId) {
-                $qInstituicao->where('sindicato_id', $sindicatoId);
-            });
+						return $query->whereIn('categoria_id', $categoriasIds);
+
+            
         }
 
         return $query;

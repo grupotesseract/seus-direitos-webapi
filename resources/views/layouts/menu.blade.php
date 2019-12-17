@@ -37,19 +37,22 @@
 @endrole
 
 @role('sindicalista')
-    <li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
+		<li class="{{ Request::is('categorias*') ? 'active' : '' }}">
+			<a href="{!! route('categorias.index') !!}"><i class="fa fa-asterisk"></i><span>Categorias</span></a>
+		</li>
+		
+		<li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
         <a href="{{ url('usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Associados </a>
 		</li>
 		
 		<li class="{{ Request::is('usuarios/funcionarios') ? 'active' : '' }}">
 			<a href="{{ url('trashed/usuarios/funcionarios') }}"> <i class="fa fa-group"></i> Associados Excluídos</a>
 		</li>
+		
 @endrole
 
 @role('superadmin')
-<li class="{{ Request::is('categorias*') ? 'active' : '' }}">
-    <a href="{!! route('categorias.index') !!}"><i class="fa fa-asterisk"></i><span>Categorias</span></a>
-</li>
+
 
 <li class="{{ Request::is('sindicatos*') ? 'active' : '' }}">
     <a href="{!! route('sindicatos.index') !!}"><i class="fa fa-bank"></i><span>Sindicatos</span></a>
