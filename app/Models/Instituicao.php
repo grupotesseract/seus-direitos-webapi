@@ -65,6 +65,4 @@ class Instituicao extends Model
     {
         return $this->hasMany(\App\Models\User::class);
     }
-
-    
 }

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddColunaCategoriaid extends Migration
 {
@@ -14,14 +14,14 @@ class AddColunaCategoriaid extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-						$table->integer('categoria_id')->unsigned()->nullable();
-						$table->foreign('categoria_id')->references('id')->on('categorias');
-				});
-				
-				Schema::table('convencaos', function (Blueprint $table) {
-						$table->integer('categoria_id')->unsigned()->nullable();
-						$table->foreign('categoria_id')->references('id')->on('categorias');
-				});
+            $table->integer('categoria_id')->unsigned()->nullable();
+            $table->foreign('categoria_id')->references('id')->on('categorias');
+        });
+
+        Schema::table('convencaos', function (Blueprint $table) {
+            $table->integer('categoria_id')->unsigned()->nullable();
+            $table->foreign('categoria_id')->references('id')->on('categorias');
+        });
     }
 
     /**
@@ -32,11 +32,11 @@ class AddColunaCategoriaid extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-						$table->dropColumn('categoria_id');
-				});
-				
-				Schema::table('convencaos', function (Blueprint $table) {
-						$table->dropColumn('categoria_id');
-				});
+            $table->dropColumn('categoria_id');
+        });
+
+        Schema::table('convencaos', function (Blueprint $table) {
+            $table->dropColumn('categoria_id');
+        });
     }
 }
