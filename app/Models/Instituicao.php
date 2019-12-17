@@ -66,12 +66,5 @@ class Instituicao extends Model
         return $this->hasMany(\App\Models\User::class);
     }
 
-    /**
-     * Relacao 1xN com App\Models\Convencao
-     * Uma instituição pode ter varias convencoes.
-     */
-    public function convencaos()
-    {
-        return $this->hasMany(\App\Models\Convencao::class);
-    }
+    
 }

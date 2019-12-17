@@ -1,8 +1,3 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $noticias->id !!}</p>
-</div>
 
 <!-- Manchete Field -->
 <div class="form-group">
@@ -16,27 +11,21 @@
     <p>{!! $noticias->corpo !!}</p>
 </div>
 
-<!-- Thumbnail Field -->
-<div class="form-group">
-    {!! Form::label('thumbnail', 'Thumbnail:') !!}
-    <p>{!! $noticias->thumbnail !!}</p>
-</div>
-
 <!-- Sindicato Id Field -->
 <div class="form-group">
-    {!! Form::label('sindicato_id', 'Sindicato Id:') !!}
-    <p>{!! $noticias->sindicato_id !!}</p>
+    {!! Form::label('sindicato_id', 'Sindicato:') !!}
+    <p>{!! $noticias->sindicato->nome !!}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $noticias->created_at !!}</p>
+    {!! Form::label('created_at', 'Criado em:') !!}
+    <p>{!! $noticias->created_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $noticias->updated_at !!}</p>
+    {!! Form::label('updated_at', 'Atualizado em:') !!}
+    <p>{!! $noticias->updated_at->format('d/m/Y H:i:s') !!}</p>
 </div>
 

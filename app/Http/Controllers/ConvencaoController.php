@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\ConvencaoDataTable;
-use App\DataTables\Scopes\PorSindicatoDaInstituicao;
+use App\DataTables\Scopes\PorCategoriasdoSindicato;
 use App\Http\Requests\CreateConvencaoRequest;
 use App\Http\Requests\UpdateConvencaoRequest;
+use App\Models\Categoria;
 use App\Models\Instituicao;
 use App\Models\Sindicato as Sindicato;
 use App\Models\User as User;
@@ -33,7 +34,7 @@ class ConvencaoController extends AppBaseController
     public function index(ConvencaoDataTable $convencaoDataTable)
     {
         return $convencaoDataTable
-            ->addScope(new PorSindicatoDaInstituicao(\Auth::user()))
+            ->addScope(new PorCategoriasdoSindicato(\Auth::user()))
             ->render('convencaos.index');
     }
 
@@ -45,21 +46,19 @@ class ConvencaoController extends AppBaseController
     public function create()
     {
         $user = \Auth::user();
-        $instituicaos = null;
-        $instituicao = null;
+        $categorias = null;
 
         //Se for superadmin mostrar todas instituicoes
         if ($user->hasRole('superadmin')) {
-            $instituicaos = Instituicao::all()->pluck('nomecompleto', 'id')->toArray();
-            $instituicao = null;
+            $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
         }
 
         //Se for de um sindicato, mostrar as instituicoes do sindicato apenas
         else {
-            $instituicaos = $user->sindicato->instituicoes()->pluck('nomecompleto', 'id');
+            $categorias = $user->sindicato->categorias()->pluck('nome', 'id');
         }
 
-        return view('convencaos.create')->with('instituicaos', $instituicaos);
+        return view('convencaos.create')->with('categorias', $categorias);
     }
 
     /**
@@ -124,23 +123,25 @@ class ConvencaoController extends AppBaseController
         }
 
         $user = \Auth::user();
-        $instituicaos = null;
-        $instituicao = $convencao->instituicao_id;
+				$categoria = $convencao->categoria_id;
+				
+				$categorias = null;
 
         //Se for superadmin mostrar todas instituicoes
         if ($user->hasRole('superadmin')) {
-            $instituicaos = Instituicao::all()->pluck('nomecompleto', 'id')->toArray();
+            $categorias = Categoria::all()->pluck('nome', 'id')->toArray();
         }
 
         //Se for de um sindicato, mostrar as instituicoes do sindicato apenas
         else {
-            $instituicaos = $user->sindicato->instituicoes()->pluck('nomecompleto', 'id');
-        }
+            $categorias = $user->sindicato->categorias()->pluck('nome', 'id');
+        }				
+
 
         return view('convencaos.edit')->with([
             'convencao' => $convencao,
-            'instituicao' => $instituicao,
-            'instituicaos' => $instituicaos,
+            'categoria' => $categoria,
+            'categorias' => $categorias,
         ]);
     }
 
@@ -206,10 +207,10 @@ class ConvencaoController extends AppBaseController
      */
     public function getConvencoesPorSindicato($idUsuario)
     {
-        $instituicao = User::find($idUsuario)->instituicao;
+				$categoria = User::find($idUsuario)->categoria;
 
-        if (! is_null($instituicao)) {
-            $convencoes = $instituicao->convencaos;
+        if (! is_null($categoria)) {
+            $convencoes = $categoria->convencaos;
 
             return view('convencaos.indexpublico')->with('convencoes', $convencoes);
         }

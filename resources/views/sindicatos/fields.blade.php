@@ -33,16 +33,6 @@
     {!! Form::text('email', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Categoria Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('id_categoria', 'Categoria:') !!}
-    <div class="row">
-        <div class="col-xs-12">
-            {!! Form::select('id_categoria', $categorias, isset($sindicato) ? $sindicato->categoria_id : null) !!}
-        </div>
-    </div>
-</div>
-
 <!-- Descricao Listagem Field -->
 <div class="form-group col-sm-6">
     @include('fotos.partials.fields', [

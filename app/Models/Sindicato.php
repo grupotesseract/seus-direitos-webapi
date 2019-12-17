@@ -22,7 +22,6 @@ class Sindicato extends Model
         'nome',
         'sigla',
         'nome_responsavel',
-        'id_categoria',
         'email',
     ];
 
@@ -70,16 +69,6 @@ class Sindicato extends Model
     // }
 
     /**
-     * Um Sindicato sempre pertence a uma categoria.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function categoria()
-    {
-        return $this->belongsTo(\App\Models\Categoria::class, 'id_categoria');
-    }
-
-    /**
      * Um Sindicato pode estar presente em varias cidades.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -125,6 +114,11 @@ class Sindicato extends Model
     public function noticias()
     {
         return $this->hasMany(\App\Models\Noticias::class);
+		}
+		
+		public function categorias()
+    {
+        return $this->hasMany(\App\Models\Categoria::class);
     }
 
     /**
