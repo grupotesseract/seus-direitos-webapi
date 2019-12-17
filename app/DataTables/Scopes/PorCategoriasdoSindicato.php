@@ -29,12 +29,10 @@ class PorCategoriasdoSindicato implements DataTableScope
     public function apply($query)
     {
         if ($this->sindicatoId) {
-						$sindicatoId = $this->sindicatoId;
-						$categoriasIds = Sindicato::find($sindicatoId)->categorias()->pluck('id');
+            $sindicatoId = $this->sindicatoId;
+            $categoriasIds = Sindicato::find($sindicatoId)->categorias()->pluck('id');
 
-						return $query->whereIn('categoria_id', $categoriasIds);
-
-            
+            return $query->whereIn('categoria_id', $categoriasIds);
         }
 
         return $query;

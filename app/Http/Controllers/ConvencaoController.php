@@ -7,7 +7,6 @@ use App\DataTables\Scopes\PorCategoriasdoSindicato;
 use App\Http\Requests\CreateConvencaoRequest;
 use App\Http\Requests\UpdateConvencaoRequest;
 use App\Models\Categoria;
-use App\Models\Instituicao;
 use App\Models\Sindicato as Sindicato;
 use App\Models\User as User;
 use App\Repositories\ConvencaoRepository;
@@ -123,9 +122,9 @@ class ConvencaoController extends AppBaseController
         }
 
         $user = \Auth::user();
-				$categoria = $convencao->categoria_id;
-				
-				$categorias = null;
+        $categoria = $convencao->categoria_id;
+
+        $categorias = null;
 
         //Se for superadmin mostrar todas instituicoes
         if ($user->hasRole('superadmin')) {
@@ -135,8 +134,7 @@ class ConvencaoController extends AppBaseController
         //Se for de um sindicato, mostrar as instituicoes do sindicato apenas
         else {
             $categorias = $user->sindicato->categorias()->pluck('nome', 'id');
-        }				
-
+        }
 
         return view('convencaos.edit')->with([
             'convencao' => $convencao,
@@ -207,7 +205,7 @@ class ConvencaoController extends AppBaseController
      */
     public function getConvencoesPorSindicato($idUsuario)
     {
-				$categoria = User::find($idUsuario)->categoria;
+        $categoria = User::find($idUsuario)->categoria;
 
         if (! is_null($categoria)) {
             $convencoes = $categoria->convencaos;
