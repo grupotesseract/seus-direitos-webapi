@@ -35,9 +35,9 @@ class CategoriaController extends AppBaseController
     public function index(Request $request)
     {
         $this->categoriaRepository->pushCriteria(new RequestCriteria($request));
-				//$categorias = $this->categoriaRepository->all();
-				$user = Auth::user();
-				$categorias = $user->sindicato->categorias;				
+        //$categorias = $this->categoriaRepository->all();
+        $user = Auth::user();
+        $categorias = $user->sindicato->categorias;
 
         return view('categorias.index')
             ->with('categorias', $categorias);
@@ -50,9 +50,10 @@ class CategoriaController extends AppBaseController
      */
     public function create()
     {
-				$user = Auth::user();				
-				$sindicato = $user->sindicato;	
-				return view('categorias.create')->with('sindicato', $sindicato);;
+        $user = Auth::user();
+        $sindicato = $user->sindicato;
+
+        return view('categorias.create')->with('sindicato', $sindicato);
     }
 
     /**
@@ -64,8 +65,8 @@ class CategoriaController extends AppBaseController
      */
     public function store(CreateCategoriaRequest $request)
     {
-				$input = $request->all();
-				
+        $input = $request->all();
+
         $categoria = $this->categoriaRepository->create($input);
 
         Flash::success('Categoria salva com sucesso.');
@@ -102,10 +103,10 @@ class CategoriaController extends AppBaseController
      */
     public function edit($id)
     {
-				$categoria = $this->categoriaRepository->findWithoutFail($id);
+        $categoria = $this->categoriaRepository->findWithoutFail($id);
 
-				$user = Auth::user();				
-				$sindicato = $user->sindicato;	
+        $user = Auth::user();
+        $sindicato = $user->sindicato;
 
         if (empty($categoria)) {
             Flash::error('Categoria não encontrada');
