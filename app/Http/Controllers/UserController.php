@@ -114,8 +114,8 @@ class UserController extends AppBaseController
                 if (! is_null($row['categoria']) || $row['categoria'] != '') {
                     $categoria = Categoria::firstOrCreate(
                                                 [
-                                                        'nome' => $row['categoria'],
-                                                        'sindicato_id' => $sindicato->id,
+                                                    'nome' => $row['categoria'],
+                                                    'sindicato_id' => $sindicato->id,
                                                 ]
                                         );
                 }

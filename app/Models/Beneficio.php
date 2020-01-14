@@ -45,9 +45,9 @@ class Beneficio extends Model
     ];
 
     public $hidden = [
-       'sindicato_id',
-       'created_at',
-       'updated_at',
+        'sindicato_id',
+        'created_at',
+        'updated_at',
     ];
 
     /**
