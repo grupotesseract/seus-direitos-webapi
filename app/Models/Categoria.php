@@ -17,8 +17,8 @@ class Categoria extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $fillable = [
-				'nome',
-				'sindicato_id'
+                'nome',
+                'sindicato_id',
     ];
 
     /**
@@ -41,12 +41,12 @@ class Categoria extends Model
         'nome' => 'required',
     ];
 
-		public function sindicato()
+    public function sindicato()
     {
         return $this->belongsTo(\App\Models\Sindicato::class);
-		}
-		
-		/**
+    }
+
+    /**
      * Relacao 1xN com App\Models\Convencao
      * Uma instituição pode ter varias convencoes.
      */
