@@ -208,9 +208,9 @@ class ConvencaoController extends AppBaseController
         $categoria = User::find($idUsuario)->categoria;
 
         if (! is_null($categoria)) {
-            $convencoes = $categoria->convencaos;
-            $sindicato = $categoria->sindicato;
-
+            $convencoes = $categoria->convencaos()->orderBy('id')->get();
+						$sindicato = $categoria->sindicato;
+						
             return view('convencaos.indexpublico')->with(['convencoes' => $convencoes, 'sindicato' => $sindicato]);
         }
     }
