@@ -209,8 +209,8 @@ class ConvencaoController extends AppBaseController
 
         if (! is_null($categoria)) {
             $convencoes = $categoria->convencaos()->orderBy('id')->get();
-						$sindicato = $categoria->sindicato;
-						
+            $sindicato = $categoria->sindicato;
+
             return view('convencaos.indexpublico')->with(['convencoes' => $convencoes, 'sindicato' => $sindicato]);
         }
     }
