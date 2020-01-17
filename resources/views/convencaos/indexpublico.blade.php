@@ -39,7 +39,7 @@
 	<div>
 		@foreach ($convencoes as $convencao)
 		<a class="" href="{{ url('detalhaconvencao/'.$convencao->id) }}">
-			<h3>{{$convencao->resumo}}</h3>
+			<h3 style="font-size: 0.80rem">{{$convencao->resumo}}</h3>
 		</a>
 		@endforeach
 	</div>
