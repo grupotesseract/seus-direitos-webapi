@@ -38,8 +38,10 @@
 
 			<h3>{{ $noticia->manchete }}</h3>
 
+			{{ $noticia->corpo }}
+
 			<a href="{{ url('detalhanoticia/'.$noticia->id) }}">
-				<h3>LEIA MAIS &gt;</h3>
+				<h3>LEIA MAIS &gt;</h3>z
 			</a>
 		</div>
 	</div>
