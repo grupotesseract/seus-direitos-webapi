@@ -15,7 +15,7 @@
 <div class="noticias-header">
 	<div>
 		<div>
-			<div onclick="setTimeout(window.close, 300);">
+			<a href="/sindicatos/{{$noticia->sindicato->id}}/noticias"></a>
 		</div>
 
 		<div>
