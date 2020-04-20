@@ -42,9 +42,9 @@ $factory->define(App\Models\Categoria::class, function (Faker\Generator $faker) 
 /* Factory de Sindicatos para teste */
 $factory->define(App\Models\Sindicato::class, function (Faker\Generator $faker) {
     $nome = $faker->randomElement([
-            'Sindicato dos ',
-            'Sind dos ',
-        ])
+        'Sindicato dos ',
+        'Sind dos ',
+    ])
         .
         $faker->randomElement([
             'Trabalhadores na Construção Civil',

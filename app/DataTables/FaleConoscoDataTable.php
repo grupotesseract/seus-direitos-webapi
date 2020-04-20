@@ -29,7 +29,7 @@ class FaleConoscoDataTable extends DataTable
      */
     public function query(FaleConosco $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->orderBy('id', 'DESC');
     }
 
     /**
