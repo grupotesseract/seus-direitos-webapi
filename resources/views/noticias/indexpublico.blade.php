@@ -14,7 +14,7 @@
 
 <div class="noticias-header">
 	<div>
-		<div onclick="window.close();">
+		<div onclick="setTimeout(window.close, 300);">
 		</div>
 
 		<div>
@@ -37,8 +37,6 @@
 				alt="{{$noticia->thumbnailid}}">
 
 			<h3>{{ $noticia->manchete }}</h3>
-
-			{!! $noticia->corpo !!}
 
 			<a href="{{ url('detalhanoticia/'.$noticia->id) }}">
 				<h3>LEIA MAIS &gt;</h3>
