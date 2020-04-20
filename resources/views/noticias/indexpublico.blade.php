@@ -41,7 +41,7 @@
 			{!! $noticia->corpo !!}
 
 			<a href="{{ url('detalhanoticia/'.$noticia->id) }}">
-				<h3>LEIA MAIS &gt;</h3>z
+				<h3>LEIA MAIS &gt;</h3>
 			</a>
 		</div>
 	</div>
