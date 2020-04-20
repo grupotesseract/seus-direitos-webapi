@@ -40,7 +40,7 @@
 
 			{!! $noticia->corpo !!}
 
-			<a href="{{ url('detalhanoticia/'.$noticia->id) }}" target="_blank">
+			<a href="{{ url('detalhanoticia/'.$noticia->id) }}">
 				<h3>LEIA MAIS &gt;</h3>
 			</a>
 		</div>
