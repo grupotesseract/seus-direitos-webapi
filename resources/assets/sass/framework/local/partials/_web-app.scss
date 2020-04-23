@@ -183,7 +183,7 @@
 				left: 0;
 				width: 100%;
 				height: 2rem;
-				background-image: linear-gradient(to top, $white-1, rgba(255, 0, 0, 0));
+				//background-image: linear-gradient(to top, $white-1, rgba(255, 0, 0, 0));
 			}
 		}
 	}
@@ -195,7 +195,7 @@
 	> div {
 		a h3 {
 			&:before {
-				background-image: linear-gradient(to top, $pink-1, rgba(255, 0, 0, 0));
+				//background-image: linear-gradient(to top, $pink-1, rgba(255, 0, 0, 0));
 			}
 		}
 	}
