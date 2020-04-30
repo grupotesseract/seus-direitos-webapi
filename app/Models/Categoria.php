@@ -17,8 +17,8 @@ class Categoria extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $fillable = [
-                'nome',
-                'sindicato_id',
+        'nome',
+        'sindicato_id',
     ];
 
     /**

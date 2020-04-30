@@ -23,9 +23,9 @@ class FaleConosco extends Model
 
     public $fillable = [
         'assunto',
-                'texto',
-                'email',
-                'telefone',
+        'texto',
+        'email',
+        'telefone',
         'sindicato_id',
     ];
 
@@ -36,9 +36,9 @@ class FaleConosco extends Model
      */
     protected $casts = [
         'assunto' => 'string',
-                'texto' => 'string',
-                'email' => 'string',
-                'telefone' => 'string',
+        'texto' => 'string',
+        'email' => 'string',
+        'telefone' => 'string',
         'sindicato_id' => 'integer',
     ];
 
@@ -51,7 +51,7 @@ class FaleConosco extends Model
         'assunto' => 'required',
         'texto' => 'required',
         'sindicato_id' => 'required',
-        ];
+    ];
 
     public function sindicato()
     {
