@@ -29,7 +29,7 @@ class NoticiasDataTable extends DataTable
      */
     public function query(Noticias $model)
     {
-        return $model->newQuery();
+        return $model->orderBy('id', 'DESC');
     }
 
     /**
