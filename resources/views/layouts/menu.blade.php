@@ -58,26 +58,26 @@
     <a href="{!! route('sindicatos.index') !!}"><i class="fa fa-bank"></i><span>Sindicatos</span></a>
 </li>
 
-{{-- <li class="{{ Request::is('trashed/sindicatos*') ? 'active' : '' }}">
+<li class="{{ Request::is('trashed/sindicatos*') ? 'active' : '' }}">
 	<a href="{!! url('trashed/sindicatos') !!}"><i class="fa fa-bank"></i><span>Sindicatos Excluídos</span></a>
-</li> --}}
+</li>
 
 
-{{-- <li class="{{ Request::is('filmes*') ? 'active' : '' }}">
+<li class="{{ Request::is('filmes*') ? 'active' : '' }}">
     <a href="{!! route('filmes.index') !!}"><i class="fa fa-film"></i><span>Filmes</span></a>
-</li> --}}
+</li>
 
-{{-- <li class="{{ Request::is('eventos*') ? 'active' : '' }}">
+<li class="{{ Request::is('eventos*') ? 'active' : '' }}">
     <a href="{!! route('eventos.index') !!}"><i class="fa fa-calendar"></i><span>Eventos</span></a>
-</li> --}}
+</li>
 
-{{-- <li class="{{ Request::is('promocaos*') ? 'active' : '' }}">
+<li class="{{ Request::is('promocaos*') ? 'active' : '' }}">
     <a href="{!! route('promocaos.index') !!}"><i class="fa fa-gift"></i><span>Promoções</span></a>
-</li> --}}
+</li>
 
-{{-- <li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
+<li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
     <a href="{!! route('beneficios.index') !!}"><i class="fa fa-pagelines"></i><span>Benefícios</span></a>
-</li> --}}
+</li>
 
 <li class="{{ Request::is('videos*') ? 'active' : '' }}">
     <a href="{!! route('videos.index') !!}"><i class="fa fa-play"></i><span>Videos</span></a>
@@ -87,17 +87,17 @@
     <a href="{!! route('propagandas.index') !!}"><i class="fa fa-image"></i><span>Propagandas</span></a>
 </li>
 
-{{-- <li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
+<li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
     <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-building"></i><span>Instituições</span></a>
-</li> --}}
+</li>
 
-{{-- <li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
+<li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
     <a href="{!! route('convencaos.index') !!}"><i class="fa fa-calendar-check-o"></i><span>Convenções Coletivas</span></a>
-</li> --}}
+</li>
 
-{{-- <li class="{{ Request::is('noticias*') ? 'active' : '' }}">
+<li class="{{ Request::is('noticias*') ? 'active' : '' }}">
     <a href="{!! route('noticias.index') !!}"><i class="fa fa-bullhorn"></i><span>Notícias</span></a>
-</li> --}}
+</li>
 
 <li class="treeview">
 	<a href="#">
@@ -123,26 +123,24 @@
 
 
 @role('sindicalista')
-{{-- <li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
+<li class="{{ Request::is('beneficios*') ? 'active' : '' }}">
     <a href="{!! route('beneficios.index') !!}"><i class="fa fa-pagelines"></i><span>Benefícios</span></a>
-</li> --}}
+</li>
 
-{{-- <li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
+<li class="{{ Request::is('convencaos*') ? 'active' : '' }}">
     <a href="{!! route('convencaos.index') !!}"><i class="fa fa-calendar-check-o"></i><span>Convenções Coletivas</span></a>
-</li> --}}
+</li>
 
-{{-- <li class="{{ Request::is('noticias*') ? 'active' : '' }}">
+<li class="{{ Request::is('noticias*') ? 'active' : '' }}">
     <a href="{!! route('noticias.index') !!}"><i class="fa fa-bullhorn"></i><span>Notícias</span></a>
-</li> --}}
+</li>
 
 <li class="{{ Request::is('faleConoscos*') ? 'active' : '' }}">
     <a href="{!! route('faleConoscos.index') !!}"><i class="fa fa-envelope"></i><span>Fale Conosco</span></a>
 </li>
 
-{{-- <li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
+<li class="{{ Request::is('instituicaos*') ? 'active' : '' }}">
     <a href="{!! route('instituicaos.index') !!}"><i class="fa fa-building"></i><span>Instituições</span></a>
-</li> --}}
+</li>
 
 @endrole
-
-
